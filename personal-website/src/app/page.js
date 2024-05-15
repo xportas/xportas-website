@@ -1,11 +1,12 @@
 import ExpertiseCard from "./components/ExpertiseCard";
-
+import Nav from "./components/Nav";
 
 
 export default function Home() {
   return (
     <>
-      <ExpertiseCard></ExpertiseCard>
+      <Nav />
+      <ExpertiseCard />
       <p>El espacio, el vasto y misterioso ámbito que se extiende más allá de la atmósfera terrestre, ha fascinado a la humanidad desde tiempos inmemoriales. Este entorno aparentemente infinito, donde las estrellas, los planetas y otras formas celestiales residen, sigue siendo un lugar de inmenso interés y asombro. Desde las primeras civilizaciones que miraban al cielo con reverencia y especulación hasta las modernas agencias espaciales que envían sondas y telescopios al cosmos, el espacio ha sido una fuente constante de inspiración y descubrimiento.
 
         ### El Universo y sus Misterios
