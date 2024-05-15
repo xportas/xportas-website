@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: public-pixel;
+  src: url("/fonts/public-pixel.woff");
+}
+@font-face {
+  font-family: chill;
+  src: url("/fonts/chill.woff");
+}
