@@ -16,8 +16,13 @@ CONTACTO - CONTACT
 IDEAS:
 
 Selección de idioma en la pantalla del ordenador
+
+Sección "my work" a la izquierda porner el título y la descripción de abajo poner lo de mi github (he estado involucrado en varios proyectos moviles, web, erps etc) y a la derecha la tuerca de que está en progreso y la barra de progreso como que todavía lo estoy construyendo jeje
+
 Tema oscuro que sea un fondo de universo pixel art
+
 Descargar CV y enlace a LinkedIn
+
 CV que sea una extensión del diseño de la web
 
 

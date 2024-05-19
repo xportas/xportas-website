@@ -11,6 +11,12 @@ module.exports = {
         'header': ['public-pixel', 'Roboto mono', 'monoespace'],
         'main': ['chill', 'Roboto mono', 'monoespace'],
       },
+      boxShadow: {
+        'custom': '6px 6px #52525240',
+        'custom-hover': '12px 12px 5px 1px #52525240',
+      }, colors: {
+        'main-color-gray': "#525252",
+      }
     },
   },
   plugins: [],
