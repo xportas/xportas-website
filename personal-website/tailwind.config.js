@@ -7,15 +7,19 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        'header': ['public-pixel', 'Roboto mono', 'monoespace'],
-        'main': ['chill', 'Roboto mono', 'monoespace'],
+      blur: {
+        xs: '2px',
       },
       boxShadow: {
         'custom': '6px 6px #52525240',
         'custom-hover': '12px 12px 5px 1px #52525240',
-      }, colors: {
+      },
+      colors: {
         'main-color-gray': "#525252",
+      },
+      fontFamily: {
+        'header': ['public-pixel', 'Roboto mono', 'monoespace'],
+        'main': ['chill', 'Roboto mono', 'monoespace'],
       }
     },
   },
