@@ -25,6 +25,10 @@ Descargar CV y enlace a LinkedIn
 
 CV que sea una extensión del diseño de la web
 
+Las skills pueden estar en blanco y negro y luego cuando se ejecuta el evento onhover que tomen su color natural, por ejemplo logo de JS gris y que se vuelva amarillo
+
+MI FOTO: EN BLANCO Y NEGRO Y QUE AL PASAR POR ENCIMA SE VUELVA DE COLOR y algún efecto como que se eleva o algo así, como los botones
+
 
 
 ## Getting Started
