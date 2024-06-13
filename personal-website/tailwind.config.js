@@ -13,6 +13,8 @@ module.exports = {
       boxShadow: {
         'custom': '6px 6px #52525240',
         'custom-hover': '12px 12px 5px 1px #52525240',
+        'custom-dark-theme': '6px 6px #78716c',
+        'custom-hover-dark-theme': '12px 12px 5px 1px #78716c',
       },
       colors: {
         'main-color-gray': "#525252",

@@ -1,4 +1,3 @@
-import Head from "next/head";
 import "./globals.css";
 
 
@@ -10,9 +9,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html /*lang="en"*/ >
-      <Head>
-      <link rel="icon" href="/favicon.ico" />
-      </Head>
       <body className="font-main bg-orange-200 text-main-color-gray">{children}</body>
     </html>
   );
