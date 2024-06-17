@@ -9,7 +9,7 @@ export default function Nav() {
   const [showNavbar, setShowNavbar] = useState(false);
   const [navbarHidden, setNavbarHidden] = useState(true);
   const [hoverBtnsEffectDisabled, setHoverBtnsEffectDisabled] = useState(true);
-  const navbarInitialState = { home: false, expertise: false, work: false, experience: false, contact: false };
+  const navbarInitialState = { about: false, work: false, experience: false, contact: false };
   const [navbarOnHoverState, setNavbarOnHoverState] = useState(navbarInitialState);
 
   const onMouseDown = () => { setHoverBtnsEffectDisabled(false); }
@@ -18,7 +18,7 @@ export default function Nav() {
     onMouseDown();
     setTimeout(() => {
       setHoverBtnsEffectDisabled(true);
-    }, 100);
+    }, 70);
   }
   const handleNavbarOnHover = (a, isHover) => {
     const newNavbarOnHoverState = { ...navbarInitialState, [a]: isHover };
@@ -92,17 +92,15 @@ export default function Nav() {
             <div className="fixed left-1/2 transform -translate-x-1/2 z-20">
               <nav className={`flex font-header text-orange-200 bg-main-color-gray px-5 py-1 border-solid border-2 border-orange-200 shadow-custom ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}>
                 <div className="absolute  z-30 flex items-center justify-center">
-                  <span className={`px-3 m-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.home ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>Home</span>
-                  <span className={`px-3 m-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.expertise ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>Expertise</span>
-                  <span className={`px-3 m-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.work ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>Work</span>
+                  <span className={`px-3 m-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.about ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>About</span>
                   <span className={`px-3 m-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.experience ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>Experience</span>
+                  <span className={`px-3 m-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.work ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>Work</span>
                   <span className={`px-3 m-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.contact ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>Contact</span>
                 </div>
                 <div className="relative z-40 flex items-center justify-center">
-                  <a href="#home-section" className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150" onMouseOver={() => handleNavbarOnHover('home', true)} onMouseLeave={() => handleNavbarOnHover('home', false)}><span className={`bg-main-color-gray bg-clip-text`} >Home</span></a>
-                  <a href="#expertise-section" className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150" onMouseOver={() => handleNavbarOnHover('expertise', true)} onMouseLeave={() => handleNavbarOnHover('expertise', false)}><span className={`bg-main-color-gray bg-clip-text`} >Expertise</span></a>
-                  <a href="#work-section" className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150" onMouseOver={() => handleNavbarOnHover('work', true)} onMouseLeave={() => handleNavbarOnHover('work', false)}><span className={`bg-main-color-gray bg-clip-text`} >Work</span></a>
+                  <a href="#about-section" className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150" onMouseOver={() => handleNavbarOnHover('about', true)} onMouseLeave={() => handleNavbarOnHover('about', false)}><span className={`bg-main-color-gray bg-clip-text`} >About</span></a>
                   <a href="#experience-section" className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150" onMouseOver={() => handleNavbarOnHover('experience', true)} onMouseLeave={() => handleNavbarOnHover('experience', false)}><span className={`bg-main-color-gray bg-clip-text`} >Experience</span></a>
+                  <a href="#work-section" className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150" onMouseOver={() => handleNavbarOnHover('work', true)} onMouseLeave={() => handleNavbarOnHover('work', false)}><span className={`bg-main-color-gray bg-clip-text`} >Work</span></a>
                   <a href="#contact-section" className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150" onMouseOver={() => handleNavbarOnHover('contact', true)} onMouseLeave={() => handleNavbarOnHover('contact', false)}><span className={`bg-main-color-gray bg-clip-text`} >Contact</span></a>
                 </div>
               </nav>
@@ -116,10 +114,9 @@ export default function Nav() {
       {screenWidth < 1500 ?
         <div className={`fixed h-screen w-screen bg-main-color-gray z-40 ${showNavbar ? 'wipe-in-right' : 'wipe-out-left'} ${navbarHidden ? 'hidden' : ''}`}>
           <nav className="inline-flex items-baseline flex-col font-header text-orange-200 pt-24 p-7 w-full">
-            <a href="#home-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.home ? 'bg-orange-200 text-main-color-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('home', true)} onMouseLeave={() => handleNavbarOnHover('home', false)} ><span className="ml-3">Home</span></a>
-            <a href="#expertise-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.expertise ? 'bg-orange-200 text-main-color-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('expertise', true)} onMouseLeave={() => handleNavbarOnHover('expertise', false)} ><span className="ml-3">Expertise</span></a>
-            <a href="#work-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.work ? 'bg-orange-200 text-main-color-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('work', true)} onMouseLeave={() => handleNavbarOnHover('work', false)} ><span className="ml-3">Work</span></a>
+            <a href="#about-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.about ? 'bg-orange-200 text-main-color-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('about', true)} onMouseLeave={() => handleNavbarOnHover('about', false)} ><span className="ml-3">About</span></a>
             <a href="#experience-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.experience ? 'bg-orange-200 text-main-color-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('experience', true)} onMouseLeave={() => handleNavbarOnHover('experience', false)} ><span className="ml-3">Experience</span></a>
+            <a href="#work-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.work ? 'bg-orange-200 text-main-color-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('work', true)} onMouseLeave={() => handleNavbarOnHover('work', false)} ><span className="ml-3">Work</span></a>
             <a href="#contact-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.contact ? 'bg-orange-200 text-main-color-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('contact', true)} onMouseLeave={() => handleNavbarOnHover('contact', false)} ><span className="ml-3">Contact</span></a>
           </nav>
         </div>
