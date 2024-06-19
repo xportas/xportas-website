@@ -2,16 +2,6 @@
 Open source project containing the source code of my personal website
 
 
-APARTADOS:
-
-ENCABEZADO - HOME
-SOBRE MÍ - ABOUT ME
-CONOCIMIENTOS - EXPERTISE
-PROYECTOS - WORK
-CONTACTO - EXPERIENCE
-CONTACTO - CONTACT
-
-
 
 IDEAS:
 
