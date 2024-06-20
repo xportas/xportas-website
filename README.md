@@ -5,17 +5,9 @@ Open source project containing the source code of my personal website
 
 IDEAS:
 
-Selección de idioma en la pantalla del ordenador
+Selección de idioma en el navegador
 
-Sección "my work" a la izquierda porner el título y la descripción de abajo poner lo de mi github (he estado involucrado en varios proyectos moviles, web, erps etc) y a la derecha la tuerca de que está en progreso y la barra de progreso como que todavía lo estoy construyendo jeje
-
-Tema oscuro que sea un fondo de universo pixel art
-
-Descargar CV y enlace a LinkedIn
-
-CV que sea una extensión del diseño de la web
-
-Las skills pueden estar en blanco y negro y luego cuando se ejecuta el evento onhover que tomen su color natural, por ejemplo logo de JS gris y que se vuelva amarillo
+Tema oscuro que sea otro diseño moderno (v4) y que en vez de elegir el tema, se elija "salir de lo retro" o "de los años 80"
 
 MI FOTO: EN BLANCO Y NEGRO Y QUE AL PASAR POR ENCIMA SE VUELVA DE COLOR y algún efecto como que se eleva o algo así, como los botones
 

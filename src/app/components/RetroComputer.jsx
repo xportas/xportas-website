@@ -12,23 +12,23 @@ export default function RetroComputer() {
   useEffect(() => {
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.outputColorSpace = THREE.SRGBColorSpace;
-    renderer.setSize(window.innerWidth, window.innerHeight); // TODO: change the model size
+    renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-    camera.position.set(4, 5, 11);
+    const camera = new THREE.PerspectiveCamera(5, window.innerWidth / window.innerHeight, 1, 100);
+    camera.position.set(2, 2.5, 5);
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.enablePan = false;
-    controls.minDistance = 0;
-    controls.maxDistance = 12;
-    controls.minPolarAngle = 0.7;
+    controls.minDistance = 10;
+    controls.maxDistance = 90;
+    controls.minPolarAngle = 1;
     controls.maxPolarAngle = 1.3;
 
     const currentAzimuthAngle = controls.getAzimuthalAngle();
-    const rotationRange = Math.PI / 8;
+    const rotationRange = Math.PI / 10;
     controls.minAzimuthAngle = currentAzimuthAngle - rotationRange;
     controls.maxAzimuthAngle = currentAzimuthAngle + rotationRange / 2;
 
@@ -52,7 +52,8 @@ export default function RetroComputer() {
             child.receiveShadow = true;
           }
         });
-        mesh.position.set(0, 1.05, -1);
+        mesh.position.set(0, 2.05, 0);
+        // mesh.rotation.y = THREE.MathUtils.degToRad(15);
         scene.add(mesh);
       },
       (error) => {
