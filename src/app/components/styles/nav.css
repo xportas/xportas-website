@@ -1,28 +1,38 @@
+:root{
+  --dynamic-duration: 0.3s;
+  --dynamic-translate: -100%;
+}
+
+
 /* main menu display animation */
 @keyframes fadeIn {
   from {
+    transform: translateX(var(--dynamic-translate));
     opacity: 0;
   }
   to {
+    transform: translateX(0);
     opacity: 1;
   }
 }
 .animate-fadeIn {
-  animation: fadeIn 0.3s ease-in-out;
+  animation: fadeIn var(--dynamic-duration) ease-out;
 }
 
 
 /* animation of disappearing from the main menu */
 @keyframes fadeOut {
   from {
+    transform: translateX(0);
     opacity: 1;
   }
   to {
+    transform: translateX(var(--dynamic-translate));
     opacity: 0;
   }
 }
 .animate-fadeOut {
-  animation: fadeOut 0.3s ease-in-out forwards;
+  animation: fadeOut var(--dynamic-duration) ease-out forwards;
 }
 
 
@@ -55,4 +65,22 @@
 }
 .wipe-out-left {
   animation: 0.75s cubic-bezier(.25, 1, .30, 1) wipe-out-left both;
+}
+
+.numbered-nav {
+  counter-reset: link;
+}
+
+.numbered-nav > a,
+.numbered-nav > span {
+  counter-increment: link;
+}
+
+.numbered-nav > a::before,
+.numbered-nav > span::before {
+  content: counter(link) ". ";
+  display: inline-block;
+  font-family: chill;
+  font-size: 2.7vh;
+  margin-right: 7px;
 }

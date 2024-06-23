@@ -17,7 +17,8 @@ module.exports = {
         'custom-hover-dark-theme': '12px 12px 5px 1px #78716c',
       },
       colors: {
-        'main-color-gray': "#525252",
+        'main-gray': "#525252",
+        'secondary-orange': "B39E84"
       },
       fontFamily: {
         'header': ['public-pixel', 'Roboto mono', 'monoespace'],

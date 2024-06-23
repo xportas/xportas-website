@@ -5,7 +5,7 @@ Open source project containing the source code of my personal website
 
 IDEAS:
 
-Selección de idioma en el navegador
+Selección de idioma en la pantalla inicial que simula ser la del ordenador
 
 Tema oscuro que sea otro diseño moderno (v4) y que en vez de elegir el tema, se elija "salir de lo retro" o "de los años 80"
 

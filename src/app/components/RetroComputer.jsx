@@ -17,7 +17,7 @@ export default function RetroComputer() {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(5, window.innerWidth / window.innerHeight, 1, 100);
-    camera.position.set(2, 2.5, 5);
+    camera.position.set(1, 2.5, 5);
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
@@ -29,8 +29,8 @@ export default function RetroComputer() {
 
     const currentAzimuthAngle = controls.getAzimuthalAngle();
     const rotationRange = Math.PI / 10;
-    controls.minAzimuthAngle = currentAzimuthAngle - rotationRange;
-    controls.maxAzimuthAngle = currentAzimuthAngle + rotationRange / 2;
+    controls.minAzimuthAngle = currentAzimuthAngle - rotationRange / 2;
+    controls.maxAzimuthAngle = currentAzimuthAngle + rotationRange / 4;
 
     controls.autoRotate = false;
     controls.target = new THREE.Vector3(0, 4, 0);
@@ -53,11 +53,10 @@ export default function RetroComputer() {
           }
         });
         mesh.position.set(0, 2.05, 0);
-        // mesh.rotation.y = THREE.MathUtils.degToRad(15);
         scene.add(mesh);
       },
       (error) => {
-        console.error(error);
+        // console.error(error);
       }
     );
 

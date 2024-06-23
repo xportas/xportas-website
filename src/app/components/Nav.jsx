@@ -49,9 +49,10 @@ export default function Nav() {
       <header className="fixed m-5 z-50">
         <div className="flex items-center justify-between px-5 py-3">
 
-          <div className="flex items-center">
-            {/* Show / hide nave button */}
-            <button type="button" className={`${navbarHidden || screenWidth >= 1500 ? 'bg-main-color-gray border-orange-200 shadow-custom' : 'bg-orange-200 border-main-color-gray shadow-custom-dark-theme'} px-5 py-1 border-solid border-2 transition ease-in-out ${hoverBtnsEffectDisabled ? (navbarHidden||screenWidth>=1500?'hover:shadow-custom-hover':'hover:shadow-custom-hover-dark-theme') +  ' hover:-translate-y-1 hover:scale-105' : ''}`} onMouseDown={onMouseDown} onMouseUp={() => (setHoverBtnsEffectDisabled(true), setShowNavbar(!showNavbar))} onMouseLeave={onMouseLeave} onClick={handleClickOnNavBtns}>
+          <div className="flex items-center z-40">
+            
+            {/* Show / hide nav button */}
+            <button type="button" className={`${navbarHidden || screenWidth >= 1500 ? 'bg-main-gray border-orange-200 shadow-custom' : 'bg-orange-200 border-main-gray shadow-custom-dark-theme'} px-5 py-1 border-solid border-2 transition ease-in-out ${hoverBtnsEffectDisabled ? (navbarHidden||screenWidth>=1500?'hover:shadow-custom-hover':'hover:shadow-custom-hover-dark-theme') +  ' hover:-translate-y-1 hover:scale-105' : ''} z-50`} onMouseDown={onMouseDown} onMouseUp={() => (setHoverBtnsEffectDisabled(true), setShowNavbar(!showNavbar))} onMouseLeave={onMouseLeave} onClick={handleClickOnNavBtns}>
               <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" strokeWidth="0" />
                 <g id="SVGRepo_tracerCarrier" strokeLinecap="sharp" strokeLinejoin="sharp" />
@@ -62,7 +63,7 @@ export default function Nav() {
             </button>
 
             {/* Redirect to LinkedIn btn */}
-            <a className={`ml-7 ${navbarHidden || screenWidth >= 1500 ? 'bg-main-color-gray border-orange-200 shadow-custom' : 'bg-orange-200 border-main-color-gray shadow-custom-dark-theme'} px-3 py-1 border-solid border-2 transition ease-in-out ${hoverBtnsEffectDisabled ? (navbarHidden||screenWidth>=1500?'hover:shadow-custom-hover':'hover:shadow-custom-hover-dark-theme') +  ' hover:-translate-y-1 hover:scale-105' : ''}`} href="https://es.linkedin.com/in/xabierportas" onMouseDown={onMouseDown} onMouseUp={() => setHoverBtnsEffectDisabled(true)} onMouseLeave={onMouseLeave} onClick={handleClickOnNavBtns}>
+            <a style={{'--dynamic-duration': '0.9s'}} className={`ml-7 ${navbarHidden || screenWidth >= 1500 ? 'bg-main-gray border-orange-200 shadow-custom' : 'bg-orange-200 border-main-gray shadow-custom-dark-theme'} px-3 py-1 border-solid border-2 transition ease-in-out ${hoverBtnsEffectDisabled ? (navbarHidden||screenWidth>=1500?'hover:shadow-custom-hover':'hover:shadow-custom-hover-dark-theme') +  ' hover:-translate-y-1 hover:scale-105' : ''} z-40 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`} href="https://es.linkedin.com/in/xabierportas" onMouseDown={onMouseDown} onMouseUp={() => setHoverBtnsEffectDisabled(true)} onMouseLeave={onMouseLeave} onClick={handleClickOnNavBtns}>
               <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="">
                 <g id="SVGRepo_bgCarrier" strokeWidth="0" />
                 <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
@@ -70,15 +71,8 @@ export default function Nav() {
               </svg>
             </a>
 
-            {/* Download CV btn */}
-            <a className={`${navbarHidden || screenWidth >= 1500 ? 'bg-main-color-gray border-orange-200 shadow-custom' : 'bg-orange-200 border-main-color-gray shadow-custom-dark-theme'} px-3 py-1 border-solid border-2 transition ease-in-out ${hoverBtnsEffectDisabled ? (navbarHidden||screenWidth>=1500?'hover:shadow-custom-hover':'hover:shadow-custom-hover-dark-theme') +  ' hover:-translate-y-1 hover:scale-105' : ''}`} href="/cv-xportas.pdf" download="cv-xportas.pdf" onMouseDown={onMouseDown} onMouseUp={() => setHoverBtnsEffectDisabled(true)} onMouseLeave={onMouseLeave} onClick={handleClickOnNavBtns}>
-              <svg width="35px" height="25px" xmlns="http://www.w3.org/2000/svg">
-                <text className="font-header" x="50%" y="60%" textAnchor="middle" dominantBaseline="middle" fill={`${navbarHidden||screenWidth>=1500?'#fed7aa':'#525252'}`}>CV</text>
-              </svg>
-            </a>
-
             {/* Redirect to my GitHub profile */}
-            <a className={`${navbarHidden || screenWidth >= 1500 ? 'bg-main-color-gray border-orange-200 shadow-custom' : 'bg-orange-200 border-main-color-gray shadow-custom-dark-theme'} px-3 py-1 border-solid border-2 transition ease-in-out ${hoverBtnsEffectDisabled ? (navbarHidden||screenWidth>=1500?'hover:shadow-custom-hover':'hover:shadow-custom-hover-dark-theme') +  ' hover:-translate-y-1 hover:scale-105' : ''}`} onMouseDown={onMouseDown} onMouseUp={() => setHoverBtnsEffectDisabled(true)} onMouseLeave={onMouseLeave} href="https://github.com/xportas" onClick={handleClickOnNavBtns}>
+            <a style={{'--dynamic-duration': '0.7s'}} className={`${navbarHidden || screenWidth >= 1500 ? 'bg-main-gray border-orange-200 shadow-custom' : 'bg-orange-200 border-main-gray shadow-custom-dark-theme'} px-3 py-1 border-solid border-2 transition ease-in-out ${hoverBtnsEffectDisabled ? (navbarHidden||screenWidth>=1500?'hover:shadow-custom-hover':'hover:shadow-custom-hover-dark-theme') +  ' hover:-translate-y-1 hover:scale-105' : ''} z-40 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`} onMouseDown={onMouseDown} onMouseUp={() => setHoverBtnsEffectDisabled(true)} onMouseLeave={onMouseLeave} href="https://github.com/xportas" onClick={handleClickOnNavBtns}>
               <svg width="25px" height="25px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke={`${navbarHidden?'#fed7aa':'#52525240'}`} strokeWidth="0.00024000000000000003">
                 <g id="SVGRepo_bgCarrier" strokeWidth="0" />
                 <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" stroke="#CCCCCC" strokeWidth="0.048" />
@@ -87,21 +81,28 @@ export default function Nav() {
             </a>
           </div>
 
+          {/* Download CV btn */}
+          <a style={{'--dynamic-duration': '0.5s'}} className={`${navbarHidden || screenWidth >= 1500 ? 'bg-main-gray border-orange-200 shadow-custom' : 'bg-orange-200 border-main-gray shadow-custom-dark-theme'} px-3 py-1 border-solid border-2 transition ease-in-out ${hoverBtnsEffectDisabled ? (navbarHidden||screenWidth>=1500?'hover:shadow-custom-hover':'hover:shadow-custom-hover-dark-theme') +  ' hover:-translate-y-1 hover:scale-105' : ''} z-40 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`} href="/cv-xportas.pdf" download="cv-xportas.pdf" onMouseDown={onMouseDown} onMouseUp={() => setHoverBtnsEffectDisabled(true)} onMouseLeave={onMouseLeave} onClick={handleClickOnNavBtns}>
+              <svg width="35px" height="25px" xmlns="http://www.w3.org/2000/svg">
+                <text className="font-header" x="50%" y="60%" textAnchor="middle" dominantBaseline="middle" fill={`${navbarHidden||screenWidth>=1500?'#fed7aa':'#525252'}`}>CV</text>
+              </svg>
+            </a>
+
           {/* Main nav (for large and traditional screens) */}
           {screenWidth < 1500 ? null :
             <div className="fixed left-1/2 transform -translate-x-1/2 z-20">
-              <nav className={`flex font-header text-orange-200 bg-main-color-gray px-5 py-1 border-solid border-2 border-orange-200 shadow-custom ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}>
-                <div className="absolute  z-30 flex items-center justify-center">
-                  <span className={`px-3 m-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.about ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>About</span>
-                  <span className={`px-3 m-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.experience ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>Experience</span>
-                  <span className={`px-3 m-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.work ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>Work</span>
-                  <span className={`px-3 m-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.contact ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>Contact</span>
+              <nav style={{'--dynamic-duration': '0.7s', '--dynamic-translate': '-40%'}} className={`flex font-header text-orange-200 bg-main-gray px-5 py-1 border-solid border-2 border-orange-200 shadow-custom ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}>
+                <div className="absolute z-30 flex items-center justify-center numbered-nav">
+                  <span style={{'--dynamic-duration': '0.3s', '--dynamic-translate': '0'}} className={`px-3 m-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.about ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>About</span>
+                  <span style={{'--dynamic-duration': '0.3s', '--dynamic-translate': '0'}} className={`px-3 m-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.experience ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>Experience</span>
+                  <span style={{'--dynamic-duration': '0.3s', '--dynamic-translate': '0'}} className={`px-3 m-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.work ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>Work</span>
+                  <span style={{'--dynamic-duration': '0.3s', '--dynamic-translate': '0'}} className={`px-3 m-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.contact ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>Contact</span>
                 </div>
-                <div className="relative z-40 flex items-center justify-center">
-                  <a href="#about-section" className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150" onMouseOver={() => handleNavbarOnHover('about', true)} onMouseLeave={() => handleNavbarOnHover('about', false)}><span className={`bg-main-color-gray bg-clip-text`} >About</span></a>
-                  <a href="#experience-section" className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150" onMouseOver={() => handleNavbarOnHover('experience', true)} onMouseLeave={() => handleNavbarOnHover('experience', false)}><span className={`bg-main-color-gray bg-clip-text`} >Experience</span></a>
-                  <a href="#work-section" className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150" onMouseOver={() => handleNavbarOnHover('work', true)} onMouseLeave={() => handleNavbarOnHover('work', false)}><span className={`bg-main-color-gray bg-clip-text`} >Work</span></a>
-                  <a href="#contact-section" className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150" onMouseOver={() => handleNavbarOnHover('contact', true)} onMouseLeave={() => handleNavbarOnHover('contact', false)}><span className={`bg-main-color-gray bg-clip-text`} >Contact</span></a>
+                <div className="relative z-40 flex items-center justify-center numbered-nav">
+                  <a href="#about-section" className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150" onMouseOver={() => handleNavbarOnHover('about', true)} onMouseLeave={() => handleNavbarOnHover('about', false)}><span className={`bg-main-gray bg-clip-text`} >About</span></a>
+                  <a href="#experience-section" className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150" onMouseOver={() => handleNavbarOnHover('experience', true)} onMouseLeave={() => handleNavbarOnHover('experience', false)}><span className={`bg-main-gray bg-clip-text`} >Experience</span></a>
+                  <a href="#work-section" className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150" onMouseOver={() => handleNavbarOnHover('work', true)} onMouseLeave={() => handleNavbarOnHover('work', false)}><span className={`bg-main-gray bg-clip-text`} >Work</span></a>
+                  <a href="#contact-section" className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150" onMouseOver={() => handleNavbarOnHover('contact', true)} onMouseLeave={() => handleNavbarOnHover('contact', false)}><span className={`bg-main-gray bg-clip-text`} >Contact</span></a>
                 </div>
               </nav>
             </div>}
@@ -112,12 +113,12 @@ export default function Nav() {
 
       {/* Multiplataform nav (small screens) */}
       {screenWidth < 1500 ?
-        <div className={`fixed h-screen w-screen bg-main-color-gray z-40 ${showNavbar ? 'wipe-in-right' : 'wipe-out-left'} ${navbarHidden ? 'hidden' : ''}`}>
+        <div className={`fixed h-screen w-screen bg-main-gray z-40 ${showNavbar ? 'wipe-in-right' : 'wipe-out-left'} ${navbarHidden ? 'hidden' : ''}`}>
           <nav className="inline-flex items-baseline flex-col font-header text-orange-200 pt-24 p-7 w-full">
-            <a href="#about-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.about ? 'bg-orange-200 text-main-color-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('about', true)} onMouseLeave={() => handleNavbarOnHover('about', false)} ><span className="ml-3">About</span></a>
-            <a href="#experience-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.experience ? 'bg-orange-200 text-main-color-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('experience', true)} onMouseLeave={() => handleNavbarOnHover('experience', false)} ><span className="ml-3">Experience</span></a>
-            <a href="#work-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.work ? 'bg-orange-200 text-main-color-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('work', true)} onMouseLeave={() => handleNavbarOnHover('work', false)} ><span className="ml-3">Work</span></a>
-            <a href="#contact-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.contact ? 'bg-orange-200 text-main-color-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('contact', true)} onMouseLeave={() => handleNavbarOnHover('contact', false)} ><span className="ml-3">Contact</span></a>
+            <a href="#about-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.about ? 'bg-orange-200 text-main-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('about', true)} onMouseLeave={() => handleNavbarOnHover('about', false)} ><span className="ml-3">About</span></a>
+            <a href="#experience-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.experience ? 'bg-orange-200 text-main-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('experience', true)} onMouseLeave={() => handleNavbarOnHover('experience', false)} ><span className="ml-3">Experience</span></a>
+            <a href="#work-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.work ? 'bg-orange-200 text-main-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('work', true)} onMouseLeave={() => handleNavbarOnHover('work', false)} ><span className="ml-3">Work</span></a>
+            <a href="#contact-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.contact ? 'bg-orange-200 text-main-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('contact', true)} onMouseLeave={() => handleNavbarOnHover('contact', false)} ><span className="ml-3">Contact</span></a>
           </nav>
         </div>
         : null}

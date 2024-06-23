@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html /*lang="en"*/ >
-      <body className="font-main bg-orange-200 text-main-color-gray">{children}</body>
+      <body className="font-main bg-orange-200 text-main-gray">{children}</body>
     </html>
   );
 }

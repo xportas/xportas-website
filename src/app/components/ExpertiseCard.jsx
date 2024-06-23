@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function ExpertiseCard() {
   return (
     <article
-      className="border-solid border-2 border-main-color-gray p-9 shadow-custom transition ease-in-out hover:shadow-custom-hover hover:-translate-y-1 hover:scale-105 overflow-hidden ">
+      className="border-solid border-2 border-main-gray p-9 shadow-custom transition ease-in-out hover:shadow-custom-hover hover:-translate-y-1 hover:scale-105 overflow-hidden ">
 
       <div className="grid grid-cols-4 gap-4">
         <div className="relative w-full col-span-1 flex justify-center items-stretch">
@@ -16,7 +16,7 @@ export default function ExpertiseCard() {
 
       <div className="mt-2">
         <span>&lt; h3 &gt;</span>
-        <div className="border-l-2 border-main-color-gray border-dashed p-1 ml-5 pl-5">Experienced in both functional and OOP: Dart,
+        <div className="border-l-2 border-main-gray border-dashed p-1 ml-5 pl-5">Experienced in both functional and OOP: Dart,
           Python, Java,
           JavaScript, TypeScript.</div>
         <span>&lt; h3 &gt;</span>
