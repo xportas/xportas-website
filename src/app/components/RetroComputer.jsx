@@ -4,10 +4,9 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-
-
 export default function RetroComputer() {
   const mountRef = useRef(null);
+  const controlsRef = useRef(null);
 
   useEffect(() => {
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -20,6 +19,7 @@ export default function RetroComputer() {
     camera.position.set(1, 2.5, 5);
 
     const controls = new OrbitControls(camera, renderer.domElement);
+    controlsRef.current = controls;
     controls.enableDamping = true;
     controls.enablePan = false;
     controls.minDistance = 10;
@@ -55,9 +55,9 @@ export default function RetroComputer() {
         mesh.position.set(0, 2.05, 0);
         scene.add(mesh);
       },
-      (error) => {
-        // console.error(error);
-      }
+      // (error) => {
+      //   console.error(error);
+      // }
     );
 
     window.addEventListener('resize', onWindowResize, false);
@@ -76,9 +76,20 @@ export default function RetroComputer() {
     mountRef.current.appendChild(renderer.domElement);
     animate();
 
+    // When the maximum zoom is raised, the focus is removed from the model and returned to the page
+    function handleMouseWheel(event) {
+      if (camera.position.length() >= controls.maxDistance) {
+        event.preventDefault();
+        window.scrollBy(0, event.deltaY);
+      }
+    }
+
+    renderer.domElement.addEventListener('wheel', handleMouseWheel);
+
     return () => {
       mountRef.current.removeChild(renderer.domElement);
       window.removeEventListener('resize', onWindowResize);
+      renderer.domElement.removeEventListener('wheel', handleMouseWheel);
     };
   }, []);
 
