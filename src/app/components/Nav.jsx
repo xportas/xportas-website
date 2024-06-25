@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useState } from "react";
-import "./styles/nav.css";
 
 
 export default function Nav() {
@@ -37,7 +36,7 @@ export default function Nav() {
     if (!showNavbar) {
       const timer = setTimeout(() => {
         setNavbarHidden(true);
-      }, 300);
+      }, 500);
       return () => clearTimeout(timer);
     } else {
       setNavbarHidden(false);

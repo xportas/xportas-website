@@ -18,7 +18,7 @@ module.exports = {
       },
       colors: {
         'main-gray': "#525252",
-        'secondary-orange': "B39E84"
+        'screen-bgcolor': "#140E08"
       },
       fontFamily: {
         'header': ['public-pixel', 'Roboto mono', 'monoespace'],
