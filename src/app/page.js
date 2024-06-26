@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <>
       <RetroScreen />
-      {/* <Nav />
-      <RetroComputer />
+      {/* <Nav /> */}
+      {/* <RetroComputer />
       <p>
         The universe, an expansive and awe-inspiring entity, stretches across unimaginable distances, holding within it galaxies, stars, planets, and vast regions of empty space. From the smallest subatomic particles to the largest cosmic structures, it encapsulates the entirety of existence as we know it.
         At its core, the universe began with the Big Bang, an event approximately 13.8 billion years ago, where space and time itself burst into existence from a singular point of infinite density and temperature. Since then, it has been expanding continuously, shaping the cosmic landscape we observe today.

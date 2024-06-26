@@ -22,10 +22,6 @@
 
 
 
-
-
-
-
 /* 
 *
 *  SCROLLBARS
@@ -48,95 +44,12 @@ html::-webkit-scrollbar {
 
 
 
-
-
-
-
 /* 
 *
 *  NAV
 *
 */
 
-:root {
-  --dynamic-duration: 0.3s;
-  --dynamic-translate: -100%;
-}
-
-
-/* main menu display animation */
-@keyframes fadeIn {
-  from {
-    transform: translateX(var(--dynamic-translate));
-    opacity: 0;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.animate-fadeIn {
-  animation: fadeIn var(--dynamic-duration) ease-out;
-}
-
-
-/* animation of disappearing from the main menu */
-@keyframes fadeOut {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  to {
-    transform: translateX(var(--dynamic-translate));
-    opacity: 0;
-  }
-}
-
-.animate-fadeOut {
-  animation: fadeOut var(--dynamic-duration) ease-out forwards;
-}
-
-
-/* multiplataform menu display animation */
-@keyframes wipe-in-right {
-  from {
-    opacity: 0;
-    clip-path: inset(0 100% 0 0);
-  }
-
-  to {
-    opacity: 1;
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-.wipe-in-right {
-  animation: 1s cubic-bezier(.25, 1, .30, 1) wipe-in-right both;
-}
-
-
-/* animation of disappearing from the multiplataform menu */
-@keyframes wipe-out-left {
-  from {
-    opacity: 1;
-    clip-path: inset(0 0 0 0);
-  }
-
-  to {
-    opacity: 0;
-    clip-path: inset(0 100% 0 0);
-  }
-}
-
-.wipe-out-left {
-  animation: 0.75s cubic-bezier(.25, 1, .30, 1) wipe-out-left both;
-}
-
-
-/* Numbered nav */
 .numbered-nav {
   counter-reset: link;
 }
@@ -153,41 +66,4 @@ html::-webkit-scrollbar {
   font-family: chill;
   font-size: 2.7vh;
   margin-right: 7px;
-}
-
-.text-3vh {
-  font-size: 3.5vh;
-}
-
-
-
-
-
-
-
-/* 
-*
-*   RETRO SCREEN
-*
-*/
-
-.ctr-noise {
-  width: 100%;
-  height: 100%;
-  background:
-    linear-gradient(to bottom, transparent, #aaa4, #8881, #6664, #4445, #2228, #4443, transparent),
-    repeating-linear-gradient(transparent 0 2px, #25242950 2px 4px);
-  animation: moveBand 8s linear infinite;
-  z-index: 4;
-  position: relative;
-}
-
-@keyframes moveBand {
-  0% {
-    background-position-y: 0, 0;
-  }
-
-  100% {
-    background-position-y: -221px, -150px;
-  }
 }

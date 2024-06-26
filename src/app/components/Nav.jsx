@@ -112,12 +112,12 @@ export default function Nav() {
 
       {/* Multiplataform nav (small screens) */}
       {screenWidth < 1500 ?
-        <div className={`fixed h-screen w-screen bg-main-gray z-40 ${showNavbar ? 'wipe-in-right' : 'wipe-out-left'} ${navbarHidden ? 'hidden' : ''}`}>
+        <div className={`fixed h-screen w-screen bg-main-gray z-40 ${showNavbar ? 'animate-wipe-in-right' : 'animate-wipe-out-left'} ${navbarHidden ? 'hidden' : ''}`}>
           <nav className="inline-flex items-baseline flex-col font-header text-orange-200 pt-24 p-7 w-full">
-            <a href="#about-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.about ? 'bg-orange-200 text-main-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('about', true)} onMouseLeave={() => handleNavbarOnHover('about', false)} ><span className="ml-3">About</span></a>
-            <a href="#experience-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.experience ? 'bg-orange-200 text-main-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('experience', true)} onMouseLeave={() => handleNavbarOnHover('experience', false)} ><span className="ml-3">Experience</span></a>
-            <a href="#work-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.work ? 'bg-orange-200 text-main-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('work', true)} onMouseLeave={() => handleNavbarOnHover('work', false)} ><span className="ml-3">Work</span></a>
-            <a href="#contact-section" className={`text-3vh w-full mb-2 ${navbarOnHoverState.contact ? 'bg-orange-200 text-main-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('contact', true)} onMouseLeave={() => handleNavbarOnHover('contact', false)} ><span className="ml-3">Contact</span></a>
+            <a href="#about-section" className={`text-[3.5vh] w-full mb-2 ${navbarOnHoverState.about ? 'bg-orange-200 text-main-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('about', true)} onMouseLeave={() => handleNavbarOnHover('about', false)} ><span className="ml-3">About</span></a>
+            <a href="#experience-section" className={`text-[3.5vh] w-full mb-2 ${navbarOnHoverState.experience ? 'bg-orange-200 text-main-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('experience', true)} onMouseLeave={() => handleNavbarOnHover('experience', false)} ><span className="ml-3">Experience</span></a>
+            <a href="#work-section" className={`text-[3.5vh] w-full mb-2 ${navbarOnHoverState.work ? 'bg-orange-200 text-main-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('work', true)} onMouseLeave={() => handleNavbarOnHover('work', false)} ><span className="ml-3">Work</span></a>
+            <a href="#contact-section" className={`text-[3.5vh] w-full mb-2 ${navbarOnHoverState.contact ? 'bg-orange-200 text-main-gray' : ''}`} onMouseOver={() => handleNavbarOnHover('contact', true)} onMouseLeave={() => handleNavbarOnHover('contact', false)} ><span className="ml-3">Contact</span></a>
           </nav>
         </div>
         : null}
