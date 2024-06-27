@@ -11,7 +11,7 @@ Tema oscuro que sea otro diseño moderno (v4) y que en vez de elegir el tema, se
 
 MI FOTO: EN BLANCO Y NEGRO Y QUE AL PASAR POR ENCIMA SE VUELVA DE COLOR y algún efecto como que se eleva o algo así, como los botones
 
-
+NO OLVIDARSE DE HACER SEO (ver cómo hacerlo en v4 y buscar más info)
 
 ## Getting Started
 
