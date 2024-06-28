@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 
 
 const languageOptions = [
-  { value: 'es', flag: 'https://hatscripts.github.io/circle-flags/flags/es.svg' },
   { value: 'en', flag: 'https://hatscripts.github.io/circle-flags/flags/uk.svg' },
+  { value: 'es', flag: 'https://hatscripts.github.io/circle-flags/flags/es.svg' },
   { value: 'pt', flag: 'https://hatscripts.github.io/circle-flags/flags/pt.svg' },
   { value: 'gz', flag: './images/gz.svg' }
 ];
@@ -91,8 +91,8 @@ export default function RetroScreen() {
         </div>
 
         <div className='flex place-content-around h-2/5'>
-          <div className='w-1/6'>
-            <table class="table-auto">
+          <div className='flex justify-center content-center w-2/6'>
+            <table className='m-auto'>
               <thead>
                 <tr>
                   <th colSpan={2}>Choose one of the languages I speak:</th>
@@ -100,11 +100,11 @@ export default function RetroScreen() {
               </thead>
               <tbody>
                 <tr>
-                  <td><img src="./images/arrow-keys.svg" alt="arrow-keys" width={190} /></td>
+                  <td><img src="./images/arrow-keys.svg" alt="arrow-keys" width={50} /></td>
                   <td>Move between the options</td>
                 </tr>
                 <tr>
-                  <td><img src="./images/enter-key.svg" alt="enter-keys" width={190} /></td>
+                  <td><img src="./images/enter-key.svg" alt="enter-keys" width={50} /></td>
                   <td>Select language</td>
                 </tr>
               </tbody>
