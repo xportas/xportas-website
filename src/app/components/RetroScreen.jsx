@@ -1,6 +1,14 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 
+
+const languageOptions = [
+  { value: 'es', flag: 'https://hatscripts.github.io/circle-flags/flags/es.svg' },
+  { value: 'en', flag: 'https://hatscripts.github.io/circle-flags/flags/uk.svg' },
+  { value: 'pt', flag: 'https://hatscripts.github.io/circle-flags/flags/pt.svg' },
+  { value: 'gz', flag: './images/gz.svg' }
+];
+
 export default function RetroScreen() {
 
   const NAME = "Xabier Portas", ALIAS = "xportas";
@@ -59,9 +67,10 @@ export default function RetroScreen() {
       <div className='h-full w-full z-50 relative animate-crtScreen' id='crt-noise'
         style={{ background: `linear-gradient(to bottom, transparent, #aaa4, #8881, #6664, #4445, #2228, #4443, transparent), repeating-linear-gradient(transparent 0 2px, #25242950 2px 4px)` }}>
 
-        <div className='flex h-3/5'>
+        <div className=' flex h-3/5'>
           <div className='w-1/2 '>
-            <div>          <p>Hello world, {' '}</p>
+            <div>
+              <p>Hello world, {' '}</p>
             </div>
             <div><span>I'm {' '}</span>
               <span className="" ref={typedNameOrAlias}></span>
@@ -76,13 +85,35 @@ export default function RetroScreen() {
 
           </div>
 
-          <div className='flex-1'>
-            {/* Image */}
+          <div className=' flex flex-1 justify-center content-center'>
+            <img src="/images/dark-xportas-img.jpeg" alt="xportas-portrait" className='img-blur rounded-full h-full mt-10' />
           </div>
         </div>
 
-        <div className='h-2/5'>
-          {/* Language selector */}
+        <div className='flex place-content-around h-2/5'>
+          <div className='w-1/6'>
+            <table class="table-auto">
+              <thead>
+                <tr>
+                  <th colSpan={2}>Choose one of the languages I speak:</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><img src="./images/arrow-keys.svg" alt="arrow-keys" width={190} /></td>
+                  <td>Move between the options</td>
+                </tr>
+                <tr>
+                  <td><img src="./images/enter-key.svg" alt="enter-keys" width={190} /></td>
+                  <td>Select language</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+          {languageOptions.map((lang) => (
+            <img key={lang.value} src={lang.flag} alt={lang.value} className='rounded-full h-3/6 m-auto' />
+          ))}
         </div>
 
       </div>
