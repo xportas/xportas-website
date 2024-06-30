@@ -7,6 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        blink: 'blink .5s linear infinite alternate',
+        crtScreen: 'moveBand 3s linear infinite',
+        fadeIn: 'fadeIn var(--dynamic-duration) ease-out',
+        fadeOut: 'fadeOut var(--dynamic-duration) ease-out forwards',
+        'wipe-in-right': 'wipe-in-right 1s cubic-bezier(.25, 1, .30, 1) both',
+        'wipe-out-left': 'wipe-out-left 0.75s cubic-bezier(.25, 1, .30, 1) both'
+      },
+      backgroundImage: {
+        'pixel-space': "url('/images/space-pixel-art.jpeg')",
+      },
       blur: {
         xs: '2px',
       },
@@ -15,10 +26,12 @@ module.exports = {
         'custom-hover': '12px 12px 5px 1px #52525240',
         'custom-dark-theme': '6px 6px #78716c',
         'custom-hover-dark-theme': '12px 12px 5px 1px #78716c',
+        'lang-glow': '0 0 30px 3px #FFAD36',
       },
       colors: {
         'main-gray': "#525252",
-        'screen-bgcolor': "#140E08"
+        'screen-bgcolor': "#140E08",
+        'screen-txt-color': "#FFAD36",
       },
       fontFamily: {
         'header': ['public-pixel', 'Roboto mono', 'monoespace'],
@@ -52,13 +65,8 @@ module.exports = {
           '100%': { opacity: '0', 'clip-path': 'inset(0 100% 0 0)' },
         },
       },
-      animation: {
-        blink: 'blink .5s linear infinite alternate',
-        crtScreen: 'moveBand 3s linear infinite',
-        fadeIn: 'fadeIn var(--dynamic-duration) ease-out',
-        fadeOut: 'fadeOut var(--dynamic-duration) ease-out forwards',
-        'wipe-in-right': 'wipe-in-right 1s cubic-bezier(.25, 1, .30, 1) both',
-        'wipe-out-left': 'wipe-out-left 0.75s cubic-bezier(.25, 1, .30, 1) both'
+      listStyleType: {
+        square: 'square',
       },
     },
   },

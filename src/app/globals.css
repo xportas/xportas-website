@@ -74,6 +74,33 @@ html::-webkit-scrollbar {
 
 
 
+
+
+
+
+
+
+
+
+
+.bg-pixel-space-transparent {
+  background-image: url('/images/space-pixel-art.jpeg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.bg-pixel-space-transparent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(20, 14, 8, 0.5); /* Cambia el color y la opacidad según necesites */
+  z-index: 1;
+}
+
 .img-blur {
   mask-image: radial-gradient( black 0%, transparent );
 }

@@ -13,6 +13,8 @@ export default function RetroScreen() {
 
   const NAME = "Xabier Portas", ALIAS = "xportas";
   const typedNameOrAlias = useRef(null);
+  const [langIndex, setLangIndex] = useState(0);
+  const [selectedLang, setSelectedLang] = useState('en');
 
 
   function waitForMs(ms) {
@@ -40,6 +42,8 @@ export default function RetroScreen() {
     }
   }
 
+
+  // Infinite typing effect
   useEffect(() => {
     let isMounted = true;
 
@@ -62,30 +66,60 @@ export default function RetroScreen() {
   }, []);
 
 
+  // Keyboard listening effect
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      switch (event.key) {
+        case 'ArrowLeft':
+          setLangIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : languageOptions.length - 1));
+          break;
+        case 'ArrowRight':
+          setLangIndex((prevIndex) => (prevIndex < languageOptions.length - 1 ? prevIndex + 1 : 0));
+          break;
+        case 'Enter':
+          // TODO: redirect to the main page with the selected language
+          break;
+        default:
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [langIndex]);
+
+  useEffect(() => {
+    setSelectedLang(languageOptions[langIndex].value);
+  }, [langIndex]);
+
+
   return (
-    <div className='h-screen w-screen m-0 p-0 bg-screen-bgcolor' id='screen'>
+    <div className='h-screen w-screen m-0 p-0 bg-pixel-space-transparent text-screen-txt-color' id='screen'>
       <div className='h-full w-full z-50 relative animate-crtScreen' id='crt-noise'
         style={{ background: `linear-gradient(to bottom, transparent, #aaa4, #8881, #6664, #4445, #2228, #4443, transparent), repeating-linear-gradient(transparent 0 2px, #25242950 2px 4px)` }}>
 
-        <div className=' flex h-3/5'>
-          <div className='w-1/2 '>
+        <div className='flex h-3/5'>
+          <div className='flex flex-col justify-center content-center space-y-12 font-header p-20 w-1/2'>
             <div>
-              <p>Hello world, {' '}</p>
+              <p className='text-3xl'>Hi there,</p>
             </div>
-            <div><span>I'm {' '}</span>
-              <span className="" ref={typedNameOrAlias}></span>
-              <span className="inline-block w-[3px] h-[35px] bg-white ml-[3px] animate-blink"></span></div>
+            <div className='inline-block text-screen-bgcolor'>
+              <span className='bg-screen-txt-color py-3 text-4xl font-main'>I'm {' '}</span>
+              <span className='bg-screen-txt-color py-3 text-4xl font-main' ref={typedNameOrAlias}></span>
+              <span className="inline-block w-[4px] h-[35px] bg-screen-txt-color ml-[3px] animate-blink mr-1"></span></div>
             <div>
-              <ul>
-                <li>
-                  Software Developer
-                </li>
+              <ul className='list-inside list-square'>
+                <li> Full Stack Developer </li>
+                <li className='mt-2'> Specialization in GIS </li>
               </ul>
             </div>
 
           </div>
 
-          <div className=' flex flex-1 justify-center content-center'>
+          <div className='flex flex-1 justify-center content-center'>
             <img src="/images/dark-xportas-img.jpeg" alt="xportas-portrait" className='img-blur rounded-full h-full mt-10' />
           </div>
         </div>
@@ -104,7 +138,7 @@ export default function RetroScreen() {
                   <td>Move between the options</td>
                 </tr>
                 <tr>
-                  <td><img src="./images/enter-key.svg" alt="enter-keys" width={50} /></td>
+                  <td><img src="./images/enter-key.svg" alt="enter-keys" width={35} /></td>
                   <td>Select language</td>
                 </tr>
               </tbody>
@@ -112,7 +146,7 @@ export default function RetroScreen() {
 
           </div>
           {languageOptions.map((lang) => (
-            <img key={lang.value} src={lang.flag} alt={lang.value} className='rounded-full h-3/6 m-auto' />
+            <img key={lang.value} src={lang.flag} alt={lang.value} className={`rounded-full h-3/6 m-auto ${ selectedLang === lang.value ? 'shadow-lang-glow' : '' }`} />
           ))}
         </div>
 
