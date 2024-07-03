@@ -26,7 +26,7 @@ module.exports = {
         'custom-hover': '12px 12px 5px 1px #52525240',
         'custom-dark-theme': '6px 6px #78716c',
         'custom-hover-dark-theme': '12px 12px 5px 1px #78716c',
-        'lang-glow': '0 0 30px 3px #FFAD36',
+        'lang-glow': '0 0 30px 10px #FFAD36',
       },
       colors: {
         'main-gray': "#525252",

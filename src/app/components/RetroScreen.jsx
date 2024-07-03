@@ -98,55 +98,64 @@ export default function RetroScreen() {
 
   return (
     <div className='h-screen w-screen m-0 p-0 bg-pixel-space-transparent text-screen-txt-color' id='screen'>
-      <div className='h-full w-full z-50 relative animate-crtScreen' id='crt-noise'
+      
+      {/* CTR noise */}
+      <div className='h-full w-full z-30 relative animate-crtScreen' id='crt-noise'
         style={{ background: `linear-gradient(to bottom, transparent, #aaa4, #8881, #6664, #4445, #2228, #4443, transparent), repeating-linear-gradient(transparent 0 2px, #25242950 2px 4px)` }}>
 
-        <div className='flex h-3/5'>
-          <div className='flex flex-col justify-center content-center space-y-12 font-header p-20 w-1/2'>
+        {/* Hero */}
+        <div className='flex h-3/5 opacity-80'>
+          <div className='flex flex-col justify-center content-center space-y-12 font-header py-20 pl-20 w-1/2'>
             <div>
               <p className='text-3xl'>Hi there,</p>
             </div>
             <div className='inline-block text-screen-bgcolor'>
               <span className='bg-screen-txt-color py-3 text-4xl font-main'>I'm {' '}</span>
               <span className='bg-screen-txt-color py-3 text-4xl font-main' ref={typedNameOrAlias}></span>
-              <span className="inline-block w-[4px] h-[35px] bg-screen-txt-color ml-[3px] animate-blink mr-1"></span></div>
+              <span className="inline-block w-[6px] h-[3rem] bg-screen-txt-color ml-[3px] animate-blink align-middle mb-3 mr-1"></span></div>
             <div>
               <ul className='list-inside list-square'>
                 <li> Full Stack Developer </li>
                 <li className='mt-2'> Specialization in GIS </li>
               </ul>
             </div>
-
           </div>
 
-          <div className='flex flex-1 justify-center content-center'>
+
+          {/* xportas image */}
+          <div className='flex flex-1 justify-center content-center opacity-80'>
             <img src="/images/dark-xportas-img.jpeg" alt="xportas-portrait" className='img-blur rounded-full h-full mt-10' />
           </div>
         </div>
 
-        <div className='flex place-content-around h-2/5'>
-          <div className='flex justify-center content-center w-2/6'>
-            <table className='m-auto'>
-              <thead>
-                <tr>
-                  <th colSpan={2}>Choose one of the languages I speak:</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><img src="./images/arrow-keys.svg" alt="arrow-keys" width={50} /></td>
-                  <td>Move between the options</td>
-                </tr>
-                <tr>
-                  <td><img src="./images/enter-key.svg" alt="enter-keys" width={35} /></td>
-                  <td>Select language</td>
-                </tr>
-              </tbody>
-            </table>
+
+        {/* Language selector */}
+        <div className='flex place-content-around h-2/5 opacity-80'>
+          <div className='flex flex-col w-2/6 mx-10 mt-3 space-y-5'>
+
+            <div className='ml-1'>
+              <span className='text-2xl'>Select one of my languages:</span>
+            </div>
+            <div className='flex items-center ml-7'>
+              <div className='flex justify-center w-1/6'>
+                <img src="./images/arrow-keys.svg" alt="arrow-keys" width={60} />
+              </div>
+              <div className='ml-3 w-5/6'>
+                <span>Move between the options</span>
+              </div>
+            </div>
+            <div className='flex items-center ml-7'>
+              <div className='flex justify-center w-1/6'>
+                <img src="./images/enter-key.svg" alt="enter-keys" width={45} />
+              </div>
+              <div className='ml-3 w-5/6'>
+                <span >Select language</span>
+              </div>
+            </div>
 
           </div>
           {languageOptions.map((lang) => (
-            <img key={lang.value} src={lang.flag} alt={lang.value} className={`rounded-full h-3/6 m-auto ${ selectedLang === lang.value ? 'shadow-lang-glow' : '' }`} />
+            <img key={lang.value} src={lang.flag} alt={lang.value} className={`rounded-full h-3/6 m-auto opacity-75 ${selectedLang === lang.value ? 'shadow-lang-glow' : ''}`} />
           ))}
         </div>
 
