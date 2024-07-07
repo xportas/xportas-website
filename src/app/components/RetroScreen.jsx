@@ -9,12 +9,13 @@ const languageOptions = [
   { value: 'gz', flag: './images/gz.svg' }
 ];
 
-export default function RetroScreen() {
+export default function RetroScreen({ setCurrentLanguage }) {
 
   const NAME = "Xabier Portas", ALIAS = "xportas";
   const typedNameOrAlias = useRef(null);
   const [langIndex, setLangIndex] = useState(0);
   const [selectedLang, setSelectedLang] = useState('en');
+  const [retroScreenOn, setRetroScreenOn] = useState(true);
 
 
   function waitForMs(ms) {
@@ -48,12 +49,14 @@ export default function RetroScreen() {
     let isMounted = true;
 
     const asyncTypeNameLoop = async () => {
-      while (isMounted) {
+      while (isMounted && retroScreenOn) {
         await typeString(NAME, typedNameOrAlias);
         await waitForMs(2000);
+        if (!isMounted) break;
         await deleteString(typedNameOrAlias);
         await typeString(ALIAS, typedNameOrAlias);
         await waitForMs(2000);
+        if (!isMounted) break;
         await deleteString(typedNameOrAlias);
       }
     }
@@ -77,7 +80,8 @@ export default function RetroScreen() {
           setLangIndex((prevIndex) => (prevIndex < languageOptions.length - 1 ? prevIndex + 1 : 0));
           break;
         case 'Enter':
-          // TODO: redirect to the main page with the selected language
+          setCurrentLanguage(selectedLang);
+          setRetroScreenOn(false);
           break;
         default:
           break;
@@ -98,13 +102,10 @@ export default function RetroScreen() {
 
   return (
     <div className='h-screen w-screen m-0 p-0 bg-pixel-space-transparent text-screen-txt-color' id='screen'>
-      
-      {/* CTR noise */}
-      <div className='h-full w-full z-30 relative animate-crtScreen' id='crt-noise'
-        style={{ background: `linear-gradient(to bottom, transparent, #aaa4, #8881, #6664, #4445, #2228, #4443, transparent), repeating-linear-gradient(transparent 0 2px, #25242950 2px 4px)` }}>
+      <div className='h-full w-full absolute' >
 
         {/* Hero */}
-        <div className='flex h-3/5 opacity-80'>
+        <div className='flex h-3/5'>
           <div className='flex flex-col justify-center content-center space-y-12 font-header py-20 pl-20 w-1/2'>
             <div>
               <p className='text-3xl'>Hi there,</p>
@@ -123,14 +124,14 @@ export default function RetroScreen() {
 
 
           {/* xportas image */}
-          <div className='flex flex-1 justify-center content-center opacity-80'>
+          <div className='flex flex-1 justify-center content-center'>
             <img src="/images/dark-xportas-img.jpeg" alt="xportas-portrait" className='img-blur rounded-full h-full mt-10' />
           </div>
         </div>
 
 
         {/* Language selector */}
-        <div className='flex place-content-around h-2/5 opacity-80'>
+        <div className='flex place-content-around h-2/5'>
           <div className='flex flex-col w-2/6 mx-10 mt-3 space-y-5'>
 
             <div className='ml-1'>
@@ -155,11 +156,15 @@ export default function RetroScreen() {
 
           </div>
           {languageOptions.map((lang) => (
-            <img key={lang.value} src={lang.flag} alt={lang.value} className={`rounded-full h-3/6 m-auto opacity-75 ${selectedLang === lang.value ? 'shadow-lang-glow' : ''}`} />
+            <img key={lang.value} src={lang.flag} alt={lang.value} className={`rounded-full h-3/6 m-auto opacity-95 ${selectedLang === lang.value ? 'shadow-lang-glow' : ''}`} />
           ))}
         </div>
-
       </div>
+
+      {/* CTR noise */}
+      <div className='h-full w-full z-30 relative animate-crtScreen opacity-45' id='crt-noise'
+        style={{ background: `linear-gradient(to bottom, transparent, #aaa4, #8881, #6664, #4445, #2228, #4443, transparent), repeating-linear-gradient(transparent 0 2px, #25242950 2px 4px)` }}></div>
+
     </div>
   );
 }

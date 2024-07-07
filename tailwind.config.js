@@ -46,7 +46,7 @@ module.exports = {
         },
         moveBand: {
           '0%': { 'background-position-y': '0, 0' },
-          '100%': { 'background-position-y': '-100vh, -100vh' },
+          '100%': { 'background-position-y': '100vh, 100vh' },
         },
         fadeIn: {
           '0%': { transform: 'translateX(var(--dynamic-translate))', opacity: '0' },
