@@ -13,7 +13,8 @@ export default function Home() {
 
   return (
     <>
-      <TurnOffNoise></TurnOffNoise>
+    <RetroScreen setCurrentLanguage={setCurrentLanguage} />
+      {/* <TurnOffNoise></TurnOffNoise> */}
       {/* { !currentLanguage ?
         <RetroScreen setCurrentLanguage={setCurrentLanguage} />
         :
@@ -93,7 +94,7 @@ export default function Home() {
             From the smallest subatomic particles to the largest superclusters of galaxies, the universe remains a testament to the beauty of scientific inquiry and the boundless curiosity of the human spirit. As we gaze into the night sky, we are reminded of our shared journey through the cosmos and the limitless possibilities that await us in the vastness of space and time.
           </p>
         </>
-      } */}
+      */}
     </>
   );
 }

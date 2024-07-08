@@ -13,6 +13,7 @@ export default function RetroScreen({ setCurrentLanguage }) {
 
   const NAME = "Xabier Portas", ALIAS = "xportas";
   const typedNameOrAlias = useRef(null);
+  const audioRef = useRef(null);
   const [langIndex, setLangIndex] = useState(0);
   const [selectedLang, setSelectedLang] = useState('en');
   const [retroScreenOn, setRetroScreenOn] = useState(true);
@@ -100,8 +101,31 @@ export default function RetroScreen({ setCurrentLanguage }) {
   }, [langIndex]);
 
 
+  // Song effect
+  useEffect(() => {
+    const audioElement = audioRef.current;
+  
+    if (audioElement) {
+      audioElement.play()
+        .catch(error => {
+          console.error('Error al reproducir audio:', error);
+        });
+    }
+  
+    return () => {
+      // Detener el audio si el componente se desmonta antes de que termine de reproducirse
+      if (audioElement && !audioElement.paused) {
+        audioElement.pause();
+        audioElement.currentTime = 0;
+      }
+    };
+  }, []);
+  
+
+
   return (
     <div className='h-screen w-screen m-0 p-0 bg-pixel-space-transparent text-screen-txt-color' id='screen'>
+      <audio ref={audioRef} src="/audio/main-song.mp3"></audio>
       <div className='h-full w-full absolute' >
 
         {/* Hero */}

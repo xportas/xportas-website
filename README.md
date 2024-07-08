@@ -3,11 +3,15 @@ Open source project containing the source code of my personal website
 
 
 
+
+
+--> 4265 ms cuando se apaga la pantalla en el audio, cuadrar efecto de apagado en imagen
+
+
+
+
+
 IDEAS:
-
-Selección de idioma en la pantalla inicial que simula ser la del ordenador
-
-Tema oscuro que sea otro diseño moderno (v4) y que en vez de elegir el tema, se elija "salir de lo retro" o "de los años 80"
 
 MI FOTO: EN BLANCO Y NEGRO Y QUE AL PASAR POR ENCIMA SE VUELVA DE COLOR y algún efecto como que se eleva o algo así, como los botones
 
