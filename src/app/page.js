@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Nav from "./components/Nav";
 import RetroComputer from "./components/RetroComputer";
 import RetroScreen from "./components/RetroScreen";
-import TurnOffNoise from "./components/TurnOffNoise";
 
 
 
@@ -13,9 +12,7 @@ export default function Home() {
 
   return (
     <>
-    <RetroScreen setCurrentLanguage={setCurrentLanguage} />
-      {/* <TurnOffNoise></TurnOffNoise> */}
-      {/* { !currentLanguage ?
+      {!currentLanguage ?
         <RetroScreen setCurrentLanguage={setCurrentLanguage} />
         :
         <>
@@ -94,7 +91,7 @@ export default function Home() {
             From the smallest subatomic particles to the largest superclusters of galaxies, the universe remains a testament to the beauty of scientific inquiry and the boundless curiosity of the human spirit. As we gaze into the night sky, we are reminded of our shared journey through the cosmos and the limitless possibilities that await us in the vastness of space and time.
           </p>
         </>
-      */}
+      }
     </>
   );
 }

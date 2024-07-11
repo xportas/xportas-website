@@ -69,6 +69,11 @@ html::-webkit-scrollbar {
   z-index: 1;
 }
 
+.pixelated-image-root {
+  image-rendering: pixelated;
+  border: 2px solid #FFAD36;
+}
+
 
 
 /* 
