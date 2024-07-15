@@ -2,20 +2,18 @@
 Open source project containing the source code of my personal website
 
 
-
-
+TODO: MEJORAR LOS ESTILOS DEL BOTÓN PRINCIPAL, ON / OFF, Y METER EFECTO DE QUE SE ENCIENDE, SE JODE LA PANTALLA, Y SE APAGA
 
 --> 4265 ms cuando se apaga la pantalla en el audio, cuadrar efecto de apagado en imagen
 
 
-
-
-
 IDEAS:
-
-MI FOTO: EN BLANCO Y NEGRO Y QUE AL PASAR POR ENCIMA SE VUELVA DE COLOR y algún efecto como que se eleva o algo así, como los botones
-
 NO OLVIDARSE DE HACER SEO (ver cómo hacerlo en v4 y buscar más info)
+
+
+
+
+
 
 ## Getting Started
 

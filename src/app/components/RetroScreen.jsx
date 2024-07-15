@@ -117,9 +117,10 @@ export default function RetroScreen({ setCurrentLanguage }) {
   }
 
 
-  const handleStartAudio = () => {
+  const handleStartMainThemeAudio = async () => {
     const mainThemeAudioElement = mainThemeAudioRef.current;
     if (mainThemeAudioElement) {
+      await waitForMs(300);
       mainThemeAudioElement.play().then(() => setMainThemeAudioON(true));
     }
   };
@@ -132,16 +133,24 @@ export default function RetroScreen({ setCurrentLanguage }) {
       <audio ref={mainThemeAudioRef} src="/audio/main-song.mp3"></audio>
       {!mainThemeAudioON && (
         <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center bg-black z-50">
-          <button className="bg-white text-black p-4 rounded"
-            onClick={() => handleStartAudio()}
-          >
-            Start
+          <button
+            className="powerOnOffBtn"
+            onClick={() => handleStartMainThemeAudio()}>
+            <div className="powerOnOffBtn-top">
+              <img
+                src="./images/shutdown-icon.svg"
+                alt="arrow-keys"
+                width={20}
+              />
+            </div>
+            <div className="powerOnOffBtn-bottom"></div>
+            <div className="powerOnOffBtn-base"></div>
           </button>
         </div>
       )}
 
       <div className='h-full w-full absolute' >
-        
+
         {/* Hero */}
         <div className='flex h-3/5'>
           <div className='flex flex-col justify-center content-center space-y-12 font-header py-20 pl-20 w-1/2'>
