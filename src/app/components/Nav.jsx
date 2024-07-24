@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from "react";
+import { links, navLinks } from '../utils/config';
 
 
 export default function Nav() {
@@ -71,7 +72,7 @@ export default function Nav() {
             <a
               style={{ '--dynamic-duration': '0.9s' }}
               className={`ml-7 ${navbarHidden || screenWidth >= 1500 ? 'bg-main-gray border-orange-200 shadow-custom' : 'bg-orange-200 border-main-gray shadow-custom-dark-theme'} px-3 py-1 border-solid border-2 transition ease-in-out ${hoverBtnsEffectDisabled ? (navbarHidden || screenWidth >= 1500 ? 'hover:shadow-custom-hover' : 'hover:shadow-custom-hover-dark-theme') + ' hover:-translate-y-1 hover:scale-105' : ''} z-40 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
-              href="https://es.linkedin.com/in/xabierportas"
+              href={links.LinkedIn}
               onMouseDown={onMouseDown}
               onMouseUp={() => setHoverBtnsEffectDisabled(true)}
               onMouseLeave={onMouseLeave}
@@ -90,7 +91,8 @@ export default function Nav() {
               className={`${navbarHidden || screenWidth >= 1500 ? 'bg-main-gray border-orange-200 shadow-custom' : 'bg-orange-200 border-main-gray shadow-custom-dark-theme'} px-3 py-1 border-solid border-2 transition ease-in-out ${hoverBtnsEffectDisabled ? (navbarHidden || screenWidth >= 1500 ? 'hover:shadow-custom-hover' : 'hover:shadow-custom-hover-dark-theme') + ' hover:-translate-y-1 hover:scale-105' : ''} z-40 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
               onMouseDown={onMouseDown}
               onMouseUp={() => setHoverBtnsEffectDisabled(true)}
-              onMouseLeave={onMouseLeave} href="https://github.com/xportas"
+              onMouseLeave={onMouseLeave} 
+              href={links.GitHub}
               onClick={handleClickOnNavBtns}
             >
               <svg width="25px" height="25px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke={`${navbarHidden ? '#fed7aa' : '#52525240'}`} strokeWidth="0.00024000000000000003">
@@ -105,7 +107,7 @@ export default function Nav() {
           <a
             style={{ '--dynamic-duration': '0.5s' }}
             className={`${navbarHidden || screenWidth >= 1500 ? 'bg-main-gray border-orange-200 shadow-custom' : 'bg-orange-200 border-main-gray shadow-custom-dark-theme'} px-3 py-1 border-solid border-2 transition ease-in-out ${hoverBtnsEffectDisabled ? (navbarHidden || screenWidth >= 1500 ? 'hover:shadow-custom-hover' : 'hover:shadow-custom-hover-dark-theme') + ' hover:-translate-y-1 hover:scale-105' : ''} z-40 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
-            href="/cv-xportas.pdf"
+            href={links.CV}
             download="cv-xportas.pdf"
             onMouseDown={onMouseDown}
             onMouseUp={() => setHoverBtnsEffectDisabled(true)}
@@ -151,7 +153,7 @@ export default function Nav() {
 
                 <div className="relative z-40 flex items-center justify-center numbered-nav">
                   <a
-                    href="#about-section"
+                    href={navLinks.About}
                     className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150"
                     onMouseOver={() => handleNavbarOnHover('about', true)}
                     onMouseLeave={() => handleNavbarOnHover('about', false)}>
@@ -160,7 +162,7 @@ export default function Nav() {
                     </span>
                   </a>
                   <a
-                    href="#experience-section"
+                    href={navLinks.Experience}
                     className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150"
                     onMouseOver={() => handleNavbarOnHover('experience', true)}
                     onMouseLeave={() => handleNavbarOnHover('experience', false)}>
@@ -169,7 +171,7 @@ export default function Nav() {
                     </span>
                   </a>
                   <a
-                    href="#work-section"
+                    href={navLinks.Work}
                     className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150"
                     onMouseOver={() => handleNavbarOnHover('work', true)}
                     onMouseLeave={() => handleNavbarOnHover('work', false)}>
@@ -179,7 +181,7 @@ export default function Nav() {
                     </span>
                   </a>
                   <a
-                    href="#contact-section"
+                    href={navLinks.Contact}
                     className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150"
                     onMouseOver={() => handleNavbarOnHover('contact', true)}
                     onMouseLeave={() => handleNavbarOnHover('contact', false)}>

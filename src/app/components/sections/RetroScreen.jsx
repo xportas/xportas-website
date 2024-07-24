@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { PixelatedImage } from './PixelatedImage';
+import { PixelatedImage } from '../PixelatedImage';
 
 
 const languageOptions = [
@@ -45,7 +45,7 @@ export default function RetroScreen({ setCurrentLanguage }) {
 
   // Keyboard listening effect
   useEffect(() => {
-    const handleKeyDown = (event) => {
+    const handleKeyDown = async (event) => {
       switch (event.key) {
         case 'ArrowLeft':
           setLangIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : languageOptions.length - 1));
@@ -54,8 +54,9 @@ export default function RetroScreen({ setCurrentLanguage }) {
           setLangIndex((prevIndex) => (prevIndex < languageOptions.length - 1 ? prevIndex + 1 : 0));
           break;
         case 'Enter':
-          setCurrentLanguage(selectedLang);
           setRetroScreenOn(false);
+          // await waitForMs(500);
+          setCurrentLanguage(selectedLang);
           break;
         default:
           break;
@@ -149,7 +150,7 @@ export default function RetroScreen({ setCurrentLanguage }) {
         </div>
       )}
 
-      <div className='h-full w-full absolute' >
+      <div className={`h-full w-full absolute ${ retroScreenOn ? '' : '' }`} >
 
         {/* Hero */}
         <div className='flex h-3/5'>
@@ -179,7 +180,7 @@ export default function RetroScreen({ setCurrentLanguage }) {
           <div className='flex flex-1 justify-center content-center'>
             <PixelatedImage
               src="/images/dark-xportas-img.jpeg"
-              blockSize={30}
+              blockSize={45}
               className='img-blur rounded-full h-full mt-10'
             />
           </div>
