@@ -2,7 +2,7 @@ import "./globals.css";
 
 
 export const metadata = {
-  title: "xportas",
+  title: "Xabier Portas",
   description: "Created by xportas",
 };
 
