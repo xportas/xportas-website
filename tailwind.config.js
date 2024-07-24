@@ -12,8 +12,8 @@ module.exports = {
         crtScreen: 'moveBand 3s linear infinite',
         fadeIn: 'fadeIn var(--dynamic-duration) ease-out',
         fadeOut: 'fadeOut var(--dynamic-duration) ease-out forwards',
-        'wipe-in-right': 'wipe-in-right 1s cubic-bezier(.25, 1, .30, 1) both',
-        'wipe-out-left': 'wipe-out-left 0.75s cubic-bezier(.25, 1, .30, 1) both'
+        wipeInRight: 'wipeInRight 1s cubic-bezier(.25, 1, .30, 1) both',
+        wipeOutLeft: 'wipeOutLeft 0.75s cubic-bezier(.25, 1, .30, 1) both'
       },
       backgroundImage: {
         'pixel-space': "url('/images/space-pixel-art.jpeg')",
@@ -37,6 +37,9 @@ module.exports = {
         'header': ['public-pixel', 'Roboto mono', 'monoespace'],
         'main': ['chill', 'Roboto mono', 'monoespace'],
       },
+      fontSize: {
+        'clamp-title': 'clamp(40px, 5vw, 60px)',
+      },
       keyframes: {
         blink: {
           '0%': { opacity: '1' },
@@ -56,11 +59,11 @@ module.exports = {
           '0%': { transform: 'translateX(0)', opacity: '1' },
           '100%': { transform: 'translateX(var(--dynamic-translate))', opacity: '0' },
         },
-        'wipe-in-right': {
+        wipeInRight: {
           '0%': { opacity: '0', 'clip-path': 'inset(0 100% 0 0)' },
           '100%': { opacity: '1', 'clip-path': 'inset(0 0 0 0)' },
         },
-        'wipe-out-left': {
+        wipeOutLeft: {
           '0%': { opacity: '1', 'clip-path': 'inset(0 0 0 0)' },
           '100%': { opacity: '0', 'clip-path': 'inset(0 100% 0 0)' },
         },

@@ -165,7 +165,7 @@ html::-webkit-scrollbar {
 
 /* 
 *
-*  NAV
+*  NAV / NUMERATORS
 *
 */
 
@@ -173,16 +173,22 @@ html::-webkit-scrollbar {
   counter-reset: link;
 }
 
-.numbered-nav>a,
-.numbered-nav>span {
+.numbered>a,
+.numbered>span,
+.numbered>h3 {
   counter-increment: link;
 }
 
-.numbered-nav>a::before,
-.numbered-nav>span::before {
+.numbered>a::before,
+.numbered>span::before,
+.numbered>h3::before {
   content: counter(link) ". ";
   display: inline-block;
   font-family: chill;
   font-size: 2.7vh;
   margin-right: 7px;
+}
+
+.numbered>a.no-count::before {
+  content: none;
 }

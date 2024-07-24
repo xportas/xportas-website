@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from "react";
 import { links, navLinks } from '../utils/config';
+import { waitForMs } from "../utils/utils";
 
 
 export default function Nav() {
@@ -14,11 +15,10 @@ export default function Nav() {
 
   const onMouseDown = () => { setHoverBtnsEffectDisabled(false); }
   const onMouseLeave = () => { setHoverBtnsEffectDisabled(true); }
-  const handleClickOnNavBtns = () => {
+  const handleClickOnNavBtns = async () => {
     onMouseDown();
-    setTimeout(() => {
-      setHoverBtnsEffectDisabled(true);
-    }, 70);
+    await waitForMs(70);
+    setHoverBtnsEffectDisabled(true);
   }
   const handleNavbarOnHover = (a, isHover) => {
     const newNavbarOnHoverState = { ...navbarInitialState, [a]: isHover };
@@ -34,14 +34,15 @@ export default function Nav() {
   }, []);
 
   useEffect(() => {
-    if (!showNavbar) {
-      const timer = setTimeout(() => {
+    const handleNavbar = async () => {
+      if (!showNavbar) {
+        await waitForMs(500);
         setNavbarHidden(true);
-      }, 500);
-      return () => clearTimeout(timer);
-    } else {
-      setNavbarHidden(false);
-    }
+      } else {
+        setNavbarHidden(false);
+      }
+    };
+    handleNavbar();
   }, [showNavbar]);
 
   return (
@@ -91,7 +92,7 @@ export default function Nav() {
               className={`${navbarHidden || screenWidth >= 1500 ? 'bg-main-gray border-orange-200 shadow-custom' : 'bg-orange-200 border-main-gray shadow-custom-dark-theme'} px-3 py-1 border-solid border-2 transition ease-in-out ${hoverBtnsEffectDisabled ? (navbarHidden || screenWidth >= 1500 ? 'hover:shadow-custom-hover' : 'hover:shadow-custom-hover-dark-theme') + ' hover:-translate-y-1 hover:scale-105' : ''} z-40 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
               onMouseDown={onMouseDown}
               onMouseUp={() => setHoverBtnsEffectDisabled(true)}
-              onMouseLeave={onMouseLeave} 
+              onMouseLeave={onMouseLeave}
               href={links.GitHub}
               onClick={handleClickOnNavBtns}
             >
@@ -128,7 +129,7 @@ export default function Nav() {
                 style={{ '--dynamic-duration': '0.7s', '--dynamic-translate': '-40%' }}
                 className={`flex font-header text-orange-200 bg-main-gray px-5 py-1 border-solid border-2 border-orange-200 shadow-custom ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
               >
-                <div className="absolute z-30 flex items-center justify-center numbered-nav">
+                <div className="absolute z-30 flex items-center justify-center numbered">
                   <span
                     style={{ '--dynamic-duration': '0.3s', '--dynamic-translate': '0' }}
                     className={`px-3 m-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.about ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>
@@ -151,7 +152,7 @@ export default function Nav() {
                   </span>
                 </div>
 
-                <div className="relative z-40 flex items-center justify-center numbered-nav">
+                <div className="relative z-40 flex items-center justify-center numbered">
                   <a
                     href={navLinks.About}
                     className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150"
@@ -200,7 +201,7 @@ export default function Nav() {
 
       {/* Multiplataform nav (small screens) */}
       {screenWidth < 1500 ?
-        <div className={`fixed h-screen w-screen bg-main-gray z-40 ${showNavbar ? 'animate-wipe-in-right' : 'animate-wipe-out-left'} ${navbarHidden ? 'hidden' : ''}`}>
+        <div className={`fixed h-screen w-screen bg-main-gray z-40 ${showNavbar ? 'animate-wipeInRight' : 'animate-wipeOutLeft'} ${navbarHidden ? 'hidden' : ''}`}>
           <nav className="inline-flex items-baseline flex-col font-header text-orange-200 pt-24 p-7 w-full">
             <a
               href="#about-section"

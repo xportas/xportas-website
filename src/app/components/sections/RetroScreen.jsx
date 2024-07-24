@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { PixelatedImage } from '../PixelatedImage';
+import { waitForMs } from '../../utils/utils';
 
 
 const languageOptions = [
@@ -88,11 +89,6 @@ export default function RetroScreen({ setCurrentLanguage }) {
       }
     };
   }, []);
-
-
-  function waitForMs(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
 
 
   async function typeString(sentence, eleRef, delay = 100) {
