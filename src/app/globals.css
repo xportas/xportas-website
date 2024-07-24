@@ -32,9 +32,7 @@ html,
 body {
   overflow: auto;
   -ms-overflow-style: none;
-  /* IE and Edge */
   scrollbar-width: none;
-  /* Firefox */
 }
 
 /* For Chrome, Safari, and Opera */
