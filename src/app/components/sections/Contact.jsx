@@ -9,11 +9,12 @@ export default function Contact() {
 
   return (
     <section
-      className="max-w-[600px] mx-auto mb-12 text-center md:mb-24 block numbered" >
+      className="max-w-[600px] mx-auto mb-12 text-center md:mb-24 block numbered"
+    >
       <h3>
         What’s Next?
       </h3>
-      <h2 className="text-clamp-title">
+      <h2 className="text-short-heading">
         Get In Touch
       </h2>
       <p className='mt-6 mb-12'>

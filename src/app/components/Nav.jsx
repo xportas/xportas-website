@@ -67,6 +67,7 @@ export default function Nav() {
               styles={`ml-7 px-3 py-1 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''} z-40`}
               darkTheme={(navbarHidden && screenWidth >= 1500) || screenWidth < 1500}
               href={links.LinkedIn}
+              target={"_blank"}
               child={
                 <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="">
                   <g id="SVGRepo_bgCarrier" strokeWidth="0" />
@@ -82,6 +83,7 @@ export default function Nav() {
               styles={`px-3 py-1 z-40 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
               darkTheme={(navbarHidden && screenWidth >= 1500) || screenWidth < 1500}
               href={links.GitHub}
+              target={"_blank"}
               child={
                 <svg width="25px" height="25px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke={`${navbarHidden ? '#fed7aa' : '#52525240'}`} strokeWidth="0.00024000000000000003">
                   <g id="SVGRepo_bgCarrier" strokeWidth="0" />
@@ -99,6 +101,7 @@ export default function Nav() {
             darkTheme={(navbarHidden && screenWidth >= 1500) || screenWidth < 1500}
             href={links.CV}
             download="cv-xportas.pdf"
+            target={"_blank"}
             child={<svg width="35px" height="25px" xmlns="http://www.w3.org/2000/svg">
               <text className="font-header" x="50%" y="60%" textAnchor="middle" dominantBaseline="middle" fill={`${navbarHidden || screenWidth >= 1500 ? '#fed7aa' : '#525252'}`}>CV</text>
             </svg>}

@@ -38,7 +38,9 @@ module.exports = {
         'main': ['chill', 'Roboto mono', 'monoespace'],
       },
       fontSize: {
-        'clamp-title': 'clamp(40px, 5vw, 60px)',
+        'big-heading': 'clamp(40px, 8vw, 80px)',
+        'medium-heading': 'clamp(40px, 8vw, 60px)',
+        'short-heading': 'clamp(40px, 5vw, 60px)',
       },
       keyframes: {
         blink: {

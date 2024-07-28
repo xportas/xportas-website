@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { waitForMs } from '../utils/utils';
 
-export default function RetroBtn({ child, darkTheme, download, effect, href, style, styles }) {
+export default function RetroBtn({ child, darkTheme, download, effect, href, rel, style, styles, target }) {
 
   const [hoverBtnsEffectDisabled, setHoverBtnsEffectDisabled] = useState(true);
 
@@ -23,7 +23,10 @@ export default function RetroBtn({ child, darkTheme, download, effect, href, sty
       onMouseDown={() => setHoverBtnsEffectDisabled(false)}
       onMouseUp={() => setHoverBtnsEffectDisabled(true)}
       onMouseLeave={() => setHoverBtnsEffectDisabled(true)}
-      onClick={handleClickOnNavBtns} >
+      onClick={handleClickOnNavBtns} 
+      target={target}
+      rel={rel}
+      >
       {child}
     </a>
   );
