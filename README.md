@@ -4,7 +4,7 @@ Open source project containing the source code of my personal website
 
 TODO: MEJORAR LOS ESTILOS DEL BOTÓN PRINCIPAL, ON / OFF, Y METER EFECTO DE QUE SE ENCIENDE, SE JODE LA PANTALLA, Y SE APAGA
 
-TODO: mejorar organización y reutilización de código, hay métodos como waitForMs que se repiten en componentes, extraer a ficheros externos y reutilizar en varias clases
+BUG: En firefox, cuando cargo la página ya suena la música, controlar para que hasta pulsar el btn on/off no se reproduzca la música
 
 --> 4265 ms cuando se apaga la pantalla en el audio, cuadrar efecto de apagado en imagen
 

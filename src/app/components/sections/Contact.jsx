@@ -20,12 +20,14 @@ export default function Contact() {
         Although I’m not currently looking for any new opportunities, my inbox is always open.
         Whether you have a question or just want to say hi, I’ll try my best to get back to you!
       </p>
-      <RetroBtn
-      styles={'px-6 py-4'}
-      darkTheme={false}
-      href={`mailto:${email}`}
-      child={<span className='text-orange-200'>Say Hello</span>}
-      />
+      <div className='relative flex justify-center'>
+        <RetroBtn
+          styles={'px-6 py-4'}
+          darkTheme={false}
+          href={`mailto:${email}`}
+          child={<span className='text-orange-200'>Say Hello</span>}
+        />
+      </div>
     </section>
   );
 }
