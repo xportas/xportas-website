@@ -2,12 +2,13 @@
 import { useState } from 'react';
 import { waitForMs } from '../utils/utils';
 
-export default function RetroBtn({ child, darkTheme, download, href, style, styles }) {
+export default function RetroBtn({ child, darkTheme, download, effect, href, style, styles }) {
 
   const [hoverBtnsEffectDisabled, setHoverBtnsEffectDisabled] = useState(true);
 
   const handleClickOnNavBtns = async () => {
     setHoverBtnsEffectDisabled(false);
+    effect ? effect() : null;
     await waitForMs(70);
     setHoverBtnsEffectDisabled(true);
   }

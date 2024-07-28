@@ -10,17 +10,9 @@ export default function Nav() {
   const [screenWidth, setScreenWidth] = useState(0);
   const [showNavbar, setShowNavbar] = useState(false);
   const [navbarHidden, setNavbarHidden] = useState(true);
-  const [hoverBtnsEffectDisabled, setHoverBtnsEffectDisabled] = useState(true);
   const navbarInitialState = { about: false, work: false, experience: false, contact: false };
   const [navbarOnHoverState, setNavbarOnHoverState] = useState(navbarInitialState);
 
-  const onMouseDown = () => { setHoverBtnsEffectDisabled(false); }
-  const onMouseLeave = () => { setHoverBtnsEffectDisabled(true); }
-  const handleClickOnNavBtns = async () => {
-    onMouseDown();
-    await waitForMs(70);
-    setHoverBtnsEffectDisabled(true);
-  }
   const handleNavbarOnHover = (a, isHover) => {
     const newNavbarOnHoverState = { ...navbarInitialState, [a]: isHover };
     setNavbarOnHoverState(newNavbarOnHoverState);
@@ -54,22 +46,20 @@ export default function Nav() {
           <div className="flex items-center z-40">
 
             {/* Show / hide nav button */}
-            <button
-              type="button"
-              className={`${navbarHidden || screenWidth >= 1500 ? 'bg-main-gray border-orange-200 shadow-custom' : 'bg-orange-200 border-main-gray shadow-custom-dark-theme'} px-5 py-1 border-solid border-2 transition ease-in-out ${hoverBtnsEffectDisabled ? (navbarHidden || screenWidth >= 1500 ? 'hover:shadow-custom-hover' : 'hover:shadow-custom-hover-dark-theme') + ' hover:-translate-y-1 hover:scale-105' : ''} z-50`}
-              onMouseDown={onMouseDown}
-              onMouseUp={() => (setHoverBtnsEffectDisabled(true), setShowNavbar(!showNavbar))}
-              onMouseLeave={onMouseLeave}
-              onClick={handleClickOnNavBtns}
-            >
-              <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-                <g id="SVGRepo_tracerCarrier" strokeLinecap="sharp" strokeLinejoin="sharp" />
-                <g id="SVGRepo_iconCarrier">
-                  <path d="M4 6H20M4 12H20M4 18H20" stroke={`${navbarHidden || screenWidth >= 1500 ? '#fed7aa' : '#525252'}`} strokeWidth="3" strokeLinecap="sharp" strokeLinejoin="sharp" />
-                </g>
-              </svg>
-            </button>
+            <RetroBtn
+              styles={`px-5 py-1 z-50`}
+              darkTheme={!navbarHidden && screenWidth < 1500}
+              effect={() => setShowNavbar(!showNavbar)}
+              child={
+                <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+                  <g id="SVGRepo_tracerCarrier" strokeLinecap="sharp" strokeLinejoin="sharp" />
+                  <g id="SVGRepo_iconCarrier">
+                    <path d="M4 6H20M4 12H20M4 18H20" stroke={`${navbarHidden || screenWidth >= 1500 ? '#fed7aa' : '#525252'}`} strokeWidth="3" strokeLinecap="sharp" strokeLinejoin="sharp" />
+                  </g>
+                </svg>
+              }
+            />
 
             {/* Redirect to LinkedIn btn */}
             <RetroBtn
