@@ -12,5 +12,15 @@ module.exports = {
     Experience: '#expecience-section',
     Work: '#work-section',
     Contact: '#contact-section'
-    }
+    },
+
+  skills: {
+    JS: 'JavaScript',
+    TS: 'TypeScript',
+    Java: 'Java',
+    Py: 'Python',
+    PHP: 'PHP',
+    CSharp: 'C#',
+    // TODO: INCOMPLETO
+  },
 };
