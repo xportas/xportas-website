@@ -7,17 +7,18 @@ export default function Hero() {
 
   return (
     <section
-      className='flex flex-col items-start min-h-screen p-0 m-0'
+      className='flex flex-col items-start justify-center min-h-screen mx-80'
     >
-      <h3 className=''>Hi, my name is</h3>
-      <h1 className="text-big-heading ">
+      <h3 className='text-xl'>Hi, my name is</h3>
+      <h1 className="text-big-heading mt-2">
         Xabier Portas.
       </h1>
-      <h2 className="text-big-heading">
+      <h2 className="text-medium-heading">
         I build things for the web.
       </h2>
-      <p className=''>
-        I am a passionate full-stack software engineer dedicated to crafting exceptional digital products. I thrive on building robust backend architectures and developing intuitive user interfaces. Currently, I am focused on contributing to the Government of Navarra by developing innovative digital solutions at{' '}
+      <p className='mt-5 pr-80'>
+        I am a passionate full-stack software engineer dedicated to crafting exceptional digital products. I thrive on building robust backend architectures and developing intuitive user interfaces.</p>
+        <p className='pr-80'>Currently, I am focused on contributing to the Government of Navarra by developing innovative digital solutions at{' '}
         <a href="https://itracasa.es/" target="_blank" rel="noreferrer">
           Tracasa Instrumental
         </a>
