@@ -1,5 +1,9 @@
 module.exports = {
-  email: 'xabierportasglz@gmail.com',
+  personalData : {
+    name: 'Xabier Portas',
+    alias: 'xportas',
+    email: 'xabierportasglz@gmail.com'
+  },
 
   links: {
     GitHub: 'https://github.com/xportas',

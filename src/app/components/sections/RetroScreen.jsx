@@ -1,7 +1,8 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { PixelatedImage } from '../PixelatedImage';
 import { waitForMs } from '../../utils/utils';
+import { PixelatedImage } from '../PixelatedImage';
+import AnimatedTyping from '../AnimatedTyping';
 
 
 const languageOptions = [
@@ -12,36 +13,11 @@ const languageOptions = [
 ];
 
 export default function RetroScreen({ setCurrentLanguage }) {
-
-  const NAME = "Xabier Portas", ALIAS = "xportas";
-  const typedNameOrAlias = useRef(null);
   const mainThemeAudioRef = useRef(null);
   const [langIndex, setLangIndex] = useState(0);
   const [selectedLang, setSelectedLang] = useState('en');
   const [retroScreenOn, setRetroScreenOn] = useState(true);
   const [mainThemeAudioON, setMainThemeAudioON] = useState(false);
-
-
-  // Infinite typing effect
-  useEffect(() => {
-    let isMounted = true;
-    const asyncTypeNameLoop = async () => {
-      while (isMounted && retroScreenOn) {
-        await typeString(NAME, typedNameOrAlias);
-        await waitForMs(2000);
-        if (!isMounted) break;
-        await deleteString(typedNameOrAlias);
-        await typeString(ALIAS, typedNameOrAlias);
-        await waitForMs(2000);
-        if (!isMounted) break;
-        await deleteString(typedNameOrAlias);
-      }
-    }
-    asyncTypeNameLoop();
-    return () => {
-      isMounted = false;
-    };
-  }, []);
 
 
   // Keyboard listening effect
@@ -91,29 +67,6 @@ export default function RetroScreen({ setCurrentLanguage }) {
   }, []);
 
 
-  async function typeString(sentence, eleRef, delay = 100) {
-    const letters = sentence.split("");
-    let i = 0;
-    while (i < letters.length) {
-      await waitForMs(delay);
-      if (eleRef.current) {
-        eleRef.current.innerHTML += letters[i];
-      }
-      ++i;
-    }
-  }
-
-
-  async function deleteString(eleRef) {
-    const letters = eleRef.current.innerHTML.split("");
-    while (letters.length > 0) {
-      await waitForMs(100);
-      letters.pop();
-      eleRef.current.innerHTML = letters.join("");
-    }
-  }
-
-
   const handleStartMainThemeAudio = async () => {
     const mainThemeAudioElement = mainThemeAudioRef.current;
     if (mainThemeAudioElement) {
@@ -146,6 +99,7 @@ export default function RetroScreen({ setCurrentLanguage }) {
         </div>
       )}
 
+{/* TODO: implementar efecto de apagado de pantalla antigua */}
       <div className={`h-full w-full absolute ${ retroScreenOn ? '' : '' }`} >
 
         {/* Hero */}
@@ -160,8 +114,7 @@ export default function RetroScreen({ setCurrentLanguage }) {
               <span className='bg-screen-txt-color py-3 text-4xl font-main'>
                 I'm {' '}
               </span>
-              <span className='bg-screen-txt-color py-3 text-4xl font-main' ref={typedNameOrAlias}></span>
-              <span className="inline-block w-[6px] h-[3rem] bg-screen-txt-color ml-[3px] animate-blink align-middle mb-3 mr-1"></span>
+              <AnimatedTyping cursorStyle={'inline-block w-[6px] h-[3rem] bg-screen-txt-color ml-[3px] animate-blink align-middle mb-3 mr-1'} stop={!retroScreenOn} textStyle={`bg-screen-txt-color py-3 text-4xl font-main`} />
             </div>
             <div>
               <ul className='list-inside list-square'>

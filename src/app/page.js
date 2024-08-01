@@ -1,11 +1,11 @@
 'use client'
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import RetroComputer from "./components/RetroComputer";
-import RetroScreen from "./components/sections/RetroScreen";
 import Contact from "./components/sections/Contact";
-import Footer from "./components/Footer";
 import Hero from "./components/sections/Hero";
+import RetroScreen from "./components/sections/RetroScreen";
 
 
 
@@ -18,15 +18,14 @@ export default function Home() {
       {/* {!currentLanguage ?
         <RetroScreen setCurrentLanguage={setCurrentLanguage} />
         :
-        <>
+        <> */}
           <Nav />
-          <RetroComputer /> */}
-          <Nav />
+          {/* <RetroComputer /> */}
           <Hero /> 
           <Contact />
           <Footer />
-        {/* </> */}
-      {/* } */}
-    </>
+        </>
+    //   }
+    // </>
   );
 }
