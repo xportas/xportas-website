@@ -30,8 +30,10 @@ module.exports = {
       },
       colors: {
         'main-gray': "#525252",
-        'screen-bgcolor': "#140E08",
-        'screen-txt-color': "#FFAD36",
+        'secondary-gray': "#A8947E",
+        'secondary-orange': "#c3751c",
+        'retroScreen-bgcolor': "#140E08",
+        'retroScreen-txtcolor': "#FFAD36",
       },
       fontFamily: {
         'header': ['public-pixel', 'Roboto mono', 'monoespace'],

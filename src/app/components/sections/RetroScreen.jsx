@@ -78,7 +78,7 @@ export default function RetroScreen({ setCurrentLanguage }) {
 
 
   return (
-    <div className='h-screen w-screen m-0 p-0 bg-pixel-space-transparent text-screen-txt-color' id='screen'>
+    <div className='h-screen w-screen m-0 p-0 bg-pixel-space-transparent text-retroScreen-txtcolor' id='screen'>
 
       <audio ref={mainThemeAudioRef} src="/audio/main-song.mp3"></audio>
       {!mainThemeAudioON && (
@@ -110,11 +110,11 @@ export default function RetroScreen({ setCurrentLanguage }) {
                 Hi there,
               </p>
             </div>
-            <div className='inline-block text-screen-bgcolor'>
-              <span className='bg-screen-txt-color py-3 text-4xl font-main'>
+            <div className='inline-block text-retroScreen-bgcolor'>
+              <span className='bg-retroScreen-txtcolor py-3 text-4xl font-main'>
                 I'm {' '}
               </span>
-              <AnimatedTyping cursorStyle={'inline-block w-[6px] h-[3rem] bg-screen-txt-color ml-[3px] animate-blink align-middle mb-3 mr-1'} stop={!retroScreenOn} textStyle={`bg-screen-txt-color py-3 text-4xl font-main`} />
+              <AnimatedTyping cursorStyle={'inline-block w-[6px] h-[3rem] bg-retroScreen-txtcolor ml-[3px] animate-blink align-middle mb-3 mr-1'} stop={!retroScreenOn} textStyle={`bg-retroScreen-txtcolor py-3 text-4xl font-main`} />
             </div>
             <div>
               <ul className='list-inside list-square'>

@@ -21,11 +21,11 @@ export default function Home() {
         <> */}
           <Nav />
           {/* <RetroComputer /> */}
-          <Hero /> 
+          <Hero />
           <Contact />
           <Footer />
         </>
-    //   }
+      // }
     // </>
   );
 }
