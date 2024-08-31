@@ -9,7 +9,8 @@ export default function Contact() {
 
   return (
     <section
-      className="max-w-[600px] mx-auto mb-12 text-center md:mb-24 block numbered"
+    style={{'--dynamic-font-size' : '-short-heading'}}
+      className="block text-center max-w-[600px] mx-auto mb-12 md:mb-24 numbered"
     >
       <h3>
         What’s Next?
@@ -21,7 +22,7 @@ export default function Contact() {
         Although I’m not currently looking for any new opportunities, my inbox is always open.
         Whether you have a question or just want to say hi, I’ll try my best to get back to you!
       </p>
-      <div className='relative flex justify-center'>
+      <div className='flex justify-center relative'>
         <RetroBtn
           styles={'px-6 py-4'}
           darkTheme={false}

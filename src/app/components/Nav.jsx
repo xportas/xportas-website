@@ -63,7 +63,7 @@ export default function Nav() {
 
             {/* Redirect to LinkedIn btn */}
             <RetroBtn
-              style={{ '--dynamic-duration': '0.9s' }}
+              style={{ '--dynamic-duration': `${showNavbar ? '0.9s' : '0.5s'}`, '--dynamic-translate': '-40%' }}
               styles={`ml-7 px-3 py-1 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''} z-40`}
               darkTheme={(navbarHidden && screenWidth >= 1500) || screenWidth < 1500}
               href={links.LinkedIn}
@@ -79,7 +79,7 @@ export default function Nav() {
 
             {/* Redirect to my GitHub profile */}
             <RetroBtn
-              style={{ '--dynamic-duration': '0.7s' }}
+              style={{ '--dynamic-duration': '0.7s', '--dynamic-translate': '-40%' }}
               styles={`px-3 py-1 z-40 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
               darkTheme={(navbarHidden && screenWidth >= 1500) || screenWidth < 1500}
               href={links.GitHub}
@@ -96,7 +96,7 @@ export default function Nav() {
 
           {/* Download CV btn */}
           <RetroBtn
-            style={{ '--dynamic-duration': '0.5s' }}
+            style={{ '--dynamic-duration': `${showNavbar ? '0.5s' : '0.9s'}`, '--dynamic-translate': '-40%' }}
             styles={`px-3 py-1 z-40 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
             darkTheme={(navbarHidden && screenWidth >= 1500) || screenWidth < 1500}
             href={links.CV}

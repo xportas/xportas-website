@@ -2,11 +2,23 @@
 Open source project containing the source code of my personal website
 
 
-==> CONTINUAR TRABAJANDO POR: about me
+
+
+
+
+
+==> CONTINUAR TRABAJANDO POR: About.jsx
+
+
+
+
+
+
+
 
 TODO: MEJORAR LOS ESTILOS DEL BOTÓN PRINCIPAL, ON / OFF, Y METER EFECTO DE QUE SE ENCIENDE, SE JODE LA PANTALLA, Y SE APAGA
 
-BUG: En firefox, cuando cargo la página ya suena la música, controlar para que hasta pulsar el btn on/off no se reproduzca la música
+*** BUG: En firefox, cuando cargo la página ya suena la música, controlar para que hasta pulsar el btn on/off no se reproduzca la música
 
 --> 4265 ms cuando se apaga la pantalla en el audio, cuadrar efecto de apagado en imagen
 
@@ -16,9 +28,41 @@ NO OLVIDARSE DE HACER SEO (ver cómo hacerlo en v4 y buscar más info)
 
 
 TODO: 's -->
+--> AL FINALIZAR, HACER MULTIPLATAFORMA AL TIEMPO QUE REFACTORIZO LAS CLASES
 --> Al finalizar, limpiar estilos de tailwind.config que no se usan.
---> Eliminar y terminar todos los posibles TODO's-
---> Refactorizar clases.
+--> Eliminar y terminar todos los posibles TODO's
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

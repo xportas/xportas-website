@@ -185,7 +185,7 @@ html::-webkit-scrollbar {
   content: counter(link) ". ";
   display: inline-block;
   font-family: chill;
-  font-size: 2.7vh;
+  font-size: var(--dynamic-font-size);
   margin-right: 7px;
 }
 

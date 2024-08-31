@@ -43,6 +43,7 @@ module.exports = {
         'big-heading': 'clamp(40px, 8vw, 80px)',
         'medium-heading': 'clamp(40px, 8vw, 60px)',
         'short-heading': 'clamp(40px, 5vw, 60px)',
+        'regular-heading': 'clamp(26px, 5vw, 32px)',
       },
       keyframes: {
         blink: {
