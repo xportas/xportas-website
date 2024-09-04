@@ -20,7 +20,7 @@ export default function Hero() {
       <p className='mt-5 pr-80'>
         I am a passionate full-stack software engineer dedicated to building and designing exceptional digital experiences.</p>
         <p className='pr-80'>Currently, I am focused on contributing to the Government of Navarra by developing innovative digital solutions at{' '}
-        <a className={`text-secondary-orange ${underlineEffect} before:bg-secondary-orange`} href="https://itracasa.es/" target="_blank" rel="noreferrer">
+        <a className={`text-secondary-orange ${underlineEffect}`} href="https://itracasa.es/" target="_blank" rel="noreferrer">
           Tracasa Instrumental
         </a>
         .

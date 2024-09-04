@@ -14,7 +14,8 @@ export const underlineEffect = `inline-block
                                 before:h-0.5
                                 before:transition-all 
                                 before:duration-300 
-                                hover:before:w-full`;
+                                hover:before:w-full
+                                before:bg-secondary-orange`;
 
 export const dashedLine = `after:content-['']
                            after:block

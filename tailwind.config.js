@@ -40,10 +40,9 @@ module.exports = {
         'main': ['chill', 'Roboto mono', 'monoespace'],
       },
       fontSize: {
-        'big-heading': 'clamp(40px, 8vw, 80px)',
-        'medium-heading': 'clamp(40px, 8vw, 60px)',
-        'short-heading': 'clamp(40px, 5vw, 60px)',
-        'regular-heading': 'clamp(26px, 5vw, 32px)',
+        'big-heading': 'clamp(30px, 7vw, 80px)',
+        'regular-heading': 'clamp(30px, 4vw, 40px)',
+        'short-heading': 'clamp(26px, 5vw, 32px)',
       },
       keyframes: {
         blink: {

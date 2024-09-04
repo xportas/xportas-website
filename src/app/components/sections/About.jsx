@@ -1,6 +1,6 @@
 'use client';
 import { skills } from "../../utils/config";
-import { dashedLine } from "../../utils/utils";
+import { dashedLine, underlineEffect } from "../../utils/utils";
 
 export default function About() {
 
@@ -9,7 +9,7 @@ export default function About() {
     <section className='max-w-5xl mx-auto numbered mb-12 md:mb-24' >
 
       <h3 style={{ '--dynamic-font-size': '-regular-heading' }}
-        className={`flex items-center mb-7 text-regular-heading ${dashedLine}`}>
+        className={`flex items-center mb-7 font-header text-short-heading ${dashedLine}`}>
         About Me</h3>
 
       <div className="block md:grid md:grid-cols-[3fr_2fr] md:gap-12">
@@ -24,10 +24,10 @@ export default function About() {
 
             <p>
               lksdj dlkjlk jdlkjdkljdkl jklsjd kl jsdjskl dkls jdkl jsdkldlk d{' '}
-              <a href="">dkj kdj dkjd kdk kdk</a>,{' '}
-              <a href="">kjd kdj dk</a>,{' '}
-              <a href="">kdj dkj dkdj kdk dd</a>, and{' '}
-              <a href="">kdj kdj dkjd kdjd kdj kddkj</a>. My
+              <a href="" className={`text-secondary-orange ${underlineEffect}`}>dkj kdj dkjd kdk kdk</a>,{' '}
+              <a href="" className={`text-secondary-orange ${underlineEffect}`}>kjd kdj dk</a>,{' '}
+              <a href="" className={`text-secondary-orange ${underlineEffect}`}>kdj dkj dkdj kdk dd</a>, and{' '}
+              <a href="" className={`text-secondary-orange ${underlineEffect}`}>kdj kdj dkjd kdjd kdj kddkj</a>. My
               lsdkj dkjd kjdkjsfkljsdflskj flsdk sdlk dldk jsdlkd ldk jdlk jldk dlkd jdl d
               djkj dkjd kdj d<a href="https://upstatement.com/">dlkjdlkjdlk</a> dkljd kdj kdjd dk
               asdfasd.
@@ -35,8 +35,8 @@ export default function About() {
 
             <p>
               asdlkfj sdlñf asd{' '}
-              <a href="">
-                asd alñksdfj aslñdkfj 
+              <a href="" className={`text-secondary-orange ${underlineEffect}`}>
+                asd alñksdfj aslñdkfj
               </a>{' '}
               dslkf jdklf jdkf jldkfjldkjf lksd jfkldj fkldfj kld jfkld lkfjkldfd fdkfjldk fjld
               lkd jdlkj dl
@@ -46,8 +46,10 @@ export default function About() {
           </div>
         </div>
 
-        <div className=''>
-          <img src="/images/xportas-img.jpeg" />
+        <div className="relative max-w-[300px] mt-[50px] mx-auto mb-0 w-[70%] md:m-auto md:w-full">
+          <div className="block relative w-full rounded bg-main-gray">
+            <img src="/images/xportas-img.jpeg" />
+          </div>
         </div>
 
       </div>

@@ -15,7 +15,7 @@ export default function Contact() {
       <h3>
         What’s Next?
       </h3>
-      <h2 className="text-short-heading">
+      <h2 className="font-header text-regular-heading">
         Get In Touch
       </h2>
       <p className='mt-6 mb-12'>

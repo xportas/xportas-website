@@ -26,7 +26,7 @@ module.exports = {
       Java: 'Java',
       Py: 'Python',
       PHP: 'PHP',
-      HTML: 'Html 5',
+      HTML: 'HTML',
       CSS: 'CSS',
     },
     '🛠️ Frameworks & Libraries': {
