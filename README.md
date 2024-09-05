@@ -25,13 +25,13 @@ TODO: MEJORAR LOS ESTILOS DEL BOTÓN PRINCIPAL, ON / OFF, Y METER EFECTO DE QUE 
 
 IDEAS:
 NO OLVIDARSE DE HACER SEO (ver cómo hacerlo en v4 y buscar más info)
-=> PORTFOLIO: al principio hacer una especie de inout retro que el usuario introduzca un alias y luego en la pantalla retro le salude a él, no en general.
-=> También hacer que cuando seleccione el nivel aparezca en amarillo en medio del mapa el nivel de ese idioma que domino
+==> al principio hacer una especie de input retro que el usuario introduzca un alias y luego en la pantalla retro le salude a él, no en general.
 
 TODO: 's -->
 --> AL FINALIZAR, HACER MULTIPLATAFORMA AL TIEMPO QUE REFACTORIZO LAS CLASES
 --> Al finalizar, limpiar estilos de tailwind.config que no se usan.
 --> Eliminar y terminar todos los posibles TODO's
+--> Foto retroScreen quitarle el fondo y meterle un filtro amarillo
 
 
 

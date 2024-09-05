@@ -9,6 +9,7 @@ export const PixelatedImage = forwardRef(
       blockSize = 20,
       width = 600,
       height = 600,
+      level = '',
       style,
       ...rest
     },
@@ -40,6 +41,16 @@ export const PixelatedImage = forwardRef(
 
         ctx.drawImage(img, 0, 0, w, h);
         ctx.drawImage(canvas, 0, 0, w, h, 0, 0, canvas.width, canvas.height);
+
+        if (level && level !== '') {
+          ctx.shadowColor = "black";
+          ctx.shadowOffsetX = 15;
+          ctx.shadowOffsetY = 15;
+          ctx.font = `200px chill`;
+          ctx.textBaseline = 'middle';
+          ctx.fillStyle = '#FFAD36';
+          ctx.fillText(level, canvas.width / 3.8, canvas.height / 2);
+        }
       };
     }, [src, blockSize]);
 

@@ -1,16 +1,10 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { waitForMs } from '../../utils/utils';
+import { waitForMs, languageOptions } from '../../utils/utils';
 import { PixelatedImage } from '../PixelatedImage';
 import AnimatedTyping from '../AnimatedTyping';
 
 
-const languageOptions = [
-  { value: 'en', flag: 'https://hatscripts.github.io/circle-flags/flags/uk.svg' },
-  { value: 'es', flag: 'https://hatscripts.github.io/circle-flags/flags/es.svg' },
-  { value: 'pt', flag: 'https://hatscripts.github.io/circle-flags/flags/pt.svg' },
-  { value: 'gz', flag: './images/gz.svg' }
-];
 
 export default function RetroScreen({ setCurrentLanguage }) {
   const mainThemeAudioRef = useRef(null);
@@ -181,6 +175,7 @@ export default function RetroScreen({ setCurrentLanguage }) {
               key={lang.value}
               src={lang.flag}
               alt={lang.value}
+              level={lang.level}
               className={`rounded-full h-3/6 m-auto opacity-95 ${selectedLang === lang.value ? 'shadow-lang-glow' : ''}`}
             />
           ))}
