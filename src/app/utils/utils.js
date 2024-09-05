@@ -17,11 +17,11 @@ export const underlineEffect = `inline-block
                                 hover:before:w-full
                                 before:bg-secondary-orange`;
 
-export const dashedLine = `after:content-['']
-                           after:block
-                           after:w-[300px]
-                           after:my-auto
-                           after:ml-7
-                           after:border-2
-                           after:border-dashed
-                           after:border-main-gray`;
+export const dashedLine =  `after:content-['']
+                            after:block
+                            after:w-[300px]
+                            after:my-auto
+                            after:ml-7
+                            after:border-2
+                            after:border-dashed
+                            after:border-main-gray`;
