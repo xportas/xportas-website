@@ -48,17 +48,20 @@ export default function About() {
 
         <div className="relative max-w-[300px] mt-[50px] mx-auto mb-0 w-[70%] md:m-auto md:w-full">
           <div className="block relative w-full rounded bg-main-gray
-                          hover:transition-all hover:duration-500 hover:ease-out hover:outline-none hover:transform hover:-translate-x-1 hover:-translate-y-1
-                          focus:transition-all focus:duration-500 focus:ease-out focus:outline-none focus:transform focus:-translate-x-1 focus:-translate-y-1
-                          hover:after:transform hover:after:translate-x-3 hover:after:translate-y-3
-                          focus:after:transform focus:after:translate-x-3 focus:after:translate-y-3
-                          before:content-[''] before:block before:absolute before:w-full before:h-full before:rounded before:transition-all before:duration-500 before:ease-out
-                          before:top-0 before:left-0 before:bg-orange-200 before:mix-blend-screen
-                          after:content-[''] after:block after:absolute after:w-full after:h-full after:rounded after:transition-all after:duration-500 after:ease-out
-                          after:top-4 after:left-4 after:z-[-1] after:border-dashed after:border-2 after:border-main-gray 
-                          ">
+                  transition-all duration-500 ease-out transform
+                  hover:-translate-x-1 hover:-translate-y-1
+                  focus:-translate-x-1 focus:-translate-y-1
+                  hover:after:translate-x-3 hover:after:translate-y-3
+                  focus:after:translate-x-3 focus:after:translate-y-3
+                  before:content-[''] before:block before:absolute before:w-full before:h-full before:rounded
+                  before:transition-all before:duration-500 before:ease-out
+                  before:top-0 before:left-0 before:bg-orange-200 before:mix-blend-screen
+                  after:content-[''] after:block after:absolute after:w-full after:h-full after:rounded
+                  after:transition-all after:duration-500 after:ease-out
+                  after:top-4 after:left-4 after:z-[-1] after:border-dashed after:border-2 after:border-main-gray 
+                  ">
             <img className="relative rounded mix-blend-multiply filter grayscale contrast-100 transition-all duration-500 ease-out
-                            hover:filter-none hover:mix-blend-normal focus:filter-none focus:mix-blend-normal"
+                    hover:filter-none hover:mix-blend-normal focus:filter-none focus:mix-blend-normal"
               src="/images/xportas-img.jpeg" />
           </div>
         </div>
