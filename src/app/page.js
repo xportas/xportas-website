@@ -7,6 +7,7 @@ import Contact from "./components/sections/Contact";
 import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
 import RetroScreen from "./components/sections/RetroScreen";
+import Jobs from "./components/sections/Jobs";
 
 
 
@@ -24,6 +25,7 @@ export default function Home() {
           {/* <RetroComputer /> */}
           <Hero />
           <About />
+          <Jobs />
           <Contact />
           <Footer />
         </>

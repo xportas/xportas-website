@@ -10,7 +10,8 @@ export default function About() {
 
       <h3 style={{ '--dynamic-font-size': '-regular-heading' }}
         className={`flex items-center mb-7 font-header text-short-heading ${dashedLine}`}>
-        About Me</h3>
+        About Me
+      </h3>
 
       <div className="block md:grid md:grid-cols-[3fr_2fr] md:gap-12">
         <div>
