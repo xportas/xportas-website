@@ -32,3 +32,7 @@ export const dashedLine =  `after:content-['']
                             after:border-2
                             after:border-dashed
                             after:border-main-gray`;
+
+export const linkStyle = `inline-block no-underline text-inherit relative transition-all duration-300
+                          hover:text-green-400 hover:outline-0
+                          focus:text-green-400 focus:outline-0`;
