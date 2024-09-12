@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import { jobs } from '../../utils/config';
 import { dashedLine, linkStyle } from "../../utils/utils";
 
 
@@ -8,9 +9,6 @@ export default function Jobs() {
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
-  
-  
-  const jobsData = []; // TODO: useEffect to get jobs data when component is mounted
 
 
   const focusTab = () => {
@@ -55,7 +53,7 @@ export default function Jobs() {
 
 
   return (
-    <section className="max-w-[700px]">
+    <section className="max-w-[700px] mx-auto numbered mb-12 md:mb-24">
 
       <h3 style={{ '--dynamic-font-size': '-regular-heading' }}
         className={`flex items-center mb-7 font-header text-short-heading ${dashedLine}`}>
@@ -66,8 +64,7 @@ export default function Jobs() {
         <div className="relative w-max p-0 m-0 list-none z-10
                         max-[480px]:w-[calc(100% + 50px)] max-[480px]:pl-6 max-[480px]:ml-6
                         max-[600px]:flex max-[600px]:overflow-x-auto max-[600px]:w-[calc(100% + 100px)]
-                        max-[600px]:pl-[50px] max-[600px]:ml-[-50px] max-[600px]:mb-8
-                        "
+                        max-[600px]:pl-[50px] max-[600px]:ml-[-50px] max-[600px]:mb-8"
           onKeyDown={(e) => onKeyDown(e)}>
 
           {/* PARA EL DIV DE ARRIBA ME FALTA PONERLE LOS ESTILOS A LOS li HIJOS COMO ESTÁ COMENTADO AQUÍ ABAJO
@@ -96,12 +93,15 @@ li {
 
           {/* FIN DE ESTILOS PENDIENTES, AHORA CONTINÚO */}
 
-          {jobsData &&
-            jobsData.map(({ job }, i) => {
+          {jobs &&
+            Object.entries(jobs).map(([key, job], i) => {
               return (
                 <button
                   className={`${linkStyle} flex items-center w-full h-11 py-0 pb-5 border-l-2 border-solid border-main-gray
-                              bg-transparent font-header text-xs text-left whitespace-nowrap`}
+                              bg-transparent font-header text-xs text-left whitespace-nowrap max-[768px]:pt-0 max-[768px]:px-4 max-[768px]:pb-[2px]
+                              max-[600px]:flex max-[600px]:justify-between max-[600px]:items-center max-[600px]:min-w-32 max-[600px]:py-0
+                              max-[600px]:px-4 max-[600px]:border-l-0 max-[600px]:border-b-2 max-[600px]:border-slate-400 max-[600px]:text-center
+                              hover:bg-slate-400 focus:bg-slate-400 ${activeTabId === i ? 'text-green-500' : 'text-gray-500'}`}
                   key={i}
                   isActive={activeTabId === i}
                   onClick={() => setActiveTabId(i)}
@@ -116,9 +116,17 @@ li {
               );
             })}
 
-
-
+          <div className='absolute top-0 left-0 z-20 w-[2px] h-11 rounded bg-green-300
+                transition-transform ease-in-out duration-200 delay-100
+                max-[480px]:ml-6 max-[600px]:top-auto max-[600px]:bottom-0 max-[600px]:w-full max-[600px]:max-w-[120] max-[600px]:h-[2px] max-[600px]:ml-12'
+            style={{
+              transform: window.innerWidth > 600
+                ? `translateY(calc(${activeTabId} * 44px))`
+                : `translateX(calc(${activeTabId} * 120px))`
+            }}></div>
         </div>
+
+
 
       </div>
     </section>

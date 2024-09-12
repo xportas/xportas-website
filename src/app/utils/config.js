@@ -62,4 +62,52 @@ module.exports = {
       GS: 'GeoServer',
     },
   },
+
+  jobs: {
+    "TRACASA": {
+      "date": "2024-01-15",
+      "title": "FullStack Developer",
+      "company": "Tracasa Instrumental",
+      "location": "Sarriguren, NA",
+      "range": "July - December 2017",
+      "url": "https://www.web.com",
+      "duties": {
+        "d1": "Contributed to something in the development of amazing products",
+        "d2": "Contributed to something in the development of amazing products",
+        "d3": "Contributed to something in the development of amazing products",
+        "d4": "Contributed to something in the development of amazing products",
+        "d5": "Contributed to something in the development of amazing products"
+      }
+    },
+    "LIVENSA": {
+      "date": "2024-01-15",
+      "title": "FullStack Developer",
+      "company": "Livensa Living",
+      "location": "Sarriguren, NA",
+      "range": "July - December 2017",
+      "url": "https://www.web.com",
+      "duties": {
+        "d1": "Contributed to something in the development of amazing products",
+        "d2": "Contributed to something in the development of amazing products",
+        "d3": "Contributed to something in the development of amazing products",
+        "d4": "Contributed to something in the development of amazing products",
+        "d5": "Contributed to something in the development of amazing products"
+      }
+    },
+    "CCPP": {
+      "date": "2024-01-15",
+      "title": "FullStack Developer",
+      "company": "Spin Doctor Pedro Sánchez",
+      "location": "Sarriguren, NA",
+      "range": "July - December 2017",
+      "url": "https://www.web.com",
+      "duties": {
+        "d1": "Contributed to something in the development of amazing products",
+        "d2": "Contributed to something in the development of amazing products",
+        "d3": "Contributed to something in the development of amazing products",
+        "d4": "Contributed to something in the development of amazing products",
+        "d5": "Contributed to something in the development of amazing products"
+      }
+    }
+  }
 };
