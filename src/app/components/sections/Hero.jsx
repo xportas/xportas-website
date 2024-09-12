@@ -1,4 +1,3 @@
-'use client';
 import { links } from '../../utils/config';
 import { underlineEffect } from '../../utils/utils';
 import RetroBtn from '../RetroBtn';

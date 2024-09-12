@@ -1,4 +1,3 @@
-'use client';
 import { email } from '../../utils/config';
 import RetroBtn from '../RetroBtn';
 

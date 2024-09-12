@@ -1,4 +1,3 @@
-'use client';
 import { skills } from "../../utils/config";
 import { dashedLine, underlineEffect } from "../../utils/utils";
 
