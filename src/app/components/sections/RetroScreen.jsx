@@ -119,12 +119,12 @@ export default function RetroScreen({ setCurrentLanguage }) {
           </div>
 
 
-          {/* xportas image */}
+          {/* xportas logo image */}
           <div className='flex flex-1 justify-center content-center'>
             <PixelatedImage
               src="/images/xportas-logo.webp"
               blockSize={100}
-              className='img-blur rounded-full h-full mt-10'
+              className='img-blur rounded-full h-full mt-10 animate-rotation'
             />
           </div>
         </div>

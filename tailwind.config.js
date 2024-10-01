@@ -12,6 +12,7 @@ module.exports = {
         crtScreen: 'moveBand 3s linear infinite',
         fadeIn: 'fadeIn var(--dynamic-duration) ease-out',
         fadeOut: 'fadeOut var(--dynamic-duration) ease-out forwards',
+        rotation: 'rotation 10s infinite linear',
         wipeInRight: 'wipeInRight 1s cubic-bezier(.25, 1, .30, 1) both',
         wipeOutLeft: 'wipeOutLeft 0.75s cubic-bezier(.25, 1, .30, 1) both'
       },
@@ -62,6 +63,10 @@ module.exports = {
         fadeOut: {
           '0%': { transform: 'translateX(0)', opacity: '1' },
           '100%': { transform: 'translateX(var(--dynamic-translate))', opacity: '0' },
+        },
+        rotation: {
+          '0%': { transform: 'rotateY(0deg)' },
+          '100%': { transform: 'rotateY(360deg)' },
         },
         wipeInRight: {
           '0%': { opacity: '0', 'clip-path': 'inset(0 100% 0 0)' },
