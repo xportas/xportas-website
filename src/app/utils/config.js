@@ -12,10 +12,10 @@ module.exports = {
   },
 
   navLinks: {
-    About: '#about-section',
-    Experience: '#expecience-section',
-    Work: '#work-section',
-    Contact: '#contact-section'
+    About: '#about',
+    Experience: '#experience',
+    Work: '#work',
+    Contact: '#contact'
   },
 
   skills: {

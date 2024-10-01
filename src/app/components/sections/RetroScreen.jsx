@@ -1,8 +1,8 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { waitForMs, languageOptions } from '../../utils/utils';
-import { PixelatedImage } from '../PixelatedImage';
+import { languageOptions, waitForMs } from '../../utils/utils';
 import AnimatedTyping from '../AnimatedTyping';
+import { PixelatedImage } from '../PixelatedImage';
 
 
 

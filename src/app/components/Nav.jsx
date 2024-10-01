@@ -191,7 +191,7 @@ export default function Nav() {
         <div className={`fixed h-screen w-screen bg-main-gray z-40 ${showNavbar ? 'animate-wipeInRight' : 'animate-wipeOutLeft'} ${navbarHidden ? 'hidden' : ''}`}>
           <nav className="inline-flex items-baseline flex-col font-header text-orange-200 pt-24 p-7 w-full">
             <a
-              href="#about-section"
+              href={navLinks.About}
               className={`text-[3.5vh] w-full mb-2 ${navbarOnHoverState.about ? 'bg-orange-200 text-main-gray' : ''}`}
               onMouseOver={() => handleNavbarOnHover('about', true)} onMouseLeave={() => handleNavbarOnHover('about', false)}>
               <span className="ml-3">
@@ -199,7 +199,7 @@ export default function Nav() {
               </span>
             </a>
             <a
-              href="#experience-section"
+              href={navLinks.Experience}
               className={`text-[3.5vh] w-full mb-2 ${navbarOnHoverState.experience ? 'bg-orange-200 text-main-gray' : ''}`}
               onMouseOver={() => handleNavbarOnHover('experience', true)} onMouseLeave={() => handleNavbarOnHover('experience', false)}>
               <span className="ml-3">
@@ -207,7 +207,7 @@ export default function Nav() {
               </span>
             </a>
             <a
-              href="#work-section"
+              href={navLinks.Work}
               className={`text-[3.5vh] w-full mb-2 ${navbarOnHoverState.work ? 'bg-orange-200 text-main-gray' : ''}`}
               onMouseOver={() => handleNavbarOnHover('work', true)}
               onMouseLeave={() => handleNavbarOnHover('work', false)}>
@@ -215,7 +215,8 @@ export default function Nav() {
                 Work
               </span>
             </a>
-            <a href="#contact-section"
+            <a
+              href={navLinks.Contact}
               className={`text-[3.5vh] w-full mb-2 ${navbarOnHoverState.contact ? 'bg-orange-200 text-main-gray' : ''}`}
               onMouseOver={() => handleNavbarOnHover('contact', true)}
               onMouseLeave={() => handleNavbarOnHover('contact', false)} >

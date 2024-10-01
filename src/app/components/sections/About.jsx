@@ -5,7 +5,7 @@ export default function About() {
 
 
   return (
-    <section className='max-w-5xl mx-auto numbered mb-12 md:mb-24' >
+    <section className='max-w-5xl mx-auto numbered mb-12 md:mb-24' id="about" >
 
       <h3 style={{ '--dynamic-font-size': '-regular-heading' }}
         className={`flex items-center mb-7 font-header text-short-heading ${dashedLine}`}>
