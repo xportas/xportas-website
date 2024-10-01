@@ -87,11 +87,11 @@ module.exports = {
       "range": "July - December 2017",
       "url": "https://www.web.com",
       "duties": {
-        "d1": "Contributed to something in the development of amazing products",
-        "d2": "Contributed to something in the development of amazing products",
-        "d3": "Contributed to something in the development of amazing products",
-        "d4": "Contributed to something in the development of amazing products",
-        "d5": "Contributed to something in the development of amazing products"
+        "d1": "Contributed to something in LIVENSA",
+        "d2": "Contributed to something in LIVENSA",
+        "d3": "Contributed to something in LIVENSA",
+        "d4": "Contributed to something in LIVENSA",
+        "d5": "Contributed to something in LIVENSA"
       }
     },
     "CCPP": {
@@ -102,11 +102,11 @@ module.exports = {
       "range": "July - December 2017",
       "url": "https://www.web.com",
       "duties": {
-        "d1": "Contributed to something in the development of amazing products",
-        "d2": "Contributed to something in the development of amazing products",
-        "d3": "Contributed to something in the development of amazing products",
-        "d4": "Contributed to something in the development of amazing products",
-        "d5": "Contributed to something in the development of amazing products"
+        "d1": "Contributed to something in CCPP",
+        "d2": "Contributed to something in CCPP",
+        "d3": "Contributed to something in CCPP",
+        "d4": "Contributed to something in CCPP",
+        "d5": "Contributed to something in CCPP"
       }
     }
   }

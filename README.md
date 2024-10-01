@@ -32,6 +32,7 @@ TODO: 's -->
 --> Al finalizar, limpiar estilos de tailwind.config que no se usan.
 --> Eliminar y terminar todos los posibles TODO's
 --> Foto retroScreen quitarle el fondo y meterle un filtro amarillo
+--> mucho CSS del global.css se puede convertir a tailwind para que sea más consistente
 
 
 
