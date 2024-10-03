@@ -58,10 +58,10 @@ export const PixelatedImage = forwardRef(
       <canvas
         ref={canvasRef}
         id={id}
-        className={`pixelated-image-root ${className || ''}`}
+        className={`border-2 border-solid border-[#FFAD36] ${className || ''}`}
         width={width}
         height={height}
-        style={style}
+        style={{style, imageRendering: 'pixelated'}}
         {...rest}
       />
     );

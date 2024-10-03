@@ -17,10 +17,10 @@ export default function Home() {
 
   return (
     <>
-      {/* {!currentLanguage ?
+      {!currentLanguage ?
         <RetroScreen setCurrentLanguage={setCurrentLanguage} />
         :
-        <> */}
+        <>
           <Nav />
           {/* <RetroComputer /> */}
           <Hero />
@@ -29,7 +29,7 @@ export default function Home() {
           <Contact />
           <Footer />
         </>
-      // }
-    // </>
+      }
+    </>
   );
 }

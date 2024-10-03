@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { languageOptions, waitForMs } from '../../utils/utils';
 import AnimatedTyping from '../AnimatedTyping';
 import { PixelatedImage } from '../PixelatedImage';
+import PowerOnBtn from '../PowerOnBtn';
 
 
 
@@ -72,29 +73,18 @@ export default function RetroScreen({ setCurrentLanguage }) {
 
 
   return (
-    <div className='h-screen w-screen m-0 p-0 bg-pixel-space-transparent text-retroScreen-txtcolor' id='screen'>
+    <div className="h-screen w-screen m-0 p-0 bg-[url('/images/bg-retro.jpg')] bg-cover bg-center relative text-retroScreen-txtcolor
+    before:content-[''] before:absolute before:bg-[rgba(20,14,8,0.4)] before:z-[1] before:inset-0" id='screen'>
 
       <audio ref={mainThemeAudioRef} src="/audio/main-song.mp3"></audio>
       {!mainThemeAudioON && (
         <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center bg-black z-50">
-          <button
-            className="powerOnOffBtn"
-            onClick={() => handleStartMainThemeAudio()}>
-            <div className="powerOnOffBtn-top">
-              <img
-                src="./images/shutdown-icon.svg"
-                alt="arrow-keys"
-                width={20}
-              />
-            </div>
-            <div className="powerOnOffBtn-bottom"></div>
-            <div className="powerOnOffBtn-base"></div>
-          </button>
+          <PowerOnBtn handleStartMainThemeAudio={handleStartMainThemeAudio} />
         </div>
       )}
 
-{/* TODO: implementar efecto de apagado de pantalla antigua */}
-      <div className={`h-full w-full absolute ${ retroScreenOn ? '' : '' }`} >
+      {/* TODO: implementar efecto de apagado de pantalla antigua */}
+      <div className={`h-full w-full absolute ${retroScreenOn ? '' : ''}`} >
 
         {/* Hero */}
         <div className='flex h-3/5'>
@@ -108,7 +98,10 @@ export default function RetroScreen({ setCurrentLanguage }) {
               <span className='bg-retroScreen-txtcolor py-3 text-4xl font-main'>
                 I'm {' '}
               </span>
-              <AnimatedTyping cursorStyle={'inline-block w-[6px] h-[3rem] bg-retroScreen-txtcolor ml-[3px] animate-blink align-middle mb-3 mr-1'} stop={!retroScreenOn} textStyle={`bg-retroScreen-txtcolor py-3 text-4xl font-main`} />
+              <AnimatedTyping
+                cursorStyle={'inline-block w-[6px] h-[3rem] bg-retroScreen-txtcolor ml-[3px] animate-blink align-middle mb-3 mr-1'}
+                stop={!retroScreenOn}
+                textStyle={`bg-retroScreen-txtcolor py-3 text-4xl font-main`} />
             </div>
             <div>
               <ul className='list-inside list-square'>

@@ -125,7 +125,7 @@ export default function Jobs() {
                   <ul className='p-0 m-0 list-none ' style={{ fontSize: '18px' }}>
                     {Object.values(job.duties).map(dutie => {
                       return (
-                        <li className='relative pl-7 mb-3 before:absolute before:left-0 before:text-green-400 before:content-["▹"]'>
+                        <li className='relative pl-7 mb-3 before:absolute before:left-0 before:text-green-400 before:content-["▹"] animate-wipeInRight'>
                           {dutie}
                         </li>
                       )
