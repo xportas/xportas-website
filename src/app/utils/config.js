@@ -28,7 +28,6 @@ module.exports = {
       TS: 'TypeScript',
       Java: 'Java',
       Py: 'Python',
-      PHP: 'PHP',
       HTML: 'HTML',
       CSS: 'CSS',
     },
@@ -41,14 +40,6 @@ module.exports = {
       IO: 'Ionic',
       TW: 'Tailwind CSS',
       BS: 'Bootstrap',
-      JQ: 'JQuery',
-      Scss: 'Scss',
-      OL: 'OpenLayers',
-    },
-    '🐧 Operating Systems': {
-      Linx: 'Linux',
-      WIN: 'Windows',
-      And: 'Android',
     },
     '🗄️ Databases': {
       POST: 'PostgreSQL',
@@ -60,9 +51,13 @@ module.exports = {
       GH: 'GitHub',
       AZURE: 'Azure DevOps',
     },
-    '⚙️ Others': {
-      DOCK: 'Docker',
+    '🗺️ GIS': {
       GS: 'GeoServer',
+      PGIS: 'PostGIS',
+      OL: 'OpenLayers',
+    },
+    '⚙️ Others': {
+      SCRUM: 'wenas prácticas y eso'
     },
   },
 

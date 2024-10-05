@@ -1,5 +1,6 @@
 import { skills } from "../../utils/config";
 import { dashedLine, underlineEffect } from "../../utils/utils";
+import Skills from '../Skills';
 
 export default function About() {
 
@@ -88,6 +89,7 @@ export default function About() {
             </div>
           );
         }) : null}
+        <Skills />
       </div>
     </section>
   );
