@@ -5,9 +5,8 @@ import { waitForMs } from "../utils/utils";
 import RetroBtn from './RetroBtn';
 
 
-export default function Nav() {
+export default function Nav({screenWidth}) {
 
-  const [screenWidth, setScreenWidth] = useState(0);
   const [showNavbar, setShowNavbar] = useState(false);
   const [navbarHidden, setNavbarHidden] = useState(true);
   const navbarInitialState = { about: false, work: false, experience: false, contact: false };
@@ -17,14 +16,6 @@ export default function Nav() {
     const newNavbarOnHoverState = { ...navbarInitialState, [a]: isHover };
     setNavbarOnHoverState(newNavbarOnHoverState);
   }
-
-  // effect to handle changes in screen width property
-  useEffect(() => {
-    setScreenWidth(window.innerWidth);
-    window.addEventListener('resize', () => {
-      setScreenWidth(window.innerWidth);
-    });
-  }, []);
 
   useEffect(() => {
     const handleNavbar = async () => {

@@ -4,7 +4,7 @@ import { jobs } from '../../utils/config';
 import { dashedLine, linkStyle } from "../../utils/utils";
 
 
-export default function Jobs() {
+export default function Jobs({screenWidth}) {
 
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
@@ -91,7 +91,7 @@ export default function Jobs() {
                 transition-transform ease-in-out duration-200 delay-100
                 max-[480px]:ml-6 max-[600px]:top-auto max-[600px]:bottom-0 max-[600px]:w-full max-[600px]:max-w-[120px] max-[600px]:h-[2px] max-[600px]:ml-12'
             style={{
-              transform: window.innerWidth > 600
+              transform: screenWidth > 600
                 ? `translateY(calc(${activeTabId} * 44px))`
                 : `translateX(calc(${activeTabId} * 120px))`
             }}></div>

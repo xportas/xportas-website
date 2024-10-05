@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import RetroComputer from "./components/RetroComputer";
@@ -14,22 +14,31 @@ import Jobs from "./components/sections/Jobs";
 export default function Home() {
 
   const [currentLanguage, setCurrentLanguage] = useState(null);
+  const [screenWidth, setScreenWidth] = useState(0);
+
+  // effect to handle changes in screen width property
+  useEffect(() => {
+    setScreenWidth(window.innerWidth);
+    window.addEventListener('resize', () => {
+      setScreenWidth(window.innerWidth);
+    });
+  }, []);
 
   return (
     <>
-      {!currentLanguage ?
+      {/* {!currentLanguage ?
         <RetroScreen setCurrentLanguage={setCurrentLanguage} />
         :
-        <>
-          <Nav />
-          {/* <RetroComputer /> */}
-          <Hero />
-          <About />
-          <Jobs />
-          <Contact />
-          <Footer />
-        </>
-      }
+        <> */}
+      <Nav screenWidth={screenWidth} />
+      {/* <RetroComputer /> */}
+      <Hero />
+      <About />
+      <Jobs screenWidth={screenWidth} />
+      <Contact />
+      <Footer />
     </>
+    //   }
+    // </>
   );
 }
