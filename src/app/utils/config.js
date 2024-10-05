@@ -8,7 +8,10 @@ module.exports = {
   links: {
     GitHub: 'https://github.com/xportas',
     LinkedIn: 'https://es.linkedin.com/in/xabierportas',
-    CV: '/cv-xportas.pdf'
+    CV: '/cv-xportas.pdf',
+    License: 'https://github.com/xportas/xportas-website/blob/main/LICENSE',
+    ReadMe: 'https://github.com/xportas/xportas-website/blob/main/README.md',
+    Repository: 'https://github.com/xportas/xportas-website/tree/main'
   },
 
   navLinks: {
