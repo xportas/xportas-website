@@ -31,7 +31,7 @@ module.exports = {
       HTML: 'HTML',
       CSS: 'CSS',
     },
-    'Frameworks & Libraries': {
+    'Frameworks': {
       NET: '.NET CORE',
       EF: 'Entity Framework',
       REACT: 'React',

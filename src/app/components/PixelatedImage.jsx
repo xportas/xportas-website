@@ -35,12 +35,17 @@ export const PixelatedImage = forwardRef(
       img.src = src;
 
       img.onload = () => {
-        const size = blockSize * 0.01;
-        const w = canvas.width * size;
-        const h = canvas.height * size;
+        const tempCanvas = document.createElement('canvas');
+        const tempCtx = tempCanvas.getContext('2d');
 
-        ctx.drawImage(img, 0, 0, w, h);
-        ctx.drawImage(canvas, 0, 0, w, h, 0, 0, canvas.width, canvas.height);
+        tempCanvas.width = canvas.width * blockSize * 0.01;
+        tempCanvas.height = canvas.height * blockSize * 0.01;
+
+        tempCtx.imageSmoothingEnabled = false;
+        tempCtx.drawImage(img, 0, 0, tempCanvas.width, tempCanvas.height);
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(tempCanvas, 0, 0, tempCanvas.width, tempCanvas.height, 0, 0, canvas.width, canvas.height);
 
         if (level && level !== '') {
           ctx.shadowColor = "black";
