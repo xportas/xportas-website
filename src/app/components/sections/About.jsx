@@ -1,6 +1,6 @@
 import { skills } from "../../utils/config";
 import { dashedLine, underlineEffect } from "../../utils/utils";
-import Skills from '../Skills';
+import Skill from '../Skill';
 
 export default function About() {
 
@@ -70,26 +70,30 @@ export default function About() {
       </div>
 
       <div className="block mt-7 md:grid md:grid-cols-3 md:gap-12">
-        {skills ? Object.entries(skills).map(([category, items]) => {
+        {skills && Object.entries(skills).map(([category, items]) => {
           return (
-            <div key={category}>
-              <h6 className="font-header mb-2">{category}</h6>
-              <ul className="grid grid-cols-[repeat(2,minmax(140px,200px))] gap-x-2.5 p-0 mt-5 overflow-hidden list-none">
-                {Object.entries(items).map(([key, value]) => {
-                  return (
-                    <li
-                      key={key}
-                      className="relative mb-2.5 pl-5 text-xs before:content-['▹'] before:absolute before:left-0 before:text-secondary-orange before:text-sm before:leading-3"
-                    >
-                      {value}
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
+            <Skill 
+              url={ `${category}` }
+              back={
+                <div className="flex flex-col justify-center items-center">
+                  <h6 className="font-header mb-2">{category}</h6>
+                  <ul className="grid grid-cols-[repeat(2,minmax(140px,200px))] gap-x-2.5 p-0 mt-5 overflow-hidden list-none">
+                    {Object.entries(items).map(([key, value]) => {
+                      return (
+                        <li
+                          key={key}
+                          className="relative mb-2.5 pl-5 text-xs before:content-['▹'] before:absolute before:left-0 before:text-secondary-orange 
+                          before:text-sm before:leading-3">
+                          {value}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              }>
+            </Skill>
           );
-        }) : null}
-        <Skills />
+        })}
       </div>
     </section>
   );

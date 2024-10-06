@@ -73,7 +73,7 @@ export default function RetroScreen({ setCurrentLanguage }) {
 
 
   return (
-    <div className="h-screen w-screen m-0 p-0 bg-[url('/images/bg-retro.jpg')] bg-cover bg-center relative text-retroScreen-txtcolor
+    <div className="h-screen w-screen m-0 p-0 bg-[url('/images/retro-bg.jpg')] bg-cover bg-center relative text-retroScreen-txtcolor
     before:content-[''] before:absolute before:bg-[rgba(20,14,8,0.4)] before:z-[1] before:inset-0" id='screen'>
 
       <audio ref={mainThemeAudioRef} src="/audio/main-song.mp3"></audio>
@@ -135,7 +135,7 @@ export default function RetroScreen({ setCurrentLanguage }) {
             <div className='flex items-center ml-7'>
               <div className='flex justify-center w-1/6'>
                 <img
-                  src="./images/arrow-keys.svg"
+                  src="./images/arrow-keys-icon.svg"
                   alt="arrow-keys"
                   width={60}
                 />
@@ -149,7 +149,7 @@ export default function RetroScreen({ setCurrentLanguage }) {
             <div className='flex items-center ml-7'>
               <div className='flex justify-center w-1/6'>
                 <img
-                  src="./images/enter-key.svg"
+                  src="./images/enter-key-icon.svg"
                   alt="enter-keys"
                   width={45}
                 />

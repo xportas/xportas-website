@@ -30,14 +30,14 @@ export default function Home() {
         <RetroScreen setCurrentLanguage={setCurrentLanguage} />
         :
         <> */}
-      <Nav screenWidth={screenWidth} />
-      {/* <RetroComputer /> */}
-      <Hero />
-      <About />
-      <Jobs screenWidth={screenWidth} />
-      <Contact />
-      <Footer />
-    </>
+          <Nav screenWidth={screenWidth} />
+          {/* <RetroComputer /> */}
+          <Hero />
+          <About />
+          <Jobs screenWidth={screenWidth} />
+          <Contact />
+          <Footer />
+        </>
     //   }
     // </>
   );

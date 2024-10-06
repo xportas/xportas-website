@@ -22,7 +22,7 @@ module.exports = {
   },
 
   skills: {
-    '💻 Languages': {
+    'Languages': {
       CSharp: 'C#',
       JS: 'JavaScript',
       TS: 'TypeScript',
@@ -31,7 +31,7 @@ module.exports = {
       HTML: 'HTML',
       CSS: 'CSS',
     },
-    '🛠️ Frameworks & Libraries': {
+    'Frameworks & Libraries': {
       NET: '.NET CORE',
       EF: 'Entity Framework',
       REACT: 'React',
@@ -41,22 +41,22 @@ module.exports = {
       TW: 'Tailwind CSS',
       BS: 'Bootstrap',
     },
-    '🗄️ Databases': {
+    'Databases': {
       POST: 'PostgreSQL',
       SQLSer: 'SQL Server',
       MySQL: 'MySQL',
     },
-    '🔄️ Version Control': {
+    'Version Control': {
       GIT: 'Git',
       GH: 'GitHub',
       AZURE: 'Azure DevOps',
     },
-    '🗺️ GIS': {
+    'GIS': {
       GS: 'GeoServer',
       PGIS: 'PostGIS',
       OL: 'OpenLayers',
     },
-    '⚙️ Others': {
+    'Others': {
       SCRUM: 'wenas prácticas y eso'
     },
   },
