@@ -5,7 +5,7 @@ import { waitForMs } from "../utils/utils";
 import RetroBtn from './RetroBtn';
 
 
-export default function Nav({screenWidth}) {
+export default function Nav({ screenWidth }) {
 
   const [showNavbar, setShowNavbar] = useState(false);
   const [navbarHidden, setNavbarHidden] = useState(true);
@@ -54,7 +54,7 @@ export default function Nav({screenWidth}) {
 
             {/* Redirect to LinkedIn btn */}
             <RetroBtn
-              style={{ '--dynamic-duration': `${showNavbar ? '0.9s' : '0.5s'}`, '--dynamic-translate': '-40%' }}
+              style={{ '--dynamic-duration': '0.5s', '--dynamic-translate': '-90%' }}
               styles={`ml-7 px-3 py-1 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''} z-40`}
               darkTheme={(navbarHidden && screenWidth >= 1500) || screenWidth < 1500}
               href={links.LinkedIn}
@@ -70,8 +70,8 @@ export default function Nav({screenWidth}) {
 
             {/* Redirect to my GitHub profile */}
             <RetroBtn
-              style={{ '--dynamic-duration': '0.7s', '--dynamic-translate': '-40%' }}
-              styles={`px-3 py-1 z-40 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
+              style={{ '--dynamic-duration': '0.7s', '--dynamic-translate': '-90%' }}
+              styles={`px-3 py-1 z-40 ${showNavbar ? 'animate-fadeIn ' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
               darkTheme={(navbarHidden && screenWidth >= 1500) || screenWidth < 1500}
               href={links.GitHub}
               target={"_blank"}
@@ -87,7 +87,7 @@ export default function Nav({screenWidth}) {
 
           {/* Download CV btn */}
           <RetroBtn
-            style={{ '--dynamic-duration': `${showNavbar ? '0.5s' : '0.9s'}`, '--dynamic-translate': '-40%' }}
+            style={{ '--dynamic-duration': '0.9s', '--dynamic-translate': '-90%' }}
             styles={`px-3 py-1 z-40 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
             darkTheme={(navbarHidden && screenWidth >= 1500) || screenWidth < 1500}
             href={links.CV}
@@ -99,12 +99,10 @@ export default function Nav({screenWidth}) {
           />
 
           {/* Main nav (for large and traditional screens) */}
-          {screenWidth < 1500 ?
-            null
-            :
+          {!(screenWidth < 1500) &&
             <div className="fixed left-1/2 transform -translate-x-1/2 z-20">
               <nav
-                style={{ '--dynamic-duration': '0.7s', '--dynamic-translate': '-40%' }}
+                style={{ '--dynamic-duration': '1.1s', '--dynamic-translate': '-90%' }}
                 className={`flex font-header text-orange-200 bg-main-gray px-5 py-1 border-solid border-2 border-orange-200 shadow-custom ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
               >
                 <div className="absolute z-30 flex items-center justify-center numbered">
@@ -178,7 +176,7 @@ export default function Nav({screenWidth}) {
 
 
       {/* Multiplataform nav (small screens) */}
-      {screenWidth < 1500 ?
+      {screenWidth < 1500 &&
         <div className={`fixed h-screen w-screen bg-main-gray z-40 ${showNavbar ? 'animate-wipeInRight' : 'animate-wipeOutLeft'} ${navbarHidden ? 'hidden' : ''}`}>
           <nav className="inline-flex items-baseline flex-col font-header text-orange-200 pt-24 p-7 w-full">
             <a
@@ -217,7 +215,7 @@ export default function Nav({screenWidth}) {
             </a>
           </nav>
         </div>
-        : null}
+      }
     </>
   );
 }

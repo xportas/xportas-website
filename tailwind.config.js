@@ -57,12 +57,12 @@ module.exports = {
           '100%': { 'background-position-y': '100vh, 100vh' },
         },
         fadeIn: {
-          '0%': { transform: 'translateX(var(--dynamic-translate))', opacity: '0' },
-          '100%': { transform: 'translateX(0)', opacity: '1' },
+          '0%': { transform: 'translateY(var(--dynamic-translate))', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
         },
         fadeOut: {
-          '0%': { transform: 'translateX(0)', opacity: '1' },
-          '100%': { transform: 'translateX(var(--dynamic-translate))', opacity: '0' },
+          '0%': { transform: 'translateY(0)', opacity: '1' },
+          '100%': { transform: 'translateY(var(--dynamic-translate))', opacity: '0' },
         },
         rotation: {
           '0%': { transform: 'rotateY(0deg)' },
