@@ -6,17 +6,7 @@ Open source project containing the source code of my personal website
 
 
 
-
-==> CONTINUAR TRABAJANDO POR: About.jsx
-
-
-
-
-
-
-
-
-TODO: MEJORAR LOS ESTILOS DEL BOTÓN PRINCIPAL, ON / OFF, Y METER EFECTO DE QUE SE ENCIENDE, SE JODE LA PANTALLA, Y SE APAGA
+TODO: METER EFECTO DE QUE SE ENCIENDE, SE JODE LA PANTALLA, Y SE APAGA
 
 *** BUG: En firefox, cuando cargo la página ya suena la música, controlar para que hasta pulsar el btn on/off no se reproduzca la música
 
@@ -31,8 +21,6 @@ TODO: 's -->
 --> AL FINALIZAR, HACER MULTIPLATAFORMA AL TIEMPO QUE REFACTORIZO LAS CLASES
 --> Al finalizar, limpiar estilos de tailwind.config que no se usan.
 --> Eliminar y terminar todos los posibles TODO's
---> Foto retroScreen quitarle el fondo y meterle un filtro amarillo
---> mucho CSS del global.css se puede convertir a tailwind para que sea más consistente
 
 
 

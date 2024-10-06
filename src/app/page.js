@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from "react";
-import Footer from "./components/Footer";
+import Footer from "./components/sections/Footer";
 import Nav from "./components/Nav";
 import RetroComputer from "./components/RetroComputer";
 import Contact from "./components/sections/Contact";
@@ -26,10 +26,10 @@ export default function Home() {
 
   return (
     <>
-      {/* {!currentLanguage ?
+      {!currentLanguage ?
         <RetroScreen setCurrentLanguage={setCurrentLanguage} />
         :
-        <> */}
+        <>
           <Nav screenWidth={screenWidth} />
           {/* <RetroComputer /> */}
           <Hero />
@@ -38,7 +38,7 @@ export default function Home() {
           <Contact />
           <Footer />
         </>
-    //   }
-    // </>
+      }
+    </>
   );
 }

@@ -1,4 +1,4 @@
-import { links, navLinks } from '../utils/config';
+import { links, navLinks } from '../../utils/config';
 
 export default function Footer() {
   return (
