@@ -77,7 +77,7 @@ export default function About() {
               back={
                 <div className="flex flex-col justify-center items-center">
                   <h6 className="font-header mb-2">{category}</h6>
-                  <ul className="grid grid-cols-[repeat(2,minmax(140px,200px))] gap-x-2.5 p-0 mt-5 overflow-hidden list-none">
+                  <ul className="grid grid-cols-[repeat(2,minmax(50px,150px))] gap-x-2 p-0 mt-5 mx-5 overflow-hidden list-none">
                     {Object.entries(items).map(([key, value]) => {
                       return (
                         <li
