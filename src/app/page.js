@@ -26,10 +26,10 @@ export default function Home() {
 
   return (
     <>
-      {!currentLanguage ?
+      {/* {!currentLanguage ?
         <RetroScreen setCurrentLanguage={setCurrentLanguage} />
         :
-        <>
+        <> */}
           <Nav screenWidth={screenWidth} />
           {/* <RetroComputer /> */}
           <Hero />
@@ -38,7 +38,7 @@ export default function Home() {
           <Contact />
           <Footer />
         </>
-      }
-    </>
+    //   }
+    // </>
   );
 }

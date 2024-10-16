@@ -13,7 +13,7 @@ module.exports = {
         fadeIn: 'fadeIn var(--dynamic-duration) ease-out',
         fadeOut: 'fadeOut var(--dynamic-duration) ease-out forwards',
         rotation: 'rotation 10s infinite linear',
-        wipeInRight: 'wipeInRight 1s cubic-bezier(.25, 1, .30, 1) both',
+        wipeInRight: 'wipeInRight 1.3s cubic-bezier(.25, 1, .30, 1) both',
         wipeOutLeft: 'wipeOutLeft 0.75s cubic-bezier(.25, 1, .30, 1) both'
       },
       backgroundImage: {
@@ -69,8 +69,8 @@ module.exports = {
           '100%': { transform: 'rotateY(360deg)' },
         },
         wipeInRight: {
-          '0%': { opacity: '0', 'clip-path': 'inset(0 100% 0 0)' },
-          '100%': { opacity: '1', 'clip-path': 'inset(0 0 0 0)' },
+          '0%': { opacity: '0', 'clip-path': 'inset(0 100% 0 0)', filter: 'blur(5px)' },
+          '100%': { opacity: '1', 'clip-path': 'inset(0 0 0 0)', filter: 'blur(0)' },
         },
         wipeOutLeft: {
           '0%': { opacity: '1', 'clip-path': 'inset(0 0 0 0)' },

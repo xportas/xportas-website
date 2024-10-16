@@ -4,7 +4,7 @@ import { jobs } from '../../utils/config';
 import { dashedLine, linkStyle } from "../../utils/utils";
 
 
-export default function Jobs({screenWidth}) {
+export default function Jobs({ screenWidth }) {
 
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
@@ -69,11 +69,11 @@ export default function Jobs({screenWidth}) {
           {jobs && Object.entries(jobs).map(([key, job], i) => {
             return (
               <button
-                className={`${linkStyle} flex items-center w-full h-11 py-0 pb-5 border-l-2 border-solid border-main-gray
+                className={`${linkStyle} flex justify-center items-center w-full h-11 py-0 border-l-4 border-solid border-main-gray
                               bg-transparent font-header text-xs text-left whitespace-nowrap max-[768px]:pt-0 max-[768px]:px-4 max-[768px]:pb-[2px]
                               max-[600px]:flex max-[600px]:justify-between max-[600px]:items-center max-[600px]:min-w-32 max-[600px]:py-0
-                              max-[600px]:px-4 max-[600px]:border-l-0 max-[600px]:border-b-2 max-[600px]:border-slate-400 max-[600px]:text-center
-                              hover:bg-slate-400 focus:bg-slate-400 ${activeTabId === i ? 'text-green-500' : 'text-gray-500'}`}
+                              max-[600px]:px-4 max-[600px]:border-l-0 max-[600px]:border-b-2 max-[600px]:border-[#a8947e8b] max-[600px]:text-center
+                              hover:bg-[#a8947e8b] focus:bg-[#a8947e8b] ${activeTabId === i ? 'text-secondary-orange' : 'text-main-gray'}`}
                 key={i}
                 isActive={activeTabId === i}
                 onClick={() => setActiveTabId(i)}
@@ -83,12 +83,12 @@ export default function Jobs({screenWidth}) {
                 tabIndex={activeTabId === i ? '0' : '-1'}
                 aria-selected={activeTabId === i ? true : false}
                 aria-controls={`panel-${i}`}>
-                <span>{job.company}</span>
+                <span className='mx-2'>{job.company}</span>
               </button>
             );
           })}
-          <div className='absolute top-0 left-0 z-20 w-[2px] h-11 rounded bg-green-300
-                transition-transform ease-in-out duration-200 delay-100
+          <div className='absolute top-0 left-0 z-20 w-1 h-11 bg-secondary-orange
+                transition-transform ease-in-out duration-300 delay-100
                 max-[480px]:ml-6 max-[600px]:top-auto max-[600px]:bottom-0 max-[600px]:w-full max-[600px]:max-w-[120px] max-[600px]:h-[2px] max-[600px]:ml-12'
             style={{
               transform: screenWidth > 600
@@ -109,23 +109,25 @@ export default function Jobs({screenWidth}) {
                 aria-hidden={activeTabId !== i}
                 hidden={activeTabId !== i}>
 
-                <h3 className='mb-[2px] font-medium' style={{ fontSize: '22px', lineHeight: 1.3 }}>
+                <h3 className='mb-[2px] font-medium animate-wipeInRight' style={{ fontSize: '22px', lineHeight: 1.3 }}>
                   <span>{job.title}</span>
-                  <span className="text-green-500">
+                  <span className="text-secondary-orange">
                     &nbsp;@&nbsp;
-                    <a href={job.url} className="inline-link">
+                    <a href={job.url}>
                       {job.company}
                     </a>
                   </span>
                 </h3>
 
-                <p className='mb-6 text-[#a8b2d1]' style={{ fontSize: '13px' }}>{job.range}</p>
+                <p className='mb-6 text-secondary-gray animate-wipeInRight' style={{ fontSize: '13px' }}>{job.range}</p>
 
                 <div className='p-0 m-0'>
                   <ul className='p-0 m-0 list-none ' style={{ fontSize: '18px' }}>
-                    {Object.values(job.duties).map(dutie => {
+                    {Object.values(job.duties).map((dutie, i) => {
                       return (
-                        <li className='relative pl-7 mb-3 before:absolute before:left-0 before:text-green-400 before:content-["▹"] animate-wipeInRight'>
+                        <li className={`relative pl-7 mb-3 before:absolute before:left-0 before:text-secondary-orange before:content-["▹"] 
+                                        animate-wipeInRight`}
+                            style={{ animationDelay: `${i * 100}ms` }}>
                           {dutie}
                         </li>
                       )

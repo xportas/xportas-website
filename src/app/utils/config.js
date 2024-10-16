@@ -91,21 +91,6 @@ module.exports = {
         "d4": "Contributed to something in LIVENSA",
         "d5": "Contributed to something in LIVENSA"
       }
-    },
-    "CCPP": {
-      "date": "2024-01-15",
-      "title": "FullStack Developer",
-      "company": "Spin Doctor Pedro Sánchez",
-      "location": "Sarriguren, NA",
-      "range": "July - December 2017",
-      "url": "https://www.web.com",
-      "duties": {
-        "d1": "Contributed to something in CCPP",
-        "d2": "Contributed to something in CCPP",
-        "d3": "Contributed to something in CCPP",
-        "d4": "Contributed to something in CCPP",
-        "d5": "Contributed to something in CCPP"
-      }
     }
   }
 };
