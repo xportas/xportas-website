@@ -1,6 +1,6 @@
-import { links } from '../../utils/config';
-import { underlineEffect } from '../../utils/utils';
-import RetroBtn from '../RetroBtn';
+import RetroBtn from '../components/RetroBtn';
+import { links } from '../utils/config';
+import { underlineEffect } from '../utils/utils';
 
 export default function Hero() {
 

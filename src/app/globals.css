@@ -30,7 +30,7 @@
 
 /* 
 *
-*  SCROLLBARS
+*  SCROLLBARS && CURSOR
 *
 */
 
@@ -44,6 +44,10 @@ body {
 /* For Chrome, Safari, and Opera */
 html::-webkit-scrollbar {
   display: none;
+}
+
+body {
+  cursor: url(../../public/images/retro-cursor.svg), auto;
 }
 
 

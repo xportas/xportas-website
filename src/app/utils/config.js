@@ -25,9 +25,9 @@ module.exports = {
     'Languages': {
       CSharp: 'C#',
       JS: 'JavaScript',
+      Py: 'Python',
       TS: 'TypeScript',
       Java: 'Java',
-      Py: 'Python',
       HTML: 'HTML',
       CSS: 'CSS',
     },
@@ -50,11 +50,13 @@ module.exports = {
       GIT: 'Git',
       GH: 'GitHub',
       AZURE: 'Azure DevOps',
+      GLAB: 'Git Lab',
     },
     'GIS': {
       GS: 'GeoServer',
       PGIS: 'PostGIS',
       OL: 'OpenLayers',
+      QGIS: 'QGIS',
     },
     'Others': {
       SCRUM: 'wenas prácticas y eso'

@@ -1,5 +1,5 @@
-import { personalData } from '../../utils/config';
-import RetroBtn from '../RetroBtn';
+import RetroBtn from '../components/RetroBtn';
+import { personalData } from '../utils/config';
 
 export default function Contact() {
 

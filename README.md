@@ -4,13 +4,15 @@ Open source project containing the source code of my personal website
 
 
 
+COMPORTAMIENTO DEFINITIVO DE LA WEB:
+Btn encendido desencadena un efecto de encendido de pantalla y un loading para que cargue todo. Luego la retro screen y cuando selecciona idioma
+efecto de apagado de pantalla, aparece el modelo 3D con un zoom de la hostia y se va alejando solo, de forma automatizada hasta que está al máximo de lejos y queda como un modelo con el que se puede jugar y nada más, aparecen las scroll bars verticales en el lateral y la web se visualiza normal, pero al hacer scrool el modelo 3D no se va hacia arriba, se va hacia atrás y se desvanece haciéndose cada vez más transparente y el componente Hero se pone por delante.)
 
 
-TODO: METER EFECTO DE QUE SE ENCIENDE, SE JODE LA PANTALLA, Y SE APAGA
 
 *** BUG: En firefox, cuando cargo la página ya suena la música, controlar para que hasta pulsar el btn on/off no se reproduzca la música
 
---> 4265 ms cuando se apaga la pantalla en el audio, cuadrar efecto de apagado en imagen
+
 
 
 IDEAS:

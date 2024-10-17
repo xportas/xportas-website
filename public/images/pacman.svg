@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" shape-rendering="crispEdges" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+  <g transform="rotate(180, 16, 16)">
+    <path d="m9.82 2.66v2.23h-4.47v2.23h-2.23v4.47h4.47v2.23h6.69v2.23h6.69v2.23h-6.69v2.23h-6.69v2.23h-4.47v4.47h2.23v2.23h4.47v2.23h11.48v-2.23h4.47v-2.23h2.23v-4.47h2.23v-11.48h-2.23v-4.47h-2.23v-2.23h-4.47v-2.23h-11.48z" fill="#fff000" stroke="#525252" stroke-width="0.5"/>
+  </g>
+</svg>

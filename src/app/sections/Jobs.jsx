@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { jobs } from '../../utils/config';
-import { dashedLine, linkStyle } from "../../utils/utils";
+import { jobs } from '../utils/config';
+import { dashedLine, linkStyle } from "../utils/utils";
 
 
 export default function Jobs({ screenWidth }) {
@@ -53,14 +53,14 @@ export default function Jobs({ screenWidth }) {
 
 
   return (
-    <section className="max-w-[700px] mx-auto numbered mb-12 md:mb-24" id='experience'>
+    <section className="max-w-[750px] mx-auto numbered mb-12 md:mb-24" id='experience'>
 
       <h3 style={{ '--dynamic-font-size': '-regular-heading' }}
         className={`flex items-center mb-7 font-header text-short-heading ${dashedLine}`}>
         Where I’ve Worked
       </h3>
 
-      <div className="flex max-[600px]:block min-[700px]:min-h-[340px]">
+      <div className="flex max-[600px]:block min-[750px]:min-h-[340px]">
         <div onKeyDown={(e) => onKeyDown(e)}
           className="relative w-max p-0 m-0 list-none z-10
                         max-[480px]:w-[calc(100% + 50px)] max-[480px]:pl-6 max-[480px]:ml-6

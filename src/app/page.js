@@ -1,13 +1,12 @@
 'use client'
-import { useState, useEffect } from "react";
-import Footer from "./components/sections/Footer";
+import { useEffect, useState } from "react";
 import Nav from "./components/Nav";
-import RetroComputer from "./components/RetroComputer";
-import Contact from "./components/sections/Contact";
-import Hero from "./components/sections/Hero";
-import About from "./components/sections/About";
-import RetroScreen from "./components/sections/RetroScreen";
-import Jobs from "./components/sections/Jobs";
+import About from "./sections/About";
+import Contact from "./sections/Contact";
+import Footer from "./sections/Footer";
+import Hero from "./sections/Hero";
+import Jobs from "./sections/Jobs";
+import Projects from "./sections/Projects";
 
 
 
@@ -35,6 +34,7 @@ export default function Home() {
           <Hero />
           <About />
           <Jobs screenWidth={screenWidth} />
+          <Projects />
           <Contact />
           <Footer />
         </>
