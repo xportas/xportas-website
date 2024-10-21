@@ -3,7 +3,7 @@
 export default function PowerOnBtn({ handleStartMainThemeAudio }) {
   return (
     <button
-      className="group appearance-none relative min-w-[5em] box-border cursor-pointer pt-0 pb-3 px-2 border-0"
+      className="group appearance-none relative min-w-[5em] box-border cursor-retroPointer pt-0 pb-3 px-2 border-0"
       style={{ background: 'transparent', font: 'inherit', WebkitAppearance: 'none' }}
       onClick={() => handleStartMainThemeAudio()}
     >

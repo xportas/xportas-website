@@ -36,6 +36,9 @@ module.exports = {
         'retroScreen-bgcolor': "#140E08",
         'retroScreen-txtcolor': "#FFAD36",
       },
+      cursor: {
+        retroPointer: "url(../../public/images/pointer.webp), pointer"
+      },
       fontFamily: {
         'header': ['public-pixel', 'Roboto mono', 'monoespace'],
         'main': ['chill', 'Roboto mono', 'monoespace'],

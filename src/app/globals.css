@@ -47,7 +47,11 @@ html::-webkit-scrollbar {
 }
 
 body {
-  cursor: url(../../public/images/retro-cursor.svg), auto;
+  cursor: url(../../public/images/cursor.webp), auto;
+}
+
+a, button {
+  cursor: url(../../public/images/pointer.webp), pointer;
 }
 
 

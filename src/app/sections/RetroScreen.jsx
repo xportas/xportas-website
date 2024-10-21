@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import AnimatedTyping from '../components/AnimatedTyping';
+import PacManGhosts from '../components/PacManGhosts';
 import { PixelatedImage } from '../components/PixelatedImage';
 import PowerOnBtn from '../components/PowerOnBtn';
 import { languageOptions, waitForMs } from '../utils/utils';
@@ -74,7 +75,10 @@ export default function RetroScreen({ setCurrentLanguage }) {
 
   return (
     <div className="h-screen w-screen m-0 p-0 bg-[url('/images/retro-bg.jpg')] bg-cover bg-center relative text-retroScreen-txtcolor
-    before:content-[''] before:absolute before:bg-[rgba(20,14,8,0.4)] before:z-[1] before:inset-0" id='screen'>
+    before:content-[''] before:absolute before:bg-[rgba(20,14,8,0.4)] before:z-[1] before:inset-0" id='screen'
+      style={{ cursor: mainThemeAudioON && 'url("./images/pacman.svg"), auto' }}>
+
+      {mainThemeAudioON && <PacManGhosts />}
 
       <audio ref={mainThemeAudioRef} src="/audio/main-song.mp3"></audio>
       {!mainThemeAudioON && (
