@@ -1,29 +1,81 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function PacManGhosts() {
+  const [weakGhosts, setWeakGhosts] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
       const ghosts = document.querySelectorAll('.ghost');
+      const safetyMargin = 33;
+
       ghosts.forEach((g, index) => {
         setTimeout(() => {
-          g.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-          g.style.transition = 'transform 0.5s linear';
-        }, index * 200); // Delay each ghost slightly for a trailing effect
+          let offsetX, offsetY;
+
+          if (weakGhosts) {
+            // Ghosts escape, go in the opposite direction of the cursor.
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
+            const ghostRect = g.getBoundingClientRect();
+            const ghostCenterX = ghostRect.left + ghostRect.width / 2;
+            const ghostCenterY = ghostRect.top + ghostRect.height / 2;
+
+            const directionX = ghostCenterX - e.clientX;
+            const directionY = ghostCenterY - e.clientY;
+
+            // Calculates the new position by escaping from the cursor
+            offsetX = ghostCenterX + directionX;
+            offsetY = ghostCenterY + directionY;
+
+            // Limiting to avoid edges and corners
+            offsetX = Math.max(safetyMargin, Math.min(windowWidth - ghostRect.width - safetyMargin, offsetX));
+            offsetY = Math.max(safetyMargin, Math.min(windowHeight - ghostRect.height - safetyMargin, offsetY));
+
+          } else {
+            // Ghosts chase the cursor
+            offsetX = e.clientX;
+            offsetY = e.clientY;
+
+            // Limit to prevent them from moving completely to the edges.
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            const ghostRect = g.getBoundingClientRect();
+            offsetX = Math.max(safetyMargin, Math.min(windowWidth - ghostRect.width - safetyMargin, offsetX));
+            offsetY = Math.max(safetyMargin, Math.min(windowHeight - ghostRect.height - safetyMargin, offsetY));
+          }
+
+          g.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+          g.style.transition = 'transform 0.7s linear';
+        }, index * 200); // Delay to create the dragging effect
       });
     };
 
+    const weakenTheGhosts = () => setWeakGhosts(!weakGhosts);
+
     document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('click', weakenTheGhosts);
+
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('click', weakenTheGhosts);
     };
-  }, []);
+  }, [weakGhosts]);
 
   return (
-    <div className='p-0 m-0' style={{ cursor: 'url("./images/pacman.svg"), auto' }}>
-      <img id="g-red" src="./images/red-ghost.svg" className="ghost absolute w-9 h-9 pointer-events-none transition-transform duration-75 z-30"></img>
-      <img id="g-cian" src="./images/cian-ghost.svg" className="ghost absolute w-9 h-9 pointer-events-none transition-transform duration-75 z-30"></img>
-      <img id="g-pink" src="./images/pink-ghost.svg" className="ghost absolute w-9 h-9 pointer-events-none transition-transform duration-75 z-30"></img>
-    </div>
+    <>
+      <img id="g-red"
+        src={weakGhosts ? "./images/blue-ghost.svg" : "./images/red-ghost.svg"}
+        className="ghost absolute w-9 h-9 pointer-events-none transition-transform duration-75 z-30"
+      />
+      <img id="g-cian"
+        src={weakGhosts ? "./images/blue-ghost.svg" : "./images/cian-ghost.svg"}
+        className="ghost absolute w-9 h-9 pointer-events-none transition-transform duration-75 z-30"
+      />
+      <img id="g-pink"
+        src={weakGhosts ? "./images/blue-ghost.svg" : "./images/pink-ghost.svg"}
+        className="ghost absolute w-9 h-9 pointer-events-none transition-transform duration-75 z-30"
+      />
+    </>
   )
 }
