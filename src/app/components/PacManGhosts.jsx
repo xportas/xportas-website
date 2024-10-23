@@ -6,9 +6,17 @@ export default function PacManGhosts() {
   useEffect(() => {
     const handleMouseMove = (e) => {
       const ghosts = document.querySelectorAll('.ghost');
-      const safetyMargin = 33;
+      const pacmanCursor = document.getElementById('pacman-cursor');
+      const safetyMargin = 15;
+
+      // Pac-Man movement
+      if (pacmanCursor) {
+        pacmanCursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        pacmanCursor.classList.remove('hidden');
+      }
 
       ghosts.forEach((g, index) => {
+        g.classList.remove('hidden');
         setTimeout(() => {
           let offsetX, offsetY;
 
@@ -64,18 +72,24 @@ export default function PacManGhosts() {
 
   return (
     <>
+      <div
+        id="pacman-cursor"
+        className="hidden absolute w-9 h-9 z-20 pointer-events-none"
+        style={{ backgroundImage: 'url(./images/pacman.svg)', backgroundSize: 'cover' }}
+      ></div>
+
       <img id="g-red"
         src={weakGhosts ? "./images/blue-ghost.svg" : "./images/red-ghost.svg"}
-        className="ghost absolute w-9 h-9 pointer-events-none transition-transform duration-75 z-30"
+        className="ghost hidden absolute w-9 h-9 pointer-events-none transition-transform duration-75 z-10"
       />
       <img id="g-cian"
         src={weakGhosts ? "./images/blue-ghost.svg" : "./images/cian-ghost.svg"}
-        className="ghost absolute w-9 h-9 pointer-events-none transition-transform duration-75 z-30"
+        className="ghost hidden absolute w-9 h-9 pointer-events-none transition-transform duration-75 z-10"
       />
       <img id="g-pink"
         src={weakGhosts ? "./images/blue-ghost.svg" : "./images/pink-ghost.svg"}
-        className="ghost absolute w-9 h-9 pointer-events-none transition-transform duration-75 z-30"
+        className="ghost hidden absolute w-9 h-9 pointer-events-none transition-transform duration-75 z-10"
       />
     </>
-  )
+  );
 }

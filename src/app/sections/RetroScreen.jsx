@@ -74,9 +74,8 @@ export default function RetroScreen({ setCurrentLanguage }) {
 
 
   return (
-    <div className="h-screen w-screen m-0 p-0 bg-[url('/images/retro-bg.jpg')] bg-cover bg-center relative text-retroScreen-txtcolor
-    before:content-[''] before:absolute before:bg-[rgba(20,14,8,0.4)] before:z-[1] before:inset-0" id='screen'
-      style={{ cursor: mainThemeAudioON && 'url("./images/pacman.svg"), auto' }}>
+    <div className={`h-screen w-screen m-0 p-0 bg-[url('/images/retro-bg.jpg')] bg-cover bg-center relative text-retroScreen-txtcolor
+    before:content-[''] before:absolute before:bg-[rgba(20,14,8,0.4)] before:z-[1] before:inset-0 ${mainThemeAudioON && 'cursor-none'}`} id='screen' >
 
       {mainThemeAudioON && <PacManGhosts />}
 
