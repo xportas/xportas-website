@@ -8,6 +8,7 @@ import Hero from "./sections/Hero";
 import Jobs from "./sections/Jobs";
 import Projects from "./sections/Projects";
 import RetroScreen from "./sections/RetroScreen";
+import RetroComputer from "./components/RetroComputer";
 
 
 
@@ -31,7 +32,7 @@ export default function Home() {
         :
         <>
           <Nav screenWidth={screenWidth} />
-          {/* <RetroComputer /> */}
+          <RetroComputer />
           <Hero />
           <About />
           <Jobs screenWidth={screenWidth} />

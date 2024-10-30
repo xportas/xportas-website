@@ -30,6 +30,42 @@
 
 /* 
 *
+*  SCREEN TURN ON / SHUT OFF ANIMATIONS
+*
+*/
+
+.turningOnAnimation {
+  animation: expandFromDot 0.6s forwards, expandFromLine 0.25s 0.6s forwards;
+}
+
+@keyframes expandFromDot {
+  0% { transform: scaleY(0) scaleX(0); opacity: 0; border-radius: 5%; }
+  100% { transform: scaleY(0.01) scaleX(1); opacity: 1; }
+}
+
+@keyframes expandFromLine {
+  0% { transform: scaleY(0.01); }
+  100% { transform: scaleY(1); }
+}
+
+.shuttingOffAnimation {
+  animation: shrinkToLine 0.6s forwards, shrinkToDot 0.25s 0.6s forwards;
+}
+
+@keyframes shrinkToLine {
+  0% { transform: scaleY(1); }
+  100% { transform: scaleY(0.01); }
+}
+
+@keyframes shrinkToDot {
+  0% { transform: scaleY(0.01) scaleX(1); }
+  100% { transform: scaleY(0) scaleX(0); opacity: 0; border-radius: 5%; }
+}
+
+
+
+/* 
+*
 *  SCROLLBARS && CURSOR
 *
 */
