@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -7,6 +7,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 export default function RetroComputer() {
   const mountRef = useRef(null);
   const controlsRef = useRef(null);
+  const [disappear, setDisappear] = useState(false);
 
   useEffect(() => {
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -24,13 +25,15 @@ export default function RetroComputer() {
     controls.enablePan = false;
     controls.minDistance = 10;
     controls.maxDistance = 90;
-    controls.minPolarAngle = 1;
-    controls.maxPolarAngle = 1.3;
+    controls.minPolarAngle = 1.23;
+    controls.maxPolarAngle = 1.32;
 
     const currentAzimuthAngle = controls.getAzimuthalAngle();
     const rotationRange = Math.PI / 10;
     controls.minAzimuthAngle = currentAzimuthAngle - rotationRange / 2;
     controls.maxAzimuthAngle = currentAzimuthAngle + rotationRange / 4;
+
+    controls.rotateSpeed = 0.1;
 
     controls.autoRotate = false;
     controls.target = new THREE.Vector3(0, 4, 0);
@@ -81,6 +84,7 @@ export default function RetroComputer() {
       if (camera.position.length() >= controls.maxDistance) {
         event.preventDefault();
         window.scrollBy(0, event.deltaY);
+        setDisappear(true);
       }
     }
 
@@ -94,7 +98,7 @@ export default function RetroComputer() {
   }, []);
 
   return (
-    <div>
+    <div className={`${disappear ? 'fixed top-0 left-0 w-full h-full flex justify-center items-center opacity-45 z-[-1]' : 'flex justify-center items-center' }`}>
       <div ref={mountRef}></div>
     </div>
   );
