@@ -1,11 +1,14 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { jobs } from '../utils/config';
 import { dashedLine, linkStyle } from "../utils/utils";
 
 
 export default function Jobs({ screenWidth }) {
-
+  const { ref: jobsRef, inView } = useInView({
+    threshold: 0.1,
+  });
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
@@ -53,7 +56,9 @@ export default function Jobs({ screenWidth }) {
 
 
   return (
-    <section className="max-w-[750px] mx-auto numbered mb-12 md:mb-24" id='experience'>
+    <section ref={jobsRef}
+      className={`max-w-[750px] mx-auto numbered mb-12 md:mb-24 transition-all duration-300 ease-in ${inView ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
+      id='experience'>
 
       <h3 style={{ '--dynamic-font-size': '-regular-heading' }}
         className={`flex items-center mb-7 font-header text-short-heading ${dashedLine}`}>
@@ -127,7 +132,7 @@ export default function Jobs({ screenWidth }) {
                       return (
                         <li className={`relative pl-7 mb-3 before:absolute before:left-0 before:text-secondary-orange before:content-["▹"] 
                                         animate-wipeInRight`}
-                            style={{ animationDelay: `${i * 100}ms` }}>
+                          style={{ animationDelay: `${i * 100}ms` }}>
                           {dutie}
                         </li>
                       )

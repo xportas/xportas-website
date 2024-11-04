@@ -1,12 +1,17 @@
+import { useInView } from 'react-intersection-observer';
+import Skill from '../components/Skill';
 import { skills } from "../utils/config";
 import { dashedLine, underlineEffect } from "../utils/utils";
-import Skill from '../components/Skill';
 
 export default function About() {
-
+  const { ref: aboutRef, inView } = useInView({
+    threshold: 0.07,
+  });
 
   return (
-    <section className='max-w-5xl mx-auto numbered mb-12 md:mb-24' id="about" >
+    <section ref={aboutRef}
+      className={`max-w-5xl mx-auto numbered mb-12 md:mb-24 transition-all duration-300 ease-in ${inView ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
+      id="about" >
 
       <h3 style={{ '--dynamic-font-size': '-regular-heading' }}
         className={`flex items-center mb-7 font-header text-short-heading ${dashedLine}`}>
@@ -72,8 +77,8 @@ export default function About() {
       <div className="block mt-7 md:grid md:grid-cols-3 md:gap-12">
         {skills && Object.entries(skills).map(([category, items]) => {
           return (
-            <Skill 
-              url={ `${category}` }
+            <Skill
+              url={`${category}`}
               back={
                 <div className="flex flex-col justify-center items-center">
                   <h6 className="font-header mb-2">{category}</h6>

@@ -1,13 +1,17 @@
+import { useInView } from 'react-intersection-observer';
 import RetroBtn from '../components/RetroBtn';
 import { personalData } from '../utils/config';
 
 export default function Contact() {
-
+  const { ref: contactRef, inView } = useInView({
+    threshold: 0.05,
+  });
 
   return (
     <section
+      ref={contactRef}
       style={{ '--dynamic-font-size': '-short-heading' }}
-      className="block text-center max-w-[600px] mx-auto mb-12 md:mb-24 numbered"
+      className={`block text-center max-w-[600px] mx-auto mb-12 md:mb-24 numbered transition-all duration-300 ease-in ${inView ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
       id='contact'
     >
       <h3>

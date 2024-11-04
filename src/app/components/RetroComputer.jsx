@@ -98,7 +98,7 @@ export default function RetroComputer() {
   }, []);
 
   return (
-    <div className={`${disappear ? 'fixed top-0 left-0 w-full h-full flex justify-center items-center opacity-45 z-[-1]' : 'flex justify-center items-center' }`}>
+    <div className={`${disappear ? '' : ''}`}>
       <div ref={mountRef}></div>
     </div>
   );
