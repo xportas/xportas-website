@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import Nav from "./components/Nav";
+import RetroComputer from "./components/RetroComputer";
 import About from "./sections/About";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
@@ -8,7 +9,6 @@ import Hero from "./sections/Hero";
 import Jobs from "./sections/Jobs";
 import Projects from "./sections/Projects";
 import RetroScreen from "./sections/RetroScreen";
-import RetroComputer from "./components/RetroComputer";
 
 
 

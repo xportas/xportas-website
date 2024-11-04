@@ -74,7 +74,7 @@ export default function RetroScreen({ setCurrentLanguage }) {
 
   return (
     <div className='absolute top-0 left-0 w-full h-full flex justify-center items-center'>
-      
+
       {/* PowerOnBtn --> "turning ON" the web */}
       {!mainThemeAudioON && (
         <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center bg-black z-50">
@@ -82,123 +82,123 @@ export default function RetroScreen({ setCurrentLanguage }) {
         </div>
       )}
 
-    <div className={`h-screen w-screen m-0 p-0 bg-[url('/images/retro-bg.jpg')] bg-cover bg-center relative text-retroScreen-txtcolor
+      <div className={`h-screen w-screen m-0 p-0 bg-[url('/images/retro-bg.jpg')] bg-cover bg-center relative text-retroScreen-txtcolor
                     before:content-[''] before:absolute before:bg-[rgba(20,14,8,0.4)] before:z-[1] before:inset-0 
-                    ${mainThemeAudioON && 'turningOnAnimation cursor-none'} ${!retroScreenOn && 'shuttingOffAnimation'}`} id='screen' >
+                    ${mainThemeAudioON && 'cursor-none'} ${!retroScreenOn && 'shuttingOffAnimation'}`} id='screen' >
+        {/* ${mainThemeAudioON && 'turningOnAnimation cursor-none'} */}
 
-      {retroScreenOn ? // Necessary for the shutdown effect, hides elements of the screen
+        {retroScreenOn ? // Necessary for the shutdown effect, hides elements of the screen
 
-        <>
-          {mainThemeAudioON && <PacManGhosts />}
-          <audio ref={mainThemeAudioRef} src="/audio/main-song.mp3"></audio>
+          <>
+            {mainThemeAudioON && <PacManGhosts />}
+            <audio ref={mainThemeAudioRef} src="/audio/main-song.mp3"></audio>
 
-          {/* TODO: implementar efecto de apagado de pantalla antigua */}
-          <div className={`h-full w-full absolute`} >
+            <div className={`h-full w-full absolute`} >
 
-            {/* Hero */}
-            <div className='flex h-3/5'>
-              <div className='flex flex-col justify-center content-center space-y-12 font-header py-20 pl-20 w-1/2'>
-                <div>
-                  <p className='text-3xl'>
-                    Hi there,
-                  </p>
+              {/* Hero */}
+              <div className='flex h-3/5'>
+                <div className='flex flex-col justify-center content-center space-y-12 font-header py-20 pl-20 w-1/2'>
+                  <div>
+                    <p className='text-3xl'>
+                      Hi there,
+                    </p>
+                  </div>
+                  <div className='inline-block text-retroScreen-bgcolor'>
+                    <span className='bg-retroScreen-txtcolor py-3 text-4xl font-main'>
+                      I'm {' '}
+                    </span>
+                    <AnimatedTyping
+                      cursorStyle={'inline-block w-[6px] h-[3rem] bg-retroScreen-txtcolor ml-[3px] animate-blink align-middle mb-3 mr-1'}
+                      stop={!retroScreenOn}
+                      textStyle={`bg-retroScreen-txtcolor py-3 text-4xl font-main`} />
+                  </div>
+                  <div>
+                    <ul className='list-inside list-square'>
+                      <li> Full Stack Developer </li>
+                      <li className='mt-2'> Specialization in GIS </li>
+                    </ul>
+                  </div>
                 </div>
-                <div className='inline-block text-retroScreen-bgcolor'>
-                  <span className='bg-retroScreen-txtcolor py-3 text-4xl font-main'>
-                    I'm {' '}
-                  </span>
-                  <AnimatedTyping
-                    cursorStyle={'inline-block w-[6px] h-[3rem] bg-retroScreen-txtcolor ml-[3px] animate-blink align-middle mb-3 mr-1'}
-                    stop={!retroScreenOn}
-                    textStyle={`bg-retroScreen-txtcolor py-3 text-4xl font-main`} />
-                </div>
-                <div>
-                  <ul className='list-inside list-square'>
-                    <li> Full Stack Developer </li>
-                    <li className='mt-2'> Specialization in GIS </li>
-                  </ul>
+
+
+                {/* xportas logo image */}
+                <div className='flex flex-1 justify-center content-center'>
+                  <PixelatedImage
+                    src="/images/xportas-logo.webp"
+                    blockSize={100}
+                    className='img-blur rounded-full h-full mt-10 animate-rotation'
+                  />
                 </div>
               </div>
 
 
-              {/* xportas logo image */}
-              <div className='flex flex-1 justify-center content-center'>
-                <PixelatedImage
-                  src="/images/xportas-logo.webp"
-                  blockSize={100}
-                  className='img-blur rounded-full h-full mt-10 animate-rotation'
-                />
+              {/* Language selector */}
+              <div className='flex place-content-around h-2/5'>
+                <div className='flex flex-col w-2/6 mx-10 mt-3 space-y-5'>
+
+                  <div className='ml-1'>
+                    <span className='text-2xl'>
+                      Select one of my languages:
+                    </span>
+                  </div>
+                  <div className='flex items-center ml-7'>
+                    <div className='flex justify-center w-1/6'>
+                      <img
+                        src="./images/arrow-keys-icon.svg"
+                        alt="arrow-keys"
+                        width={60}
+                      />
+                    </div>
+                    <div className='ml-3 w-5/6'>
+                      <span>
+                        Move between the options
+                      </span>
+                    </div>
+                  </div>
+                  <div className='flex items-center ml-7'>
+                    <div className='flex justify-center w-1/6'>
+                      <img
+                        src="./images/enter-key-icon.svg"
+                        alt="enter-keys"
+                        width={45}
+                      />
+                    </div>
+                    <div className='ml-3 w-5/6'>
+                      <span>
+                        Select language
+                      </span>
+                    </div>
+                  </div>
+
+                </div>
+                {languageOptions.map((lang) => (
+                  <PixelatedImage
+                    blockSize={10}
+                    key={lang.value}
+                    src={lang.flag}
+                    alt={lang.value}
+                    level={lang.level}
+                    className={`rounded-full h-3/6 m-auto opacity-95 ${selectedLang === lang.value ? 'shadow-lang-glow' : ''}`}
+                  />
+                ))}
               </div>
             </div>
 
-
-            {/* Language selector */}
-            <div className='flex place-content-around h-2/5'>
-              <div className='flex flex-col w-2/6 mx-10 mt-3 space-y-5'>
-
-                <div className='ml-1'>
-                  <span className='text-2xl'>
-                    Select one of my languages:
-                  </span>
-                </div>
-                <div className='flex items-center ml-7'>
-                  <div className='flex justify-center w-1/6'>
-                    <img
-                      src="./images/arrow-keys-icon.svg"
-                      alt="arrow-keys"
-                      width={60}
-                    />
-                  </div>
-                  <div className='ml-3 w-5/6'>
-                    <span>
-                      Move between the options
-                    </span>
-                  </div>
-                </div>
-                <div className='flex items-center ml-7'>
-                  <div className='flex justify-center w-1/6'>
-                    <img
-                      src="./images/enter-key-icon.svg"
-                      alt="enter-keys"
-                      width={45}
-                    />
-                  </div>
-                  <div className='ml-3 w-5/6'>
-                    <span>
-                      Select language
-                    </span>
-                  </div>
-                </div>
-
-              </div>
-              {languageOptions.map((lang) => (
-                <PixelatedImage
-                  blockSize={10}
-                  key={lang.value}
-                  src={lang.flag}
-                  alt={lang.value}
-                  level={lang.level}
-                  className={`rounded-full h-3/6 m-auto opacity-95 ${selectedLang === lang.value ? 'shadow-lang-glow' : ''}`}
-                />
-              ))}
+            {/* CTR noise */}
+            <div
+              className={`h-full w-full z-30 relative animate-crtScreen ${retroScreenOn ? 'opacity-45' : 'opacity-0'}`}
+              id='crt-noise'
+              style={{ background: `linear-gradient(to bottom, transparent, #aaa4, #8881, #6664, #4445, #2228, #4443, transparent), repeating-linear-gradient(transparent 0 2px, #25242950 2px 4px)` }}>
             </div>
-          </div>
+          </>
 
-          {/* CTR noise */}
-          <div
-            className={`h-full w-full z-30 relative animate-crtScreen ${retroScreenOn ? 'opacity-45' : 'opacity-0'}`}
-            id='crt-noise'
-            style={{ background: `linear-gradient(to bottom, transparent, #aaa4, #8881, #6664, #4445, #2228, #4443, transparent), repeating-linear-gradient(transparent 0 2px, #25242950 2px 4px)` }}>
-          </div>
-        </>
+          :
 
-        :
-
-        <>
-          <div className='h-full w-full bg-white'></div>
-        </>
-      }
-    </div>
+          <>
+            <div className={`${!retroScreenOn ? 'bg-white fixed inset-0 z-[999]' : ''}`} ></div>
+          </>
+        }
+      </div>
     </div>
   );
 }
