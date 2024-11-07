@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-export default function RetroComputer({ hiddenRetCompState }) {
+export default function RetroComputer({ setHiddenRetroComputer, scrollFactor }) {
   const mountRef = useRef(null);
   const controlsRef = useRef(null);
 
@@ -83,7 +83,7 @@ export default function RetroComputer({ hiddenRetCompState }) {
       if (camera.position.length() >= controls.maxDistance) {
         event.preventDefault();
         window.scrollBy(0, event.deltaY);
-        hiddenRetCompState.setHiddenRetroComputer(true);
+        setHiddenRetroComputer(true);
       }
     }
 
@@ -97,7 +97,12 @@ export default function RetroComputer({ hiddenRetCompState }) {
   }, []);
 
   return (
-    <div className={`transition-all duration-1000 ease-in ${hiddenRetCompState.hiddenRetroComputer ? 'sticky opacity-0' : 'opacity-100'}`}>
+    <div
+      className={"fixed top-0 left-0 transition-all duration-300 ease-out"}
+      style={{
+        opacity: 1 - scrollFactor * 4.7
+      }}
+    >
       <div ref={mountRef}></div>
     </div>
   );
