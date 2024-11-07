@@ -1,17 +1,38 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
 import { jobs } from '../utils/config';
 import { dashedLine, linkStyle } from "../utils/utils";
 
 
 export default function Jobs({ screenWidth }) {
-  const { ref: jobsRef, inView } = useInView({
-    threshold: 0.1,
-  });
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);
+  const jobsRef = useRef(null);
+  const [rendered, setRendered] = useState(false);
+
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !rendered) {
+          setRendered(true);
+          observer.disconnect(); // Disconnects the observer after the first intersection
+        }
+      },
+      { threshold: 0.07 }
+    );
+
+    if (jobsRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => {
+      if (jobsRef.current) {
+        observer.disconnect();
+      }
+    };
+  }, [rendered]);
 
 
   const focusTab = () => {
@@ -57,7 +78,7 @@ export default function Jobs({ screenWidth }) {
 
   return (
     <section ref={jobsRef}
-      className={`max-w-[750px] mx-auto numbered mb-12 md:mb-24 transition-all duration-300 ease-in ${inView ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
+      className={`max-w-[750px] mx-auto numbered mb-12 md:mb-24 transition-all duration-300 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
       id='experience'>
 
       <h3 style={{ '--dynamic-font-size': '-regular-heading' }}

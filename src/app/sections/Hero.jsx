@@ -1,17 +1,39 @@
-import { useInView } from 'react-intersection-observer';
+import { useEffect, useRef, useState } from 'react';
 import RetroBtn from '../components/RetroBtn';
 import { links } from '../utils/config';
 import { underlineEffect } from '../utils/utils';
 
 export default function Hero() {
-  const { ref: heroRef, inView } = useInView({
-    threshold: 0.25,
-  });
+  const heroRef = useRef(null);
+  const [rendered, setRendered] = useState(false);
+
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !rendered) {
+          setRendered(true);
+          observer.disconnect(); // Disconnects the observer after the first intersection
+        }
+      },
+      { threshold: 0.07 }
+    );
+
+    if (heroRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => {
+      if (heroRef.current) {
+        observer.disconnect();
+      }
+    };
+  }, [rendered]);
 
   return (
     <section
       ref={heroRef}
-      className={`flex flex-col items-start justify-center min-h-screen mx-52 transition-all duration-300 ease-in ${inView ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
+      className={`flex flex-col items-start justify-center min-h-screen mx-52 transition-all duration-300 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
     >
       <h3 className="text-xl text-secondary-orange">Hi, my name is</h3>
       <h1 className="text-big-heading mt-2">Xabier Portas.</h1>

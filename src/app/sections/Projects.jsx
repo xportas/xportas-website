@@ -1,15 +1,37 @@
-import { useInView } from 'react-intersection-observer';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Projects() {
-  const { ref: projectsRef, inView } = useInView({
-    threshold: 0.1,
-  });
+  const projectsRef = useRef(null);
+  const [rendered, setRendered] = useState(false);
+
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !rendered) {
+          setRendered(true);
+          observer.disconnect(); // Disconnects the observer after the first intersection
+        }
+      },
+      { threshold: 0.07 }
+    );
+
+    if (projectsRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => {
+      if (projectsRef.current) {
+        observer.disconnect();
+      }
+    };
+  }, [rendered]);
 
   // a --> relative z-10
 
   return (
     <section ref={projectsRef}
-      className={`numbered mb-12 md:mb-24 transition-all duration-500 ease-in ${inView ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
+      className={`numbered mb-12 md:mb-24 transition-all duration-500 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
       id='work'>
       <h3 /*ref={revealTitle}*/>
         Some Things I’ve Built
