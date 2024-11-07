@@ -16,7 +16,7 @@ export default function Hero() {
           observer.disconnect(); // Disconnects the observer after the first intersection
         }
       },
-      { threshold: 0.07 }
+      { threshold: 0.25 }
     );
 
     if (heroRef.current) {
@@ -33,7 +33,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className={`flex flex-col items-start justify-center min-h-screen mx-52 transition-all duration-300 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
+      className={`flex flex-col items-start justify-center min-h-screen mx-52 transition-all duration-500 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
     >
       <h3 className="text-xl text-secondary-orange">Hi, my name is</h3>
       <h1 className="text-big-heading mt-2">Xabier Portas.</h1>

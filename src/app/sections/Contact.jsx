@@ -15,7 +15,7 @@ export default function Contact() {
           observer.disconnect(); // Disconnects the observer after the first intersection
         }
       },
-      { threshold: 0.07 }
+      { threshold: 0.05 }
     );
 
     if (contactRef.current) {
@@ -33,7 +33,7 @@ export default function Contact() {
     <section
       ref={contactRef}
       style={{ '--dynamic-font-size': '-short-heading' }}
-      className={`block text-center max-w-[600px] mx-auto mb-12 md:mb-24 numbered transition-all duration-300 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
+      className={`block text-center max-w-[600px] mx-auto mb-12 md:mb-24 numbered transition-all duration-500 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
       id='contact'
     >
       <h3>

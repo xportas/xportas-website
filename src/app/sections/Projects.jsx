@@ -13,7 +13,7 @@ export default function Projects() {
           observer.disconnect(); // Disconnects the observer after the first intersection
         }
       },
-      { threshold: 0.07 }
+      { threshold: 0.1 }
     );
 
     if (projectsRef.current) {

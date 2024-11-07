@@ -16,6 +16,7 @@ export default function Home() {
 
   const [currentLanguage, setCurrentLanguage] = useState(null);
   const [screenWidth, setScreenWidth] = useState(0);
+  const [hiddenRetroComputer, setHiddenRetroComputer] = useState(false);
 
   // effect to handle changes in screen width property
   useEffect(() => {
@@ -31,8 +32,8 @@ export default function Home() {
         <RetroScreen setCurrentLanguage={setCurrentLanguage} />
         :
         <>
-          <Nav screenWidth={screenWidth} />
-          <RetroComputer />
+          <Nav screenWidth={screenWidth} hiddenRetroComputer={hiddenRetroComputer} />
+          <RetroComputer hiddenRetCompState={{ hiddenRetroComputer, setHiddenRetroComputer }} />
           <Hero />
           <About />
           <Jobs screenWidth={screenWidth} />

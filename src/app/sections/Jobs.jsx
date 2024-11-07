@@ -20,7 +20,7 @@ export default function Jobs({ screenWidth }) {
           observer.disconnect(); // Disconnects the observer after the first intersection
         }
       },
-      { threshold: 0.07 }
+      { threshold: 0.1 }
     );
 
     if (jobsRef.current) {
@@ -78,7 +78,7 @@ export default function Jobs({ screenWidth }) {
 
   return (
     <section ref={jobsRef}
-      className={`max-w-[750px] mx-auto numbered mb-12 md:mb-24 transition-all duration-300 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
+      className={`max-w-[750px] mx-auto numbered mb-12 md:mb-24 transition-all duration-500 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
       id='experience'>
 
       <h3 style={{ '--dynamic-font-size': '-regular-heading' }}

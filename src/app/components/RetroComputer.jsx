@@ -1,13 +1,12 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-export default function RetroComputer() {
+export default function RetroComputer({ hiddenRetCompState }) {
   const mountRef = useRef(null);
   const controlsRef = useRef(null);
-  const [disappear, setDisappear] = useState(false);
 
   useEffect(() => {
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -84,7 +83,7 @@ export default function RetroComputer() {
       if (camera.position.length() >= controls.maxDistance) {
         event.preventDefault();
         window.scrollBy(0, event.deltaY);
-        setDisappear(true);
+        hiddenRetCompState.setHiddenRetroComputer(true);
       }
     }
 
@@ -98,7 +97,7 @@ export default function RetroComputer() {
   }, []);
 
   return (
-    <div className={`${disappear ? '' : ''}`}>
+    <div className={`transition-all duration-1000 ease-in ${hiddenRetCompState.hiddenRetroComputer ? 'sticky opacity-0' : 'opacity-100'}`}>
       <div ref={mountRef}></div>
     </div>
   );

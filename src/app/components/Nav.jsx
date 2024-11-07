@@ -5,7 +5,7 @@ import { waitForMs } from "../utils/utils";
 import RetroBtn from './RetroBtn';
 
 
-export default function Nav({ screenWidth }) {
+export default function Nav({ hiddenRetroComputer, screenWidth }) {
 
   const [showNavbar, setShowNavbar] = useState(false);
   const [navbarHidden, setNavbarHidden] = useState(true);
@@ -38,7 +38,7 @@ export default function Nav({ screenWidth }) {
 
             {/* Show / hide nav button */}
             <RetroBtn
-              styles={`px-5 py-1 z-50`}
+              styles={`px-5 py-1 z-50 transition-all duration-1000 ease-in ${!hiddenRetroComputer ? 'pointer-events-none opacity-0 blur-sm' : 'pointer-events-auto opacity-100 blur-0'}`}
               darkTheme={!navbarHidden && screenWidth < 1500}
               effect={() => setShowNavbar(!showNavbar)}
               child={
