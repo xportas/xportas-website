@@ -38,7 +38,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
 
             {/* Show / hide nav button */}
             <RetroBtn
-              styles={`px-5 py-1 z-50 transition-all duration-1000 ease-in ${!hiddenRetroComputer ? 'pointer-events-none opacity-0 blur-sm' : 'pointer-events-auto opacity-100 blur-0'}`}
+              styles={`px-5 py-1 z-50 ${!hiddenRetroComputer ? 'pointer-events-none opacity-0 blur-sm' : 'pointer-events-auto opacity-100 blur-0'}`}
               darkTheme={!navbarHidden && screenWidth < 1500}
               effect={() => setShowNavbar(!showNavbar)}
               child={
