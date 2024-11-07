@@ -24,7 +24,7 @@ export default function Jobs({ screenWidth }) {
     );
 
     if (jobsRef.current) {
-      observer.observe(aboutRef.current);
+      observer.observe(jobsRef.current);
     }
 
     return () => {

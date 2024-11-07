@@ -20,7 +20,7 @@ export default function Hero() {
     );
 
     if (heroRef.current) {
-      observer.observe(aboutRef.current);
+      observer.observe(heroRef.current);
     }
 
     return () => {

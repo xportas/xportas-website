@@ -17,7 +17,7 @@ export default function Projects() {
     );
 
     if (projectsRef.current) {
-      observer.observe(aboutRef.current);
+      observer.observe(projectsRef.current);
     }
 
     return () => {

@@ -19,7 +19,7 @@ export default function Contact() {
     );
 
     if (contactRef.current) {
-      observer.observe(aboutRef.current);
+      observer.observe(contactRef.current);
     }
 
     return () => {
