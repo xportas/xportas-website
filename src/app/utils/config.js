@@ -1,4 +1,11 @@
 module.exports = {
+  navLinks: {
+    About: '#about',
+    Experience: '#experience',
+    Work: '#work',
+    Contact: '#contact'
+  },
+
   personalData: {
     name: 'Xabier Portas',
     alias: 'xportas',
@@ -12,13 +19,6 @@ module.exports = {
     License: 'https://github.com/xportas/xportas-website/blob/main/LICENSE',
     ReadMe: 'https://github.com/xportas/xportas-website/blob/main/README.md',
     Repository: 'https://github.com/xportas/xportas-website/tree/main'
-  },
-
-  navLinks: {
-    About: '#about',
-    Experience: '#experience',
-    Work: '#work',
-    Contact: '#contact'
   },
 
   skills: {
@@ -93,6 +93,21 @@ module.exports = {
         "d4": "Contributed to something in LIVENSA",
         "d5": "Contributed to something in LIVENSA"
       }
+    }
+  },
+
+  projects: {
+    website: {
+      title: "XPortas Website",
+      cover: "../../../public/images/retro-bg2.webp",
+      github: "https://github.com/xportas/xportas-website",
+      tech: {
+        t1: "React",
+        t2: "Tailwind CSS",
+        t3: "Three.js",
+        t4: "CONTINUAR CON LAS DEMÁS SKILLS"
+      },
+      description: "Esto es mi portfolio y todo lo demás que tengo que contar aquí a modo de introducción jalsdkfj asdlfkjsd flñaskdjf ñlasdkfj añsldkfj sdfl fasdf asdf asd"
     }
   }
 };
