@@ -78,15 +78,15 @@ export default function Jobs({ screenWidth }) {
 
   return (
     <section ref={jobsRef}
-      className={`max-w-[750px] mx-auto numbered mb-12 md:mb-24 transition-all duration-500 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
+      className={`numbered mb-12 md:mb-24 transition-all duration-500 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
       id='experience'>
 
       <h3 style={{ '--dynamic-font-size': '-regular-heading' }}
-        className={`flex items-center mb-7 font-header text-short-heading ${dashedLine}`}>
+        className={`flex items-center justify-center mb-7 font-header text-short-heading ${dashedLine}`}>
         Where I’ve Worked
       </h3>
 
-      <div className="flex max-[600px]:block min-[750px]:min-h-[340px]">
+      <div className="flex max-[600px]:block min-[750px]:min-h-[340px] max-w-[750px] mx-auto">
         <div onKeyDown={(e) => onKeyDown(e)}
           className="relative w-max p-0 m-0 list-none z-10
                         max-[480px]:w-[calc(100% + 50px)] max-[480px]:pl-6 max-[480px]:ml-6
@@ -114,7 +114,7 @@ export default function Jobs({ screenWidth }) {
             );
           })}
           <div className='absolute top-0 left-0 z-20 w-1 h-11 bg-secondary-orange
-                transition-transform ease-in-out duration-300 delay-100
+                transition-transform ease-in duration-300 delay-100
                 max-[480px]:ml-6 max-[600px]:top-auto max-[600px]:bottom-0 max-[600px]:w-full max-[600px]:max-w-[120px] max-[600px]:h-[2px] max-[600px]:ml-12'
             style={{
               transform: screenWidth > 600

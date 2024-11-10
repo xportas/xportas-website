@@ -98,15 +98,15 @@ module.exports = {
 
   projects: {
     website: {
-      title: "XPortas Website",
-      cover: "../../../public/images/retro-bg2.webp",
+      title: "Retro Website",
+      cover: "/images/retro-bg.jpg",
       github: "https://github.com/xportas/xportas-website",
-      tech: {
-        t1: "React",
-        t2: "Tailwind CSS",
-        t3: "Three.js",
-        t4: "CONTINUAR CON LAS DEMÁS SKILLS"
-      },
+      tech: [
+        "React",
+        "Tailwind CSS",
+        "Three.js",
+        "CONTINUAR CON LAS DEMÁS SKILLS"
+      ],
       description: "Esto es mi portfolio y todo lo demás que tengo que contar aquí a modo de introducción jalsdkfj asdlfkjsd flñaskdjf ñlasdkfj añsldkfj sdfl fasdf asdf asd"
     }
   }

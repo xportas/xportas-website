@@ -9,8 +9,6 @@ export function waitForMs(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export const transition = `transition-all duration-[0.25s] ease-[cubic-bezier(0.645,0.045,0.355,1)]`;
-
 export const dashedLine = `after:content-['']
                             after:block
                             after:w-[300px]
@@ -19,11 +17,6 @@ export const dashedLine = `after:content-['']
                             after:border-2
                             after:border-dashed
                             after:border-main-gray`;
-
-export const inlineLink = `inline-block relative text-[green] transition-[${transition}] after:content-[''] after:block after:w-0 after:h-px
-                            after:relative after:bg-green-400 after:opacity-50 after:bottom-[0.37em] motion-safe:after:transition-[${transition}]
-                            hover:text-green-500 focus-visible:text-green-500 hover:after:w-full focus-visible:after:w-full`;
-{/* TODO: todo hijo de inlineLink ==> hover: y focus-visible: hacer esto ==> text-green-500 transition-[export transition utils] */}
 
 export const linkStyle = `inline-block no-underline text-inherit relative transition-all duration-300
                           hover:text-secondary-orange hover:outline-0

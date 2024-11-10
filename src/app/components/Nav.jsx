@@ -183,7 +183,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
               href={navLinks.About}
               className={`text-[3.5vh] w-full mb-2 ${navbarOnHoverState.about ? 'bg-orange-200 text-main-gray' : ''}`}
               onMouseOver={() => handleNavbarOnHover('about', true)} onMouseLeave={() => handleNavbarOnHover('about', false)}>
-              <span className="ml-3">
+              <span className="ml-3" onClick={() => setShowNavbar(!showNavbar)}>
                 About
               </span>
             </a>
@@ -191,7 +191,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
               href={navLinks.Experience}
               className={`text-[3.5vh] w-full mb-2 ${navbarOnHoverState.experience ? 'bg-orange-200 text-main-gray' : ''}`}
               onMouseOver={() => handleNavbarOnHover('experience', true)} onMouseLeave={() => handleNavbarOnHover('experience', false)}>
-              <span className="ml-3">
+              <span className="ml-3" onClick={() => setShowNavbar(!showNavbar)}>
                 Experience
               </span>
             </a>
@@ -200,7 +200,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
               className={`text-[3.5vh] w-full mb-2 ${navbarOnHoverState.work ? 'bg-orange-200 text-main-gray' : ''}`}
               onMouseOver={() => handleNavbarOnHover('work', true)}
               onMouseLeave={() => handleNavbarOnHover('work', false)}>
-              <span className="ml-3">
+              <span className="ml-3" onClick={() => setShowNavbar(!showNavbar)}>
                 Work
               </span>
             </a>
@@ -209,7 +209,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
               className={`text-[3.5vh] w-full mb-2 ${navbarOnHoverState.contact ? 'bg-orange-200 text-main-gray' : ''}`}
               onMouseOver={() => handleNavbarOnHover('contact', true)}
               onMouseLeave={() => handleNavbarOnHover('contact', false)} >
-              <span className="ml-3">
+              <span className="ml-3" onClick={() => setShowNavbar(!showNavbar)}>
                 Contact
               </span>
             </a>
