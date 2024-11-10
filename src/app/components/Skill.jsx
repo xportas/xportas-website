@@ -2,7 +2,7 @@ import { PixelatedImage } from "./PixelatedImage";
 
 export default function Skill({ url, back }) {
   return (
-    <section className="group border-4 border-dashed border-main-gray rounded-sm w-[300px] h-[220px] hover:scale-110 transition-all duration-[0.87s]"
+    <article className="group border-4 border-dashed border-main-gray rounded-sm w-[300px] h-[220px] hover:scale-110 transition-all duration-[0.87s] max-[768px]:m-auto max-[768px]:my-7"
       style={{ perspective: '1000px' }}>
       <div className="w-full h-full relative transition-transform duration-[0.87s] group-hover:rotate-y-180"
         style={{ transformStyle: 'preserve-3d' }}>
@@ -23,6 +23,6 @@ export default function Skill({ url, back }) {
         </div>
 
       </div>
-    </section>
+    </article>
   );
 }
