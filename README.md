@@ -11,6 +11,8 @@ efecto de apagado de pantalla, aparece el modelo 3D con un zoom de la hostia y s
 
 
 *** BUG: En firefox, cuando cargo la página ya suena la música, controlar para que hasta pulsar el btn on/off no se reproduzca la música
+*** BUG: Cuando hago scroll con el trackpad el retroComputer no pierde bien el foco y no me permite seguir haciendo scroll
+***** BUGS: arreglar errores de la consola
 
 
 
