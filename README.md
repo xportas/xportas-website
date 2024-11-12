@@ -20,10 +20,6 @@ NO OLVIDARSE DE HACER SEO (ver cómo hacerlo en v4 y buscar más info)
 ==> meter en la esquina inferior derecha una flecha que rota en 3D (como la rotación de la tierra) y bota verticalmente para pasar a la siguiente sección
 ==> al principio hacer una especie de input retro que el usuario introduzca un alias y luego en la pantalla retro le salude a él, no en general.
 
-TODO: 's -->
---> AL FINALIZAR, HACER MULTIPLATAFORMA AL TIEMPO QUE REFACTORIZO LAS CLASES
---> Al finalizar, limpiar estilos de tailwind.config que no se usan.
---> Eliminar y terminar todos los posibles TODO's
 
 
 
