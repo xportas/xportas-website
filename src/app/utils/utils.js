@@ -11,12 +11,18 @@ export function waitForMs(ms) {
 
 export const dashedLine = `after:content-['']
                             after:block
+                            after:relative
                             after:w-[300px]
+                            after:h-px
+                            after:ml-7;
                             after:my-auto
-                            after:ml-7
                             after:border-2
                             after:border-dashed
-                            after:border-main-gray`;
+                            after:border-main-gray
+                            after:max-[1080px]:w-[200px]
+                            after:max-[768px]:w-full
+                            after:min-[768px]:ml-3
+                            after:max-[600px]:ml-3`;
 
 export const linkStyle = `inline-block no-underline text-inherit relative transition-all duration-300
                           hover:text-secondary-orange hover:outline-0

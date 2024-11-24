@@ -31,29 +31,33 @@ export default function Hero() {
   }, [rendered]);
 
   return (
-    <section
-      ref={heroRef}
-      className={`flex flex-col items-start justify-center min-h-screen h-screen transition-all duration-500 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
-    >
-      <h3 className="text-xl text-secondary-orange">Hi, my name is</h3>
-      <h1 className="text-big-heading mt-2">Xabier Portas.</h1>
-      <h2 className="text-short-heading text-secondary-gray">I build things for the web.</h2>
-      <p className="mt-5 pr-80">
-        I am a passionate full-stack software engineer dedicated to building and designing exceptional digital experiences.
-      </p>
-      <p className="pr-80">
-        Currently, I am focused on contributing to the Government of Navarra by developing innovative digital solutions at{' '}
-        <a className={`text-secondary-orange ${underlineEffect}`} href="https://itracasa.es/" target="_blank" rel="noreferrer">
-          Tracasa Instrumental
-        </a>.
-      </p>
-      <RetroBtn
-        href={links.GitHub}
-        target="_blank"
-        rel="author"
-        styles="mt-12 px-10 py-4"
-        child={<span className="text-orange-200">Check out my GitHub!</span>}
-      />
-    </section>
+    <div className='flex items-center justify-center'>
+      <section
+        ref={heroRef}
+        className={`flex flex-col items-start justify-center min-h-screen h-auto mx-auto transition-all duration-500 ease-in 
+                  ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'} max-[768px]:py-auto max-[768px]:mx-7 max-[768px]:mb-32
+                  min-[768px]:mx-32 min-[1080px]:max-w-[980px]`}
+      >
+        <h3 className="text-xl text-secondary-orange">Hi, my name is</h3>
+        <h1 className="text-[clamp(33px,7vw,80px)] mt-2 whitespace-nowrap">Xabier Portas.</h1>
+        <h2 className="text-short-heading text-secondary-gray">I build things for the web.</h2>
+        <p className="mt-5 min-[1080px]:w-1/2 pb-3">
+          I am a passionate full-stack software engineer dedicated to building and designing exceptional digital experiences.
+        </p>
+        <p className="min-[1080px]:w-1/2">
+          Currently, I am focused on contributing to the Government of Navarra by developing innovative digital solutions at{' '}
+          <a className={`text-secondary-orange ${underlineEffect}`} href="https://itracasa.es/" target="_blank" rel="noreferrer">
+            Tracasa Instrumental
+          </a>.
+        </p>
+        <RetroBtn
+          href={links.GitHub}
+          target="_blank"
+          rel="author"
+          styles="mt-12 px-10 py-4 max-[350px]:px-5"
+          child={<span className="text-orange-200">Check out my GitHub!</span>}
+        />
+      </section>
+    </div>
   );
 }

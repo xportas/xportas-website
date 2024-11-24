@@ -33,11 +33,11 @@ export default function About() {
 
   return (
     <section ref={aboutRef}
-      className={`max-w-5xl mx-auto numbered mb-12 md:mb-24 transition-all duration-300 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
+      className={`max-w-5xl mx-auto numbered mb-12 md:mb-24 transition-all duration-300 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}
+                  max-[450px]:h-auto max-[450px]:py-auto max-[450px]:mx-7 max-[450px]:mb-32 max-[480px]:text-xs`}
       id="about" >
 
-      <h3 style={{ '--dynamic-font-size': '-regular-heading' }}
-        className={`flex items-center mb-7 font-header text-short-heading ${dashedLine}`}>
+      <h3 className={`flex items-center mb-7 font-header text-responsive-section-heading whitespace-nowrap ${dashedLine}`}>
         About Me
       </h3>
 
@@ -45,10 +45,8 @@ export default function About() {
         <div>
           <div className="grid grid-cols-1 gap-y-4">
             <p>
-              asdfa sdfasdfñlkj dflñaksdjf ñlasdkfj ñsldkfj sdlkfjsdolkfj sdlkfjlkjsdlfkj sdlfkj
-              dlkf jsldkfj sldkfj sldkfj sldkfj sdlkfj sdlkfj sdlkfj sdlkfj skldjf lksdjf lksdjf klsd
-              lskdjf lksdjf lksdjf lskdjf lskdjf lskdf jklsdjflksdjfklsd klfjlsdkfklsdf klsdfj lsd
-              ñsldfk sñdlfk sdñlfks
+              quiero comprobar que esto tiene sentido algunao para ver si el tamaño de la letra es correcto
+              porque claro a la hora de ver si esto es correcto quiero ver si el usuario puede leer bien con este tamaño de letra y demás
             </p>
 
             <p>
@@ -75,7 +73,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="relative max-w-[300px] mt-[50px] mx-auto mb-0 w-[70%] md:m-auto md:w-full">
+        <div className="relative max-w-[300px] mt-[50px] mx-auto mb-0 w-[70%] md:m-auto md:w-full max-[450px]:pb-12">
           <div className="block relative w-full rounded bg-main-gray
                   transition-all duration-500 ease-out transform
                   hover:-translate-x-1 hover:-translate-y-1

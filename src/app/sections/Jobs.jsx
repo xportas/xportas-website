@@ -82,7 +82,7 @@ export default function Jobs({ screenWidth }) {
       id='experience'>
 
       <h3 style={{ '--dynamic-font-size': '-regular-heading' }}
-        className={`flex items-center justify-center mb-7 font-header text-short-heading ${dashedLine}`}>
+        className={`flex items-center justify-center mb-7 font-header text-short-heading whitespace-nowrap ${dashedLine}`}>
         Where I’ve Worked
       </h3>
 
