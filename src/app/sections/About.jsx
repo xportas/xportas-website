@@ -34,7 +34,7 @@ export default function About() {
   return (
     <section ref={aboutRef}
       className={`max-w-5xl mx-auto numbered mb-12 md:mb-24 transition-all duration-300 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}
-                  max-[450px]:h-auto max-[450px]:py-auto max-[450px]:mx-7 max-[450px]:mb-32 max-[480px]:text-xs`}
+                  max-[450px]:h-auto max-[450px]:py-auto max-[450px]:mx-7 max-[450px]:mb-32 max-[480px]:text-xs max-[768px]:mx-7 max-[768px]:mb-32 min-[768px]:mx-32`}
       id="about" >
 
       <h3 className={`flex items-center mb-7 font-header text-responsive-section-heading whitespace-nowrap ${dashedLine}`}>
@@ -95,7 +95,7 @@ export default function About() {
 
       </div>
 
-      <div className="block mt-7 md:grid md:grid-cols-3 md:gap-12">
+      <div className="block mt-12 max-[450px]:mt-7 md:grid md:grid-cols-3 md:gap-12">
         {skills && Object.entries(skills).map(([category, items]) => {
           return (
             <Skill

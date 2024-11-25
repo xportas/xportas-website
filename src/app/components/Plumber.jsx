@@ -35,7 +35,7 @@ export default function Plumber() {
       after:left-[35px] 
       after:top-[15px]"
       style={{ '--base-color': '#FED7AA'}}></span>
-      <span className="text-[clamp(12px,2.5vw,14px)] font-header">* Working on new projects *</span>
+      <span className="text-[clamp(10px,2.5vw,18px)] font-header whitespace-nowrap">* Working on new projects *</span>
     </div>
   );
 }
