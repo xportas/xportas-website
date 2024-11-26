@@ -34,13 +34,13 @@ export default function Contact() {
       ref={contactRef}
       style={{ '--dynamic-font-size': '-short-heading' }}
       className={`block text-center max-w-[600px] mx-auto max-[450px]:py-14 max-[768px]:py-20 md:py-24 numbered transition-all duration-500 ease-in 
-                  ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
+                  ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'} px-7 sm:px-6 md:px-8`}
       id='contact'
     >
-      <h3>
+      <h3 className='text-lg'>
         What’s Next?
       </h3>
-      <h2 className="font-header text-regular-heading">
+      <h2 className="font-header text-responsive-section-heading whitespace-nowrap">
         Get In Touch
       </h2>
       <p className='mt-6 mb-12'>
