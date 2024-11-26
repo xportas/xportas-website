@@ -78,7 +78,7 @@ export default function Jobs({ screenWidth }) {
 
   return (
     <section ref={jobsRef}
-      className={`numbered mb-12 md:mb-24 transition-all duration-500 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
+      className={`numbered max-[450px]:py-14 max-[768px]:py-20 md:py-24 transition-all duration-500 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
       id='experience'>
 
       <h3 style={{ '--dynamic-font-size': '-regular-heading' }}

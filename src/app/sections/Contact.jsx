@@ -33,7 +33,8 @@ export default function Contact() {
     <section
       ref={contactRef}
       style={{ '--dynamic-font-size': '-short-heading' }}
-      className={`block text-center max-w-[600px] mx-auto mb-12 md:mb-24 numbered transition-all duration-500 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
+      className={`block text-center max-w-[600px] mx-auto max-[450px]:py-14 max-[768px]:py-20 md:py-24 numbered transition-all duration-500 ease-in 
+                  ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
       id='contact'
     >
       <h3>

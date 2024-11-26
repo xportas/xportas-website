@@ -35,7 +35,8 @@ export default function Projects() {
   return (
     <section
       ref={projectsRef}
-      className={`numbered mb-12 mx-auto md:mb-24 transition-all duration-500 ease-in max-w-[1200px] ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
+      className={`numbered max-[450px]:py-14 max-[768px]:py-20 md:py-24 mx-auto transition-all duration-500 ease-in max-w-[1200px]
+                  ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
       id='work'
     >
       <h3
@@ -53,7 +54,7 @@ export default function Projects() {
             return (
               <li
                 key={i}
-                className="relative grid gap-2.5 grid-cols-[repeat(12,1fr)] items-center mb-24 max-[768px]:mb-16 max-[480px]:mb-8"
+                className="relative grid gap-2.5 grid-cols-[repeat(12,1fr)] items-center mb-10 max-[768px]:mb-16 max-[480px]:mb-8"
               >
                 <div className="relative col-[1_/_7] row-span-full max-[1080px]:col-[1_/_9] max-[768px]:flex max-[768px]:flex-col max-[768px]:justify-center
                                 max-[768px]:h-full max-[768px]:col-span-full max-[768px]:z-[5] max-[768px]:pt-10 max-[768px]:pb-[30px] max-[768px]:px-10 

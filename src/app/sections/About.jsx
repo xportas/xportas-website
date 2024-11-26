@@ -34,7 +34,7 @@ export default function About() {
   return (
     <section
       ref={aboutRef}
-      className={`max-w-5xl mx-auto numbered mb-12 md:mb-24 transition-all duration-300 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}
+      className={`max-w-5xl mx-auto numbered max-[450px]:pb-14 max-[768px]:pb-20 md:pb-24 transition-all duration-300 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}
                   px-7 sm:px-6 md:px-8`}
       id="about"
     >
