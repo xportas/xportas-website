@@ -41,7 +41,7 @@ export default function Projects() {
     >
       <h3
         style={{ '--dynamic-font-size': '-regular-heading' }}
-        className={`flex items-center justify-center mb-14 font-header text-short-heading whitespace-nowrap ${dashedLine}`}
+        className={`flex items-center justify-center mb-14 font-header text-responsive-section-heading whitespace-nowrap ${dashedLine}`}
       >
         Some Things I’ve Built
       </h3>
