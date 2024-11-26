@@ -45,6 +45,7 @@ module.exports = {
         'main': ['chill', 'Roboto mono', 'monoespace'],
       },
       fontSize: {
+        'big-heading': 'clamp(33px,7vw,80px)',
         'regular-heading': 'clamp(7px, 4vw, 40px)',
         'responsive-section-heading': 'clamp(23px, 4vw, 40px)',
         'short-heading': 'clamp(26px, 5vw, 32px)',

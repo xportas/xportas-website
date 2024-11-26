@@ -31,7 +31,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
 
   return (
     <>
-      <header className="fixed m-5 z-50">
+      <header className="fixed m-1 md:m-5 z-50">
         <div className="flex items-center justify-between px-5 py-3">
 
           <div className="flex items-center z-40">
