@@ -39,9 +39,7 @@ export default function Projects({ screenWidth }) {
                   ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'} md:p-8`}
       id='work'
     >
-      <h3
-        style={{ '--dynamic-font-size': '-short-heading' }}
-        className={`flex items-center justify-center mb-14 mx-7 font-header text-responsive-section-heading ${screenWidth > 768 && dashedLine}`}
+      <h3 className={`flex items-center justify-center mb-14 mx-7 font-header text-responsive-section-heading ${screenWidth > 768 && dashedLine}`}
       >
         Some Things I’ve Built
       </h3>

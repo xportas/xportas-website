@@ -32,7 +32,7 @@ export default function Hero() {
 
   return (
     <div className='flex items-center justify-center'>
-      <section
+      <article
         ref={heroRef}
         className={`flex flex-col items-start justify-center min-h-screen h-auto mx-auto transition-all duration-500 ease-in 
                   ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'} max-[768px]:py-auto max-[768px]:mx-7 max-[768px]:mb-32
@@ -57,7 +57,7 @@ export default function Hero() {
           styles="mt-12 px-10 py-4 max-[350px]:px-5"
           child={<span className="text-orange-200">Check out my GitHub!</span>}
         />
-      </section>
+      </article>
     </div>
   );
 }

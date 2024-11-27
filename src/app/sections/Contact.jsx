@@ -32,7 +32,6 @@ export default function Contact() {
   return (
     <section
       ref={contactRef}
-      style={{ '--dynamic-font-size': '-regular-heading' }}
       className={`block text-center max-w-[600px] mx-auto max-[450px]:py-14 max-[768px]:py-20 md:py-24 numbered transition-all duration-500 ease-in 
                   ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'} px-7 sm:px-6 md:px-8`}
       id='contact'

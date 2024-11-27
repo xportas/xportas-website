@@ -95,27 +95,41 @@ a, button {
 
 /* 
 *
-*  NAV / NUMERATORS
+*  NUMERATORS [ SECTIONS & NAV ]
 *
 */
+
+body {
+  counter-reset: sectionCounter;
+}
+
+section h3 { 
+  counter-increment: sectionCounter;
+}
+
+section h3::before { 
+  content: counter(sectionCounter, decimal-leading-zero) ". "; 
+  display: inline-block;
+  font-family: chill;
+  font-size: clamp(16px, 4vw, 25px);
+  color: #A8947E;
+  margin-right: 7px;
+}
 
 .numbered-nav {
   counter-reset: link;
 }
 
 .numbered>a,
-.numbered>span,
-.numbered>h3 {
+.numbered>span {
   counter-increment: link;
 }
 
 .numbered>a::before,
-.numbered>span::before,
-.numbered>h3::before {
-  content: counter(link) ". ";
+.numbered>span::before {
+  content: counter(link, decimal-leading-zero) ". ";
   display: inline-block;
   font-family: chill;
-  font-size: var(--dynamic-font-size);
   margin-right: 7px;
 }
 

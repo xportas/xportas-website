@@ -81,8 +81,7 @@ export default function Jobs({ screenWidth }) {
       className={`numbered max-[450px]:py-14 max-[768px]:py-20 md:py-24 transition-all duration-500 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
       id='experience'>
 
-      <h3 style={{ '--dynamic-font-size': '-short-heading' }}
-        className={`flex items-center justify-center mb-7 mx-7 font-header text-responsive-section-heading ${screenWidth > 515 && dashedLine}`}>
+      <h3 className={`flex items-center justify-center mb-7 mx-7 font-header text-responsive-section-heading ${screenWidth > 515 && dashedLine}`}>
         Where I’ve Worked
       </h3>
 
@@ -135,7 +134,7 @@ export default function Jobs({ screenWidth }) {
                 aria-hidden={activeTabId !== i}
                 hidden={activeTabId !== i}>
 
-                <h3 className='mb-[2px] font-medium animate-wipeInRight' style={{ fontSize: '22px', lineHeight: 1.3 }}>
+                <h4 className='mb-[2px] font-medium animate-wipeInRight' style={{ fontSize: '22px', lineHeight: 1.3 }}>
                   <span>{job.title}</span>
                   <span className="text-secondary-orange">
                     &nbsp;@&nbsp;
@@ -143,7 +142,7 @@ export default function Jobs({ screenWidth }) {
                       {job.company}
                     </a>
                   </span>
-                </h3>
+                </h4>
 
                 <p className='mb-6 text-secondary-gray animate-wipeInRight' style={{ fontSize: '13px' }}>{job.range}</p>
 
