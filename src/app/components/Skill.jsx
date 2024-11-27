@@ -14,7 +14,7 @@ export default function Skill({ url, back }) {
             blockSize={15}
             src={`/images/${url}.png`}
             alt={url}
-            className={'p-5 w-full h-full'}
+            className={'p-8 w-full h-full'}
           />
         </div>
 

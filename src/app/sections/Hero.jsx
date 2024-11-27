@@ -41,12 +41,12 @@ export default function Hero() {
         <h3 className="text-[clamp(14px,4vw,16px)] text-secondary-orange">Hi, my name is</h3>
         <h1 className="text-big-heading whitespace-nowrap">Xabier Portas.</h1>
         <h2 className="text-responsive-section-heading text-secondary-gray">I build things for the web.</h2>
-        <p className="mt-5 min-[1080px]:w-1/2 pb-3 text-xs min-[480px]:text-sm">
+        <p className="mt-5 min-[1080px]:w-1/2 pb-3 text-xs min-[480px]:text-sm min-[1375px]:text-base">
           I am a passionate full-stack software engineer dedicated to building and designing exceptional digital experiences.
         </p>
-        <p className="min-[1080px]:w-1/2 text-xs min-[480px]:text-sm">
+        <p className="min-[1080px]:w-1/2 text-xs min-[480px]:text-sm min-[1375px]:text-base">
           Currently, I am focused on contributing to the Government of Navarra by developing innovative digital solutions at{' '}
-          <a className={`text-xs min-[480px]:text-sm text-secondary-orange ${underlineEffect}`} href="https://itracasa.es/" target="_blank" rel="noreferrer">
+          <a className={`text-xs min-[480px]:text-sm min-[1375px]:text-base text-secondary-orange ${underlineEffect}`} href="https://itracasa.es/" target="_blank" rel="noreferrer">
             Tracasa Instrumental
           </a>.
         </p>

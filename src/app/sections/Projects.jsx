@@ -36,7 +36,7 @@ export default function Projects() {
     <section
       ref={projectsRef}
       className={`numbered max-[450px]:py-14 max-[768px]:py-20 md:py-24 mx-auto transition-all duration-500 ease-in max-w-[1200px]
-                  ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
+                  ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'} md:p-8`}
       id='work'
     >
       <h3
@@ -61,14 +61,14 @@ export default function Projects() {
                                 max-[480px]:pt-[30px] max-[480px]:pb-5 max-[480px]:px-[25px]"
                 >
                   <div>
-                    <h6 className={`text-secondary-orange text-[clamp(24px,5vw,28px)] font-header md:mt-0 md:mb-5 md:mx-0 ${underlineEffect}`}>
+                    <h6 className={`text-secondary-orange text-[clamp(24px,5vw,28px)] font-header md:mt-0 md:mb-5 md:mx-0 ${underlineEffect} z-20`}>
                       <a href={github || '#'} target={"_blank"}>
                         {title}
                       </a>
                     </h6>
 
-                    <div className="relative z-20 p-6 rounded bg-main-gray text-orange-200 text-lg max-[768px]:text-main-gray max-[768px]:bg-transparent
-                                    max-[768px]:shadow-none max-[768px]:px-0 max-[768px]:py-5 shadow-custom transition-all duration-[0.25s] ease-out 
+                    <div className="relative z-20 p-6 rounded bg-main-gray text-orange-200 max-[768px]:text-main-gray text-xs min-[480px]:text-sm min-[1375px]:text-base 
+                                    max-[768px]:bg-transparent max-[768px]:shadow-none max-[768px]:px-0 max-[768px]:py-5 shadow-custom transition-all duration-[0.25s] ease-out 
                                     hover:shadow-custom-hover hover:-translate-x-1 hover:-translate-y-1 focus:shadow-custom-hover focus:-translate-x-1 focus:-translate-y-1"
                     >
                       <p>{description}</p>

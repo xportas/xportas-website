@@ -43,7 +43,7 @@ export default function About() {
         About Me
       </h3>
 
-      <div className="block md:grid md:grid-cols-[3fr_2fr] md:gap-12 text-xs">
+      <div className="block md:grid md:grid-cols-[3fr_2fr] md:gap-12 text-xs min-[480px]:text-sm min-[1375px]:text-base">
         <div>
           <div className="grid grid-cols-1 gap-y-4">
             <p>
