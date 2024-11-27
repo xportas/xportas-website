@@ -43,22 +43,22 @@ export default function Home() {
 
   return (
     <>
-      {!currentLanguage ?
+      {/* {!currentLanguage ?
         <RetroScreen setCurrentLanguage={setCurrentLanguage} />
         :
-        <>
-          <Nav screenWidth={screenWidth} hiddenRetroComputer={hiddenRetroComputer} />
-          {/* <Nav screenWidth={screenWidth} hiddenRetroComputer={true} /> */}
+        <> */}
+          {/* <Nav screenWidth={screenWidth} hiddenRetroComputer={hiddenRetroComputer} /> */}
+          <Nav screenWidth={screenWidth} hiddenRetroComputer={true} />
 
-          <RetroComputer setHiddenRetroComputer={setHiddenRetroComputer} scrollFactor={scrollFactor} />
+          {/* <RetroComputer setHiddenRetroComputer={setHiddenRetroComputer} scrollFactor={scrollFactor} /> */}
           <Hero />
           <About />
           <Jobs screenWidth={screenWidth} />
-          <Projects />
+          <Projects screenWidth={screenWidth} />
           <Contact />
           <Footer />
         </>
-      }
-    </>
+    //   }
+    // </>
   );
 }

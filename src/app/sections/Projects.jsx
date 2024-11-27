@@ -4,7 +4,7 @@ import { projects } from '../utils/config';
 import { dashedLine, underlineEffect } from '../utils/utils';
 
 
-export default function Projects() {
+export default function Projects({ screenWidth }) {
   const projectsRef = useRef(null);
   const [rendered, setRendered] = useState(false);
 
@@ -41,7 +41,7 @@ export default function Projects() {
     >
       <h3
         style={{ '--dynamic-font-size': '-regular-heading' }}
-        className={`flex items-center justify-center mb-14 font-header text-responsive-section-heading whitespace-nowrap ${dashedLine}`}
+        className={`flex items-center justify-center mb-14 mx-7 font-header text-responsive-section-heading ${screenWidth > 768 && dashedLine}`}
       >
         Some Things I’ve Built
       </h3>
