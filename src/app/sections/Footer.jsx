@@ -8,9 +8,9 @@ export default function Footer() {
     >
       <div className='fixed bottom-0 h-[500px] w-full bg-main-gray'>
 
-        <div className='bg-main-gray text-orange-200 py-8 px-12 h-full w-full flex flex-col justify-between'>
+        <div className='bg-main-gray text-orange-200 py-7 px-7 h-full w-full flex flex-col justify-between'>
 
-          <div className='flex shrink-0 gap-32'>
+          <div className='flex flex-shrink-0 gap-12 min-[550px]:gap-20 lg:gap-28 min-[800px]:ml-5 lg:ml-10 text-xs min-[480px]:text-sm min-[1375px]:text-base'>
             <div className='flex flex-col gap-2'>
               <h6 className='font-header mb-2 uppercase text-[#fcc688]'>Go Back</h6>
               <a href={navLinks.About} >About</a>
@@ -27,8 +27,8 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className='flex justify-between items-end'>
-            <h1 className='text-[10vw] font-header leading-[0.9] mt-3 text-[#ffca8e]'>Xabier Portas</h1>
+          <div className='flex justify-between items-end max-[823px]:flex-col max-[823px]:gap-7'>
+            <h1 className='text-footer-name font-header leading-[0.8] text-[#ffca8e]'>Xabier Portas</h1>
             <p>Designed and Developed by xportas&nbsp;©&nbsp;copyright</p>
           </div>
 

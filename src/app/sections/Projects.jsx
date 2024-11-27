@@ -40,7 +40,7 @@ export default function Projects({ screenWidth }) {
       id='work'
     >
       <h3
-        style={{ '--dynamic-font-size': '-regular-heading' }}
+        style={{ '--dynamic-font-size': '-short-heading' }}
         className={`flex items-center justify-center mb-14 mx-7 font-header text-responsive-section-heading ${screenWidth > 768 && dashedLine}`}
       >
         Some Things I’ve Built

@@ -81,7 +81,7 @@ export default function Jobs({ screenWidth }) {
       className={`numbered max-[450px]:py-14 max-[768px]:py-20 md:py-24 transition-all duration-500 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
       id='experience'>
 
-      <h3 style={{ '--dynamic-font-size': '-regular-heading' }}
+      <h3 style={{ '--dynamic-font-size': '-short-heading' }}
         className={`flex items-center justify-center mb-7 mx-7 font-header text-responsive-section-heading whitespace-nowrap ${screenWidth > 515 && dashedLine}`}>
         Where I’ve Worked
       </h3>
