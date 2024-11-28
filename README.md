@@ -19,7 +19,6 @@ efecto de apagado de pantalla, aparece el modelo 3D con un zoom de la hostia y s
 
 IDEAS:
 NO OLVIDARSE DE HACER SEO (ver cómo hacerlo en v4 y buscar más info)
-==> meter en la esquina inferior derecha una flecha que rota en 3D (como la rotación de la tierra) y bota verticalmente para pasar a la siguiente sección
 ==> al principio hacer una especie de input retro que el usuario introduzca un alias y luego en la pantalla retro le salude a él, no en general.
 
 

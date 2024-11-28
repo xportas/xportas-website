@@ -35,7 +35,7 @@ export default function Projects({ screenWidth }) {
   return (
     <section
       ref={projectsRef}
-      className={`numbered max-[450px]:py-14 max-[768px]:py-20 md:py-24 mx-auto transition-all duration-500 ease-in max-w-[1200px]
+      className={`max-[450px]:py-14 max-[768px]:py-20 md:py-24 mx-auto transition-all duration-500 ease-in max-w-[1200px]
                   ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'} md:p-8`}
       id='work'
     >
