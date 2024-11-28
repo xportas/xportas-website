@@ -101,6 +101,7 @@ export default function About() {
         {skills && Object.entries(skills).map(([category, items]) => {
           return (
             <Skill
+            key={category}
               url={`${category}`}
               back={
                 <div className="flex flex-col justify-center items-center">
@@ -109,7 +110,7 @@ export default function About() {
                     {Object.entries(items).map(([key, value]) => {
                       return (
                         <li
-                          key={key}
+                          key={`${category}-${key}`}
                           className="relative mb-2.5 pl-5 text-xs before:content-['▹'] before:absolute before:left-0 before:text-secondary-orange 
                           before:text-sm before:leading-3">
                           {value}

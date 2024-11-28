@@ -100,7 +100,7 @@ export default function Jobs({ screenWidth }) {
                               max-[600px]:px-4 max-[600px]:border-l-0 max-[600px]:border-b-2 max-[600px]:border-[#a8947e8b] max-[600px]:text-center
                               hover:bg-[#a8947e8b] focus:bg-[#a8947e8b] ${activeTabId === i ? 'text-secondary-orange' : 'text-main-gray'}`}
                 key={i}
-                isActive={activeTabId === i}
+                data-is-active={activeTabId === i}
                 onClick={() => setActiveTabId(i)}
                 ref={el => (tabs.current[i] = el)}
                 id={`tab-${i}`}
@@ -126,7 +126,9 @@ export default function Jobs({ screenWidth }) {
         <div className='relative w-full ml-5 max-[600px]:ml-0'>
           {jobs && Object.entries(jobs).map(([key, job], i) => {
             return (
-              <div className='w-full h-auto py-[10px] px-1'
+              <div
+                key={key}
+                className='w-full h-auto py-[10px] px-1'
                 id={`panel-${i}`}
                 role="tabpanel"
                 tabIndex={activeTabId === i ? '0' : '-1'}
@@ -150,8 +152,10 @@ export default function Jobs({ screenWidth }) {
                   <ul className='p-0 m-0 list-none ' style={{ fontSize: '18px' }}>
                     {Object.values(job.duties).map((dutie, i) => {
                       return (
-                        <li className={`relative pl-7 mb-3 before:absolute before:left-0 before:text-secondary-orange before:content-["▹"] 
-                                        animate-wipeInRight`}
+                        <li
+                          key={`duty-${i}`}
+                          className={`relative pl-7 mb-3 before:absolute before:left-0 before:text-secondary-orange before:content-["▹"] 
+                                      animate-wipeInRight`}
                           style={{ animationDelay: `${i * 100}ms` }}>
                           {dutie}
                         </li>
