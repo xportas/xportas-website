@@ -65,7 +65,6 @@ module.exports = {
 
   jobs: {
     "TRACASA": {
-      "date": "2024-01-15",
       "title": "FullStack Developer",
       "company": "Tracasa Instrumental",
       "location": "Sarriguren, NA",
@@ -80,7 +79,6 @@ module.exports = {
       }
     },
     "LIVENSA": {
-      "date": "2024-01-15",
       "title": "FullStack Developer",
       "company": "Livensa Living",
       "location": "Sarriguren, NA",
@@ -92,6 +90,20 @@ module.exports = {
         "d3": "Contributed to something in LIVENSA",
         "d4": "Contributed to something in LIVENSA",
         "d5": "Contributed to something in LIVENSA"
+      }
+    },
+    "COMPOS": {
+      "title": "Administrativo de RRHH",
+      "company": "Aynta. Santiago de Compostela",
+      "location": "Santiago de Compostela, GZ",
+      "range": "October 2019 - March 2020",
+      "url": "https://www.web.com",
+      "duties": {
+        "d1": "Contributed to something in Santiago de Compostela",
+        "d2": "Contributed to something in Santiago de Compostela",
+        "d3": "Contributed to something in Santiago de Compostela",
+        "d4": "Contributed to something in Santiago de Compostela",
+        "d5": "Contributed to something in Santiago de Compostela"
       }
     }
   },

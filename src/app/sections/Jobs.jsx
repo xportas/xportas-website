@@ -10,6 +10,7 @@ export default function Jobs({ screenWidth }) {
   const tabs = useRef([]);
   const jobsRef = useRef(null);
   const [rendered, setRendered] = useState(false);
+  const [markerStyle, setMarkerStyle] = useState({});
 
 
   useEffect(() => {
@@ -75,30 +76,41 @@ export default function Jobs({ screenWidth }) {
     }
   };
 
+  // Calculate the width of the tabs to place the marker just below them
+  useEffect(() => {
+    if (tabs.current[activeTabId]) {
+      const activeTab = tabs.current[activeTabId];
+      const { offsetWidth, offsetLeft } = activeTab;
+      setMarkerStyle({
+        width: `${offsetWidth}px`,
+        transform: `translateX(${offsetLeft}px)`,
+      });
+    }
+  }, [activeTabId, screenWidth]);
+
 
   return (
     <section ref={jobsRef}
-      className={`max-[450px]:py-14 max-[768px]:py-20 md:py-24 transition-all duration-500 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
+      className={`max-[450px]:py-14 max-[768px]:py-20 md:py-24 px-3 sm:px-6 md:px-8 transition-all duration-500 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
       id='experience'>
 
       <h3 className={`flex items-center justify-center mb-7 mx-3 font-header text-responsive-section-heading ${screenWidth > 770 && dashedLine}`}>
         Where I’ve Worked
       </h3>
 
-      <div className="flex max-[600px]:block min-[750px]:min-h-[340px] max-w-[750px] mx-auto">
+      <div className="flex max-[650px]:block max-[650px]:max-w-full min-[750px]:min-h-[340px] max-w-[750px] mx-auto">
         <div onKeyDown={(e) => onKeyDown(e)}
-          className="relative w-max p-0 m-0 list-none z-10
-                        max-[480px]:w-[calc(100% + 50px)] max-[480px]:pl-6 max-[480px]:ml-6
-                        max-[600px]:flex max-[600px]:overflow-x-auto max-[600px]:w-[calc(100% + 100px)]
-                        max-[600px]:pl-[50px] max-[600px]:ml-[-50px] max-[600px]:mb-8" >
+          className="relative w-max p-0 m-0 list-none z-10 max-[480px]:w-full
+                      max-[650px]:flex max-[650px]:overflow-x-auto max-[650px]:w-full
+                        max-[650px]:mb-2" >
           {jobs && Object.entries(jobs).map(([key, job], i) => {
             return (
               <button
-                className={`${linkStyle} flex justify-center items-center w-full h-11 py-0 border-l-4 border-solid border-main-gray
-                              bg-transparent font-header text-xs text-left whitespace-nowrap max-[768px]:pt-0 max-[768px]:px-4 max-[768px]:pb-[2px]
-                              max-[600px]:flex max-[600px]:justify-between max-[600px]:items-center max-[600px]:min-w-32 max-[600px]:py-0
-                              max-[600px]:px-4 max-[600px]:border-l-0 max-[600px]:border-b-2 max-[600px]:border-[#a8947e8b] max-[600px]:text-center
-                              hover:bg-[#a8947e8b] focus:bg-[#a8947e8b] ${activeTabId === i ? 'text-secondary-orange' : 'text-main-gray'}`}
+                className={`${linkStyle} flex justify-center items-center w-full h-11 py-0 border-l-4 border-solid border-main-gray min-[651px]:whitespace-nowrap
+                            bg-transparent font-header text-[8px] min-[480px]:text-[10px] min-[1375px]:text-xs text-left max-[768px]:pt-0 max-[768px]:px-4 
+                            max-[768px]:pb-[2px] max-[650px]:flex max-[650px]:justify-between max-[650px]:items-center max-[650px]:min-w-32
+                            max-[650px]:px-0 max-[650px]:border-l-0 max-[650px]:border-b-2 max-[650px]:border-[#a8947e8b] max-[650px]:text-center
+                            hover:bg-[#a8947e8b] focus:bg-[#a8947e8b] ${activeTabId === i ? 'text-secondary-orange' : 'text-main-gray'}`}
                 key={i}
                 data-is-active={activeTabId === i}
                 onClick={() => setActiveTabId(i)}
@@ -112,18 +124,24 @@ export default function Jobs({ screenWidth }) {
               </button>
             );
           })}
+
+          { screenWidth <= 650 ?
+            <div
+            className="absolute top-auto bottom-0 z-20 h-[3px] bg-secondary-orange transition-all ease-in-out duration-300"
+            style={markerStyle}
+          />
+          :
           <div className='absolute top-0 left-0 z-20 w-1 h-11 bg-secondary-orange
-                transition-transform ease-in duration-300 delay-100
-                max-[480px]:ml-6 max-[600px]:top-auto max-[600px]:bottom-0 max-[600px]:w-full max-[600px]:max-w-[120px] max-[600px]:h-[2px] max-[600px]:ml-12'
-            style={{
-              transform: screenWidth > 600
-                ? `translateY(calc(${activeTabId} * 44px))`
-                : `translateX(calc(${activeTabId} * 120px))`
-            }}></div>
+                          transition-transform ease-in duration-300 delay-100
+                          max-[480px]:ml-12 max-[650px]:top-auto max-[650px]:bottom-0 max-[650px]:w-full 
+                          max-[650px]:max-w-[120px] max-[650px]:h-[3px] max-[650px]:ml-12'
+            style={{ transform: `translateY(calc(${activeTabId} * 44px))` }}
+          />
+          }
         </div>
 
 
-        <div className='relative w-full ml-5 max-[600px]:ml-0'>
+        <div className='relative w-full ml-5 max-[650px]:ml-0'>
           {jobs && Object.entries(jobs).map(([key, job], i) => {
             return (
               <div
@@ -137,10 +155,10 @@ export default function Jobs({ screenWidth }) {
                 hidden={activeTabId !== i}>
 
                 <h4 className='mb-[2px] font-medium animate-wipeInRight' style={{ fontSize: '22px', lineHeight: 1.3 }}>
-                  <span>{job.title}</span>
-                  <span className="text-secondary-orange">
+                  <span className='text-base min-[1080px]:text-xl min-[1375px]:text-2xl min-[1375px]:whitespace-nowrap'>{job.title}</span>
+                  <span className="text-base min-[1080px]:text-xl min-[1375px]:text-2xl min-[1375px]:whitespace-nowrap text-secondary-orange">
                     &nbsp;@&nbsp;
-                    <a href={job.url}>
+                    <a href={job.url} target={"_blank"}>
                       {job.company}
                     </a>
                   </span>
@@ -155,7 +173,7 @@ export default function Jobs({ screenWidth }) {
                         <li
                           key={`duty-${i}`}
                           className={`relative pl-7 mb-3 before:absolute before:left-0 before:text-secondary-orange before:content-["▹"] 
-                                      animate-wipeInRight`}
+                                      text-xs min-[480px]:text-sm min-[1375px]:text-base animate-wipeInRight`}
                           style={{ animationDelay: `${i * 100}ms` }}>
                           {dutie}
                         </li>

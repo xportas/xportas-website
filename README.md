@@ -5,7 +5,7 @@ Open source project containing the source code of my personal website
 
 
 COMPORTAMIENTO DEFINITIVO DE LA WEB:
-Btn encendido desencadena un efecto de encendido de pantalla y un loading para que cargue todo. Luego la retro screen y cuando selecciona idioma
+Btn encendido desencadena un loading para que cargue todo. Luego la retro screen y cuando selecciona idioma
 efecto de apagado de pantalla, aparece el modelo 3D con un zoom de la hostia y se va alejando solo, de forma automatizada hasta que está al máximo de lejos y queda como un modelo con el que se puede jugar y nada más, aparecen las scroll bars verticales en el lateral y la web se visualiza normal, pero al hacer scrool el modelo 3D no se va hacia arriba, se va hacia atrás y se desvanece haciéndose cada vez más transparente y el componente Hero se pone por delante.)
 
 
@@ -14,11 +14,7 @@ efecto de apagado de pantalla, aparece el modelo 3D con un zoom de la hostia y s
 *** BUG: Cuando hago scroll con el trackpad el retroComputer no pierde bien el foco y no me permite seguir haciendo scroll
 
 
-
-
-IDEAS:
-NO OLVIDARSE DE HACER SEO (ver cómo hacerlo en v4 y buscar más info)
-==> al principio hacer una especie de input retro que el usuario introduzca un alias y luego en la pantalla retro le salude a él, no en general.
+*** NO OLVIDARSE DE HACER SEO (ver cómo hacerlo en v4 y buscar más info)
 
 
 
