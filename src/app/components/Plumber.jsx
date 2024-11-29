@@ -15,7 +15,7 @@ export default function Plumber() {
   */
 
   return (
-    <div className="flex items-center justify-center flex-col">
+    <div className="flex items-center justify-center flex-col" style={{ cursor: 'wait' }}>
       {/* <img src="/images/plumber.svg" alt="plumber-working" className="p-0 m-0 h-60" /> */}
       <span className="w-[60px] h-10 relative inline-block before:content-[''] before:absolute before:w-9 before:h-9 before:bg-main-gray 
       before:bg-[radial-gradient(circle_8px_at_18px_18px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_18px_0px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_0px_18px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_36px_18px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_18px_36px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_30px_5px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_30px_5px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_30px_30px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_5px_30px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_5px_5px,var(--base-color)_100%,transparent_0)]
@@ -34,7 +34,7 @@ export default function Plumber() {
       after:rounded-[50%] 
       after:left-[35px] 
       after:top-[15px]"
-      style={{ '--base-color': '#FED7AA'}}></span>
+      style={{ '--base-color': '#FED7AA' }} />
       <span className="text-[clamp(10px,2.5vw,18px)] font-header whitespace-nowrap">* Working on new projects *</span>
     </div>
   );
