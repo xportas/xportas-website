@@ -125,19 +125,12 @@ export default function Jobs({ screenWidth }) {
             );
           })}
 
-          { screenWidth <= 650 ?
-            <div
-            className="absolute top-auto bottom-0 z-20 h-[3px] bg-secondary-orange transition-all ease-in-out duration-300"
-            style={markerStyle}
+          <div
+            className="absolute top-auto bottom-0 z-20 h-[3px] bg-secondary-orange transition-transform ease-in duration-300 delay-100
+                      min-[651px]:top-0 min-[651px]:left-0 min-[651px]:z-20 min-[651px]:w-1 min-[651px]:h-11"
+            style={screenWidth <= 650 ? markerStyle : { transform: `translateY(calc(${activeTabId} * 44px))` }}
           />
-          :
-          <div className='absolute top-0 left-0 z-20 w-1 h-11 bg-secondary-orange
-                          transition-transform ease-in duration-300 delay-100
-                          max-[480px]:ml-12 max-[650px]:top-auto max-[650px]:bottom-0 max-[650px]:w-full 
-                          max-[650px]:max-w-[120px] max-[650px]:h-[3px] max-[650px]:ml-12'
-            style={{ transform: `translateY(calc(${activeTabId} * 44px))` }}
-          />
-          }
+
         </div>
 
 
