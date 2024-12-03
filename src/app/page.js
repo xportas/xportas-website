@@ -14,7 +14,8 @@ import RetroScreen from "./sections/RetroScreen";
 
 export default function Home() {
 
-  const [currentLanguage, setCurrentLanguage] = useState(null);
+  // const [currentLanguage, setCurrentLanguage] = useState(null);
+  const [currentLanguage, setCurrentLanguage] = useState('en');
   const [screenWidth, setScreenWidth] = useState(0);
   const [hiddenRetroComputer, setHiddenRetroComputer] = useState(false);
   const [scrollFactor, setScrollFactor] = useState(0);
@@ -43,22 +44,23 @@ export default function Home() {
 
   return (
     <>
-      {/* {!currentLanguage ?
+      {/* <div style={{ display: currentLanguage ? "none" : "block" }}>
         <RetroScreen setCurrentLanguage={setCurrentLanguage} />
-        :
-        <> */}
-          {/* <Nav screenWidth={screenWidth} hiddenRetroComputer={hiddenRetroComputer} /> */}
-          <Nav screenWidth={screenWidth} hiddenRetroComputer={true} />
+      </div> */}
 
-          {/* <RetroComputer setHiddenRetroComputer={setHiddenRetroComputer} scrollFactor={scrollFactor} /> */}
-          <Hero />
-          <About />
-          <Jobs screenWidth={screenWidth} />
-          <Projects screenWidth={screenWidth} />
-          <Contact />
-          <Footer />
-        </>
-    //   }
-    // </>
+      <div style={{ display: currentLanguage ? "block" : "none" }}>
+        <Nav screenWidth={screenWidth} hiddenRetroComputer={hiddenRetroComputer} />
+        {/* <Nav screenWidth={screenWidth} hiddenRetroComputer={true} /> */}
+
+        <RetroComputer setHiddenRetroComputer={setHiddenRetroComputer} scrollFactor={scrollFactor} />
+
+        <Hero />
+        <About />
+        <Jobs screenWidth={screenWidth} />
+        <Projects screenWidth={screenWidth} />
+        <Contact />
+        <Footer />
+      </div>
+    </>
   );
 }

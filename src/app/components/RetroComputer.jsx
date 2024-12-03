@@ -16,14 +16,15 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor }) 
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(5, window.innerWidth / window.innerHeight, 1, 100);
-    camera.position.set(1, 2.5, 5);
+    camera.position.set(1, 2.5, 5); // Start zoomed in (closer)
+    const initialZoom = camera.position.z; // Initial zoom level
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controlsRef.current = controls;
     controls.enableDamping = true;
     controls.enablePan = false;
     controls.minDistance = 10;
-    controls.maxDistance = 90;
+    controls.maxDistance = 90; // Maximum zoom level (controls.maxDistance)
     controls.minPolarAngle = 1.23;
     controls.maxPolarAngle = 1.32;
 
@@ -69,6 +70,33 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor }) 
       renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
+    let startTime = null; // Time when animation starts
+    const delay = 1500;
+    const duration = 3700;
+
+    function animateZoom(timestamp) {
+      if (!startTime) {
+        startTime = timestamp + delay; // Set start time after delay
+      }
+
+      if (timestamp >= startTime) {
+        const elapsedTime = timestamp - startTime;
+        const t = Math.min(elapsedTime / duration, 1); // Normalize time to [0, 1]
+        const currentZoom = THREE.MathUtils.lerp(initialZoom, controls.maxDistance, t); // Interpolate zoom
+        camera.position.z = currentZoom; // Update camera zoom
+
+        if (t === 1) {
+          controls.update(); // Ensure controls are updated when animation ends
+          setHiddenRetroComputer(true);
+          return; // Stop zoom animation
+        }
+      }
+
+      controls.update();
+      renderer.render(scene, camera);
+      requestAnimationFrame(animateZoom);
+    }
+
     function animate() {
       requestAnimationFrame(animate);
       controls.update();
@@ -76,6 +104,7 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor }) 
     }
 
     mountRef.current.appendChild(renderer.domElement);
+    setTimeout(() => requestAnimationFrame(animateZoom), delay); // Start zoom animation after delay
     animate();
 
     // When the maximum zoom is raised, the focus is removed from the model and returned to the page
