@@ -44,7 +44,7 @@ export default function AnimatedTyping({ cursorStyle, stop, textStyle }) {
     while (letters.length > 0) {
       await waitForMs(100);
       letters.pop();
-      eleRef.current.innerHTML = letters.join("");
+      eleRef.current.innerHTML = letters?.join("");
     }
   }
 

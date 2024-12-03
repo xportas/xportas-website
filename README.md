@@ -5,7 +5,7 @@ Open source project containing the source code of my personal website
 
 TODO: Meter un loading al principio de todo para que carguen bien todos los modelos
 
-TODO: Hacer que después de que termine de alejarse el zoom del modelo haga scroll automático al componente Hero
+TODO: Hacer que después de que termine de alejarse el zoom del modelo haga scroll automático al componente Hero, EFECTO se ejecuta cuando cambia la porp que enseña el menú
 
 TODO: arreglar ángulo con el que se ve el modelo cuando se aleja, no es el que he establecido yo
 

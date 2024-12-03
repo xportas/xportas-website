@@ -14,8 +14,7 @@ import RetroScreen from "./sections/RetroScreen";
 
 export default function Home() {
 
-  // const [currentLanguage, setCurrentLanguage] = useState(null);
-  const [currentLanguage, setCurrentLanguage] = useState('en');
+  const [currentLanguage, setCurrentLanguage] = useState(null);
   const [screenWidth, setScreenWidth] = useState(0);
   const [hiddenRetroComputer, setHiddenRetroComputer] = useState(false);
   const [scrollFactor, setScrollFactor] = useState(0);
@@ -44,9 +43,9 @@ export default function Home() {
 
   return (
     <>
-      {/* <div style={{ display: currentLanguage ? "none" : "block" }}>
+      <div style={{ display: currentLanguage ? "none" : "block" }}>
         <RetroScreen setCurrentLanguage={setCurrentLanguage} />
-      </div> */}
+      </div>
 
       <div style={{ display: currentLanguage ? "block" : "none" }}>
         <Nav screenWidth={screenWidth} hiddenRetroComputer={hiddenRetroComputer} />

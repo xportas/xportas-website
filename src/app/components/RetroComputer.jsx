@@ -7,6 +7,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 export default function RetroComputer({ setHiddenRetroComputer, scrollFactor }) {
   const mountRef = useRef(null);
   const controlsRef = useRef(null);
+  const animationStartedRef = useRef(false);
 
   useEffect(() => {
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -16,15 +17,15 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor }) 
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(5, window.innerWidth / window.innerHeight, 1, 100);
-    camera.position.set(1, 2.5, 5); // Start zoomed in (closer)
-    const initialZoom = camera.position.z; // Initial zoom level
+    camera.position.set(1, 2.5, 5);
+    const initialZoom = camera.position.z;
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controlsRef.current = controls;
     controls.enableDamping = true;
     controls.enablePan = false;
     controls.minDistance = 10;
-    controls.maxDistance = 90; // Maximum zoom level (controls.maxDistance)
+    controls.maxDistance = 90;
     controls.minPolarAngle = 1.23;
     controls.maxPolarAngle = 1.32;
 
@@ -57,11 +58,7 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor }) 
         });
         mesh.position.set(0, 2.05, 0);
         scene.add(mesh);
-      },
-      // (error) => {
-      //   console.error(error);
-      // }
-    );
+      });
 
     window.addEventListener('resize', onWindowResize, false);
     function onWindowResize() {
@@ -70,25 +67,25 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor }) 
       renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
-    let startTime = null; // Time when animation starts
+    let startTime = null;
     const delay = 1500;
     const duration = 3700;
 
     function animateZoom(timestamp) {
       if (!startTime) {
-        startTime = timestamp + delay; // Set start time after delay
+        startTime = timestamp + delay;
       }
 
       if (timestamp >= startTime) {
         const elapsedTime = timestamp - startTime;
-        const t = Math.min(elapsedTime / duration, 1); // Normalize time to [0, 1]
-        const currentZoom = THREE.MathUtils.lerp(initialZoom, controls.maxDistance, t); // Interpolate zoom
-        camera.position.z = currentZoom; // Update camera zoom
+        const t = Math.min(elapsedTime / duration, 1);
+        const currentZoom = THREE.MathUtils.lerp(initialZoom, controls.maxDistance, t);
+        camera.position.z = currentZoom;
 
         if (t === 1) {
-          controls.update(); // Ensure controls are updated when animation ends
+          controls.update();
           setHiddenRetroComputer(true);
-          return; // Stop zoom animation
+          return;
         }
       }
 
@@ -104,8 +101,23 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor }) 
     }
 
     mountRef.current.appendChild(renderer.domElement);
-    setTimeout(() => requestAnimationFrame(animateZoom), delay); // Start zoom animation after delay
     animate();
+
+    // Start animation when the component is visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        if (entry.isIntersecting && !animationStartedRef.current) {
+          animationStartedRef.current = true;
+          requestAnimationFrame(animateZoom);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (mountRef.current) {
+      observer.observe(mountRef.current);
+    }
 
     // When the maximum zoom is raised, the focus is removed from the model and returned to the page
     function handleMouseWheel(event) {
@@ -119,9 +131,9 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor }) 
     renderer.domElement.addEventListener('wheel', handleMouseWheel);
 
     return () => {
+      if (mountRef.current) observer.unobserve(mountRef.current);
       mountRef.current.removeChild(renderer.domElement);
       window.removeEventListener('resize', onWindowResize);
-      renderer.domElement.removeEventListener('wheel', handleMouseWheel);
     };
   }, []);
 
