@@ -3,6 +3,8 @@ Open source project containing the source code of my personal website
 
 
 
+TODO: Para arreglar el tema del efecto de apagado de la retro pantalla, probar a meter el div blanco con el efecto de pantalla antigua apagándose en page.js junto con el RetroComputer, así cuando esta se va cerrando aparece el ordenador y no la pantalla naranja en blanco hasta que el estado cambie y aparezca el ordenador.
+
 TODO: Meter un loading al principio de todo para que carguen bien todos los modelos
 
 TODO: Hacer que después de que termine de alejarse el zoom del modelo haga scroll automático al componente Hero, EFECTO se ejecuta cuando cambia la porp que enseña el menú
