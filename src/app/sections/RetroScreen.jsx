@@ -9,7 +9,7 @@ import { languageOptions, waitForMs } from '../utils/utils';
 
 
 
-export default function RetroScreen({ setCurrentLanguage }) {
+export default function RetroScreen({ setCurrentLanguage, screenWidth }) {
   const mainThemeAudioRef = useRef(null);
   const [langIndex, setLangIndex] = useState(0);
   const [selectedLang, setSelectedLang] = useState('en');
@@ -91,13 +91,13 @@ export default function RetroScreen({ setCurrentLanguage }) {
         {retroScreenOn ? // Necessary for the shutdown effect, hides elements of the screen
 
           <>
-            {mainThemeAudioON && <PacManGhosts />}
+            {/* {mainThemeAudioON && <PacManGhosts />} */}
             <audio ref={mainThemeAudioRef} src="/audio/main-song.mp3"></audio>
 
             <div className={`h-full w-full absolute`} >
 
               {/* Hero */}
-              <div className='flex h-3/5'>
+              {/* <div className='flex h-3/5'>
                 <div className='flex flex-col justify-center content-center space-y-12 font-header py-20 pl-20 w-1/2'>
                   <div>
                     <p className='text-3xl'>
@@ -119,29 +119,29 @@ export default function RetroScreen({ setCurrentLanguage }) {
                       <li className='mt-2'> Specialization in GIS </li>
                     </ul>
                   </div>
-                </div>
+                </div> */}
 
 
                 {/* xportas logo image */}
-                <div className='flex flex-1 justify-center content-center'>
+                {/* <div className='flex flex-1 justify-center content-center'>
                   <PixelatedImage
                     src="/images/xportas-logo.webp"
                     blockSize={100}
                     className='img-blur rounded-full h-full mt-10 animate-rotation'
                   />
                 </div>
-              </div>
+              </div> */}
 
 
-              <LangSelector setCurrentLanguage={setCurrentLanguage} setRetroScreenOn={setRetroScreenOn} />
+              <LangSelector setCurrentLanguage={setCurrentLanguage} setRetroScreenOn={setRetroScreenOn} screenWidth={screenWidth} />
             </div>
 
             {/* CTR noise */}
-            <div
+            {/* <div
               className={`h-full w-full z-30 relative animate-crtScreen ${retroScreenOn ? 'opacity-45' : 'opacity-0'}`}
               id='crt-noise'
               style={{ background: `linear-gradient(to bottom, transparent, #aaa4, #8881, #6664, #4445, #2228, #4443, transparent), repeating-linear-gradient(transparent 0 2px, #25242950 2px 4px)` }}>
-            </div>
+            </div> */}
           </>
 
           :

@@ -44,21 +44,21 @@ export default function Home() {
   return (
     <>
       <div style={{ display: currentLanguage ? "none" : "block" }}>
-        <RetroScreen setCurrentLanguage={setCurrentLanguage} />
+        <RetroScreen setCurrentLanguage={setCurrentLanguage} screenWidth={screenWidth} />
       </div>
 
       <div style={{ display: currentLanguage ? "block" : "none" }}>
         <Nav screenWidth={screenWidth} hiddenRetroComputer={hiddenRetroComputer} />
         {/* <Nav screenWidth={screenWidth} hiddenRetroComputer={true} /> */}
 
-        <RetroComputer setHiddenRetroComputer={setHiddenRetroComputer} scrollFactor={scrollFactor} />
+        {/* <RetroComputer setHiddenRetroComputer={setHiddenRetroComputer} scrollFactor={scrollFactor} />
 
         <Hero />
         <About />
         <Jobs screenWidth={screenWidth} />
         <Projects screenWidth={screenWidth} />
         <Contact />
-        <Footer />
+        <Footer /> */}
       </div>
     </>
   );
