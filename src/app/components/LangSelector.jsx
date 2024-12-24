@@ -73,7 +73,8 @@ export default function LangSelector({ setCurrentLanguage, setRetroScreenOn, scr
           </>
         }
       </div>
-      <div className="grid grid-cols-2 gap-4 justify-center items-center md:gap-6 mt-3 md:mt-0">
+      <div className="grid grid-cols-2 gap-4 justify-center items-center min-[427px]:grid-cols-4 md:gap-7 
+                      mt-3 md:mt-0 min-[900px]:mr-7">
         {languageOptions.map((lang) => (
           <PixelatedImage
             blockSize={10}
@@ -81,8 +82,8 @@ export default function LangSelector({ setCurrentLanguage, setRetroScreenOn, scr
             src={lang.flag}
             alt={lang.value}
             level={lang.level}
-            className={`m-auto rounded-full w-20 h-20 md:w-32 md:h-32 opacity-95 ${selectedLang === lang.value ? 'shadow-lang-glow' : ''
-              }`}
+            className={`m-auto rounded-full w-20 h-20 min-[600px]:w-24 min-[600px]:h-24 min-[900px]:w-28 min-[900px]:h-28 
+                        lg:w-32 lg:h-32 opacity-95 ${selectedLang === lang.value ? 'shadow-lang-glow' : ''}`}
           />
         ))}
       </div>
