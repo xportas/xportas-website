@@ -58,7 +58,8 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor }) 
         });
         mesh.position.set(0, 2.05, 0);
         scene.add(mesh);
-      });
+      }
+    );
 
     window.addEventListener('resize', onWindowResize, false);
     function onWindowResize() {
@@ -98,6 +99,7 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor }) 
       requestAnimationFrame(animate);
       controls.update();
       renderer.render(scene, camera);
+      controls.enableZoom = false; // Required for scrolling with trackpad or touch devices
     }
 
     mountRef.current.appendChild(renderer.domElement);
@@ -120,15 +122,18 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor }) 
     }
 
     // When the maximum zoom is raised, the focus is removed from the model and returned to the page
-    function handleMouseWheel(event) {
-      if (camera.position.length() >= controls.maxDistance) {
-        event.preventDefault();
-        window.scrollBy(0, event.deltaY);
-        setHiddenRetroComputer(true);
-      }
+    function handleScroll(event) {
+      // if (camera.position.length() >= controls.maxDistance) {
+      //   event.preventDefault();
+      //   window.scrollBy(0, event.deltaY);
+      //   setHiddenRetroComputer(true);
+      // }
+      event.stopPropagation();
+      window.scrollBy({ top: event.deltaY, behavior: 'smooth', });
     }
 
-    renderer.domElement.addEventListener('wheel', handleMouseWheel);
+    renderer.domElement.addEventListener('wheel', handleScroll);
+    renderer.domElement.addEventListener('touchmove', handleScroll);
 
     return () => {
       if (mountRef.current) observer.unobserve(mountRef.current);
