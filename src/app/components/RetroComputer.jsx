@@ -4,12 +4,23 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-export default function RetroComputer({ setHiddenRetroComputer, scrollFactor }) {
+export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, setProgress }) {
   const mountRef = useRef(null);
   const controlsRef = useRef(null);
   const animationStartedRef = useRef(false);
 
   useEffect(() => {
+    const manager = new THREE.LoadingManager();
+
+    manager.onProgress = (url, itemsLoaded, itemsTotal) => {
+      const progress = Math.round((itemsLoaded / itemsTotal) * 100);
+      setProgress(progress);
+    };
+
+    manager.onLoad = () => {
+      setProgress(100);
+    };
+
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -45,7 +56,7 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor }) 
     spotLight.castShadow = true;
     scene.add(spotLight);
 
-    const loader = new GLTFLoader().setPath('models/commodore/');
+    const loader = new GLTFLoader(manager).setPath('models/commodore/');
     loader.load(
       'scene.gltf',
       (gltf) => {
@@ -140,7 +151,7 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor }) 
       mountRef.current.removeChild(renderer.domElement);
       window.removeEventListener('resize', onWindowResize);
     };
-  }, []);
+  }, [setProgress]);
 
   return (
     <>
