@@ -18,6 +18,12 @@ export default function Home() {
   const [screenWidth, setScreenWidth] = useState(0);
   const [hiddenRetroComputer, setHiddenRetroComputer] = useState(false);
   const [scrollFactor, setScrollFactor] = useState(0);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+  // to know whether it is a touch device or not
+  useEffect(() => {
+    setIsTouchDevice(('ontouchstart' in window) || (navigator.maxTouchPoints > 0));
+  }, []);
 
   // effect to handle changes in screen width property
   useEffect(() => {
@@ -44,7 +50,7 @@ export default function Home() {
   return (
     <>
       <div style={{ display: currentLanguage ? "none" : "block" }}>
-        <RetroScreen setCurrentLanguage={setCurrentLanguage} screenWidth={screenWidth} />
+        <RetroScreen setCurrentLanguage={setCurrentLanguage} screenWidth={screenWidth} isTouchDevice={isTouchDevice} />
       </div>
 
       <div style={{ display: currentLanguage ? "block" : "none" }}>
