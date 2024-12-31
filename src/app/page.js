@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from "react";
+import Loader from "./components/Loader";
 import Nav from "./components/Nav";
 import RetroComputer from "./components/RetroComputer";
 import About from "./sections/About";
@@ -51,14 +52,7 @@ export default function Home() {
   return (
     <>
       {progress < 100 && (
-        <div style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", backgroundColor: "#000", zIndex: 9999 }}>
-          <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", textAlign: "center", color: "#fff" }}>
-            <p>Loading... {progress}%</p>
-            <div style={{ background: "#fff", width: "300px", height: "10px", borderRadius: "5px", overflow: "hidden" }}>
-              <div style={{ background: "#0f0", width: `${progress}%`, height: "100%", transition: "width 0.3s ease" }}></div>
-            </div>
-          </div>
-        </div>
+        <Loader progress={progress} />
       )}
 
       <div style={{ display: currentLanguage ? "none" : "block" }}>
