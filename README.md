@@ -3,13 +3,11 @@ Open source project containing the source code of my personal website
 
 
 
-TODO: Para arreglar el tema del efecto de apagado de la retro pantalla, probar a meter el div blanco con el efecto de pantalla antigua apagándose en page.js junto con el RetroComputer, así cuando esta se va cerrando aparece el ordenador y no la pantalla naranja en blanco hasta que el estado cambie y aparezca el ordenador.
+TODO: Para arreglar el tema del efecto de apagado de la retro pantalla, probar a meter el div blanco con el efecto de pantalla antigua apagándose en page.js junto con el RetroComputer, así cuando esta se va cerrando aparece el ordenador y no la pantalla naranja en blanco hasta que el estado cambie y aparezca el ordenador. ==> meter el div blanco en el propio componente del retrocomputer
 
-TODO: Hacer multipantalla la Retro Screen y el Retro Computer
+TODO: Hacer multipantalla el logo de la RetroScreen y ver qué pasa con el RetroComputer en pantallas táctiles y de móviles
 
 *** BUG: En firefox, cuando cargo la página ya suena la música, controlar para que hasta pulsar el btn on/off no se reproduzca la música
-
-*** BUG: Cuando hago scroll con el trackpad el retroComputer no pierde bien el foco y no me permite seguir haciendo scroll
 
 TODO: HACER EL MULTIIDIOMA Y LOS STRINGS
 

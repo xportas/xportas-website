@@ -1,5 +1,7 @@
 'use client';
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from './utils/i18n';
 import Loader from "./components/Loader";
 import Nav from "./components/Nav";
 import RetroComputer from "./components/RetroComputer";
@@ -21,14 +23,14 @@ export default function Home() {
   const [scrollFactor, setScrollFactor] = useState(0);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [progress, setProgress] = useState(0);
+  const { t, i18n } = useTranslation(['strings']);
 
-  // to know whether it is a touch device or not
+
   useEffect(() => {
+    // to know whether it is a touch device or not
     setIsTouchDevice(('ontouchstart' in window) || (navigator.maxTouchPoints > 0));
-  }, []);
 
-  // effect to handle changes in screen width property
-  useEffect(() => {
+    // effect to handle changes in screen width property
     setScreenWidth(window.innerWidth);
     const handleResize = () => setScreenWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
@@ -56,12 +58,13 @@ export default function Home() {
       )}
 
       <div style={{ display: currentLanguage ? "none" : "block" }}>
-        <RetroScreen setCurrentLanguage={setCurrentLanguage} screenWidth={screenWidth} isTouchDevice={isTouchDevice} />
+        <RetroScreen i18n={i18n} setCurrentLanguage={setCurrentLanguage} screenWidth={screenWidth} isTouchDevice={isTouchDevice} />
       </div>
 
       <div style={{ display: currentLanguage ? "block" : "none" }}>
         <Nav screenWidth={screenWidth} hiddenRetroComputer={hiddenRetroComputer} />
         {/* <Nav screenWidth={screenWidth} hiddenRetroComputer={true} /> */}
+        <p>{t('welcome')}</p>{console.log(currentLanguage)}
 
         <RetroComputer setHiddenRetroComputer={setHiddenRetroComputer} scrollFactor={scrollFactor} setProgress={setProgress} />
 

@@ -9,7 +9,7 @@ import { languageOptions, waitForMs } from '../utils/utils';
 
 
 
-export default function RetroScreen({ setCurrentLanguage, screenWidth, isTouchDevice }) {
+export default function RetroScreen({ i18n, setCurrentLanguage, screenWidth, isTouchDevice }) {
   const mainThemeAudioRef = useRef(null);
   const [langIndex, setLangIndex] = useState(0);
   const [selectedLang, setSelectedLang] = useState('en');
@@ -31,6 +31,7 @@ export default function RetroScreen({ setCurrentLanguage, screenWidth, isTouchDe
           setRetroScreenOn(false);
           await waitForMs(900);
           setCurrentLanguage(selectedLang);
+          i18n.changeLanguage(selectedLang);
           break;
         default:
           break;
@@ -97,7 +98,7 @@ export default function RetroScreen({ setCurrentLanguage, screenWidth, isTouchDe
             <div className={`h-full w-full absolute`} >
 
               {/* Hero */}
-              <div className='flex h-3/5 max-w-6xl m-auto'>
+              <div className='flex min-[1090px]:h-3/5 max-w-6xl m-auto'>
                 <div className='flex flex-col justify-center content-center space-y-8 font-header py-10 px-4 sm:py-16 sm:px-10 md:py-20 md:px-16 lg:py-20 lg:pl-20 w-full md:w-3/4 lg:w-1/2'>
                   <div className='max-[767px]:flex max-[767px]:justify-center'>
                     <p className='text-xl min-[600px]:text-2xl md:text-3xl'>
@@ -123,13 +124,13 @@ export default function RetroScreen({ setCurrentLanguage, screenWidth, isTouchDe
 
 
                 {/* xportas logo image */}
-                {/* <div className='flex flex-1 justify-center content-center'>
+                <div className='flex flex-1 justify-center items-center'>
                   <PixelatedImage
                     src="/images/xportas-logo.webp"
                     blockSize={100}
-                    className='img-blur rounded-full h-full mt-10 animate-rotation'
+                    className='img-blur rounded-full h-24 min-[1090px]:h-full min-[1090px]:mt-10 animate-rotation'
                   />
-                </div> */}
+                </div>
               </div>
 
 
