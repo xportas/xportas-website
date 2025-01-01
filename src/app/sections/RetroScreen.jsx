@@ -12,7 +12,6 @@ import { languageOptions, waitForMs } from '../utils/utils';
 export default function RetroScreen({ i18n, setCurrentLanguage, screenWidth, isTouchDevice }) {
   const mainThemeAudioRef = useRef(null);
   const [langIndex, setLangIndex] = useState(0);
-  const [selectedLang, setSelectedLang] = useState('en');
   const [retroScreenOn, setRetroScreenOn] = useState(true);
   const [mainThemeAudioON, setMainThemeAudioON] = useState(false);
 
@@ -21,17 +20,19 @@ export default function RetroScreen({ i18n, setCurrentLanguage, screenWidth, isT
   useEffect(() => {
     const handleKeyDown = async (event) => {
       switch (event.key) {
+        case 'ArrowUp':
         case 'ArrowLeft':
           setLangIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : languageOptions.length - 1));
           break;
+        case 'ArrowDown':
         case 'ArrowRight':
           setLangIndex((prevIndex) => (prevIndex < languageOptions.length - 1 ? prevIndex + 1 : 0));
           break;
         case 'Enter':
           setRetroScreenOn(false);
           await waitForMs(900);
-          setCurrentLanguage(selectedLang);
-          i18n.changeLanguage(selectedLang);
+          setCurrentLanguage(languageOptions[langIndex].value);
+          i18n.changeLanguage(languageOptions[langIndex].value);
           break;
         default:
           break;
@@ -41,11 +42,6 @@ export default function RetroScreen({ i18n, setCurrentLanguage, screenWidth, isT
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [langIndex]);
-
-
-  useEffect(() => {
-    setSelectedLang(languageOptions[langIndex].value);
   }, [langIndex]);
 
 
