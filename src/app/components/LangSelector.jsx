@@ -4,11 +4,8 @@ import { PixelatedImage } from '../components/PixelatedImage';
 import { languageOptions, waitForMs } from '../utils/utils';
 
 
-
-export default function LangSelector({ setCurrentLanguage, setRetroScreenOn, screenWidth }) {
+export default function LangSelector({ i18n, setCurrentLanguage, setRetroScreenOn, screenWidth }) {
   const [langIndex, setLangIndex] = useState(0);
-  const [selectedLang, setSelectedLang] = useState('en');
-
 
   // Keyboard listening effect
   useEffect(() => {
@@ -25,7 +22,8 @@ export default function LangSelector({ setCurrentLanguage, setRetroScreenOn, scr
         case 'Enter':
           setRetroScreenOn(false);
           await waitForMs(900);
-          setCurrentLanguage(selectedLang);
+          setCurrentLanguage(languageOptions[langIndex].value);
+          i18n.changeLanguage(languageOptions[langIndex].value);
           break;
         default:
           break;
@@ -36,12 +34,6 @@ export default function LangSelector({ setCurrentLanguage, setRetroScreenOn, scr
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [langIndex]);
-
-
-  useEffect(() => {
-    setSelectedLang(languageOptions[langIndex].value);
-  }, [langIndex]);
-
 
 
   return (
@@ -83,7 +75,7 @@ export default function LangSelector({ setCurrentLanguage, setRetroScreenOn, scr
             alt={lang.value}
             level={lang.level}
             className={`m-auto rounded-full w-20 h-20 min-[600px]:w-24 min-[600px]:h-24 min-[900px]:w-28 min-[900px]:h-28 
-                        lg:w-32 lg:h-32 opacity-95 ${selectedLang === lang.value ? 'shadow-lang-glow' : ''}`}
+                        lg:w-32 lg:h-32 opacity-95 ${languageOptions[langIndex].value === lang.value ? 'shadow-lang-glow' : ''}`}
           />
         ))}
       </div>

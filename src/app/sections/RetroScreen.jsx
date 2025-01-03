@@ -11,38 +11,8 @@ import { languageOptions, waitForMs } from '../utils/utils';
 
 export default function RetroScreen({ i18n, setCurrentLanguage, screenWidth, isTouchDevice }) {
   const mainThemeAudioRef = useRef(null);
-  const [langIndex, setLangIndex] = useState(0);
   const [retroScreenOn, setRetroScreenOn] = useState(true);
   const [mainThemeAudioON, setMainThemeAudioON] = useState(false);
-
-
-  // Keyboard listening effect
-  useEffect(() => {
-    const handleKeyDown = async (event) => {
-      switch (event.key) {
-        case 'ArrowUp':
-        case 'ArrowLeft':
-          setLangIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : languageOptions.length - 1));
-          break;
-        case 'ArrowDown':
-        case 'ArrowRight':
-          setLangIndex((prevIndex) => (prevIndex < languageOptions.length - 1 ? prevIndex + 1 : 0));
-          break;
-        case 'Enter':
-          setRetroScreenOn(false);
-          await waitForMs(900);
-          setCurrentLanguage(languageOptions[langIndex].value);
-          i18n.changeLanguage(languageOptions[langIndex].value);
-          break;
-        default:
-          break;
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [langIndex]);
 
 
   // Song effect
@@ -130,7 +100,7 @@ export default function RetroScreen({ i18n, setCurrentLanguage, screenWidth, isT
               </div>
 
 
-              <LangSelector setCurrentLanguage={setCurrentLanguage} setRetroScreenOn={setRetroScreenOn} screenWidth={screenWidth} />
+              <LangSelector i18n={i18n} setCurrentLanguage={setCurrentLanguage} setRetroScreenOn={setRetroScreenOn} screenWidth={screenWidth} />
             </div>
 
             {/* CTR noise */}
