@@ -1,4 +1,16 @@
 {
-  "welcome": "Welcome to our site!",
-  "description": "This is a multi-language website."
+  "LANG_SELECTOR": {
+    "MOVE_OPT": "Move between the options",
+    "SELECT_LANG": "Select one of my languages:",
+    "SELECT_ONE_LANG": "Select language"
+  },
+  "NAV": {
+    "ABOUT": "About",
+    "CONTACT": "Contact",
+    "EXPERIENCE": "Experience",
+    "WORK": "Work"
+  },
+  "PLUMBER": {
+    "WORKING_NEW_PROJ": "* Working on new projects *"
+  }
 }

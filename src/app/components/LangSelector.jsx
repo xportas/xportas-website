@@ -1,10 +1,13 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { useTranslation } from "react-i18next";
 import { PixelatedImage } from '../components/PixelatedImage';
 import { languageOptions, waitForMs } from '../utils/utils';
 
 
 export default function LangSelector({ i18n, setCurrentLanguage, setRetroScreenOn, screenWidth }) {
+
+  const { t } = useTranslation(['strings']);
   const [langIndex, setLangIndex] = useState(0);
 
   // Keyboard listening effect
@@ -41,7 +44,7 @@ export default function LangSelector({ i18n, setCurrentLanguage, setRetroScreenO
       <div className="flex flex-col w-full md:w-2/6 mx-2 md:mx-5 lg:mx-10 mt-3 md:space-y-5">
         <div className="ml-1">
           <span className="text-responsive-section-heading md:text-2xl text-center md:text-left">
-            Select one of my languages:
+            {t('LANG_SELECTOR.SELECT_LANG')}
           </span>
         </div>
         {screenWidth >= 768 &&
@@ -52,7 +55,7 @@ export default function LangSelector({ i18n, setCurrentLanguage, setRetroScreenO
                 alt="arrow-keys"
                 className="w-8 h-8 md:w-14 md:h-14"
               />
-              <span className="text-sm md:text-base">Move between the options</span>
+              <span className="text-sm md:text-base"> {t('LANG_SELECTOR.MOVE_OPT')} </span>
             </div>
             <div className="flex items-center justify-center md:justify-start space-x-3">
               <img
@@ -60,7 +63,7 @@ export default function LangSelector({ i18n, setCurrentLanguage, setRetroScreenO
                 alt="enter-keys"
                 className="w-6 h-6 md:w-11 md:h-11"
               />
-              <span className="text-sm md:text-base">Select language</span>
+              <span className="text-sm md:text-base"> {t('LANG_SELECTOR.SELECT_ONE_LANG')} </span>
             </div>
           </>
         }

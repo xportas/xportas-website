@@ -5,7 +5,7 @@ import LangSelector from '../components/LangSelector';
 import PacManGhosts from '../components/PacManGhosts';
 import { PixelatedImage } from '../components/PixelatedImage';
 import PowerOnBtn from '../components/PowerOnBtn';
-import { languageOptions, waitForMs } from '../utils/utils';
+import { waitForMs } from '../utils/utils';
 
 
 

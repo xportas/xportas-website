@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 export default function Plumber() {
+
+  const { t } = useTranslation(['strings']);
 
   /*
   *
@@ -16,26 +20,29 @@ export default function Plumber() {
 
   return (
     <div className="flex items-center justify-center flex-col" style={{ cursor: 'wait' }}>
+
       {/* <img src="/images/plumber.svg" alt="plumber-working" className="p-0 m-0 h-60" /> */}
+
       <span className="w-[60px] h-10 relative inline-block before:content-[''] before:absolute before:w-9 before:h-9 before:bg-main-gray 
-      before:bg-[radial-gradient(circle_8px_at_18px_18px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_18px_0px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_0px_18px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_36px_18px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_18px_36px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_30px_5px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_30px_5px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_30px_30px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_5px_30px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_5px_5px,var(--base-color)_100%,transparent_0)]
-      before:bg-no-repeat 
-      before:box-border 
-      before:animate-[rotationLoader_3s_linear_infinite] 
-      before:rounded-[50%] 
-      before:left-0 
-      before:top-0 after:content-['']
-      after:absolute after:w-6 after:h-6 
-      after:bg-main-gray 
-      after:bg-[radial-gradient(circle_5px_at_12px_12px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_12px_0px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_0px_12px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_24px_12px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_12px_24px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_20px_3px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_20px_3px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_20px_20px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_3px_20px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_3px_3px,var(--base-color)_100%,transparent_0)] 
-      after:bg-no-repeat 
-      after:box-border 
-      after:animate-[rotationLoader_4s_linear_infinite_reverse] 
-      after:rounded-[50%] 
-      after:left-[35px] 
-      after:top-[15px]"
-      style={{ '--base-color': '#FED7AA' }} />
-      <span className="text-[clamp(10px,2.5vw,18px)] font-header whitespace-nowrap">* Working on new projects *</span>
+                      before:bg-[radial-gradient(circle_8px_at_18px_18px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_18px_0px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_0px_18px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_36px_18px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_18px_36px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_30px_5px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_30px_5px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_30px_30px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_5px_30px,var(--base-color)_100%,transparent_0),radial-gradient(circle_4px_at_5px_5px,var(--base-color)_100%,transparent_0)]
+                      before:bg-no-repeat 
+                      before:box-border 
+                      before:animate-[rotationLoader_3s_linear_infinite] 
+                      before:rounded-[50%] 
+                      before:left-0 
+                      before:top-0 after:content-['']
+                      after:absolute after:w-6 after:h-6 
+                      after:bg-main-gray 
+                      after:bg-[radial-gradient(circle_5px_at_12px_12px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_12px_0px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_0px_12px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_24px_12px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_12px_24px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_20px_3px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_20px_3px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_20px_20px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_3px_20px,var(--base-color)_100%,transparent_0),radial-gradient(circle_2.5px_at_3px_3px,var(--base-color)_100%,transparent_0)] 
+                      after:bg-no-repeat 
+                      after:box-border 
+                      after:animate-[rotationLoader_4s_linear_infinite_reverse] 
+                      after:rounded-[50%] 
+                      after:left-[35px] 
+                      after:top-[15px]"
+        style={{ '--base-color': '#FED7AA' }} />
+
+      <span className="text-[clamp(10px,2.5vw,18px)] font-header whitespace-nowrap"> {t('PLUMBER.WORKING_NEW_PROJ')} </span>
     </div>
   );
 }

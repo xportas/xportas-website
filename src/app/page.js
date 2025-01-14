@@ -1,7 +1,5 @@
 'use client';
 import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
-import i18n from './utils/i18n';
 import Loader from "./components/Loader";
 import Nav from "./components/Nav";
 import RetroComputer from "./components/RetroComputer";
@@ -12,6 +10,7 @@ import Hero from "./sections/Hero";
 import Jobs from "./sections/Jobs";
 import Projects from "./sections/Projects";
 import RetroScreen from "./sections/RetroScreen";
+import i18n from './utils/i18n';
 
 
 
@@ -23,7 +22,6 @@ export default function Home() {
   const [scrollFactor, setScrollFactor] = useState(0);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [progress, setProgress] = useState(0);
-  const { t, i18n } = useTranslation(['strings']);
 
 
   useEffect(() => {
@@ -53,7 +51,7 @@ export default function Home() {
 
   return (
     <>
-      {progress < 100 && (
+      {progress > 100 && (
         <Loader progress={progress} />
       )}
 
@@ -62,11 +60,10 @@ export default function Home() {
       </div>
 
       <div style={{ display: currentLanguage ? "block" : "none" }}>
-        <Nav screenWidth={screenWidth} hiddenRetroComputer={hiddenRetroComputer} />
-        {/* <Nav screenWidth={screenWidth} hiddenRetroComputer={true} /> */}
-        <p>{t('welcome')}</p>{console.log(currentLanguage)}
+        {/* <Nav screenWidth={screenWidth} hiddenRetroComputer={hiddenRetroComputer} /> */}
+        <Nav screenWidth={screenWidth} hiddenRetroComputer={true} />
 
-        <RetroComputer setHiddenRetroComputer={setHiddenRetroComputer} scrollFactor={scrollFactor} setProgress={setProgress} />
+        {/* <RetroComputer setHiddenRetroComputer={setHiddenRetroComputer} scrollFactor={scrollFactor} setProgress={setProgress} /> */}
 
         <Hero />
         <About />

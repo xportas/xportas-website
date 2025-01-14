@@ -1,5 +1,3 @@
-
-
 export default function PowerOnBtn({ handleStartMainThemeAudio }) {
   return (
     <button

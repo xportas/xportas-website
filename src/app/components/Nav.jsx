@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { links, navLinks } from '../utils/config';
 import { waitForMs } from "../utils/utils";
 import RetroBtn from './RetroBtn';
@@ -7,6 +8,7 @@ import RetroBtn from './RetroBtn';
 
 export default function Nav({ hiddenRetroComputer, screenWidth }) {
 
+  const { t } = useTranslation(['strings']);
   const [showNavbar, setShowNavbar] = useState(false);
   const [navbarHidden, setNavbarHidden] = useState(true);
   const navbarInitialState = { about: false, work: false, experience: false, contact: false };
@@ -109,22 +111,22 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
                   <span
                     style={{ '--dynamic-duration': '0.3s', '--dynamic-translate': '0' }}
                     className={`px-3 m-2 bg-orange-300 bg-clip-text text-sm text-transparent ${navbarOnHoverState.about ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>
-                    About
+                    {t('NAV.ABOUT')}
                   </span>
                   <span
                     style={{ '--dynamic-duration': '0.3s', '--dynamic-translate': '0' }}
                     className={`px-3 m-2 bg-orange-300 bg-clip-text text-sm text-transparent ${navbarOnHoverState.experience ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>
-                    Experience
+                    {t('NAV.EXPERIENCE')}
                   </span>
                   <span
                     style={{ '--dynamic-duration': '0.3s', '--dynamic-translate': '0' }}
                     className={`px-3 m-2 bg-orange-300 bg-clip-text text-sm text-transparent ${navbarOnHoverState.work ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>
-                    Work
+                    {t('NAV.WORK')}
                   </span>
                   <span
                     style={{ '--dynamic-duration': '0.3s', '--dynamic-translate': '0' }}
                     className={`px-3 m-2 bg-orange-300 bg-clip-text text-sm text-transparent ${navbarOnHoverState.contact ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>
-                    Contact
+                    {t('NAV.CONTACT')}
                   </span>
                 </div>
 
@@ -135,7 +137,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
                     onMouseOver={() => handleNavbarOnHover('about', true)}
                     onMouseLeave={() => handleNavbarOnHover('about', false)}>
                     <span className={`bg-main-gray bg-clip-text text-sm`}>
-                      About
+                      {t('NAV.ABOUT')}
                     </span>
                   </a>
                   <a
@@ -144,7 +146,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
                     onMouseOver={() => handleNavbarOnHover('experience', true)}
                     onMouseLeave={() => handleNavbarOnHover('experience', false)}>
                     <span className={`bg-main-gray bg-clip-text text-sm`}>
-                      Experience
+                      {t('NAV.EXPERIENCE')}
                     </span>
                   </a>
                   <a
@@ -154,7 +156,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
                     onMouseLeave={() => handleNavbarOnHover('work', false)}>
                     <span
                       className={`bg-main-gray bg-clip-text text-sm`}>
-                      Work
+                      {t('NAV.WORK')}
                     </span>
                   </a>
                   <a
@@ -164,7 +166,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
                     onMouseLeave={() => handleNavbarOnHover('contact', false)}>
                     <span
                       className={`bg-main-gray bg-clip-text text-sm`}>
-                      Contact
+                      {t('NAV.CONTACT')}
                     </span>
                   </a>
                 </div>
@@ -184,7 +186,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
               className={`text-[3.5vh] w-full mb-2 ${navbarOnHoverState.about ? 'bg-orange-200 text-main-gray' : ''}`}
               onMouseOver={() => handleNavbarOnHover('about', true)} onMouseLeave={() => handleNavbarOnHover('about', false)}>
               <span className="ml-3" onClick={() => setShowNavbar(!showNavbar)}>
-                About
+                {t('NAV.ABOUT')}
               </span>
             </a>
             <a
@@ -192,7 +194,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
               className={`text-[3.5vh] w-full mb-2 ${navbarOnHoverState.experience ? 'bg-orange-200 text-main-gray' : ''}`}
               onMouseOver={() => handleNavbarOnHover('experience', true)} onMouseLeave={() => handleNavbarOnHover('experience', false)}>
               <span className="ml-3" onClick={() => setShowNavbar(!showNavbar)}>
-                Experience
+                {t('NAV.EXPERIENCE')}
               </span>
             </a>
             <a
@@ -201,7 +203,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
               onMouseOver={() => handleNavbarOnHover('work', true)}
               onMouseLeave={() => handleNavbarOnHover('work', false)}>
               <span className="ml-3" onClick={() => setShowNavbar(!showNavbar)}>
-                Work
+                {t('NAV.WORK')}
               </span>
             </a>
             <a
@@ -210,7 +212,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
               onMouseOver={() => handleNavbarOnHover('contact', true)}
               onMouseLeave={() => handleNavbarOnHover('contact', false)} >
               <span className="ml-3" onClick={() => setShowNavbar(!showNavbar)}>
-                Contact
+                {t('NAV.CONTACT')}
               </span>
             </a>
           </nav>
