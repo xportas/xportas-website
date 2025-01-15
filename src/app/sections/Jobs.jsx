@@ -1,10 +1,13 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from "react-i18next";
 import { jobs } from '../utils/config';
 import { dashedLine, linkStyle } from "../utils/utils";
 
 
 export default function Jobs({ screenWidth }) {
+  
+  const { t } = useTranslation(['strings']);
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
   const tabs = useRef([]);

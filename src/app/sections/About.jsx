@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from "react-i18next";
 import Skill from '../components/Skill';
 import { skills } from "../utils/config";
 import { dashedLine, underlineEffect } from "../utils/utils";
 
 export default function About() {
 
+  const { t } = useTranslation(['strings']);
   const aboutRef = useRef(null);
   const [rendered, setRendered] = useState(false);
 
@@ -40,26 +42,25 @@ export default function About() {
     >
 
       <h3 className={`flex items-center mb-7 font-header text-responsive-section-heading whitespace-nowrap ${dashedLine}`}>
-        About Me
+        {t('ABOUT.ABOUT_ME')}
       </h3>
 
       <div className="block md:grid md:grid-cols-[3fr_2fr] md:gap-12 text-xs min-[480px]:text-sm min-[1375px]:text-base">
         <div>
           <div className="grid grid-cols-1 gap-y-4">
             <p>
-              quiero comprobar que esto tiene sentido algunao para ver si el tamaño de la letra es correcto
-              porque claro a la hora de ver si esto es correcto quiero ver si el usuario puede leer bien con este tamaño de letra y demás
+              {t('ABOUT.P1')}
             </p>
 
             <p>
-              lksdj dlkjlk jdlkjdkljdkl jklsjd kl jsdjskl dkls jdkl jsdkldlk d{' '}
-              <a href="" className={`text-secondary-orange ${underlineEffect}`}>dkj kdj dkjd kdk kdk</a>,{' '}
-              <a href="" className={`text-secondary-orange ${underlineEffect}`}>kjd kdj dk</a>,{' '}
-              <a href="" className={`text-secondary-orange ${underlineEffect}`}>kdj dkj dkdj kdk dd</a>, and{' '}
-              <a href="" className={`text-secondary-orange ${underlineEffect}`}>kdj kdj dkjd kdjd kdj kddkj</a>. My
-              lsdkj dkjd kjdkjsfkljsdflskj flsdk sdlk dldk jsdlkd ldk jdlk jldk dlkd jdl d
-              djkj dkjd kdj d<a href="https://upstatement.com/">dlkjdlkjdlk</a> dkljd kdj kdjd dk
-              asdfasd.
+              {t('ABOUT.P21')}
+              <a href="" className={`text-secondary-orange ${underlineEffect}`}>dkj kdj dkjd kdk kdk</a>,
+              <a href="" className={`text-secondary-orange ${underlineEffect}`}>kjd kdj dk</a>,
+              <a href="" className={`text-secondary-orange ${underlineEffect}`}>kdj dkj dkdj kdk dd</a>, and
+              <a href="" className={`text-secondary-orange ${underlineEffect}`}>kdj kdj dkjd kdjd kdj kddkj</a>.
+              {t('ABOUT.P22')}
+              <a href="https://upstatement.com/">dlkjdlkjdlk</a>
+              {t('ABOUT.P23')}
             </p>
 
             <p>
@@ -71,7 +72,7 @@ export default function About() {
               lkd jdlkj dl
             </p>
 
-            <p>Here are all the technologies I’ve been working:</p>
+            <p>{t('ABOUT.TECH_I_KNOW')}</p>
           </div>
         </div>
 
@@ -101,7 +102,7 @@ export default function About() {
         {skills && Object.entries(skills).map(([category, items]) => {
           return (
             <Skill
-            key={category}
+              key={category}
               url={`${category}`}
               back={
                 <div className="flex flex-col justify-center items-center">

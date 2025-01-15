@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from "react-i18next";
 import Plumber from '../components/Plumber';
 import { projects } from '../utils/config';
 import { dashedLine, underlineEffect } from '../utils/utils';
 
 
 export default function Projects({ screenWidth }) {
+  
+  const { t } = useTranslation(['strings']);
   const projectsRef = useRef(null);
   const [rendered, setRendered] = useState(false);
 

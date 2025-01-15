@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from "react-i18next";
 import RetroBtn from '../components/RetroBtn';
 import { personalData } from '../utils/config';
 
 export default function Contact() {
+
+  const { t } = useTranslation(['strings']);
   const contactRef = useRef(null);
   const [rendered, setRendered] = useState(false);
 
@@ -37,21 +40,20 @@ export default function Contact() {
       id='contact'
     >
       <h3 className='text-lg'>
-        What’s Next?
+        {t('CONTACT.WHATS_NEXT')}
       </h3>
       <h2 className="font-header text-responsive-section-heading whitespace-nowrap">
-        Get In Touch
+        {t('CONTACT.GET_IN_TOUCH')}
       </h2>
       <p className='mt-6 mb-12 text-xs min-[480px]:text-sm min-[1375px]:text-base'>
-        Although I’m not currently looking for any new opportunities, my inbox is always open.
-        Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+        {t('CONTACT.BODY')}
       </p>
       <div className='flex justify-center relative'>
         <RetroBtn
           styles={'px-6 py-4'}
           darkTheme={false}
           href={`mailto:${personalData.email}`}
-          child={<span className='text-orange-200'>Say Hello</span>}
+          child={<span className='text-orange-200'>{t('CONTACT.SAY_HELLO')}</span>}
         />
       </div>
     </section>
