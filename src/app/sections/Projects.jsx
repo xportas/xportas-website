@@ -44,7 +44,7 @@ export default function Projects({ screenWidth }) {
     >
       <h3 className={`flex items-center justify-center mb-14 mx-3 font-header text-responsive-section-heading ${screenWidth > 768 && dashedLine}`}
       >
-        Some Things I’ve Built
+        {t('PROJECTS.TITLE')}
       </h3>
 
       <ul className="p-0 m-0 flex flex-wrap items-center justify-center max-w-[1200px] mx-auto max-[768px]:m-7" style={{ listStyle: 'none' }}>
@@ -64,7 +64,7 @@ export default function Projects({ screenWidth }) {
                   <div>
                     <h6 className={`text-secondary-orange text-[clamp(24px,5vw,28px)] font-header md:mt-0 md:mb-5 md:mx-0 ${underlineEffect} z-20`}>
                       <a href={github || '#'} target={"_blank"}>
-                        {title}
+                        {t(`${title}`)}
                       </a>
                     </h6>
 
@@ -72,7 +72,7 @@ export default function Projects({ screenWidth }) {
                                     max-[768px]:bg-transparent max-[768px]:shadow-none max-[768px]:px-0 max-[768px]:py-5 shadow-custom transition-all duration-[0.25s] ease-out 
                                     hover:shadow-custom-hover hover:-translate-x-1 hover:-translate-y-1 focus:shadow-custom-hover focus:-translate-x-1 focus:-translate-y-1"
                     >
-                      <p>{description}</p>
+                      <p>{t(`${description}`)}</p>
                     </div>
 
                     {tech.length && (

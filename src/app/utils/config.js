@@ -79,17 +79,17 @@ module.exports = {
       }
     },
     "LIVENSA": {
-      "title": "FullStack Developer",
-      "company": "Livensa Living",
-      "location": "Sarriguren, NA",
-      "range": "July - December 2017",
+      "title": "JOBS.LIVENSA.TITLE",
+      "company": "JOBS.LIVENSA.COMPANY",
+      "location": "JOBS.LIVENSA.LOCATION",
+      "range": "JOBS.LIVENSA.RANGE",
       "url": "https://www.web.com",
       "duties": {
-        "d1": "Contributed to something in LIVENSA",
-        "d2": "Contributed to something in LIVENSA",
-        "d3": "Contributed to something in LIVENSA",
-        "d4": "Contributed to something in LIVENSA",
-        "d5": "Contributed to something in LIVENSA"
+        "d1": "JOBS.LIVENSA.DUTIES.D1",
+        "d2": "JOBS.LIVENSA.DUTIES.D2",
+        "d3": "JOBS.LIVENSA.DUTIES.D3",
+        "d4": "JOBS.LIVENSA.DUTIES.D4",
+        "d5": "JOBS.LIVENSA.DUTIES.D5"
       }
     },
     "COMPOS": {
@@ -110,7 +110,7 @@ module.exports = {
 
   projects: {
     website: {
-      title: "Retro Website",
+      title: "PROJECTS.RETRO_WEBSITE.TITLE",
       cover: "/images/retro-bg.jpg",
       github: "https://github.com/xportas/xportas-website",
       tech: [
@@ -119,7 +119,7 @@ module.exports = {
         "Three.js",
         "CONTINUAR CON LAS DEMÁS SKILLS"
       ],
-      description: "Esto es mi portfolio y todo lo demás que tengo que contar aquí a modo de introducción jalsdkfj asdlfkjsd flñaskdjf ñlasdkfj añsldkfj sdfl fasdf asdf asd"
+      description: "PROJECTS.RETRO_WEBSITE.DESCRIPT"
     }
   }
 };

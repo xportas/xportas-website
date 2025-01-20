@@ -1,4 +1,90 @@
 {
-  "welcome": "Francesinha",
-  "description": "This is a multi-language website."
+  "ABOUT": {
+    "ABOUT_ME": "About Me",
+    "P1": "quiero comprobar que esto tiene sentido algunao para ver si el tamaño de la letra es correcto porque claro a la hora de ver si esto es correcto quiero ver si el usuario puede leer bien con este tamaño de letra y demás",
+    "P21": "english englis english englis english englis english englis english englis",
+    "P22": "english englis english englis english englis english englis english englis",
+    "P23": "english englis english englis english englis english englis english englis",
+    "TECH_I_KNOW": "Here are all the technologies I’ve been working: "
+  },
+  "CONTACT": {
+    "BODY": "Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!",
+    "GET_IN_TOUCH": "Get In Touch",
+    "SAY_HELLO": "Say Hello",
+    "WHATS_NEXT": "What’s Next?"
+  },
+  "FOOTER": {
+    "CONTACT_ME": "Contact Me",
+    "COPYRIGHT": "Designed and Developed by xportas © copyright",
+    "GO_BACK": "Go Back",
+    "LICENSE": "License ©",
+    "MORE_INF": "More information",
+    "README": "README.txt",
+    "SOURCE_CODE": "Source Code"
+  },
+  "HERO": {
+    "CHECK_GH": "Check out my GitHub!",
+    "GREETING": "Hi, my name is",
+    "H2": "I build things for the web.",
+    "NAME": "Xabier Portas",
+    "P1": "I am a passionate full-stack software engineer dedicated to building and designing exceptional digital experiences.",
+    "P2": "Currently, I am focused on contributing to the Government of Navarra by developing innovative digital solutions at ",
+    "TRACASA": "Tracasa Instrumental"
+  },
+  "JOBS": {
+    "LIVENSA": {
+      "COMPANY": "Livensa Living",
+      "DUTIES": {
+        "D1": "Contributed to something in LIVENSA",
+        "D2": "Contributed to something in LIVENSA",
+        "D3": "Contributed to something in LIVENSA",
+        "D4": "Contributed to something in LIVENSA",
+        "D5": "Contributed to something in LIVENSA"
+      },
+      "LOCATION": "Sarriguren, NA",
+      "RANGE": "July - December 2017",
+      "TITLE": "FullStack Developer"
+    },
+    "TITLE": "Where I’ve Worked",
+    "TRACASA": {
+      "COMPANY": "Tracasa Instrumental",
+      "DUTIES": {
+        "D1": "Contributed to something in the development of amazing products",
+        "D2": "Contributed to something in the development of amazing products",
+        "D3": "Contributed to something in the development of amazing products",
+        "D4": "Contributed to something in the development of amazing products",
+        "D5": "Contributed to something in the development of amazing products"
+      },
+      "LOCATION": "Sarriguren, NA",
+      "RANGE": "July - December 2017",
+      "TITLE": "FullStack Developer"
+    }
+  },
+  "LANG_SELECTOR": {
+    "MOVE_OPT": "Move between the options",
+    "SELECT_LANG": "Select one of my languages:",
+    "SELECT_ONE_LANG": "Select language"
+  },
+  "NAV": {
+    "ABOUT": "About",
+    "CONTACT": "Contact",
+    "EXPERIENCE": "Experience",
+    "WORK": "Work"
+  },
+  "PLUMBER": {
+    "WORKING_NEW_PROJ": "* Working on new projects *"
+  },
+  "PROJECTS": {
+    "RETRO_WEBSITE": {
+      "DESCRIPT": "Esto es mi portfolio y todo lo demás que tengo que contar aquí a modo de introducción jalsdkfj asdlfkjsd flñaskdjf ñlasdkfj añsldkfj sdfl fasdf asdf asd",
+      "TITLE": "Retro Website"
+    },
+    "TITLE": "Some Things I’ve Built"
+  },
+  "RETRO_SCREEN": {
+    "FSDEV": "Full Stack Developer",
+    "GIS_SPEC": "Specialization in GIS",
+    "GREETING": "Hi there, ",
+    "I_AM": "I'm "
+  }
 }

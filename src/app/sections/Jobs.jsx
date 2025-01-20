@@ -98,7 +98,7 @@ export default function Jobs({ screenWidth }) {
       id='experience'>
 
       <h3 className={`flex items-center justify-center mb-7 mx-3 font-header text-responsive-section-heading ${screenWidth > 770 && dashedLine}`}>
-        Where I’ve Worked
+        {t('JOBS.TITLE')}
       </h3>
 
       <div className="flex max-[650px]:block max-[650px]:max-w-full min-[750px]:min-h-[340px] max-w-[1040px] mx-auto">
@@ -123,7 +123,7 @@ export default function Jobs({ screenWidth }) {
                 tabIndex={activeTabId === i ? '0' : '-1'}
                 aria-selected={activeTabId === i ? true : false}
                 aria-controls={`panel-${i}`}>
-                <span className='mx-2'>{job.company}</span>
+                <span className='mx-2'>{t(`${job.company}`)}</span>
               </button>
             );
           })}
@@ -151,16 +151,16 @@ export default function Jobs({ screenWidth }) {
                 hidden={activeTabId !== i}>
 
                 <h4 className='mb-[2px] font-medium animate-wipeInRight' style={{ fontSize: '22px', lineHeight: 1.3 }}>
-                  <span className='text-base min-[1080px]:text-xl min-[1375px]:text-2xl min-[1375px]:whitespace-nowrap'>{job.title}</span>
+                  <span className='text-base min-[1080px]:text-xl min-[1375px]:text-2xl min-[1375px]:whitespace-nowrap'>{t(`${job.title}`)}</span>
                   <span className="text-base min-[1080px]:text-xl min-[1375px]:text-2xl min-[1375px]:whitespace-nowrap text-secondary-orange">
                     &nbsp;@&nbsp;
                     <a href={job.url} target={"_blank"}>
-                      {job.company}
+                    {t(`${job.company}`)}
                     </a>
                   </span>
                 </h4>
 
-                <p className='mb-6 text-secondary-gray animate-wipeInRight' style={{ fontSize: '13px' }}>{job.range}</p>
+                <p className='mb-6 text-secondary-gray animate-wipeInRight' style={{ fontSize: '13px' }}>{t(`${job.range}`)}</p>
 
                 <div className='p-0 m-0'>
                   <ul className='p-0 m-0 list-none ' style={{ fontSize: '18px' }}>
@@ -171,7 +171,7 @@ export default function Jobs({ screenWidth }) {
                           className={`relative pl-7 mb-3 before:absolute before:left-0 before:text-secondary-orange before:content-["▹"] 
                                       text-xs min-[480px]:text-sm min-[1375px]:text-base animate-wipeInRight`}
                           style={{ animationDelay: `${i * 100}ms` }}>
-                          {dutie}
+                          {t(`${dutie}`)}
                         </li>
                       )
                     })}

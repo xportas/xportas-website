@@ -31,6 +31,35 @@
     "P2": "Currently, I am focused on contributing to the Government of Navarra by developing innovative digital solutions at ",
     "TRACASA": "Tracasa Instrumental"
   },
+  "JOBS": {
+    "LIVENSA": {
+      "COMPANY": "Livensa Living",
+      "DUTIES": {
+        "D1": "Contributed to something in LIVENSA",
+        "D2": "Contributed to something in LIVENSA",
+        "D3": "Contributed to something in LIVENSA",
+        "D4": "Contributed to something in LIVENSA",
+        "D5": "Contributed to something in LIVENSA"
+      },
+      "LOCATION": "Sarriguren, NA",
+      "RANGE": "July - December 2017",
+      "TITLE": "FullStack Developer"
+    },
+    "TITLE": "Where I’ve Worked",
+    "TRACASA": {
+      "COMPANY": "Tracasa Instrumental",
+      "DUTIES": {
+        "D1": "Contributed to something in the development of amazing products",
+        "D2": "Contributed to something in the development of amazing products",
+        "D3": "Contributed to something in the development of amazing products",
+        "D4": "Contributed to something in the development of amazing products",
+        "D5": "Contributed to something in the development of amazing products"
+      },
+      "LOCATION": "Sarriguren, NA",
+      "RANGE": "July - December 2017",
+      "TITLE": "FullStack Developer"
+    }
+  },
   "LANG_SELECTOR": {
     "MOVE_OPT": "Move between the options",
     "SELECT_LANG": "Select one of my languages:",
@@ -44,6 +73,13 @@
   },
   "PLUMBER": {
     "WORKING_NEW_PROJ": "* Working on new projects *"
+  },
+  "PROJECTS": {
+    "RETRO_WEBSITE": {
+      "DESCRIPT": "Esto es mi portfolio y todo lo demás que tengo que contar aquí a modo de introducción jalsdkfj asdlfkjsd flñaskdjf ñlasdkfj añsldkfj sdfl fasdf asdf asd",
+      "TITLE": "Retro Website"
+    },
+    "TITLE": "Some Things I’ve Built"
   },
   "RETRO_SCREEN": {
     "FSDEV": "Full Stack Developer",
