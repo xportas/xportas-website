@@ -51,7 +51,7 @@ export default function Home() {
 
   return (
     <>
-      {progress > 100 && (
+      {progress < 100 && (
         <Loader progress={progress} />
       )}
 
@@ -60,10 +60,12 @@ export default function Home() {
       </div>
 
       <div style={{ display: currentLanguage ? "block" : "none" }}>
-        {/* <Nav screenWidth={screenWidth} hiddenRetroComputer={hiddenRetroComputer} /> */}
-        <Nav screenWidth={screenWidth} hiddenRetroComputer={true} />
+        <Nav screenWidth={screenWidth} hiddenRetroComputer={hiddenRetroComputer} />
+        {/* <Nav screenWidth={screenWidth} hiddenRetroComputer={true} /> */}
 
-        {/* <RetroComputer setHiddenRetroComputer={setHiddenRetroComputer} scrollFactor={scrollFactor} setProgress={setProgress} /> */}
+        {/* Shutting OFF animation div */}
+        <div className={'bg-white fixed inset-0 z-[999] shuttingOffAnimation'} ></div>
+        <RetroComputer setHiddenRetroComputer={setHiddenRetroComputer} scrollFactor={scrollFactor} setProgress={setProgress} />
 
         <Hero />
         <About />

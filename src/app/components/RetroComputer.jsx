@@ -80,7 +80,7 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
     }
 
     let startTime = null;
-    const delay = 1500;
+    const delay = 2000;
     const duration = 3700;
 
     function animateZoom(timestamp) {

@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from "react-i18next";
 import { PixelatedImage } from '../components/PixelatedImage';
-import { languageOptions, waitForMs } from '../utils/utils';
+import { languageOptions } from '../utils/utils';
 
 
 export default function LangSelector({ i18n, setCurrentLanguage, setRetroScreenOn, screenWidth }) {
@@ -24,7 +24,6 @@ export default function LangSelector({ i18n, setCurrentLanguage, setRetroScreenO
           break;
         case 'Enter':
           setRetroScreenOn(false);
-          await waitForMs(900);
           setCurrentLanguage(languageOptions[langIndex].value);
           i18n.changeLanguage(languageOptions[langIndex].value);
           break;
