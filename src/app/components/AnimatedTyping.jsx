@@ -50,8 +50,8 @@ export default function AnimatedTyping({ cursorStyle, stop, textStyle }) {
 
   return (
     <>
-      <span className={textStyle} ref={typedNameOrAlias}></span>
-      <span className={cursorStyle}></span>
+      <span className={textStyle} ref={typedNameOrAlias} />
+      <span className={cursorStyle} />
     </>
   );
 }

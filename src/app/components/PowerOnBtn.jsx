@@ -25,10 +25,10 @@ export default function PowerOnBtn({ handleStartMainThemeAudio }) {
                       bg-[radial-gradient(4px_8px_at_4px_calc(100%_-_8px),rgba(255,255,255,0.25),transparent),radial-gradient(4px_8px_at_calc(100%_-_4px)_calc(100%_-_8px),rgba(255,255,255,0.25),transparent),
                       radial-gradient(16px_at_-4px_0,white,transparent),radial-gradient(16px_at_calc(100%_+_4px)_0,white,transparent)] 
                       shadow-[0px_2px_3px_0px_rgba(0,0,0,0.5),inset_0_-1px_3px_3px_rgba(0,0,0,0.4)] transition-[border-radius,padding-top] duration-[0.2s] 
-                      pt-1.5 rounded-[8px_/_16px_16px_8px_8px] left-1 bottom-1 group-active:pt-0 group-active:rounded-[10px_10px_8px_8px_/_8px]"></div>
+                      pt-1.5 rounded-[8px_/_16px_16px_8px_8px] left-1 bottom-1 group-active:pt-0 group-active:rounded-[10px_10px_8px_8px_/_8px]" />
 
       <div className="absolute z-[-2] w-full h-[calc(100%_-_4px)] bg-[rgba(0,0,0,0.15)] rounded-xl left-0 top-1 
-                      shadow-[0_1px_1px_0_rgba(255,255,255,0.75),inset_0_2px_2px_rgba(0,0,0,0.25)]"></div>
+                      shadow-[0_1px_1px_0_rgba(255,255,255,0.75),inset_0_2px_2px_rgba(0,0,0,0.25)]" />
 
     </button>
   )

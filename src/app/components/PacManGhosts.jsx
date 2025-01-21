@@ -77,7 +77,7 @@ export default function PacManGhosts() {
         id="pacman-cursor"
         className="hidden absolute w-9 h-9 z-20 pointer-events-none"
         style={{ backgroundImage: 'url(./images/pacman.svg)', backgroundSize: 'cover' }}
-      ></div>
+      />
 
       <img id="g-red"
         src={weakGhosts ? "./images/blue-ghost.svg" : "./images/red-ghost.svg"}

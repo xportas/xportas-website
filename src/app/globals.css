@@ -49,7 +49,8 @@
 } */
 
 .shuttingOffAnimation {
-  animation: shrinkToLine 0.6s forwards, shrinkToDot 0.25s 0.6s forwards;
+  will-change: transform, opacity; /* we ensure that the css styles of the animation are processed in the main browser thread */
+  animation: shrinkToLine 0.84s forwards, shrinkToDot 0.35s 0.84s forwards;
 }
 
 @keyframes shrinkToLine {
@@ -58,7 +59,7 @@
 }
 
 @keyframes shrinkToDot {
-  0% { transform: scaleY(0.01) scaleX(1); }
+  0% { transform: scaleY(0.01) scaleX(1); opacity: 1; }
   100% { transform: scaleY(0) scaleX(0); opacity: 0; border-radius: 5%; }
 }
 

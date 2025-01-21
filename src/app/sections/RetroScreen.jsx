@@ -59,7 +59,7 @@ export default function RetroScreen({ i18n, setCurrentLanguage, screenWidth, isT
         {/* If in the future I want to incorporate again the screen power-on effect ==> ${mainThemeAudioON && 'turningOnAnimation cursor-none'} */}
 
         {(mainThemeAudioON && !isTouchDevice) && <PacManGhosts />}
-        <audio ref={mainThemeAudioRef} src="/audio/main-song.mp3"></audio>
+        <audio ref={mainThemeAudioRef} src="/audio/main-song.mp3" />
 
         <div className={`h-full w-full absolute`} >
 

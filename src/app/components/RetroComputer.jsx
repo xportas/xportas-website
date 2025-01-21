@@ -161,7 +161,7 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
           opacity: 1 - scrollFactor * 4.7
         }}
       >
-        <div ref={mountRef}></div>
+        <div ref={mountRef} />
       </div>
       <div className="h-screen" />
     </>

@@ -9,7 +9,7 @@ TODO: Hacer multipantalla el logo de la RetroScreen y ver qué pasa con el Retro
 
 TODO: NO OLVIDARSE DE HACER SEO (ver cómo hacerlo en v4 y buscar más info)
 
-
+TODO: ELABORAR UN BUEN README
 
 
 

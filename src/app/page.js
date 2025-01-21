@@ -64,7 +64,7 @@ export default function Home() {
         {/* <Nav screenWidth={screenWidth} hiddenRetroComputer={true} /> */}
 
         {/* Shutting OFF animation div */}
-        <div className={'bg-white fixed inset-0 z-[999] shuttingOffAnimation'} ></div>
+        <div className={'bg-white fixed inset-0 z-[999] shuttingOffAnimation'} />
         <RetroComputer setHiddenRetroComputer={setHiddenRetroComputer} scrollFactor={scrollFactor} setProgress={setProgress} />
 
         <Hero />
