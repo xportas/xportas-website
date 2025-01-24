@@ -34,33 +34,33 @@
 *
 */
 
-/* .turningOnAnimation {
-  animation: expandFromDot 0.6s forwards, expandFromLine 0.25s 0.6s forwards;
-}
-
-@keyframes expandFromDot {
-  0% { transform: scaleY(0) scaleX(0); opacity: 0; border-radius: 5%; }
-  100% { transform: scaleY(0.01) scaleX(1); opacity: 1; }
-}
-
-@keyframes expandFromLine {
-  0% { transform: scaleY(0.01); }
-  100% { transform: scaleY(1); }
-} */
-
 .shuttingOffAnimation {
-  will-change: transform, opacity; /* we ensure that the css styles of the animation are processed in the main browser thread */
+  /* we ensure that the css styles of the animation are processed in the main browser thread */
+  will-change: transform, opacity;
   animation: shrinkToLine 0.84s forwards, shrinkToDot 0.35s 0.84s forwards;
 }
 
 @keyframes shrinkToLine {
-  0% { transform: scaleY(1); }
-  100% { transform: scaleY(0.01); }
+  0% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(0.01);
+  }
 }
 
 @keyframes shrinkToDot {
-  0% { transform: scaleY(0.01) scaleX(1); opacity: 1; }
-  100% { transform: scaleY(0) scaleX(0); opacity: 0; border-radius: 5%; }
+  0% {
+    transform: scaleY(0.01) scaleX(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleY(0) scaleX(0);
+    opacity: 0;
+    border-radius: 5%;
+  }
 }
 
 
@@ -73,7 +73,7 @@
 
 html,
 body {
-  scroll-behavior: smooth;  
+  scroll-behavior: smooth;
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -88,7 +88,8 @@ body {
   cursor: url(../../public/images/cursor.webp), auto;
 }
 
-a, button {
+a,
+button {
   cursor: url(../../public/images/pointer.webp), pointer;
 }
 
@@ -104,12 +105,12 @@ body {
   counter-reset: sectionCounter;
 }
 
-section h3 { 
+section h3 {
   counter-increment: sectionCounter;
 }
 
-section h3::before { 
-  content: counter(sectionCounter, decimal-leading-zero) ". "; 
+section h3::before {
+  content: counter(sectionCounter, decimal-leading-zero) ". ";
   display: inline-block;
   font-family: chill;
   font-size: clamp(16px, 4vw, 25px);
@@ -136,4 +137,60 @@ section h3::before {
 
 .numbered>a.no-count::before {
   content: none;
+}
+
+
+
+/* 
+*
+*  REUSED STYLES
+*
+*/
+
+.dashed-line {
+  @apply 
+          after:content-['']
+          after:block
+          after:relative
+          after:w-[300px]
+          after:h-px
+          after:ml-7
+          after:my-auto 
+          after:border-2
+          after:border-dashed
+          after:border-main-gray
+          after:max-[1080px]:w-[200px]
+          after:max-[768px]:w-full
+          after:min-[768px]:ml-3
+          after:max-[600px]:ml-3;
+}
+.link-style {
+  @apply 
+          
+  inline-block
+          no-underline
+          text-inherit
+          relative
+          transition-all
+          duration-300
+          hover:outline-0
+          hover:text-secondary-orange
+          focus:text-secondary-orange focus:outline-0;
+}
+.underline-effect {
+  @apply 
+          inline-block 
+          relative 
+          transition-all 
+          duration-300 
+          before:content-[''] 
+          before:absolute 
+          before:-bottom-0 
+          before:left-0 
+          before:w-0 
+          before:h-0.5
+          before:transition-all 
+          before:duration-300 
+          hover:before:w-full
+          before:bg-secondary-orange;
 }

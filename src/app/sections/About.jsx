@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from "react-i18next";
 import Skill from '../components/Skill';
 import { skills } from "../utils/config";
-import { dashedLine, underlineEffect } from "../utils/utils";
 
 export default function About() {
 
@@ -41,7 +40,7 @@ export default function About() {
       id="about"
     >
 
-      <h3 className={`flex items-center mb-7 font-header text-responsive-section-heading whitespace-nowrap ${dashedLine}`}>
+      <h3 className={'flex items-center mb-7 font-header text-responsive-section-heading whitespace-nowrap dashed-line'}>
         {t('ABOUT.ABOUT_ME')}
       </h3>
 
@@ -54,10 +53,10 @@ export default function About() {
 
             <p>
               {t('ABOUT.P21')}
-              <a href="" className={`text-secondary-orange ${underlineEffect}`}>dkj kdj dkjd kdk kdk</a>,
-              <a href="" className={`text-secondary-orange ${underlineEffect}`}>kjd kdj dk</a>,
-              <a href="" className={`text-secondary-orange ${underlineEffect}`}>kdj dkj dkdj kdk dd</a>, and
-              <a href="" className={`text-secondary-orange ${underlineEffect}`}>kdj kdj dkjd kdjd kdj kddkj</a>.
+              <a href="" className={'text-secondary-orange underline-effect'}>dkj kdj dkjd kdk kdk</a>,
+              <a href="" className={'text-secondary-orange underline-effect'}>kjd kdj dk</a>,
+              <a href="" className={'text-secondary-orange underline-effect'}>kdj dkj dkdj kdk dd</a>, and
+              <a href="" className={'text-secondary-orange underline-effect'}>kdj kdj dkjd kdjd kdj kddkj</a>.
               {t('ABOUT.P22')}
               <a href="https://upstatement.com/">dlkjdlkjdlk</a>
               {t('ABOUT.P23')}
@@ -65,7 +64,7 @@ export default function About() {
 
             <p>
               asdlkfj sdlñf asd{' '}
-              <a href="" className={`text-secondary-orange ${underlineEffect}`}>
+              <a href="" className={'text-secondary-orange underline-effect'}>
                 asd alñksdfj aslñdkfj
               </a>{' '}
               dslkf jdklf jdkf jldkfjldkjf lksd jfkldj fkldfj kld jfkld lkfjkldfd fdkfjldk fjld

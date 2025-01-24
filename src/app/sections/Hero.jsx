@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from "react-i18next";
 import RetroBtn from '../components/RetroBtn';
 import { links } from '../utils/config';
-import { underlineEffect } from '../utils/utils';
 
 export default function Hero() {
 
@@ -49,7 +48,7 @@ export default function Hero() {
         </p>
         <p className="min-[1080px]:w-1/2 text-xs min-[480px]:text-sm min-[1375px]:text-base">
           {t('HERO.P2')}
-          <a className={`text-xs min-[480px]:text-sm min-[1375px]:text-base text-secondary-orange ${underlineEffect}`} href="https://itracasa.es/" target="_blank" rel="noreferrer">
+          <a className={'text-xs min-[480px]:text-sm min-[1375px]:text-base text-secondary-orange underline-effect'} href="https://itracasa.es/" target="_blank" rel="noreferrer">
             {t('HERO.TRACASA')}
           </a>.
         </p>

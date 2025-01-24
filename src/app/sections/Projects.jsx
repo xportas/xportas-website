@@ -2,11 +2,10 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from "react-i18next";
 import Plumber from '../components/Plumber';
 import { projects } from '../utils/config';
-import { dashedLine, underlineEffect } from '../utils/utils';
 
 
 export default function Projects({ screenWidth }) {
-  
+
   const { t } = useTranslation(['strings']);
   const projectsRef = useRef(null);
   const [rendered, setRendered] = useState(false);
@@ -42,7 +41,7 @@ export default function Projects({ screenWidth }) {
                   ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'} md:p-8`}
       id='work'
     >
-      <h3 className={`flex items-center justify-center mb-14 mx-3 font-header text-responsive-section-heading ${screenWidth > 768 && dashedLine}`}
+      <h3 className={`flex items-center justify-center mb-14 mx-3 font-header text-responsive-section-heading ${screenWidth > 768 && 'dashed-line'}`}
       >
         {t('PROJECTS.TITLE')}
       </h3>
@@ -62,7 +61,7 @@ export default function Projects({ screenWidth }) {
                                 max-[480px]:pt-[30px] max-[480px]:pb-5 max-[480px]:px-[25px]"
                 >
                   <div>
-                    <h6 className={`text-secondary-orange text-[clamp(24px,5vw,28px)] font-header md:mt-0 md:mb-5 md:mx-0 ${underlineEffect} z-20`}>
+                    <h6 className={'text-secondary-orange text-[clamp(24px,5vw,28px)] font-header md:mt-0 md:mb-5 md:mx-0 underline-effect z-20'}>
                       <a href={github || '#'} target={"_blank"}>
                         {t(`${title}`)}
                       </a>

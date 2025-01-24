@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from "react-i18next";
 import { jobs } from '../utils/config';
-import { dashedLine, linkStyle } from "../utils/utils";
 
 
 export default function Jobs({ screenWidth }) {
@@ -97,7 +96,7 @@ export default function Jobs({ screenWidth }) {
       className={`max-[450px]:py-14 max-[768px]:py-20 md:py-24 px-3 sm:px-6 md:px-8 transition-all duration-500 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}`}
       id='experience'>
 
-      <h3 className={`flex items-center justify-center mb-7 mx-3 font-header text-responsive-section-heading ${screenWidth > 770 && dashedLine}`}>
+      <h3 className={`flex items-center justify-center mb-7 mx-3 font-header text-responsive-section-heading ${screenWidth > 770 && 'dashed-line'}`}>
         {t('JOBS.TITLE')}
       </h3>
 
@@ -109,7 +108,7 @@ export default function Jobs({ screenWidth }) {
           {jobs && Object.entries(jobs).map(([key, job], i) => {
             return (
               <button
-                className={`${linkStyle} flex justify-start items-center w-full h-11 py-0 border-l-4 border-solid border-main-gray min-[651px]:whitespace-nowrap
+                className={`link-style flex justify-start items-center w-full h-11 py-0 border-l-4 border-solid border-main-gray min-[651px]:whitespace-nowrap
                             bg-transparent font-header text-[8px] min-[480px]:text-[10px] min-[1375px]:text-xs text-left max-[768px]:pt-0 max-[768px]:px-4 
                             max-[768px]:pb-[2px] max-[650px]:flex max-[650px]:justify-between max-[650px]:items-center max-[650px]:min-w-32
                             max-[650px]:px-0 max-[650px]:border-l-0 max-[650px]:border-b-2 max-[650px]:border-[#a8947e8b] max-[650px]:text-center
