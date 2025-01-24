@@ -112,7 +112,8 @@ export default function Jobs({ screenWidth }) {
                             bg-transparent font-header text-[8px] min-[480px]:text-[10px] min-[1375px]:text-xs text-left max-[768px]:pt-0 max-[768px]:px-4 
                             max-[768px]:pb-[2px] max-[650px]:flex max-[650px]:justify-between max-[650px]:items-center max-[650px]:min-w-32
                             max-[650px]:px-0 max-[650px]:border-l-0 max-[650px]:border-b-2 max-[650px]:border-[#a8947e8b] max-[650px]:text-center
-                            hover:bg-[#a8947e8b] focus:bg-[#a8947e8b] ${activeTabId === i ? 'text-secondary-orange' : 'text-main-gray'}`}
+                            focus:bg-[#a8947e8b] ${activeTabId === i ? 'text-secondary-orange' : 'text-main-gray'}
+                            ${activeTabId === i ? 'hover:focus:bg-[#7968568b]' : 'hover:bg-[#a8947e8b]'}`}
                 key={i}
                 data-is-active={activeTabId === i}
                 onClick={() => setActiveTabId(i)}
