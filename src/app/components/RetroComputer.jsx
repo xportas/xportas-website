@@ -24,7 +24,8 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setPixelRatio(window.devicePixelRatio);
+    // renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Adjustment for high pixel density devices
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(5, window.innerWidth / window.innerHeight, 1, 100);
@@ -34,6 +35,7 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
     const controls = new OrbitControls(camera, renderer.domElement);
     controlsRef.current = controls;
     controls.enableDamping = true;
+    controls.dampingFactor = 0.1; // Improves smooth movements
     controls.enablePan = false;
     controls.minDistance = 10;
     controls.maxDistance = 90;
@@ -46,7 +48,6 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
     controls.maxAzimuthAngle = currentAzimuthAngle + rotationRange / 4;
 
     controls.rotateSpeed = 0.1;
-
     controls.autoRotate = false;
     controls.target = new THREE.Vector3(0, 4, 0);
     controls.update();
@@ -57,56 +58,53 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
     scene.add(spotLight);
 
     const loader = new GLTFLoader(manager).setPath('models/commodore/');
-    loader.load(
-      'scene.gltf',
-      (gltf) => {
-        const mesh = gltf.scene;
-        mesh.traverse((child) => {
-          if (child.isMesh) {
-            child.castShadow = true;
-            child.receiveShadow = true;
-          }
-        });
-        mesh.position.set(0, 2.05, 0);
-        scene.add(mesh);
-      }
-    );
+    loader.load('scene.gltf', (gltf) => {
+      const mesh = gltf.scene;
+      mesh.traverse((child) => {
+        if (child.isMesh) {
+          child.castShadow = true;
+          child.receiveShadow = true;
+        }
+      });
+      mesh.position.set(0, 2.05, 0);
+      scene.add(mesh);
+    });
 
-    window.addEventListener('resize', onWindowResize, false);
-    function onWindowResize() {
+    const  onWindowResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
+    window.addEventListener('resize', onWindowResize, false);
+
     let startTime = null;
     const delay = 2000;
     const duration = 3700;
 
-    function animateZoom(timestamp) {
+    const animateZoom = (timestamp) => {
       if (!startTime) {
         startTime = timestamp + delay;
       }
 
-      if (timestamp >= startTime) {
-        const elapsedTime = timestamp - startTime;
-        const t = Math.min(elapsedTime / duration, 1);
-        const currentZoom = THREE.MathUtils.lerp(initialZoom, controls.maxDistance, t);
-        camera.position.z = currentZoom;
-
-        if (t === 1) {
-          controls.update();
-          setHiddenRetroComputer(true);
-          return;
-        }
-      }
+      // const elapsedTime = timestamp - startTime;
+      const elapsedTime = Math.max(0, timestamp - startTime);
+      const t = Math.min(elapsedTime / duration, 1);
+      const currentZoom = THREE.MathUtils.lerp(initialZoom, controls.maxDistance, t);
+      camera.position.z = currentZoom;
 
       controls.update();
       renderer.render(scene, camera);
-      requestAnimationFrame(animateZoom);
+
+      if (t < 1) {
+        requestAnimationFrame(animateZoom);
+      } else {
+        setHiddenRetroComputer(true);
+        controls.enabled = true;
+      }
     }
 
-    function animate() {
+    const animate = () => {
       requestAnimationFrame(animate);
       controls.update();
       renderer.render(scene, camera);
@@ -122,6 +120,7 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
         const [entry] = entries;
         if (entry.isIntersecting && !animationStartedRef.current) {
           animationStartedRef.current = true;
+          controls.enabled = false; // Disable user interactions during animation
           requestAnimationFrame(animateZoom);
         }
       },
@@ -133,18 +132,18 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
     }
 
     // When the maximum zoom is raised, the focus is removed from the model and returned to the page
-    function handleScroll(event) {
-      // if (camera.position.length() >= controls.maxDistance) {
-      //   event.preventDefault();
-      //   window.scrollBy(0, event.deltaY);
-      //   setHiddenRetroComputer(true);
-      // }
-      event.stopPropagation();
-      window.scrollBy({ top: event.deltaY, behavior: 'smooth', });
-    }
+    // const handleScroll = (event) => {
+    //   // if (camera.position.length() >= controls.maxDistance) {
+    //   //   event.preventDefault();
+    //   //   window.scrollBy(0, event.deltaY);
+    //   //   setHiddenRetroComputer(true);
+    //   // }
+    //   event.stopPropagation();
+    //   window.scrollBy({ top: event.deltaY, behavior: 'smooth', });
+    // }
 
-    renderer.domElement.addEventListener('wheel', handleScroll);
-    renderer.domElement.addEventListener('touchmove', handleScroll);
+    // renderer.domElement.addEventListener('wheel', handleScroll);
+    // renderer.domElement.addEventListener('touchmove', handleScroll);
 
     return () => {
       if (mountRef.current) observer.unobserve(mountRef.current);
@@ -156,14 +155,12 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
   return (
     <>
       <div
-        className={"fixed top-0 left-0 transition-all duration-300 ease-out"}
-        style={{
-          opacity: 1 - scrollFactor * 4.7
-        }}
+        className="fixed top-0 left-0 transition-all duration-300 ease-out"
+        style={{ opacity: 1 - scrollFactor * 4.7 }}
       >
         <div ref={mountRef} />
       </div>
       <div className="h-screen" />
     </>
   );
-};
+}
