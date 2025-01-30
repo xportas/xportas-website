@@ -24,10 +24,10 @@ export default function Footer() {
             </div>
             <div className='flex flex-col gap-2'>
               <h6 className='font-header mb-2 uppercase text-[#fcc688]'>{t('FOOTER.MORE_INF')}</h6>
-              <a href={links.ReadMe} target={"_blank"} >{t('FOOTER.README')}</a>
-              <a href={links.License} target={"_blank"} >{t('FOOTER.LICENSE')}</a>
-              <a href={links.Repository} target={"_blank"} >{t('FOOTER.SOURCE_CODE')}</a>
-              <a href={links.LinkedIn} target={"_blank"} >{t('FOOTER.CONTACT_ME')}</a>
+              <a href={links.ReadMe} target="_blank" rel="noopener noreferrer" >{t('FOOTER.README')}</a>
+              <a href={links.License} target="_blank" rel="noopener noreferrer" >{t('FOOTER.LICENSE')}</a>
+              <a href={links.Repository} target="_blank" rel="noopener noreferrer" >{t('FOOTER.SOURCE_CODE')}</a>
+              <a href={links.LinkedIn} target="_blank" rel="noopener noreferrer" >{t('FOOTER.CONTACT_ME')}</a>
             </div>
           </div>
 

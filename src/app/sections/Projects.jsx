@@ -62,7 +62,7 @@ export default function Projects({ screenWidth }) {
                 >
                   <div>
                     <h6 className={'text-secondary-orange text-[clamp(24px,5vw,28px)] font-header md:mt-0 md:mb-5 md:mx-0 underline-effect z-20'}>
-                      <a href={github || '#'} target={"_blank"}>
+                      <a href={github || '#'} target="_blank" rel="noopener noreferrer">
                         {t(`${title}`)}
                       </a>
                     </h6>
@@ -94,7 +94,7 @@ export default function Projects({ screenWidth }) {
                 </div>
 
                 <div className="col-[6_/_-1] row-span-full relative z-[1] max-[768px]:col-span-full max-[768px]:h-full max-[768px]:opacity-30">
-                  <a href={github || '#'} target={"_blank"} className={`relative z-10 w-full h-full rounded align-middle`}>
+                  <a href={github || '#'} target="_blank" rel="noopener noreferrer" className={`relative z-10 w-full h-full rounded align-middle`}>
                     <img
                       src={cover} alt={title}
                       className="shadow-custom rounded brightness-[70%] max-[768px]:object-cover max-[768px]:w-full max-[768px]:h-full

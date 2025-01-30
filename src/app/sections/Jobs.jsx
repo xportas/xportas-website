@@ -154,7 +154,7 @@ export default function Jobs({ screenWidth }) {
                   <span className='text-base min-[1080px]:text-xl min-[1375px]:text-2xl min-[1375px]:whitespace-nowrap'>{t(`${job.title}`)}</span>
                   <span className="text-base min-[1080px]:text-xl min-[1375px]:text-2xl min-[1375px]:whitespace-nowrap text-secondary-orange">
                     &nbsp;@&nbsp;
-                    <a href={job.url} target={"_blank"}>
+                    <a href={job.url} target="_blank" rel="noopener noreferrer">
                     {t(`${job.company}`)}
                     </a>
                   </span>
