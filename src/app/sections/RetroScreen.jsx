@@ -14,37 +14,34 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
 
   const { t } = useTranslation(['strings']);
   const mainThemeAudioRef = useRef(null);
-  const retroShutdownNoiseRef = useRef(null);
+  const pcTurnOnNoiseRef = useRef(null);
+  const pcNoiseRef = useRef(null);
+  const pcShutdownNoiseRef = useRef(null);
   const [retroScreenOn, setRetroScreenOn] = useState(true);
-  const [mainThemeAudioON, setMainThemeAudioON] = useState(false);
-  const [mainThemeAudioElement, setMainThemeAudioElement] = useState(null);
-  const [retroShutdownNoiseElement, setRetroShutdownNoiseElement] = useState(null);
+  const [anySoundON, setAnySoundON] = useState(false);
+  const [soundElements, setSoundElements] = useState(null);
 
 
   // Sounds effects
   useEffect(() => {
-    setMainThemeAudioElement(mainThemeAudioRef.current);
-    setRetroShutdownNoiseElement(retroShutdownNoiseRef.current);
-    if (mainThemeAudioElement) {
-      mainThemeAudioElement.play();
-    }
+    setSoundElements({ mainTheme: mainThemeAudioRef.current, pcTurnOn: pcTurnOnNoiseRef.current, pcNoise: pcNoiseRef.current, pcShutdown: pcShutdownNoiseRef.current });
   }, []);
 
   useEffect(() => {
-    if (mainThemeAudioElement) {
-      mainThemeAudioElement.pause();
-      mainThemeAudioElement.currentTime = 0;
-      retroShutdownNoiseElement.play()
+    if (soundElements) {
+      soundElements.pcNoise.pause();
+      soundElements.pcShutdown.play();
     }
   }, [currentLanguage]);
 
 
-  const handleTurningOnWeb = async () => {
-    const mainThemeAudioElement = mainThemeAudioRef.current;
-    if (mainThemeAudioElement) {
-      await waitForMs(300);
-      mainThemeAudioElement.play().then(() => setMainThemeAudioON(true));
-    }
+  const handleTurningOnWeb = () => {
+    if (soundElements)
+      soundElements.pcTurnOn.play()
+                            .then(async () => await waitForMs(300))
+                            .then(() => setAnySoundON(true))
+                            .then(async () => await waitForMs(1700))
+                            .then(() => soundElements.pcNoise.play());
   };
 
 
@@ -52,20 +49,21 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
     <div className='absolute top-0 left-0 w-full h-full flex justify-center items-center'>
 
       {/* PowerOnBtn --> "turning ON" the web */}
-      {!mainThemeAudioON && (
+      {!anySoundON && (
         <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center bg-black z-50">
           <PowerOnBtn handleStartMainThemeAudio={handleTurningOnWeb} />
         </div>
       )}
 
       <div className={`h-screen w-screen m-0 p-0 bg-[url('/images/retro-bg.jpg')] bg-fixed bg-cover bg-center relative text-retroScreen-txtcolor
-                    before:content-[''] before:absolute before:bg-[rgba(20,14,8,0.4)] before:z-[1] before:inset-0 ${mainThemeAudioON && 'cursor-none'}`}
-            id='screen'>
-        {/* If in the future I want to incorporate again the screen power-on effect ==> ${mainThemeAudioON && 'turningOnAnimation cursor-none'} */}
+                    before:content-[''] before:absolute before:bg-[rgba(20,14,8,0.4)] before:z-[1] before:inset-0 ${anySoundON && 'cursor-none'}`}
+        id='screen'>
 
-        {(mainThemeAudioON && !isTouchDevice) && <PacManGhosts />}
+        {(anySoundON && !isTouchDevice) && <PacManGhosts />}
         <audio ref={mainThemeAudioRef} src="/audio/main-song.mp3" />
-        <audio ref={retroShutdownNoiseRef} src="/audio/retroTVnoise-shutdown-effect.mp3" />
+        <audio ref={pcNoiseRef} src="/audio/old-pc.mp3" loop />
+        <audio ref={pcShutdownNoiseRef} src="/audio/pc-shutdown.mp3" />
+        <audio ref={pcTurnOnNoiseRef} src="/audio/pc-turnon.mp3" />
 
         <div className={`h-full w-full absolute`} >
 

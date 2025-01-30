@@ -5,7 +5,7 @@ Open source project containing the source code of my personal website
 
 TODO: Hacer multipantalla el logo de la RetroScreen y ver qué pasa con el RetroComputer en pantallas táctiles y de móviles
 
-*** BUG: En firefox, cuando cargo la página ya suena la música, controlar para que hasta pulsar el btn on/off no se reproduzca la música
+*** BUG: En firefox no se muestra el componente RetroComputer TODO: SOLUCIONAR ESTE Y BUGS CONSOLA
 
 TODO: NO OLVIDARSE DE HACER SEO (ver cómo hacerlo en v4 y buscar más info)
 
