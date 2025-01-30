@@ -66,7 +66,7 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
     window.addEventListener('resize', onWindowResize, false);
 
     let startTime = null;
-    const delay = 2000;
+    const delay = 1300;
     const duration = 3000;
 
     const animateZoom = (timestamp) => {
