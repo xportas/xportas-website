@@ -13,19 +13,16 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
     const manager = new THREE.LoadingManager();
 
     manager.onProgress = (url, itemsLoaded, itemsTotal) => {
-      const progress = Math.round((itemsLoaded / itemsTotal) * 100);
-      setProgress(progress);
+      setProgress(Math.round((itemsLoaded / itemsTotal) * 100));
     };
 
-    manager.onLoad = () => {
-      setProgress(100);
-    };
+    manager.onLoad = () => setProgress(100);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.setSize(window.innerWidth, window.innerHeight);
-    // renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Adjustment for high pixel density devices
+    renderer.shadowMap.enabled = false;
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(5, window.innerWidth / window.innerHeight, 1, 100);
@@ -42,11 +39,6 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
     controls.minPolarAngle = 1.23;
     controls.maxPolarAngle = 1.32;
 
-    const currentAzimuthAngle = controls.getAzimuthalAngle();
-    const rotationRange = Math.PI / 10;
-    controls.minAzimuthAngle = currentAzimuthAngle - rotationRange / 2;
-    controls.maxAzimuthAngle = currentAzimuthAngle + rotationRange / 4;
-
     controls.rotateSpeed = 0.1;
     controls.autoRotate = false;
     controls.target = new THREE.Vector3(0, 4, 0);
@@ -54,62 +46,56 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
 
     const spotLight = new THREE.SpotLight(0xffffff, 3000, 0, 1, 2);
     spotLight.position.set(10, 15, 15);
-    spotLight.castShadow = true;
+    spotLight.castShadow = false;
     scene.add(spotLight);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
 
     const loader = new GLTFLoader(manager).setPath('models/commodore/');
     loader.load('scene.gltf', (gltf) => {
       const mesh = gltf.scene;
-      mesh.traverse((child) => {
-        if (child.isMesh) {
-          child.castShadow = true;
-          child.receiveShadow = true;
-        }
-      });
       mesh.position.set(0, 2.05, 0);
       scene.add(mesh);
     });
 
-    const  onWindowResize = () => {
+    const onWindowResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     }
-
     window.addEventListener('resize', onWindowResize, false);
 
     let startTime = null;
     const delay = 2000;
-    const duration = 3700;
+    const duration = 3000;
 
     const animateZoom = (timestamp) => {
-      if (!startTime) {
-        startTime = timestamp + delay;
-      }
+      if (!startTime) startTime = timestamp + delay;
 
-      // const elapsedTime = timestamp - startTime;
       const elapsedTime = Math.max(0, timestamp - startTime);
-      const t = Math.min(elapsedTime / duration, 1);
-      const currentZoom = THREE.MathUtils.lerp(initialZoom, controls.maxDistance, t);
-      camera.position.z = currentZoom;
+      const t = Math.exp(-4 * (1 - elapsedTime / duration));
+      camera.position.z = initialZoom + (controls.maxDistance - initialZoom) * t;
 
       controls.update();
       renderer.render(scene, camera);
 
-      if (t < 1) {
-        requestAnimationFrame(animateZoom);
-      } else {
+      if (t < 1) requestAnimationFrame(animateZoom);
+      else {
         setHiddenRetroComputer(true);
         controls.enabled = true;
+        controls.enableZoom = false; // Required for scrolling with trackpad or touch devices
       }
     }
 
-    const animate = () => {
+    let prevTime = 0;
+    const animate = (time) => {
+      if (time - prevTime > 17) { // Only render if at least ~16ms (~60FPS) have elapsed. This improves performance considerably.
+        controls.update();
+        renderer.render(scene, camera);
+        prevTime = time;
+      }
       requestAnimationFrame(animate);
-      controls.update();
-      renderer.render(scene, camera);
-      controls.enableZoom = false; // Required for scrolling with trackpad or touch devices
-    }
+    };
 
     mountRef.current.appendChild(renderer.domElement);
     animate();
@@ -126,24 +112,7 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
       },
       { threshold: 0.5 }
     );
-
-    if (mountRef.current) {
-      observer.observe(mountRef.current);
-    }
-
-    // When the maximum zoom is raised, the focus is removed from the model and returned to the page
-    // const handleScroll = (event) => {
-    //   // if (camera.position.length() >= controls.maxDistance) {
-    //   //   event.preventDefault();
-    //   //   window.scrollBy(0, event.deltaY);
-    //   //   setHiddenRetroComputer(true);
-    //   // }
-    //   event.stopPropagation();
-    //   window.scrollBy({ top: event.deltaY, behavior: 'smooth', });
-    // }
-
-    // renderer.domElement.addEventListener('wheel', handleScroll);
-    // renderer.domElement.addEventListener('touchmove', handleScroll);
+    if (mountRef.current) observer.observe(mountRef.current);
 
     return () => {
       if (mountRef.current) observer.unobserve(mountRef.current);
