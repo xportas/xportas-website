@@ -10,28 +10,33 @@ import { waitForMs } from '../utils/utils';
 
 
 
-export default function RetroScreen({ i18n, setCurrentLanguage, screenWidth, isTouchDevice }) {
+export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage, screenWidth, isTouchDevice }) {
 
   const { t } = useTranslation(['strings']);
   const mainThemeAudioRef = useRef(null);
+  const retroShutdownNoiseRef = useRef(null);
   const [retroScreenOn, setRetroScreenOn] = useState(true);
   const [mainThemeAudioON, setMainThemeAudioON] = useState(false);
+  const [mainThemeAudioElement, setMainThemeAudioElement] = useState(null);
+  const [retroShutdownNoiseElement, setRetroShutdownNoiseElement] = useState(null);
 
 
-  // Song effect
+  // Sounds effects
   useEffect(() => {
-    const mainThemeAudioElement = mainThemeAudioRef.current;
+    setMainThemeAudioElement(mainThemeAudioRef.current);
+    setRetroShutdownNoiseElement(retroShutdownNoiseRef.current);
     if (mainThemeAudioElement) {
       mainThemeAudioElement.play();
     }
-    return () => {
-      // Stop audio if the component is dismounted before playback is finished
-      if (mainThemeAudioElement && !mainThemeAudioElement.paused) {
-        mainThemeAudioElement.pause();
-        mainThemeAudioElement.currentTime = 0;
-      }
-    };
   }, []);
+
+  useEffect(() => {
+    if (mainThemeAudioElement) {
+      mainThemeAudioElement.pause();
+      mainThemeAudioElement.currentTime = 0;
+      retroShutdownNoiseElement.play()
+    }
+  }, [currentLanguage]);
 
 
   const handleTurningOnWeb = async () => {
@@ -60,6 +65,7 @@ export default function RetroScreen({ i18n, setCurrentLanguage, screenWidth, isT
 
         {(mainThemeAudioON && !isTouchDevice) && <PacManGhosts />}
         <audio ref={mainThemeAudioRef} src="/audio/main-song.mp3" />
+        <audio ref={retroShutdownNoiseRef} src="/audio/retroTVnoise-shutdown-effect.mp3" />
 
         <div className={`h-full w-full absolute`} >
 

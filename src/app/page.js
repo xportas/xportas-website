@@ -56,12 +56,11 @@ export default function Home() {
       )}
 
       <div style={{ display: currentLanguage ? "none" : "block" }}>
-        <RetroScreen i18n={i18n} setCurrentLanguage={setCurrentLanguage} screenWidth={screenWidth} isTouchDevice={isTouchDevice} />
+        <RetroScreen i18n={i18n} currentLanguage={currentLanguage} setCurrentLanguage={setCurrentLanguage} screenWidth={screenWidth} isTouchDevice={isTouchDevice} />
       </div>
 
       <div style={{ display: currentLanguage ? "block" : "none" }}>
         <Nav screenWidth={screenWidth} hiddenRetroComputer={hiddenRetroComputer} />
-        {/* <Nav screenWidth={screenWidth} hiddenRetroComputer={true} /> */}
 
         <div className={'bg-white fixed inset-0 z-[999] shuttingOffAnimation'} /> {/* Shutting OFF animation div */}
         <RetroComputer setHiddenRetroComputer={setHiddenRetroComputer} scrollFactor={scrollFactor} setProgress={setProgress} />
