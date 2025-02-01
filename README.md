@@ -2,16 +2,13 @@
 Open source project containing the source code of my personal website
 
 
-
-TODO: Hacer multipantalla el logo de la RetroScreen y ver qué pasa con el RetroComputer en pantallas táctiles y de móviles
-
 *** BUG: En firefox no se muestra el componente RetroComputer TODO: SOLUCIONAR ESTE Y BUGS CONSOLA
 
 TODO: NO OLVIDARSE DE HACER SEO (ver cómo hacerlo en v4 y buscar más info)
 
 TODO: ELABORAR UN BUEN README
 
-TODO: METER UN BOTÓN PARA ACTIVAR LA MÚSICA EN LA RETRO SCREEN O NO, SI SILENCIO, EL SONIDO DE ORDENADOR VIEJO TODO EL RATO
+TODO: hacer aviso de móvil de que en los 80s no existían los ordenadores y es mejor ver la web en uno, en el móvil no se puede disfrutar de todas las característcas
 
 
 

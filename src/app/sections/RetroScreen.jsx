@@ -5,7 +5,7 @@ import PacManGhosts from '../components/PacManGhosts';
 import { PixelatedImage } from '../components/PixelatedImage';
 import PowerOnBtn from '../components/PowerOnBtn';
 import RetroHero from '../components/RetroHero';
-import { icons, waitForMs } from '../utils/utils';
+import { waitForMs } from '../utils/utils';
 
 
 export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage, screenWidth, isTouchDevice }) {
@@ -26,7 +26,7 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
     setSoundElements({ mainTheme: mainThemeAudioRef.current, pcTurnOn: pcTurnOnNoiseRef.current, pcNoise: pcNoiseRef.current, pcShutdown: pcShutdownNoiseRef.current });
 
     const muteUnmuteMainTheme = async (event) => {
-      if (event.key === 'm')
+      if (event.key === 'm' || event.key === 'M')
         setMuted(prevMuted => !prevMuted);
     }
 
@@ -83,17 +83,18 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
         <audio ref={pcShutdownNoiseRef} src="/audio/pc-shutdown.mp3" />
         <audio ref={pcTurnOnNoiseRef} src="/audio/pc-turnon.mp3" />
 
-        <div className={`h-full w-full absolute`} >
-          <div className='flex min-[1090px]:h-3/5 max-w-6xl m-auto'>
+        <div className="h-full w-full absolute">
+          <div className='flex max-[767px]:flex-col min-[1090px]:h-3/5 max-w-6xl m-auto'>
 
             <RetroHero retroScreenOn={retroScreenOn} />
 
             {/* xportas logo image */}
-            <div className='flex flex-1 justify-center items-center'>
+            <div className='flex justify-center items-center m-auto min-[1090px]:m-0'>
               <PixelatedImage
                 src="/images/xportas-logo.webp"
                 blockSize={100}
-                className='img-blur rounded-full h-24 min-[1090px]:h-full min-[1090px]:mt-10 animate-rotation'
+                className='img-blur rounded-full sm:mr-7 min-[940px]:mr-14 min-[1090px]:mt-10 animate-rotation
+                          h-24 min-[375px]:h-32 min-[425px]:h-36 min-[600px]:h-48 sm:h-56 min-[900px]:h-60 min-[1090px]:h-full'
               />
             </div>
           </div>

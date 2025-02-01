@@ -33,7 +33,7 @@ export default function Hero() {
   }, [rendered]);
 
   return (
-    <div className='flex items-center justify-center'>
+    <div className='flex items-center justify-center' id='hero'>
       <article
         ref={heroRef}
         className={`flex flex-col items-start justify-center min-h-screen h-auto mx-auto transition-all duration-500 ease-in 

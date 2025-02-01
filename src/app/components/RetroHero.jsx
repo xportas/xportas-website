@@ -1,5 +1,6 @@
 'use client';
 import { useTranslation } from "react-i18next";
+import { personalData } from "../utils/config";
 import AnimatedTyping from "./AnimatedTyping";
 
 export default function RetroHero({ retroScreenOn }) {
@@ -7,7 +8,7 @@ export default function RetroHero({ retroScreenOn }) {
 
 
   return (
-    <div className='flex flex-col justify-center content-center space-y-8 font-header py-10 px-4 sm:py-16 sm:px-10 md:py-20 md:px-16 lg:py-20 lg:pl-20 w-full md:w-3/4 lg:w-1/2'>
+    <div className='flex flex-col justify-center content-center space-y-8 font-header pt-10 pb-5 px-4 sm:pt-16 sm:pb-7 sm:px-10 md:py-20 md:pl-16 lg:py-20 lg:pl-20 w-full md:w-3/4 lg:w-1/2'>
       <div className='max-[767px]:flex max-[767px]:justify-center'>
         <p className='text-xl min-[600px]:text-2xl md:text-3xl'>
           {t('RETRO_SCREEN.GREETING')}
@@ -19,6 +20,8 @@ export default function RetroHero({ retroScreenOn }) {
         </span>
         <AnimatedTyping
           cursorStyle={'inline-block w-[4px] h-[2rem] sm:w-[5px] sm:h-[2.5rem] md:w-[6px] md:h-[3rem] bg-retroScreen-txtcolor ml-[2px] sm:ml-[3px] animate-blink align-middle mb-2 sm:mb-3 mr-1'}
+          str1={personalData.name}
+          str2={personalData.alias}
           stop={!retroScreenOn}
           textStyle={`bg-retroScreen-txtcolor py-2 sm:py-3 text-2xl min-[600px]:text-3xl md:text-4xl font-main`} />
       </div>

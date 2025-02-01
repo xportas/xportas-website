@@ -1,27 +1,28 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import { personalData } from '../utils/config';
 import { waitForMs } from '../utils/utils';
 
 
-export default function AnimatedTyping({ cursorStyle, stop, textStyle }) {
+export default function AnimatedTyping({ cursorStyle, stop, textStyle, str1, str2 }) {
   const typedNameOrAlias = useRef(null);
 
   useEffect(() => {
     let isMounted = true;
-    const asyncTypeNameLoop = async () => {
+    const asyncTypeTextLoop = async () => {
       while (isMounted && !stop) {
-        await typeString(personalData.name, typedNameOrAlias);
+        await typeString(str1, typedNameOrAlias);
         await waitForMs(2000);
         if (!isMounted) break;
         await deleteString(typedNameOrAlias);
-        await typeString(personalData.alias, typedNameOrAlias);
-        await waitForMs(2000);
-        if (!isMounted) break;
-        await deleteString(typedNameOrAlias);
+        if (str2) {
+          await typeString(str2, typedNameOrAlias);
+          await waitForMs(2000);
+          if (!isMounted) break;
+          await deleteString(typedNameOrAlias);
+        }
       }
     }
-    asyncTypeNameLoop();
+    asyncTypeTextLoop();
     return () => {
       isMounted = false;
     };
