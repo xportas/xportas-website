@@ -15,7 +15,7 @@ module.exports = {
         rotation: 'rotation 10s infinite linear',
         rotationLoader: 'rotationLoader 4s linear infinite reverse',
         shuttingOffAnimation: 'shrinkToLine 0.84s forwards, shrinkToDot 0.35s 0.84s forwards',
-        turnOnAnimation: 'growFromDot 0.35s 0.84s forwards, growFromLine 0.64s forwards',
+        turnOnAnimation: 'growFromDot 0.17s 0.84s forwards, growFromLine 0.44s forwards',
         wipeInRight: 'wipeInRight 1.3s cubic-bezier(.25, 1, .30, 1) both',
         wipeOutLeft: 'wipeOutLeft 0.75s cubic-bezier(.25, 1, .30, 1) both'
       },

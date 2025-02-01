@@ -51,9 +51,9 @@ export default function Home() {
 
   return (
     <>
-      {progress < 100 && (
+      {/* {progress < 100 && (
         <Loader progress={progress} />
-      )}
+      )} */}
 
       <div style={{ display: currentLanguage ? "none" : "block" }}>
         <RetroScreen i18n={i18n} currentLanguage={currentLanguage} setCurrentLanguage={setCurrentLanguage} screenWidth={screenWidth} isTouchDevice={isTouchDevice} />
@@ -63,7 +63,7 @@ export default function Home() {
         <Nav screenWidth={screenWidth} hiddenRetroComputer={hiddenRetroComputer} />
 
         <div className={'bg-white fixed inset-0 z-[999] animate-shuttingOffAnimation'} /> {/* Shutting OFF animation div */}
-        <RetroComputer setHiddenRetroComputer={setHiddenRetroComputer} scrollFactor={scrollFactor} setProgress={setProgress} />
+        {/* <RetroComputer setHiddenRetroComputer={setHiddenRetroComputer} scrollFactor={scrollFactor} setProgress={setProgress} /> */}
 
         <Hero />
         <About />
