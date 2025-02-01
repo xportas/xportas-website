@@ -89,22 +89,22 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
                 <div className="absolute z-30 flex items-center justify-center numbered">
                   <span
                     style={{ '--dynamic-duration': '0.3s', '--dynamic-translate': '0' }}
-                    className={`px-3 m-2 bg-orange-300 bg-clip-text text-sm text-transparent ${navbarOnHoverState.about ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>
+                    className={`px-3 my-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.about ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>
                     {t('NAV.ABOUT')}
                   </span>
                   <span
                     style={{ '--dynamic-duration': '0.3s', '--dynamic-translate': '0' }}
-                    className={`px-3 m-2 bg-orange-300 bg-clip-text text-sm text-transparent ${navbarOnHoverState.experience ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>
+                    className={`px-3 my-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.experience ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>
                     {t('NAV.EXPERIENCE')}
                   </span>
                   <span
                     style={{ '--dynamic-duration': '0.3s', '--dynamic-translate': '0' }}
-                    className={`px-3 m-2 bg-orange-300 bg-clip-text text-sm text-transparent ${navbarOnHoverState.work ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>
+                    className={`px-3 my-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.work ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>
                     {t('NAV.WORK')}
                   </span>
                   <span
                     style={{ '--dynamic-duration': '0.3s', '--dynamic-translate': '0' }}
-                    className={`px-3 m-2 bg-orange-300 bg-clip-text text-sm text-transparent ${navbarOnHoverState.contact ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>
+                    className={`px-3 my-2 bg-orange-300 bg-clip-text text-transparent ${navbarOnHoverState.contact ? 'blur-xs' : 'animate-fadeOut transition-all duration-75'} `}>
                     {t('NAV.CONTACT')}
                   </span>
                 </div>
@@ -112,39 +112,39 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
                 <div className="relative z-40 flex items-center justify-center numbered">
                   <a
                     href={navLinks.About}
-                    className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150"
+                    className="px-3 my-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150"
                     onMouseOver={() => handleNavbarOnHover('about', true)}
                     onMouseLeave={() => handleNavbarOnHover('about', false)}>
-                    <span className={`bg-main-gray bg-clip-text text-sm`}>
+                    <span className={`bg-main-gray bg-clip-text`}>
                       {t('NAV.ABOUT')}
                     </span>
                   </a>
                   <a
                     href={navLinks.Experience}
-                    className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150"
+                    className="px-3 my-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150"
                     onMouseOver={() => handleNavbarOnHover('experience', true)}
                     onMouseLeave={() => handleNavbarOnHover('experience', false)}>
-                    <span className={`bg-main-gray bg-clip-text text-sm`}>
+                    <span className={`bg-main-gray bg-clip-text`}>
                       {t('NAV.EXPERIENCE')}
                     </span>
                   </a>
                   <a
                     href={navLinks.Work}
-                    className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150"
+                    className="px-3 my-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150"
                     onMouseOver={() => handleNavbarOnHover('work', true)}
                     onMouseLeave={() => handleNavbarOnHover('work', false)}>
                     <span
-                      className={`bg-main-gray bg-clip-text text-sm`}>
+                      className={`bg-main-gray bg-clip-text`}>
                       {t('NAV.WORK')}
                     </span>
                   </a>
                   <a
                     href={navLinks.Contact}
-                    className="px-3 m-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150"
+                    className="px-3 my-2 hover:-translate-y-1.5 hover:translate-x-1.5 hover:my-0 hover:pt-0 hover:pb-1 transition-all duration-150"
                     onMouseOver={() => handleNavbarOnHover('contact', true)}
                     onMouseLeave={() => handleNavbarOnHover('contact', false)}>
                     <span
-                      className={`bg-main-gray bg-clip-text text-sm`}>
+                      className={`bg-main-gray bg-clip-text`}>
                       {t('NAV.CONTACT')}
                     </span>
                   </a>
