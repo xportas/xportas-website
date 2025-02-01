@@ -103,18 +103,11 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
 
         {/* CTR noise */}
         {!isTouchDevice &&
-          // <>
-          //   <div className='fixed top-0 right-0'>
-          //     {
-          //       muted ? icons.UnmutedIcon: icons.UnmutedIcon
-          //     }
-          //   </div>
-            <div
-              className={`h-full w-full z-30 relative animate-crtScreen ${retroScreenOn ? 'opacity-45' : 'opacity-0'}`}
-              id='crt-noise'
-              style={{ background: `linear-gradient(to bottom, transparent, #aaa4, #8881, #6664, #4445, #2228, #4443, transparent), repeating-linear-gradient(transparent 0 2px, #25242950 2px 4px)` }}
-            />
-          // </>
+          <div
+            className={`h-full w-full z-30 relative animate-crtScreen ${retroScreenOn ? 'opacity-45' : 'opacity-0'}`}
+            id='crt-noise'
+            style={{ background: `linear-gradient(to bottom, transparent, #aaa4, #8881, #6664, #4445, #2228, #4443, transparent), repeating-linear-gradient(transparent 0 2px, #25242950 2px 4px)` }}
+          />
         }
 
         {/* TurningON animation */}
