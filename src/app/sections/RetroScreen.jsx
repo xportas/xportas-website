@@ -20,6 +20,7 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
   const [retroScreenOn, setRetroScreenOn] = useState(true);
   const [anySoundON, setAnySoundON] = useState(false);
   const [soundElements, setSoundElements] = useState(null);
+  const [te, setTe] = useState(false);
 
 
   // Sounds effects
@@ -35,13 +36,14 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
   }, [currentLanguage]);
 
 
-  const handleTurningOnWeb = () => {
+  const handleTurningOnWeb = async () => {
     if (soundElements)
       soundElements.pcTurnOn.play()
                             .then(async () => await waitForMs(300))
                             .then(() => setAnySoundON(true))
                             .then(async () => await waitForMs(1700))
                             .then(() => soundElements.pcNoise.play());
+      await waitForMs(150).then(() => setTe(true));
   };
 
 
@@ -115,6 +117,10 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
             style={{ background: `linear-gradient(to bottom, transparent, #aaa4, #8881, #6664, #4445, #2228, #4443, transparent), repeating-linear-gradient(transparent 0 2px, #25242950 2px 4px)` }}>
           </div>
         }
+
+        {/* TurningON animation */}
+        { te && <div className='bg-white fixed inset-0 z-[999] animate-turnOnAnimation' /> }
+
       </div>
     </div>
   );

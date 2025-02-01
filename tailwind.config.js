@@ -14,6 +14,8 @@ module.exports = {
         fadeOut: 'fadeOut var(--dynamic-duration) ease-out forwards',
         rotation: 'rotation 10s infinite linear',
         rotationLoader: 'rotationLoader 4s linear infinite reverse',
+        shuttingOffAnimation: 'shrinkToLine 0.84s forwards, shrinkToDot 0.35s 0.84s forwards',
+        turnOnAnimation: 'growFromDot 0.35s 0.84s forwards, growFromLine 0.64s forwards',
         wipeInRight: 'wipeInRight 1.3s cubic-bezier(.25, 1, .30, 1) both',
         wipeOutLeft: 'wipeOutLeft 0.75s cubic-bezier(.25, 1, .30, 1) both'
       },
@@ -70,6 +72,16 @@ module.exports = {
           '0%': { transform: 'translateY(0)', opacity: '1' },
           '100%': { transform: 'translateY(var(--dynamic-translate))', opacity: '0' },
         },
+        growFromLine: {
+          '0%': { 'border-radius': '3%', opacity: '0.5', transform: 'scaleY(0.01)' },
+          '50%': { 'opacity': '1' },
+          '100%': { 'border-radius': '0%', opacity: '0', transform: 'scaleY(1)' }
+        },
+        growFromDot: {
+          '0%': { 'border-radius': '5%', opacity: '0', transform: 'scaleY(0) scaleX(1)' },
+          '33%': { opacity: '1' },
+          '100%': { transform: 'scaleY(0.01) scaleX(1)' }
+        },
         rotation: {
           '0%': { transform: 'rotateY(0deg)' },
           '100%': { transform: 'rotateY(360deg)' },
@@ -77,6 +89,14 @@ module.exports = {
         rotationLoader: {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(-360deg)' },
+        },
+        shrinkToDot: {
+          '0%': { opacity: '1', transform: 'scaleY(0.01) scaleX(1)' },
+          '100%': { 'border-radius': '5%', opacity: '0', transform: 'scaleY(0) scaleX(0)' },
+        },
+        shrinkToLine: {
+          '0%': { transform: 'scaleY(1)' },
+          '100%': { transform: 'scaleY(0.01)' },
         },
         wipeInRight: {
           '0%': { opacity: '0', 'clip-path': 'inset(0 100% 0 0)', filter: 'blur(5px)' },
