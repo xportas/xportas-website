@@ -84,6 +84,7 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
         setHiddenRetroComputer(true);
         controls.enabled = true;
         controls.enableZoom = false; // Required for scrolling with trackpad or touch devices
+        document.getElementsByTagName("html")[0].style.overflowY = "scroll";
       }
     }
 
@@ -125,7 +126,7 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
     <>
       <div
         className="fixed top-0 left-0 transition-all duration-300 ease-out"
-        style={{ opacity: 1 - scrollFactor * 4.7 }}
+        style={{ opacity: 1 - (scrollFactor || 0) * 4.7}}
       >
         <div ref={mountRef} />
       </div>
