@@ -12,7 +12,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
   const { t } = useTranslation(['strings']);
   const [showNavbar, setShowNavbar] = useState(false);
   const [navbarHidden, setNavbarHidden] = useState(true);
-  const navbarInitialState = { about: false, work: false, experience: false, contact: false };
+  const navbarInitialState = { home: false, about: false, work: false, experience: false, contact: false };
   const [navbarOnHoverState, setNavbarOnHoverState] = useState(navbarInitialState);
 
   const handleNavbarOnHover = (a, isHover) => {
@@ -44,7 +44,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
               styles={`px-5 py-1 z-50 ${!hiddenRetroComputer ? 'pointer-events-none opacity-0 blur-sm' : 'pointer-events-auto opacity-100 blur-0'}`}
               darkTheme={!navbarHidden && screenWidth < 1423}
               effect={() => setShowNavbar(!showNavbar)}
-              child={ navbarHidden || screenWidth >= 1423 ? icons.MenuIcon : icons.DarkMenuIcon }
+              child={navbarHidden || screenWidth >= 1423 ? icons.MenuIcon : icons.DarkMenuIcon}
             />
 
             {/* Redirect to LinkedIn btn */}
@@ -54,7 +54,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
               darkTheme={(navbarHidden && screenWidth >= 1423) || screenWidth < 1423}
               href={links.LinkedIn}
               target="_blank" rel="noopener noreferrer"
-              child={ navbarHidden || screenWidth >= 1423 ? icons.LinkedInIcon : icons.DarkLinkedInIcon }
+              child={navbarHidden || screenWidth >= 1423 ? icons.LinkedInIcon : icons.DarkLinkedInIcon}
             />
 
             {/* Redirect to my GitHub profile */}
@@ -64,7 +64,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
               darkTheme={(navbarHidden && screenWidth >= 1423) || screenWidth < 1423}
               href={links.GitHub}
               target="_blank" rel="noopener noreferrer"
-              child={ navbarHidden || screenWidth >= 1423 ? icons.GitHubIcon : icons.DarkGitHubIcon }
+              child={navbarHidden || screenWidth >= 1423 ? icons.GitHubIcon : icons.DarkGitHubIcon}
             />
           </div>
 
@@ -76,7 +76,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
             href={links.CV}
             download="cv-xportas.pdf"
             target="_blank" rel="noopener noreferrer"
-              child={ navbarHidden || screenWidth >= 1423 ? icons.CVIcon : icons.DarkCVIcon }
+            child={navbarHidden || screenWidth >= 1423 ? icons.CVIcon : icons.DarkCVIcon}
           />
 
           {/* Main nav (for large and traditional screens) */}
@@ -160,6 +160,14 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
       {screenWidth < 1423 &&
         <div className={`fixed h-screen w-screen bg-main-gray z-40 ${showNavbar ? 'animate-wipeInRight' : 'animate-wipeOutLeft'} ${navbarHidden ? 'hidden' : ''}`}>
           <nav className="inline-flex items-baseline flex-col font-header text-orange-200 pt-24 p-7 w-full">
+            <a
+              href={navLinks.Home}
+              className={`text-[3.5vh] w-full mb-2 ${navbarOnHoverState.home ? 'bg-orange-200 text-main-gray' : ''}`}
+              onMouseOver={() => handleNavbarOnHover('home', true)} onMouseLeave={() => handleNavbarOnHover('home', false)}>
+              <span className="ml-3" onClick={() => setShowNavbar(!showNavbar)}>
+                {t('NAV.HERO')}
+              </span>
+            </a>
             <a
               href={navLinks.About}
               className={`text-[3.5vh] w-full mb-2 ${navbarOnHoverState.about ? 'bg-orange-200 text-main-gray' : ''}`}

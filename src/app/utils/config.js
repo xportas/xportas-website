@@ -1,5 +1,6 @@
 module.exports = {
   navLinks: {
+    Home: '#hero',
     About: '#about',
     Experience: '#experience',
     Work: '#work',

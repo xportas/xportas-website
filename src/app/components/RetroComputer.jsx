@@ -8,6 +8,7 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
   const mountRef = useRef(null);
   const controlsRef = useRef(null);
   const animationStartedRef = useRef(false);
+  const scrollFactorOperation = (scrollFactor || 0) * 4.7;
 
   useEffect(() => {
     const manager = new THREE.LoadingManager();
@@ -126,7 +127,7 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
     <>
       <div
         className="fixed top-0 left-0 transition-all duration-300 ease-out"
-        style={{ opacity: 1 - (scrollFactor || 0) * 4.7}}
+        style={{ opacity: 1 - scrollFactorOperation, zIndex: scrollFactorOperation !== 0 && -1 }}
       >
         <div ref={mountRef} />
       </div>
