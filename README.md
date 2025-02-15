@@ -8,9 +8,6 @@ TODO: NO OLVIDARSE DE HACER SEO (ver cómo hacerlo en v4 y buscar más info)
 
 TODO: ELABORAR UN BUEN README
 
-TODO: hacer aviso de móvil de que en los 80s no existían los ordenadores y es mejor ver la web en uno, en el móvil no se puede disfrutar de todas las característcas
-
-
 
 
 
