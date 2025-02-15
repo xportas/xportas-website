@@ -84,7 +84,7 @@ export default function RetroComputer({ setHiddenRetroComputer, scrollFactor, se
         setHiddenRetroComputer(true);
         controls.enabled = true;
         controls.enableZoom = false; // Required for scrolling with trackpad or touch devices
-        document.getElementsByTagName("html")[0].style.overflowY = "scroll";
+        document.getElementsByTagName("html")[0].style.overflowY = "scroll"; // Required to show the retro scrollbar
       }
     }
 

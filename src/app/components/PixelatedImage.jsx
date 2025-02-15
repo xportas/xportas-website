@@ -11,6 +11,7 @@ export const PixelatedImage = forwardRef(
       height = 600,
       level = '',
       style,
+      onClick,
       ...rest
     },
     ref,
@@ -66,7 +67,8 @@ export const PixelatedImage = forwardRef(
         className={`${level ? 'border-2 border-solid border-[#FFAD36]' : ''} ${className || ''}`}
         width={width}
         height={height}
-        style={{ style, imageRendering: 'pixelated' }}
+        style={{ style, imageRendering: 'pixelated', pointerEvents: 'auto' }}
+        onClick={onClick}
         {...rest}
       />
     );

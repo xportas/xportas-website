@@ -99,7 +99,8 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
             </div>
           </div>
 
-          <LangSelector i18n={i18n} setCurrentLanguage={setCurrentLanguage} setRetroScreenOn={setRetroScreenOn} screenWidth={screenWidth} />
+          <LangSelector i18n={i18n} setCurrentLanguage={setCurrentLanguage} setRetroScreenOn={setRetroScreenOn}
+          screenWidth={screenWidth} isTouchDevice={isTouchDevice} turningONanimation={turningONanimation} />
         </div>
 
         {/* CTR noise */}
@@ -112,7 +113,7 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
         }
 
         {/* TurningON animation */}
-        {turningONanimation && <div className='bg-white fixed inset-0 z-[999] animate-turnOnAnimation' />}
+        {turningONanimation && <div className='bg-white fixed inset-0 z-[997] animate-turnOnAnimation' />}
 
       </div>
     </div>

@@ -2,13 +2,24 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from "react-i18next";
 import { PixelatedImage } from '../components/PixelatedImage';
-import { languageOptions } from '../utils/utils';
+import { languageOptions, waitForMs } from '../utils/utils';
 
 
-export default function LangSelector({ i18n, setCurrentLanguage, setRetroScreenOn, screenWidth }) {
+export default function LangSelector({ i18n, setCurrentLanguage, setRetroScreenOn, screenWidth, isTouchDevice, turningONanimation }) {
 
   const { t } = useTranslation(['strings']);
   const [langIndex, setLangIndex] = useState(0);
+  const [increaseZIndexOfLangOpt, setIncreaseZIndexOfLangOpt] = useState(false);
+
+  useEffect(() => {
+    const handleEffect = async () => {
+      if (turningONanimation && isTouchDevice) {
+        await waitForMs(400);
+        setIncreaseZIndexOfLangOpt(true);
+      }
+    };
+    handleEffect();
+  }, [turningONanimation]);
 
   // Keyboard listening effect
   useEffect(() => {
@@ -37,6 +48,11 @@ export default function LangSelector({ i18n, setCurrentLanguage, setRetroScreenO
     };
   }, [langIndex]);
 
+  const onClickLang = (langValue) => {
+    setRetroScreenOn(false);
+    setCurrentLanguage(langValue);
+    i18n.changeLanguage(langValue);
+  }
 
   return (
     <div className="flex flex-col max-w-6xl m-auto md:flex-row place-content-around h-auto md:h-2/5 px-4 md:px-0">
@@ -76,8 +92,9 @@ export default function LangSelector({ i18n, setCurrentLanguage, setRetroScreenO
             src={lang.flag}
             alt={lang.value}
             level={lang.level}
+            onClick={() => onClickLang(lang.value)}
             className={`m-auto rounded-full w-20 h-20 min-[600px]:w-24 min-[600px]:h-24 min-[900px]:w-28 min-[900px]:h-28 
-                        lg:w-32 lg:h-32 opacity-95 ${languageOptions[langIndex].value === lang.value ? 'shadow-lang-glow' : ''}`}
+                        lg:w-32 lg:h-32 opacity-95 ${increaseZIndexOfLangOpt ? 'z-[999]' : ''} ${languageOptions[langIndex].value === lang.value ? 'shadow-lang-glow' : ''}`}
           />
         ))}
       </div>
