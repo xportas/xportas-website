@@ -1,8 +1,6 @@
 'use client';
 export default function Loader({ progress }) {
 
-  // TODO: METER AQUÍ EL MENSAJE DE QUE EN LOS 80s NO EXISTÍAN LOS MÓVILES Y QUE NO ES LA MISMA EXPERIENCIA 
-
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-black z-[9999]">
       <div className="absolute top-1/2 left-1/2 text-center -translate-x-1/2 -translate-y-1/2 text-white">

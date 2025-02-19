@@ -20,10 +20,9 @@ export default function RetroHero({ retroScreenOn }) {
         </span>
         <AnimatedTyping
           cursorStyle={'inline-block w-[4px] h-[2rem] sm:w-[5px] sm:h-[2.5rem] md:w-[6px] md:h-[3rem] bg-retroScreen-txtcolor ml-[2px] sm:ml-[3px] animate-blink align-middle mb-2 sm:mb-3 mr-1'}
-          str1={personalData.name}
-          str2={personalData.alias}
-          stop={!retroScreenOn}
-          textStyle={`bg-retroScreen-txtcolor py-2 sm:py-3 text-2xl min-[600px]:text-3xl md:text-4xl font-main`} />
+          textStyle={`bg-retroScreen-txtcolor py-2 sm:py-3 text-2xl min-[600px]:text-3xl md:text-4xl font-main`}
+          strings={[personalData.name, personalData.alias]}
+          dontStop={retroScreenOn} />
       </div>
       <div className='max-[767px]:flex max-[767px]:justify-center'>
         <ul className='list-inside list-square text-sm min-[600px]:text-base md:text-lg'>
