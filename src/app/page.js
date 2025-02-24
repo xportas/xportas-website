@@ -11,6 +11,7 @@ import Jobs from "./sections/Jobs";
 import Projects from "./sections/Projects";
 import RetroScreen from "./sections/RetroScreen";
 import i18n from './utils/i18n';
+import ModernDeviceWarning from "./components/ModernDeviceWarning";
 
 
 
@@ -22,6 +23,7 @@ export default function Home() {
   const [scrollFactor, setScrollFactor] = useState(0);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [acceptedMDWarning, setAcceptedMDWarning] = useState(false);
 
 
   useEffect(() => {
@@ -51,9 +53,13 @@ export default function Home() {
 
   return (
     <>
-      {progress < 100 && (
+      {progress < 100 &&
         <Loader progress={progress} />
-      )}
+      }
+
+      {(progress >= 100 && isTouchDevice && !acceptedMDWarning) &&
+        <ModernDeviceWarning setAcceptedMDWarning={setAcceptedMDWarning} />
+      }
 
       <div style={{ display: currentLanguage ? "none" : "block" }}>
         <RetroScreen i18n={i18n} currentLanguage={currentLanguage} setCurrentLanguage={setCurrentLanguage} screenWidth={screenWidth} isTouchDevice={isTouchDevice} />
