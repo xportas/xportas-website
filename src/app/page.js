@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
+import ModernDeviceWarning from "./components/ModernDeviceWarning";
 import Nav from "./components/Nav";
 import RetroComputer from "./components/RetroComputer";
 import About from "./sections/About";
@@ -11,7 +12,7 @@ import Jobs from "./sections/Jobs";
 import Projects from "./sections/Projects";
 import RetroScreen from "./sections/RetroScreen";
 import i18n from './utils/i18n';
-import ModernDeviceWarning from "./components/ModernDeviceWarning";
+import { waitForMs } from "./utils/utils";
 
 
 
@@ -24,6 +25,7 @@ export default function Home() {
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [progress, setProgress] = useState(0);
   const [acceptedMDWarning, setAcceptedMDWarning] = useState(false);
+  const [closeMDWarning, setCloseMDWarning] = useState(false);
 
 
   useEffect(() => {
@@ -51,6 +53,12 @@ export default function Home() {
     };
   }, []);
 
+  const handleAcceptMDWarning = async () => {
+    setCloseMDWarning(true);
+    await waitForMs(700);
+    setAcceptedMDWarning(true);
+  };
+
   return (
     <>
       {progress < 100 &&
@@ -58,7 +66,7 @@ export default function Home() {
       }
 
       {(progress >= 100 && isTouchDevice && !acceptedMDWarning) &&
-        <ModernDeviceWarning setAcceptedMDWarning={setAcceptedMDWarning} />
+        <ModernDeviceWarning closeMDWarning={closeMDWarning} handleAcceptMDWarning={handleAcceptMDWarning} />
       }
 
       <div style={{ display: currentLanguage ? "none" : "block" }}>

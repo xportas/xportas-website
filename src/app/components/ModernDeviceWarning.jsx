@@ -1,10 +1,10 @@
 'use client';
 import AnimatedTyping from "./AnimatedTyping";
 
-export default function ModernDeviceWarning({ setAcceptedMDWarning }) {
+export default function ModernDeviceWarning({ closeMDWarning, handleAcceptMDWarning }) {
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-black z-[9999]">
+    <div className={`fixed top-0 left-0 w-full h-full bg-black z-[9999] transition-opacity duration-700 ${closeMDWarning ? "opacity-0" : "opacity-100"}`}>
       <div className="absolute top-14 left-1/2 mt-20 text-start -translate-x-1/2 text-white">
         <div className="w-80">
           <AnimatedTyping
@@ -28,7 +28,7 @@ export default function ModernDeviceWarning({ setAcceptedMDWarning }) {
         <button
           className="bg-white text-black text-lg py-2 px-4 
                     hover:bg-black hover:text-white hover:border-2 hover:border-dashed hover:border-white"
-          onClick={() => setAcceptedMDWarning(true)}>
+          onClick={handleAcceptMDWarning}>
           ACEPTAR
         </button>
       </div>
