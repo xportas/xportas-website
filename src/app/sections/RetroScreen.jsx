@@ -83,7 +83,7 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
         <audio ref={pcShutdownNoiseRef} src="/audio/pc-shutdown.mp3" />
         <audio ref={pcTurnOnNoiseRef} src="/audio/pc-turnon.mp3" />
 
-        <div className="h-full w-full absolute">
+        <div className="flex flex-col items-center h-full w-full absolute max-[767px]:mb-10">
           <div className='flex max-[767px]:flex-col min-[1090px]:h-3/5 max-w-6xl m-auto'>
 
             <RetroHero retroScreenOn={retroScreenOn} />
