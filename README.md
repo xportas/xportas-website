@@ -19,13 +19,13 @@
 
 ![demo](public/images/screenshot-xportas-retro-website.png)
 
-## 🚨 Forking this repo (please read!)
+## 🚨 Before forking this repo
 
 Since I embarked on the development of this project, it was clear to me that it was going to be open source because I owe it to the community. Whenever I needed it, I found in it the collaboration and generosity that has helped me grow as a developer. This project has taken me countless hours of work and I have learned a lot in the process. Now, I want to return the favor and do my part to keep the community alive.
 
 That said, while I love it when people use, learn from or even get inspired by my work, plagiarism is not okay. If you want to reuse any part of this project, I only ask that you give me proper credit by linking back to [xabierportas.dev](https://xabierportas.dev). This project is the result of a lot of effort and dedication, and I simply want that work to be recognized.
 
-Thanks for understanding and I hope you enjoy finding all the easter eggs that I have left along this long and tortuous path😊
+Thanks for understanding and I hope you enjoy finding all the easter eggs that I have left along this path😊
 
 ## 🛠 Installation & Set Up
 
@@ -40,4 +40,4 @@ npm install
 npm run dev
 
 ```
-2. Open [http://localhost:3000](http://localhost:3000) and let your journey into the past begin!
+2. Open [http://localhost:3000](http://localhost:3000) and let your journey into the past begin! 🚀🚀
