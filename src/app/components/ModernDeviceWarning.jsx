@@ -1,6 +1,6 @@
 'use client';
-import AnimatedTyping from "./AnimatedTyping";
 import { useTranslation } from "react-i18next";
+import AnimatedTyping from "./AnimatedTyping";
 
 export default function ModernDeviceWarning({ closeMDWarning, handleAcceptMDWarning }) {
   const { t } = useTranslation(['strings']);
