@@ -10,12 +10,16 @@ export default function LangSelector({ i18n, setCurrentLanguage, setRetroScreenO
   const { t } = useTranslation(['strings']);
   const [langIndex, setLangIndex] = useState(0);
   const [increaseZIndexOfLangOpt, setIncreaseZIndexOfLangOpt] = useState(false);
+  const [enableEnter, setEnableEnter] = useState(false);
 
   useEffect(() => {
     const handleEffect = async () => {
-      if (turningONanimation && isTouchDevice) {
-        await waitForMs(400);
-        setIncreaseZIndexOfLangOpt(true);
+      if (turningONanimation) {
+        setEnableEnter(true);
+        if (isTouchDevice) {
+          await waitForMs(400);
+          setIncreaseZIndexOfLangOpt(true);
+        }
       }
     };
     handleEffect();
@@ -34,9 +38,11 @@ export default function LangSelector({ i18n, setCurrentLanguage, setRetroScreenO
           setLangIndex((prevIndex) => (prevIndex < languageOptions.length - 1 ? prevIndex + 1 : 0));
           break;
         case 'Enter':
-          setRetroScreenOn(false);
-          setCurrentLanguage(languageOptions[langIndex].value);
-          i18n.changeLanguage(languageOptions[langIndex].value);
+          if (enableEnter) {
+            setRetroScreenOn(false);
+            setCurrentLanguage(languageOptions[langIndex].value);
+            i18n.changeLanguage(languageOptions[langIndex].value);
+          }
           break;
         default:
           break;
@@ -46,7 +52,7 @@ export default function LangSelector({ i18n, setCurrentLanguage, setRetroScreenO
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [langIndex]);
+  }, [langIndex, enableEnter]);
 
   const onClickLang = (langValue) => {
     setRetroScreenOn(false);
