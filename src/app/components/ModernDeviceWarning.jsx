@@ -1,7 +1,9 @@
 'use client';
 import AnimatedTyping from "./AnimatedTyping";
+import { useTranslation } from "react-i18next";
 
 export default function ModernDeviceWarning({ closeMDWarning, handleAcceptMDWarning }) {
+  const { t } = useTranslation(['strings']);
 
   return (
     <div className={`fixed top-0 left-0 w-full h-full bg-black z-[9999] transition-opacity duration-700 ${closeMDWarning ? "opacity-0" : "opacity-100"}`}>
@@ -29,7 +31,7 @@ export default function ModernDeviceWarning({ closeMDWarning, handleAcceptMDWarn
           className="bg-white text-black text-lg py-2 px-4 
                     hover:bg-black hover:text-white hover:border-2 hover:border-dashed hover:border-white"
           onClick={handleAcceptMDWarning}>
-          ACEPTAR
+          {t('BTNS.ACCEPT')}
         </button>
       </div>
     </div>
