@@ -112,7 +112,7 @@ module.exports = {
   projects: {
     website: {
       title: "PROJECTS.RETRO_WEBSITE.TITLE",
-      cover: "/images/retro-bg.jpg",
+      cover: "/images/screenshot-xportas-retro-screen.png",
       github: "https://github.com/xportas/xportas-website",
       tech: [
         "React",
