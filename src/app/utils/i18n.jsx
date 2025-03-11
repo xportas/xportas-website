@@ -20,7 +20,7 @@ i18next
   .use(LanguageDetector)
   .init({
     resources,
-    debug: true,
+    debug: false,
     detection: {
       order: ['navigator', 'htmlTag', 'querystring', 'cookie', 'localStorage', 'sessionStorage'],
       caches: ['cookie', 'localStorage'],
