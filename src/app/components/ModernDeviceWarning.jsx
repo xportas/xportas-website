@@ -14,14 +14,14 @@ export default function ModernDeviceWarning({ closeMDWarning, handleAcceptMDWarn
                         ml-[2px] sm:ml-[3px] animate-blink align-middle mb-2 sm:mb-3 mr-1`}
             textStyle={`py-2 sm:py-3 text-lg min-[600px]:text-3xl md:text-4xl font-main`}
             strings={[
-              '¡Bienvenid@ a los años 80!',
-              'Estás a punto de viajar en el tiempo a una época donde los peinados eran más altos, los coches "fantásticos", y...',
-              '¡los smartphones aún eran ciencia ficción!',
-              'Si pretendes emprender este viaje desde tu dispositivo futurista',
-              '¡toma nota!',
-              'esta web tiene más detalles que la chaqueta de Michael Jackson, pero estos no entran en una pantalla tan pequeña...',
-              'Para una experiencia más inmersiva, te sugerimos desempolvar tu viejo Commodore 64, o usar una pantalla más grande...',
-              '¡Disfruta el viaje y que la nostalgia te acompañe!'
+              t('MODERN_DEVICE_WARNING.S1'),
+              t('MODERN_DEVICE_WARNING.S2'),
+              t('MODERN_DEVICE_WARNING.S3'),
+              t('MODERN_DEVICE_WARNING.S4'),
+              t('MODERN_DEVICE_WARNING.S5'),
+              t('MODERN_DEVICE_WARNING.S6'),
+              t('MODERN_DEVICE_WARNING.S7'),
+              t('MODERN_DEVICE_WARNING.S8')
             ]}
             typingDelay={70} />
         </div>

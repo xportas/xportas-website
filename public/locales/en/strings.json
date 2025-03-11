@@ -68,6 +68,16 @@
     "SELECT_LANG": "Select one of my languages:",
     "SELECT_ONE_LANG": "Select language"
   },
+  "MODERN_DEVICE_WARNING": {
+    "S1": "¡Bienvenid@ a los años 80!",
+    "S2": "Estás a punto de viajar en el tiempo a una época donde los peinados eran más altos, los coches \"fantásticos\", y...",
+    "S3": "¡los smartphones aún eran ciencia ficción!",
+    "S4": "Si pretendes emprender este viaje desde tu dispositivo futurista",
+    "S5": "¡toma nota!",
+    "S6": "esta web tiene más detalles que la chaqueta de Michael Jackson, pero estos no entran en una pantalla tan pequeña...",
+    "S7": "Para una experiencia más inmersiva, te sugerimos desempolvar tu viejo Commodore 64, o usar una pantalla más grande...",
+    "S8": "¡Disfruta el viaje y que la nostalgia te acompañe!"
+  },
   "NAV": {
     "ABOUT": "About",
     "CONTACT": "Contact",
