@@ -40,7 +40,7 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
   useEffect(() => {
     if (turningONanimation) {
       if (muted) soundElements.mainTheme.pause();
-      else soundElements.mainTheme.play();
+      else soundElements.mainTheme.play().catch(() => {});
     }
   }, [muted]);
 
@@ -48,6 +48,9 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
     if (soundElements) {
       soundElements.pcNoise.pause();
       soundElements.pcShutdown.play();
+      soundElements.mainTheme.pause();
+      soundElements.mainTheme.src = "";
+      soundElements.mainTheme.load();
     }
   }, [currentLanguage]);
 
@@ -100,7 +103,7 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
           </div>
 
           <LangSelector i18n={i18n} setCurrentLanguage={setCurrentLanguage} setRetroScreenOn={setRetroScreenOn}
-          screenWidth={screenWidth} isTouchDevice={isTouchDevice} turningONanimation={turningONanimation} />
+            screenWidth={screenWidth} isTouchDevice={isTouchDevice} turningONanimation={turningONanimation} />
         </div>
 
         {/* CTR noise */}
