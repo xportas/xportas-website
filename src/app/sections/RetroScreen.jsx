@@ -1,4 +1,5 @@
 'use client';
+import { VolumeXIcon } from 'raster-react';
 import { useEffect, useRef, useState } from 'react';
 import LangSelector from '../components/LangSelector';
 import PacManGhosts from '../components/PacManGhosts';
@@ -18,7 +19,7 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
   const [anySoundON, setAnySoundON] = useState(false);
   const [soundElements, setSoundElements] = useState(null);
   const [turningONanimation, setTurningONanimation] = useState(false);
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(null);
 
 
   // SOUNDS EFFECTS
@@ -63,6 +64,7 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
         .then(async () => await waitForMs(1700))
         .then(() => soundElements.pcNoise.play());
     await waitForMs(150).then(() => setTurningONanimation(true));
+    await waitForMs(300).then(() => setMuted(true));
   };
 
 
@@ -85,6 +87,11 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
         <audio ref={pcNoiseRef} src="/audio/old-pc.mp3" loop />
         <audio ref={pcShutdownNoiseRef} src="/audio/pc-shutdown.mp3" />
         <audio ref={pcTurnOnNoiseRef} src="/audio/pc-turnon.mp3" />
+
+        {(!isTouchDevice && muted && turningONanimation) &&
+          <VolumeXIcon size={75} color="#ffad36" strokeWidth={0} radius={0}
+            className={`absolute z-50 w-11 min-[425px]:w-14 min-[550px]:w-16 sm:w-20 right-7 top-3 sm:top-7 min-[1090px]:right-16`} />
+        }
 
         <div className="flex flex-col items-center h-full w-full absolute max-[767px]:mb-10">
           <div className='flex max-[767px]:flex-col min-[1090px]:h-3/5 max-w-6xl m-auto'>
