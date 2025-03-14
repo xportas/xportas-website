@@ -41,3 +41,25 @@ npm run dev
 
 ```
 2. Open [http://localhost:3000](http://localhost:3000) and let your journey into the past begin! 🚀🚀
+
+## 🌈🥚 Easter Eggs
+
+Did you really think there wouldn't be? Obviously, I'm a developer bro.
+
+But of course I'm not going to make it easy for you to find them. The only clue I can give you is... it is also possible that you need to change some lines of code to find others and go back (even more) to the past.
+
+Here you have the list of all of them, from easiest to hardest. Will you be able to find them all?
+<ul>
+  <li>
+    There is nothing more retro and vintage than the <strong>PacMan</strong> game, do you dare to play a game?
+  </li>
+  <li>
+    No my friend, <strong>smartphones</strong> didn't exist in those years...
+  </li>
+  <li>
+    If you are one of those who hate the noise made by the old machines... why don't you try activating the sound of the Commodore? When we were little and we were hiding to play at night without being discovered, we always put the sound on <strong>M</strong>ute...
+  </li>
+  <li>
+    What a pity! The <strong>plumber</strong> just left and left everything working, but if you go back in time you will find it for sure!
+  </li>
+</ul>
