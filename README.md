@@ -44,7 +44,7 @@ npm run dev
 
 ## 🌈🥚 Easter Eggs
 
-Did you really think there wouldn't be? Obviously, I'm a developer bro.
+Did you really think there wouldn't be? Men, I'm a developer...
 
 But of course I'm not going to make it easy for you to find them. The only clue I can give you is... it is also possible that you need to change some lines of code to find others and go back (even more) to the past.
 
