@@ -40,7 +40,7 @@ export default function RetroScreen({ i18n, currentLanguage, setCurrentLanguage,
   useEffect(() => {
     if (turningONanimation) {
       if (muted) soundElements.mainTheme.pause();
-      else soundElements.mainTheme.play().catch(() => {});
+      else soundElements.mainTheme.play().catch(() => { });
     }
   }, [muted]);
 
