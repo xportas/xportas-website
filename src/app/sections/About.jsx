@@ -53,22 +53,21 @@ export default function About() {
 
             <p>
               {t('ABOUT.P21')}
-              <a href="" className={'text-secondary-orange underline-effect'}>dkj kdj dkjd kdk kdk</a>,
-              <a href="" className={'text-secondary-orange underline-effect'}>kjd kdj dk</a>,
-              <a href="" className={'text-secondary-orange underline-effect'}>kdj dkj dkdj kdk dd</a>, and
-              <a href="" className={'text-secondary-orange underline-effect'}>kdj kdj dkjd kdjd kdj kddkj</a>.
+              <a href="" className={'text-secondary-orange underline-effect'}>{t('ABOUT.GIS')}</a>
+              <a href="" className={'text-secondary-orange underline-effect'}>{t('ABOUT.WEB')}</a>
+              {t('ABOUT.AND')}
+              <a href="" className={'text-secondary-orange underline-effect'}>{t('ABOUT.DESKTOP')}</a>
+              {t('ABOUT.EVEN')}
+              <a href="" className={'text-secondary-orange underline-effect'}>{t('ABOUT.ERP')}</a>
+              {t('ABOUT.AND')}
+              <a href="" className={'text-secondary-orange underline-effect'}>{t('ABOUT.MOBILE')}</a>
               {t('ABOUT.P22')}
               <a href="https://upstatement.com/">dlkjdlkjdlk</a>
               {t('ABOUT.P23')}
             </p>
 
             <p>
-              asdlkfj sdlñf asd{' '}
-              <a href="" className={'text-secondary-orange underline-effect'}>
-                asd alñksdfj aslñdkfj
-              </a>{' '}
-              dslkf jdklf jdkf jldkfjldkjf lksd jfkldj fkldfj kld jfkld lkfjkldfd fdkfjldk fjld
-              lkd jdlkj dl
+              {t('ABOUT.P3')}
             </p>
 
             <p>{t('ABOUT.TECH_I_KNOW')}</p>

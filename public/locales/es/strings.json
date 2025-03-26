@@ -1,37 +1,45 @@
 {
   "ABOUT": {
-    "ABOUT_ME": "About Me",
-    "P1": "quiero comprobar que esto tiene sentido algunao para ver si el tamaño de la letra es correcto porque claro a la hora de ver si esto es correcto quiero ver si el usuario puede leer bien con este tamaño de letra y demás",
-    "P21": "english englis english englis english englis english englis english englis",
-    "P22": "english englis english englis english englis english englis english englis",
-    "P23": "english englis english englis english englis english englis english englis",
-    "TECH_I_KNOW": "Here are all the technologies I’ve been working: "
+    "ABOUT_ME": "Sobre mí",
+    "AND": " y ",
+    "DESKTOP": "escritorio",
+    "ERP": "ERPs",
+    "EVEN": " hasta ",
+    "GIS": "GIS",
+    "MOBILE": "móvil",
+    "P1": "Mi pasión por el desarrollo nació tras finalizar la universidad y darme cuenta que mi sector no me llenaba. Siempre me había gustado la tecnología, pero nunca la había visto como algo más que un hobby, hasta que un día, navegando por internet, me topé con mis primeras líneas de código. Un par de juegos de consola después, decidí lanzarme de cabeza a la piscina y compaginar (una vez más) trabajo con estudios.",
+    "P21": "A día de hoy, he tenido el privilegio de trabajar en diversos proyectos, los cuales abarcan desde aplicaciones GIS, WEB y de escritorio, hasta ERPs y mobile.",
+    "P22": "En la actualidad, ",
+    "P23": "Apasionado de la innovación y el aprendizaje continuo, siempre estoy buscando nuevos retos y formas de mejorar mis habilidades mientras me mantengo al día de las últimas tendencias tecnológicas. ",
+    "P3": "En mi tiempo libre, disfruto consumiendo contenido relacionado con la ciberseguridad, la informática y la tecnología en general (si no estoy conquistando cumbres 🗻 o soñando bajo las estrellas ⛺️🌠).",
+    "TECH_I_KNOW": "Algunas tecnologías con las que he trabajado recientemente: ",
+    "WEB": "web"
   },
   "BTNS": {
     "ACCEPT": "ACEPTAR"
   },
   "CONTACT": {
-    "BODY": "Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!",
-    "GET_IN_TOUCH": "Get In Touch",
-    "SAY_HELLO": "Say Hello",
-    "WHATS_NEXT": "What’s Next?"
+    "BODY": "Aunque actualmente no estoy buscando nuevas oportunidades, mi bandeja de entrada siempre está abierta. Si tienes alguna pregunta o simplemente quieres saludar, ¡haré todo lo posible por responder !",
+    "GET_IN_TOUCH": "Contacto",
+    "SAY_HELLO": "¡Dime hola !",
+    "WHATS_NEXT": "¿Y ahora qué ?"
   },
   "FOOTER": {
-    "CONTACT_ME": "Contact Me",
-    "COPYRIGHT": "Designed and Developed by xportas © copyright",
-    "GO_BACK": "Go Back",
-    "LICENSE": "License ©",
-    "MORE_INF": "More information",
+    "CONTACT_ME": "Contacto",
+    "COPYRIGHT": "Diseñado y desarrollado por xportas © copyright",
+    "GO_BACK": "Volver",
+    "LICENSE": "Licencia ©",
+    "MORE_INF": "Más información",
     "README": "README.txt",
-    "SOURCE_CODE": "Source Code"
+    "SOURCE_CODE": "Código fuente"
   },
   "HERO": {
-    "CHECK_GH": "Check out my GitHub!",
-    "GREETING": "Hi, my name is",
-    "H2": "I build things for the web.",
+    "CHECK_GH": "¡Visita mi GitHub !",
+    "GREETING": "Hola, mi nombre es",
+    "H2": "Creo cosas para la web.",
     "NAME": "Xabier Portas",
-    "P1": "I am a passionate full-stack software engineer dedicated to building and designing exceptional digital experiences.",
-    "P2": "Currently, I am focused on contributing to the Government of Navarra by developing innovative digital solutions at ",
+    "P1": "Desarrollador de software full-stack con experiencia en la arquitectura, desarrollo e implementación de soluciones digitales escalables.",
+    "P2": "Actualmente contribuyo a la transformación digital del Gobierno de Navarra mediante la programación de innovadores sistemas de información geográfica (GIS) en ",
     "TRACASA": "Tracasa Instrumental"
   },
   "JOBS": {
@@ -64,29 +72,29 @@
     }
   },
   "LANG_SELECTOR": {
-    "MOVE_OPT": "Move between the options",
-    "SELECT_LANG": "Select one of my languages:",
-    "SELECT_ONE_LANG": "Select language"
+    "MOVE_OPT": "Moverse entre las opciones",
+    "SELECT_LANG": "Elige uno de mis idiomas:",
+    "SELECT_ONE_LANG": "Seleccionar idioma"
   },
   "MODERN_DEVICE_WARNING": {
-    "S1": "¡Bienvenid@ a los años 80!",
+    "S1": "¡Bienvenid@ a los años 80 !",
     "S2": "Estás a punto de viajar en el tiempo a una época donde los peinados eran más altos, los coches \"fantásticos\", y...",
-    "S3": "¡los smartphones aún eran ciencia ficción!",
+    "S3": "¡los smartphones aún eran ciencia ficción !",
     "S4": "Si pretendes emprender este viaje desde tu dispositivo futurista",
-    "S5": "¡toma nota!",
+    "S5": "¡toma nota !",
     "S6": "esta web tiene más detalles que la chaqueta de Michael Jackson, pero estos no entran en una pantalla tan pequeña...",
     "S7": "Para una experiencia más inmersiva, te sugerimos desempolvar tu viejo Commodore 64, o usar una pantalla más grande...",
-    "S8": "¡Disfruta el viaje y que la nostalgia te acompañe!"
+    "S8": "¡Disfruta el viaje y que la nostalgia te acompañe !"
   },
   "NAV": {
-    "ABOUT": "About",
-    "CONTACT": "Contact",
-    "EXPERIENCE": "Experience",
-    "HERO": "Hero",
-    "WORK": "Work"
+    "ABOUT": "Sobre mí",
+    "CONTACT": "Contacto",
+    "EXPERIENCE": "Experiencia",
+    "HERO": "Saludo",
+    "WORK": "Proyectos"
   },
   "PLUMBER": {
-    "WORKING_NEW_PROJ": "* Working on new projects *"
+    "WORKING_NEW_PROJ": "* Trabajando en nuevos proyectos *"
   },
   "PROJECTS": {
     "RETRO_WEBSITE": {
@@ -96,9 +104,9 @@
     "TITLE": "Some Things I’ve Built"
   },
   "RETRO_SCREEN": {
-    "FSDEV": "Full Stack Developer",
-    "GIS_SPEC": "Specialization in GIS",
-    "GREETING": "Hi there, ",
-    "I_AM": "I'm "
+    "FSDEV": "Desarrollador Full Stack",
+    "GIS_SPEC": "Especialización en GIS",
+    "GREETING": "Encantado, ",
+    "I_AM": "Soy "
   }
 }
