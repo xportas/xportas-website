@@ -5,7 +5,7 @@ import { jobs } from '../utils/config';
 
 
 export default function Jobs({ screenWidth }) {
-  
+
   const { t } = useTranslation(['strings']);
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
@@ -155,7 +155,7 @@ export default function Jobs({ screenWidth }) {
                   <span className="text-base min-[1080px]:text-xl min-[1375px]:text-2xl min-[1375px]:whitespace-nowrap text-secondary-orange">
                     &nbsp;@&nbsp;
                     <a href={job.url} target="_blank" rel="noopener noreferrer">
-                    {t(`${job.company}`)}
+                      {t(`${job.company}`)}
                     </a>
                   </span>
                 </h4>
@@ -165,18 +165,25 @@ export default function Jobs({ screenWidth }) {
                 <div className='p-0 m-0'>
                   <ul className='p-0 m-0 list-none ' style={{ fontSize: '18px' }}>
                     {Object.values(job.duties).map((dutie, i) => {
+                      const showBullet = t(`${dutie}`).startsWith("[");
                       return (
-                        <li
-                          key={`duty-${i}`}
-                          className={`relative pl-7 mb-3 before:absolute before:left-0 before:text-secondary-orange before:content-["▹"] 
-                                      text-xs min-[480px]:text-sm min-[1375px]:text-base animate-wipeInRight`}
-                          style={{ animationDelay: `${i * 100}ms` }}>
-                          {t(`${dutie}`)}
-                        </li>
+                        <>
+                          {showBullet && <li><br /></li>}
+                          <li
+                            key={`duty-${i}`}
+                            className={`relative pl-7 mb-3 text-xs min-[480px]:text-sm min-[1375px]:text-base animate-wipeInRight 
+                                      ${!showBullet ? 'before:content-["▹"] before:absolute before:left-0 before:text-secondary-orange' : ''}
+                                      `}
+                            style={{ animationDelay: `${i * 100}ms` }}
+                          >
+                            {t(`${dutie}`)}
+                          </li>
+                        </>
                       )
                     })}
                   </ul>
                 </div>
+
 
               </div>
             );

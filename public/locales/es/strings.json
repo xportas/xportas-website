@@ -2,18 +2,17 @@
   "ABOUT": {
     "ABOUT_ME": "Sobre mí",
     "AND": " y ",
-    "DESKTOP": "escritorio",
-    "ERP": "ERPs",
+    "DESKTOP": "de escritorio ",
+    "ERP": "ERPs ",
     "EVEN": " hasta ",
     "GIS": "GIS",
     "MOBILE": "móvil",
-    "P1": "Mi pasión por el desarrollo nació tras finalizar la universidad y darme cuenta que mi sector no me llenaba. Siempre me había gustado la tecnología, pero nunca la había visto como algo más que un hobby, hasta que un día, navegando por internet, me topé con mis primeras líneas de código. Un par de juegos de consola después, decidí lanzarme de cabeza a la piscina y compaginar (una vez más) trabajo con estudios.",
-    "P21": "A día de hoy, he tenido el privilegio de trabajar en diversos proyectos, los cuales abarcan desde aplicaciones GIS, WEB y de escritorio, hasta ERPs y mobile.",
-    "P22": "En la actualidad, ",
-    "P23": "Apasionado de la innovación y el aprendizaje continuo, siempre estoy buscando nuevos retos y formas de mejorar mis habilidades mientras me mantengo al día de las últimas tendencias tecnológicas. ",
+    "P1": "Mi pasión por el desarrollo nació tras finalizar la universidad y darme cuenta que mi sector no me llenaba. Siempre me había gustado la tecnología pero nunca la había visto como algo más que un hobby, hasta que un día, navegando por internet, me topé con mis primeras líneas de código. Un par de juegos de consola después, decidí lanzarme a la piscina y compaginar (una vez más) trabajo y estudios.",
+    "P21": "A día de hoy, he tenido el privilegio de trabajar en diversos proyectos, los cuales abarcan desde aplicaciones ",
+    "P22": "Apasionado por la innovación y el aprendizaje continuo, siempre estoy buscando nuevos retos y formas de mejorar mis habilidades mientras me mantengo al día de las últimas tendencias tecnológicas. ",
     "P3": "En mi tiempo libre, disfruto consumiendo contenido relacionado con la ciberseguridad, la informática y la tecnología en general (si no estoy conquistando cumbres 🗻 o soñando bajo las estrellas ⛺️🌠).",
     "TECH_I_KNOW": "Algunas tecnologías con las que he trabajado recientemente: ",
-    "WEB": "web"
+    "WEB": "web "
   },
   "BTNS": {
     "ACCEPT": "ACEPTAR"
@@ -21,13 +20,13 @@
   "CONTACT": {
     "BODY": "Aunque actualmente no estoy buscando nuevas oportunidades, mi bandeja de entrada siempre está abierta. Si tienes alguna pregunta o simplemente quieres saludar, ¡haré todo lo posible por responder !",
     "GET_IN_TOUCH": "Contacto",
-    "SAY_HELLO": "¡Dime hola !",
+    "SAY_HELLO": "¿Hablamos ?",
     "WHATS_NEXT": "¿Y ahora qué ?"
   },
   "FOOTER": {
     "CONTACT_ME": "Contacto",
     "COPYRIGHT": "Diseñado y desarrollado por xportas © copyright",
-    "GO_BACK": "Volver",
+    "GO_BACK": "Menú",
     "LICENSE": "Licencia ©",
     "MORE_INF": "Más información",
     "README": "README.txt",
@@ -36,39 +35,66 @@
   "HERO": {
     "CHECK_GH": "¡Visita mi GitHub !",
     "GREETING": "Hola, mi nombre es",
-    "H2": "Creo cosas para la web.",
+    "H2": "Transformo ideas en realidades.",
     "NAME": "Xabier Portas",
     "P1": "Desarrollador de software full-stack con experiencia en la arquitectura, desarrollo e implementación de soluciones digitales escalables.",
     "P2": "Actualmente contribuyo a la transformación digital del Gobierno de Navarra mediante la programación de innovadores sistemas de información geográfica (GIS) en ",
     "TRACASA": "Tracasa Instrumental"
   },
   "JOBS": {
+    "COMPOS": {
+      "COMPANY": "Ayto. Santiago de Compostela",
+      "DUTIES": {
+        "D1": "Creación y desarrollo de bases de datos comparadas.",
+        "D2": "Registro contable de facturas, nóminas, operaciones de cobro y pagos.",
+        "D3": "Gestionar cobros y pagos, emisión de efectos comerciales de pago.",
+        "D4": "Apoyo a la organización, gestión y codificación de cursos de formación del personal.",
+        "D5": "Gestión de nuevas incorporaciones en calidad de personal eventual y contratado, dando seguimiento al proceso de onboarding."
+      },
+      "LOCATION": "Santiago de Compostela, AC",
+      "RANGE": "Oct 2019 - Abr 2020",
+      "TITLE": "Administrativo de RRHH"
+    },
     "LIVENSA": {
       "COMPANY": "Livensa Living",
       "DUTIES": {
-        "D1": "Contributed to something in LIVENSA",
-        "D2": "Contributed to something in LIVENSA",
-        "D3": "Contributed to something in LIVENSA",
-        "D4": "Contributed to something in LIVENSA",
-        "D5": "Contributed to something in LIVENSA"
+        "D1": "Configuración, mantenimiento y actualización de aparatos tecnológicos de la empresa: smartphones, tablets, ordenadores, etc.",
+        "D2": "Diseño y creación de material digital.",
+        "D3": "Atención al huésped y clientes externos.",
+        "D4": "Gestión de reservas de clientes. Formalización y archivo.",
+        "D5": "Relación de incidencias y seguimiento de la actualización del PMS.",
+        "D6": "Planificación y desarrollo de actividades lúdicas para dinamizar la vida estudiantil."
       },
-      "LOCATION": "Sarriguren, NA",
-      "RANGE": "July - December 2017",
-      "TITLE": "FullStack Developer"
+      "LOCATION": "Pamplona, NA",
+      "RANGE": "Ago 2021 - Nov 2023",
+      "TITLE": "Front Desk Agent"
     },
-    "TITLE": "Where I’ve Worked",
+    "TITLE": "¿Dónde he trabajado ?",
     "TRACASA": {
       "COMPANY": "Tracasa Instrumental",
       "DUTIES": {
-        "D1": "Contributed to something in the development of amazing products",
-        "D2": "Contributed to something in the development of amazing products",
-        "D3": "Contributed to something in the development of amazing products",
-        "D4": "Contributed to something in the development of amazing products",
-        "D5": "Contributed to something in the development of amazing products"
+        "D1": "Desarrollo de aplicaciones GIS (Geographic Information System) multiplataforma, con experiencia en todo el ciclo de vida del software. Esto incluye la creación de interfaces intuitivas y responsivas, la implementación de la lógica de negocio y la administración eficiente de bases de datos.",
+        "D2": "[ FRONT-END ]",
+        "D3": "Diseño, desarrollo y mantenimiento de interfaces de usuario responsivas para todo tipo de dispositivos.",
+        "D4": "React.js, MaterialUI, OpenLayers, HTML5, CSS3, Styled-Components.",
+        "D5": "[ BACK-END ]",
+        "D6": "Desarrollo y mantenimiento de APIs y servicios para la comunicación cliente-servidor.",
+        "D7": "Optimización de la lógica de negocio.",
+        "D8": "ASP.NET Core, Entity Framework.",
+        "D9": "[ BASES DE DATOS ]",
+        "D10": "Administración de bases de datos relacionales.",
+        "D11": "Creación de automatizaciones para la gestión de los datos y garantizar su integridad.",
+        "D12": "PostgreSQL con extensión PostGIS.",
+        "D13": "[ GIS ]",
+        "D14": "Gestión de datos espaciales con GeoServer.",
+        "D15": "Desarrollo de complementos de QGIS en Python.",
+        "D16": "[ OTROS ]",
+        "D17": "Control de versiones con Git, GitLab y AzureDevOps.",
+        "D18": "Implementación de Metodologías Ágiles (Scrum y Kanban)."
       },
       "LOCATION": "Sarriguren, NA",
-      "RANGE": "July - December 2017",
-      "TITLE": "FullStack Developer"
+      "RANGE": "Enero 2024 - Actualidad",
+      "TITLE": "Desarrollador FullStack"
     }
   },
   "LANG_SELECTOR": {

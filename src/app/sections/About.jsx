@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from "react-i18next";
 import Skill from '../components/Skill';
-import { skills } from "../utils/config";
+import { links, skills } from "../utils/config";
 
 export default function About() {
 
@@ -53,17 +53,18 @@ export default function About() {
 
             <p>
               {t('ABOUT.P21')}
-              <a href="" className={'text-secondary-orange underline-effect'}>{t('ABOUT.GIS')}</a>
-              <a href="" className={'text-secondary-orange underline-effect'}>{t('ABOUT.WEB')}</a>
+              <a href={links.GIS} target="_blank" className={'text-secondary-orange underline-effect'}>{t('ABOUT.GIS')}</a>
+              {', '}
+              <span className={'text-secondary-orange'}>{t('ABOUT.WEB')}</span>
               {t('ABOUT.AND')}
-              <a href="" className={'text-secondary-orange underline-effect'}>{t('ABOUT.DESKTOP')}</a>
+              <span className={'text-secondary-orange'}>{t('ABOUT.DESKTOP')}</span>
+              {', '}
               {t('ABOUT.EVEN')}
-              <a href="" className={'text-secondary-orange underline-effect'}>{t('ABOUT.ERP')}</a>
+              <a href={links.ERP} target="_blank" className={'text-secondary-orange underline-effect'}>{t('ABOUT.ERP')}</a>
               {t('ABOUT.AND')}
-              <a href="" className={'text-secondary-orange underline-effect'}>{t('ABOUT.MOBILE')}</a>
+              <span className={'text-secondary-orange'}>{t('ABOUT.MOBILE')}</span>
+              {'. '}
               {t('ABOUT.P22')}
-              <a href="https://upstatement.com/">dlkjdlkjdlk</a>
-              {t('ABOUT.P23')}
             </p>
 
             <p>
