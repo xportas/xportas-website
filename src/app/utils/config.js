@@ -135,7 +135,9 @@ module.exports = {
         "Next.js",
         "React",
         "Tailwind CSS",
-        "Three.js"
+        "Three.js",
+        "CSS",
+        "HTML"
       ],
       description: "PROJECTS.RETRO_WEBSITE.DESCRIPT"
     }

@@ -44,7 +44,7 @@ module.exports = {
       },
       fontFamily: {
         'header': ['public-pixel', 'Roboto mono', 'monoespace'],
-        'main': ['chill', 'Cursive', 'Roboto mono', 'monoespace'],
+        'main': ['chill', 'gopixel', 'Cursive', 'monoespace'],
       },
       fontSize: {
         'big-heading': 'clamp(33px,7vw,80px)',

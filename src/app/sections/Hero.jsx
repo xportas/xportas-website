@@ -42,7 +42,7 @@ export default function Hero() {
       >
         <h3 className="text-[clamp(14px,4vw,16px)] text-secondary-orange">{t('HERO.GREETING')}</h3>
         <h1 className="text-big-heading whitespace-nowrap">{t('HERO.NAME')}.</h1>
-        <h2 className="text-responsive-section-heading text-secondary-gray">{t('HERO.H2')}</h2>
+        <h2 className="text-responsive-section-heading text-secondary-orange">{t('HERO.H2')}</h2>
         <p className="mt-5 min-[1080px]:w-1/2 pb-3 text-xs min-[480px]:text-sm min-[1375px]:text-base">
           {t('HERO.P1')}
         </p>

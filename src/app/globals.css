@@ -27,6 +27,10 @@
   src: url("/fonts/chill.woff");
 }
 
+@font-face {
+  font-family: gopixel;
+  src: url("/fonts/Gopixel.woff");
+}
 
 
 /* 

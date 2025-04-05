@@ -9,7 +9,7 @@ import { icons } from "../utils/utils";
 
 export default function Nav({ hiddenRetroComputer, screenWidth }) {
 
-  const { t } = useTranslation(['strings']);
+  const { t, i18n } = useTranslation(['strings']);
   const [showNavbar, setShowNavbar] = useState(false);
   const [navbarHidden, setNavbarHidden] = useState(true);
   const navbarInitialState = { home: false, about: false, work: false, experience: false, contact: false };
@@ -84,7 +84,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
             <div className="fixed left-1/2 transform -translate-x-1/2 z-20">
               <nav
                 style={{ '--dynamic-duration': '1.1s', '--dynamic-translate': '-90%' }}
-                className={`flex font-header text-orange-200 bg-main-gray px-5 py-1 border-solid border-2 border-orange-200 shadow-custom ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
+                className={`flex ${ i18n.language !== 'es' && 'font-header' } text-orange-200 bg-main-gray px-5 py-1 border-solid border-2 border-orange-200 shadow-custom ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
               >
                 <div className="absolute z-30 flex items-center justify-center numbered">
                   <span

@@ -2,7 +2,7 @@
   "ABOUT": {
     "ABOUT_ME": "Sobre mí",
     "AND": " y ",
-    "DESKTOP": "de escritorio ",
+    "DESKTOP": "escritorio",
     "ERP": "ERPs ",
     "EVEN": " hasta ",
     "GIS": "GIS",
@@ -20,7 +20,7 @@
   "CONTACT": {
     "BODY": "Aunque actualmente no estoy buscando nuevas oportunidades, mi bandeja de entrada siempre está abierta. Si tienes alguna pregunta o simplemente quieres saludar, ¡haré todo lo posible por responder !",
     "GET_IN_TOUCH": "Contacto",
-    "SAY_HELLO": "¿Hablamos ?",
+    "SAY_HELLO": "Saludar",
     "WHATS_NEXT": "¿Y ahora qué ?"
   },
   "FOOTER": {
@@ -34,10 +34,10 @@
   },
   "HERO": {
     "CHECK_GH": "¡Visita mi GitHub !",
-    "GREETING": "Hola, mi nombre es",
-    "H2": "Transformo ideas en realidades.",
+    "GREETING": "Buenas, mi nombre es",
+    "H2": "Construyendo el mañana a través del software.",
     "NAME": "Xabier Portas",
-    "P1": "Desarrollador de software full-stack con experiencia en la arquitectura, desarrollo e implementación de soluciones digitales escalables.",
+    "P1": "Desarrollador full-stack con experiencia en la arquitectura, desarrollo e implementación de soluciones digitales escalables.",
     "P2": "Actualmente contribuyo a la transformación digital del Gobierno de Navarra mediante la programación de innovadores sistemas de información geográfica (GIS) en ",
     "TRACASA": "Tracasa Instrumental"
   },
@@ -69,7 +69,7 @@
       "RANGE": "Ago 2021 - Nov 2023",
       "TITLE": "Front Desk Agent"
     },
-    "TITLE": "¿Dónde he trabajado ?",
+    "TITLE": "¿Dónde he trabajado?",
     "TRACASA": {
       "COMPANY": "Tracasa Instrumental",
       "DUTIES": {
@@ -116,7 +116,7 @@
     "ABOUT": "Sobre mí",
     "CONTACT": "Contacto",
     "EXPERIENCE": "Experiencia",
-    "HERO": "Saludo",
+    "HERO": "Inicio",
     "WORK": "Proyectos"
   },
   "PLUMBER": {
@@ -124,10 +124,9 @@
   },
   "PROJECTS": {
     "RETRO_WEBSITE": {
-      "DESCRIPT": "Esto es mi portfolio y todo lo demás que tengo que contar aquí a modo de introducción jalsdkfj asdlfkjsd flñaskdjf ñlasdkfj añsldkfj sdfl fasdf asdf asd",
-      "TITLE": "Retro Website"
+      "DESCRIPT": "Un homenaje desde la nostalgia. Esta single page application de código abierto combina el diseño vintage con tecnologías modernas, creando una experiencia en la que pasado y futuro se fusionan para transportar al usuario a los años del arcade."
     },
-    "TITLE": "Some Things I’ve Built"
+    "TITLE": "Proyectos personales"
   },
   "RETRO_SCREEN": {
     "FSDEV": "Desarrollador Full Stack",
