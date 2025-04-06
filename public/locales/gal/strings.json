@@ -1,104 +1,138 @@
 {
   "ABOUT": {
-    "ABOUT_ME": "About Me",
-    "P1": "quiero comprobar que esto tiene sentido algunao para ver si el tamaño de la letra es correcto porque claro a la hora de ver si esto es correcto quiero ver si el usuario puede leer bien con este tamaño de letra y demás",
-    "P21": "english englis english englis english englis english englis english englis",
-    "P22": "english englis english englis english englis english englis english englis",
-    "P23": "english englis english englis english englis english englis english englis",
-    "TECH_I_KNOW": "Here are all the technologies I’ve been working: "
+    "ABOUT_ME": "Sobre min",
+    "AND": " e ",
+    "DESKTOP": "escritorio",
+    "ERP": "ERPs ",
+    "EVEN": " até ",
+    "GIS": "GIS",
+    "MOBILE": "móbil",
+    "P1": "A miña paixón pola programación naceu tras finalizar a universidade e darme conta de que o meu sector non me enchía. Sempre gostei da tecnoloxía pero nunca a vira como algo máis que un hobby, até que un día, navegando pola web, topei coas miñas primeiras liñas de código. Após un par de xogos de consola, decidín lanzarme á piscina e compaxinar (unha vez máis) traballo e estudos.",
+    "P21": "A día de hoxe, tiven o privilexio de traballar en diversos proxectos, os cais abranguen dende aplicacións ",
+    "P22": "Apaixoado pola innovación e a aprendizaxe continua, sempre estou a buscar novos retos e formas de mellorar as miñas habilidades mentres mantéñome ao día das últimas tendencias tecnolóxicas. ",
+    "P3": "No meu tempo libre, gozo consumindo contido relacionado coa ciberseguridade, a informática e a tecnoloxía en xeral (se non estou a conquistar cumes 🗻 ou soñando baixo as estrelas ⛺️🌠).",
+    "TECH_I_KNOW": "Algunhas tecnoloxías coas que traballei recentemente: ",
+    "WEB": "web "
   },
   "BTNS": {
     "ACCEPT": "ACEPTAR"
   },
   "CONTACT": {
-    "BODY": "Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!",
-    "GET_IN_TOUCH": "Get In Touch",
-    "SAY_HELLO": "Say Hello",
-    "WHATS_NEXT": "What’s Next?"
+    "BODY": "Aínda que actualmente non estou a buscar novas oportunidades, a miña bandexa de entrada sempre está aberta. Se tes algunha pregunta ou simplemente queres saudar, farei todo o posible por responder!",
+    "GET_IN_TOUCH": "Contacto",
+    "SAY_HELLO": "Saudar",
+    "WHATS_NEXT": "E agora que?"
   },
   "FOOTER": {
-    "CONTACT_ME": "Contact Me",
-    "COPYRIGHT": "Designed and Developed by xportas © copyright",
-    "GO_BACK": "Go Back",
-    "LICENSE": "License ©",
-    "MORE_INF": "More information",
+    "CONTACT_ME": "Contacto",
+    "COPYRIGHT": "Deseñado e creado por xportas © copyright",
+    "GO_BACK": "Menú",
+    "LICENSE": "Licenza ©",
+    "MORE_INF": "Más información",
     "README": "README.txt",
-    "SOURCE_CODE": "Source Code"
+    "SOURCE_CODE": "Código fonte"
   },
   "HERO": {
-    "CHECK_GH": "Check out my GitHub!",
-    "GREETING": "Hi, my name is",
-    "H2": "I build things for the web.",
+    "CHECK_GH": "Visita o meu GitHub!",
+    "GREETING": "Boas, o meu nome é",
+    "H2": "Constrúo a través do software.",
     "NAME": "Xabier Portas",
-    "P1": "I am a passionate full-stack software engineer dedicated to building and designing exceptional digital experiences.",
-    "P2": "Currently, I am focused on contributing to the Government of Navarra by developing innovative digital solutions at ",
+    "P1": "Full-stack developer con experiencia na arquitectura, desenvolvemento e implementación de solucións dixitais escalábeis.",
+    "P2": "Actualmente contribúo á transformación dixital do Gobierno de Navarra mediante a implementación de innovadores sistemas de información xeográfica (GIS) en ",
     "TRACASA": "Tracasa Instrumental"
   },
   "JOBS": {
+    "COMPOS": {
+      "COMPANY": "Concello de Santiago de Compostela",
+      "DUTIES": {
+        "D1": "Creación e deseño de bases de datos comparadas.",
+        "D2": "Rexistro contable de facturas, nóminas, operacións de cobro e pagos.",
+        "D3": "Xestionar cobros e pagos, emisión de efeitos comerciais de pago.",
+        "D4": "Apoio á organización, xestión e codificación de cursos de formación do persoal.",
+        "D5": "Xestión de novas incorporacións en calidade de persoal eventual e contratado, dando seguimento ao proceso de onboarding."
+      },
+      "LOCATION": "Santiago de Compostela, AC",
+      "RANGE": "Out 2019 - Abr 2020",
+      "TITLE": "Administrativo de RRHH"
+    },
     "LIVENSA": {
       "COMPANY": "Livensa Living",
       "DUTIES": {
-        "D1": "Contributed to something in LIVENSA",
-        "D2": "Contributed to something in LIVENSA",
-        "D3": "Contributed to something in LIVENSA",
-        "D4": "Contributed to something in LIVENSA",
-        "D5": "Contributed to something in LIVENSA"
+        "D1": "Configuración, mantemento e actualización de aparellos tecnolóxicos da empresa: smartphones, tablets, ordenadores etc.",
+        "D2": "Deseño e creación de material dixital.",
+        "D3": "Atención ao hóspede e clientes externos.",
+        "D4": "Xestión de reservas de clientes. Formalización e arquivo.",
+        "D5": "Relación de incidencias e seguimento da actualización do PMS.",
+        "D6": "Planificación e desenvolvemento de actividades lúdicas para dinamizar a vida estudantil."
       },
-      "LOCATION": "Sarriguren, NA",
-      "RANGE": "July - December 2017",
-      "TITLE": "FullStack Developer"
+      "LOCATION": "Pamplona, NA",
+      "RANGE": "Ago 2021 - Nov 2023",
+      "TITLE": "Front Desk Agent"
     },
-    "TITLE": "Where I’ve Worked",
+    "TITLE": "Onde traballei?",
     "TRACASA": {
       "COMPANY": "Tracasa Instrumental",
       "DUTIES": {
-        "D1": "Contributed to something in the development of amazing products",
-        "D2": "Contributed to something in the development of amazing products",
-        "D3": "Contributed to something in the development of amazing products",
-        "D4": "Contributed to something in the development of amazing products",
-        "D5": "Contributed to something in the development of amazing products"
+        "D1": "Desenvolvemento de aplicacións GIS (Geographic Information System) multiplataforma, con experiencia en todo o ciclo de vida do software. Isto inclúe a creación de interfaces intuitivas e responsivas, a implementación da lóxica de negocio e a administración eficiente de bases de datos.",
+        "D2": "[ FRONT-END ]",
+        "D3": "Deseño, desenvolvemento e mantemento de interfaces de usuario responsivas para todo tipo de dispositivos.",
+        "D4": "React.js, MaterialUI, OpenLayers, HTML5, CSS3, Styled-Components.",
+        "D5": "[ BACK-END ]",
+        "D6": "Desenvolvemento e mantemento de APIs e servizos para a comunicación cliente-servidor.",
+        "D7": "Optimización da lóxica de negocio.",
+        "D8": "ASP.NET Core, Entity Framework.",
+        "D9": "[ BASES DE DATOS ]",
+        "D10": "Administración de bases de datos relacionais.",
+        "D11": "Creación de automatizacións para a xestión dos datos e garantir a súa integridade.",
+        "D12": "PostgreSQL con extensión PostGIS.",
+        "D13": "[ GIS ]",
+        "D14": "Xestión de datos espaciais con GeoServer.",
+        "D15": "Desenvolvemento de complementos de QGIS en Python.",
+        "D16": "[ OUTROS ]",
+        "D17": "Control de versións con Git, GitLab e AzureDevOps.",
+        "D18": "Implementación de Metodoloxías Áxiles (Scrum e Kanban)."
       },
       "LOCATION": "Sarriguren, NA",
-      "RANGE": "July - December 2017",
+      "RANGE": "Xan 2024 - Actualidade",
       "TITLE": "FullStack Developer"
     }
   },
   "LANG_SELECTOR": {
-    "MOVE_OPT": "Move between the options",
-    "SELECT_LANG": "Select one of my languages:",
-    "SELECT_ONE_LANG": "Select language"
+    "MOVE_OPT": "Moverse entre as opcións",
+    "SELECT_LANG": "Elixe unha das miñas línguas:",
+    "SELECT_ONE_LANG": "Seleccionar língua"
   },
   "MODERN_DEVICE_WARNING": {
-    "S1": "¡Bienvenid@ a los años 80!",
-    "S2": "Estás a punto de viajar en el tiempo a una época donde los peinados eran más altos, los coches \"fantásticos\", y...",
-    "S3": "¡los smartphones aún eran ciencia ficción!",
-    "S4": "Si pretendes emprender este viaje desde tu dispositivo futurista",
-    "S5": "¡toma nota!",
-    "S6": "esta web tiene más detalles que la chaqueta de Michael Jackson, pero estos no entran en una pantalla tan pequeña...",
-    "S7": "Para una experiencia más inmersiva, te sugerimos desempolvar tu viejo Commodore 64, o usar una pantalla más grande...",
-    "S8": "¡Disfruta el viaje y que la nostalgia te acompañe!"
+    "S1": "Benvid@ aos anos 80!",
+    "S2": "Estás a piques de viaxar no tempo a unha época onde os peiteados eran máis altos, os coches \"fantásticos\", e...",
+    "S3": "os smartphones aínda eran ciencia ficción!",
+    "S4": "Se pretendes emprender esta viaxe dende o teu aparello futurista",
+    "S5": "toma nota!",
+    "S6": "esta web ten máis detalles que a chaqueta de Michael Jackson, pero estes non entran nunha pantalla tan pequena...",
+    "S7": "Para unha experiencia máis inmersiva, suxerímosche desempoar o teu vello Commodore 64, ou usar unha pantalla máis grande...",
+    "S8": "Disfruta a viaxe e que a nostalxia che acompañe!"
   },
   "NAV": {
-    "ABOUT": "About",
-    "CONTACT": "Contact",
-    "EXPERIENCE": "Experience",
-    "HERO": "Hero",
-    "WORK": "Work"
+    "ABOUT": "Sobre min",
+    "CONTACT": "Contacto",
+    "EXPERIENCE": "Experiencia",
+    "HERO": "Inicio",
+    "WORK": "Proxectos"
   },
   "PLUMBER": {
-    "WORKING_NEW_PROJ": "* Working on new projects *"
+    "WORKING_NEW_PROJ": "* Traballando en novos proxectos *"
   },
   "PROJECTS": {
     "RETRO_WEBSITE": {
-      "DESCRIPT": "Esto es mi portfolio y todo lo demás que tengo que contar aquí a modo de introducción jalsdkfj asdlfkjsd flñaskdjf ñlasdkfj añsldkfj sdfl fasdf asdf asd",
+      "DESCRIPT": "Unha homenaxe dende a nostalxia. Esta single page application de código aberto combina o deseño retro con tecnoloxías modernas, creando unha experiencia na que pasado e futuro se fusionan para transportar ao usuario aos anos do arcade.",
       "TITLE": "Retro Website"
     },
-    "TITLE": "Some Things I’ve Built"
+    "TITLE": "Proxectos persoais"
   },
   "RETRO_SCREEN": {
     "FSDEV": "Full Stack Developer",
-    "GIS_SPEC": "Specialization in GIS",
-    "GREETING": "Hi there, ",
-    "I_AM": "I'm "
+    "GIS_SPEC": "Especialización en GIS",
+    "GREETING": "Encantado, ",
+    "I_AM": "Son "
   }
 }

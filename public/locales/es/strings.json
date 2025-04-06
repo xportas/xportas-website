@@ -35,10 +35,10 @@
   "HERO": {
     "CHECK_GH": "¡Visita mi GitHub !",
     "GREETING": "Buenas, mi nombre es",
-    "H2": "Construyendo el mañana a través del software.",
+    "H2": "Construyo a través del software.",
     "NAME": "Xabier Portas",
     "P1": "Desarrollador full-stack con experiencia en la arquitectura, desarrollo e implementación de soluciones digitales escalables.",
-    "P2": "Actualmente contribuyo a la transformación digital del Gobierno de Navarra mediante la programación de innovadores sistemas de información geográfica (GIS) en ",
+    "P2": "Actualmente contribuyo a la transformación digital del Gobierno de Navarra mediante la implementación de innovadores sistemas de información geográfica (GIS) en ",
     "TRACASA": "Tracasa Instrumental"
   },
   "JOBS": {
@@ -124,7 +124,8 @@
   },
   "PROJECTS": {
     "RETRO_WEBSITE": {
-      "DESCRIPT": "Un homenaje desde la nostalgia. Esta single page application de código abierto combina el diseño vintage con tecnologías modernas, creando una experiencia en la que pasado y futuro se fusionan para transportar al usuario a los años del arcade."
+      "DESCRIPT": "Un homenaje desde la nostalgia. Esta single page application de código abierto combina el diseño vintage con tecnologías modernas, creando una experiencia en la que pasado y futuro se fusionan para transportar al usuario a los años del arcade.",
+      "TITLE": "Retro Website"
     },
     "TITLE": "Proyectos personales"
   },
