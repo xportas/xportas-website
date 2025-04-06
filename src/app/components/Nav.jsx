@@ -42,29 +42,29 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
             {/* Show / hide nav button */}
             <RetroBtn
               styles={`px-5 py-1 z-50 ${!hiddenRetroComputer ? 'pointer-events-none opacity-0 blur-sm' : 'pointer-events-auto opacity-100 blur-0'}`}
-              darkTheme={!navbarHidden && screenWidth < 1423}
+              darkTheme={!navbarHidden && screenWidth < 1487}
               effect={() => setShowNavbar(!showNavbar)}
-              child={navbarHidden || screenWidth >= 1423 ? icons.MenuIcon : icons.DarkMenuIcon}
+              child={navbarHidden || screenWidth >= 1487 ? icons.MenuIcon : icons.DarkMenuIcon}
             />
 
             {/* Redirect to LinkedIn btn */}
             <RetroBtn
               style={{ '--dynamic-duration': '0.5s', '--dynamic-translate': '-90%' }}
               styles={`ml-7 px-3 py-1 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''} z-40`}
-              darkTheme={(navbarHidden && screenWidth >= 1423) || screenWidth < 1423}
+              darkTheme={(navbarHidden && screenWidth >= 1487) || screenWidth < 1487}
               href={links.LinkedIn}
               target="_blank" rel="noopener noreferrer"
-              child={navbarHidden || screenWidth >= 1423 ? icons.LinkedInIcon : icons.DarkLinkedInIcon}
+              child={navbarHidden || screenWidth >= 1487 ? icons.LinkedInIcon : icons.DarkLinkedInIcon}
             />
 
             {/* Redirect to my GitHub profile */}
             <RetroBtn
               style={{ '--dynamic-duration': '0.7s', '--dynamic-translate': '-90%' }}
               styles={`px-3 py-1 z-40 ${showNavbar ? 'animate-fadeIn ' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
-              darkTheme={(navbarHidden && screenWidth >= 1423) || screenWidth < 1423}
+              darkTheme={(navbarHidden && screenWidth >= 1487) || screenWidth < 1487}
               href={links.GitHub}
               target="_blank" rel="noopener noreferrer"
-              child={navbarHidden || screenWidth >= 1423 ? icons.GitHubIcon : icons.DarkGitHubIcon}
+              child={navbarHidden || screenWidth >= 1487 ? icons.GitHubIcon : icons.DarkGitHubIcon}
             />
           </div>
 
@@ -72,19 +72,19 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
           <RetroBtn
             style={{ '--dynamic-duration': '0.9s', '--dynamic-translate': '-90%' }}
             styles={`px-3 py-1 z-40 ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
-            darkTheme={(navbarHidden && screenWidth >= 1423) || screenWidth < 1423}
+            darkTheme={(navbarHidden && screenWidth >= 1487) || screenWidth < 1487}
             href={links.CV}
             download="cv-xportas.pdf"
             target="_blank" rel="noopener noreferrer"
-            child={navbarHidden || screenWidth >= 1423 ? icons.CVIcon : icons.DarkCVIcon}
+            child={navbarHidden || screenWidth >= 1487 ? icons.CVIcon : icons.DarkCVIcon}
           />
 
           {/* Main nav (for large and traditional screens) */}
-          {!(screenWidth < 1423) &&
+          {!(screenWidth < 1487) &&
             <div className="fixed left-1/2 transform -translate-x-1/2 z-20">
               <nav
                 style={{ '--dynamic-duration': '1.1s', '--dynamic-translate': '-90%' }}
-                className={`flex ${ i18n.language !== 'es' && 'font-header' } text-orange-200 bg-main-gray px-5 py-1 border-solid border-2 border-orange-200 shadow-custom ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
+                className={`flex font-header text-orange-200 bg-main-gray px-5 py-1 border-solid border-2 border-orange-200 whitespace-nowrap shadow-custom ${showNavbar ? 'animate-fadeIn' : 'animate-fadeOut'} ${navbarHidden ? 'hidden' : ''}`}
               >
                 <div className="absolute z-30 flex items-center justify-center numbered">
                   <span
@@ -157,7 +157,7 @@ export default function Nav({ hiddenRetroComputer, screenWidth }) {
 
 
       {/* Multiplataform nav (small screens) */}
-      {screenWidth < 1423 &&
+      {screenWidth < 1487 &&
         <div className={`fixed h-screen w-screen bg-main-gray z-40 ${showNavbar ? 'animate-wipeInRight' : 'animate-wipeOutLeft'} ${navbarHidden ? 'hidden' : ''}`}>
           <nav className="inline-flex items-baseline flex-col font-header text-orange-200 pt-24 p-7 w-full">
             <a
