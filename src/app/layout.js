@@ -10,7 +10,7 @@ export const metadata = {
   openGraph: {
     title: "Xabier Portas | Full Stack Developer ",
     description: "Xabier Portas | Desarrollador Full Stack en Pamplona - .NET, React, PostgreSQL, GIS, GeoServer, OpenLayers",
-    url: "https://xabierportas.dev",
+    url: "https://xabierportas.vercel.app",
     type: "website",
     images: [
       {

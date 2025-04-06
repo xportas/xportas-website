@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: 'https://xabierportas.dev',
+  siteUrl: 'https://xabierportas.vercel.app',
   generateRobotsTxt: true,
 };
