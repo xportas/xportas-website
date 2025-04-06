@@ -1,14 +1,21 @@
 {
   "ABOUT": {
     "ABOUT_ME": "About Me",
-    "P1": "quiero comprobar que esto tiene sentido algunao para ver si el tamaño de la letra es correcto porque claro a la hora de ver si esto es correcto quiero ver si el usuario puede leer bien con este tamaño de letra y demás",
-    "P21": "english englis english englis english englis english englis english englis",
-    "P22": "english englis english englis english englis english englis english englis",
-    "P23": "english englis english englis english englis english englis english englis",
-    "TECH_I_KNOW": "Here are all the technologies I’ve been working: "
+    "AND": " and ",
+    "DESKTOP": "desktop",
+    "ERP": "ERPs ",
+    "EVEN": " even ",
+    "GIS": "GIS",
+    "MOBILE": "mobile",
+    "P1": "My passion for development was born after I finished university and realized that my job did not fulfill me. I had always liked technology but had never seen it as more than a hobby, until one day, while browsing the internet, I came across my first lines of code. After a couple of console games, I decided to dive in and balance (once again) work and studies.",
+    "P21": "To date, I have had the privilege of working on various projects, ranging from applications ",
+    "P22": "Passionate about innovation and continuous learning, I am always looking for new challenges and ways to improve my skills while keeping up with the latest technological trends. ",
+    "P3": "In my spare time, I enjoy consuming content related to programming, cybersecurity, and IT in general (if I'm not hiking in the mountains🗻 or dreaming under the stars⛺️🌠).",
+    "TECH_I_KNOW": "Some technologies I've recently worked with: ",
+    "WEB": "web "
   },
   "BTNS": {
-    "ACCEPT": "ACEPTAR"
+    "ACCEPT": "ACCEPT"
   },
   "CONTACT": {
     "BODY": "Although I’m not currently looking for any new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I’ll try my best to get back to you!",
@@ -28,38 +35,65 @@
   "HERO": {
     "CHECK_GH": "Check out my GitHub!",
     "GREETING": "Hi, my name is",
-    "H2": "I build things for the web.",
+    "H2": "I build through software.",
     "NAME": "Xabier Portas",
-    "P1": "I am a passionate full-stack software engineer dedicated to building and designing exceptional digital experiences.",
+    "P1": "Full-stack developer with experience in the architecture, development, and implementation of scalable digital solutions.",
     "P2": "Currently, I am focused on contributing to the Government of Navarra by developing innovative digital solutions at ",
     "TRACASA": "Tracasa Instrumental"
   },
   "JOBS": {
+    "COMPOS": {
+      "COMPANY": "Santiago de Compostela City Council",
+      "DUTIES": {
+        "D1": "Creation and development of comparative databases.",
+        "D2": "Accounting registration of invoices, payroll, collection, and payment operations.",
+        "D3": "Managing collections and payments, issuance of commercial payment drafts.",
+        "D4": "Supporting the organization, management, and coding of staff training courses.",
+        "D5": "Managing new hires as temporary and contracted staff, overseeing the onboarding process."
+      },
+      "LOCATION": "Santiago de Compostela, AC",
+      "RANGE": "Oct 2019 - Apr 2020",
+      "TITLE": "HR Administrator"
+    },
     "LIVENSA": {
       "COMPANY": "Livensa Living",
       "DUTIES": {
-        "D1": "Contributed to something in LIVENSA",
-        "D2": "Contributed to something in LIVENSA",
-        "D3": "Contributed to something in LIVENSA",
-        "D4": "Contributed to something in LIVENSA",
-        "D5": "Contributed to something in LIVENSA"
+        "D1": "Configuration, maintenance, and updating of the company’s technological devices: smartphones, tablets, computers, etc.",
+        "D2": "Design and creation of digital materials.",
+        "D3": "Guest and external client service.",
+        "D4": "Management of client reservations. Formalization and filing.",
+        "D5": "Incident reporting and follow-up on PMS updates.",
+        "D6": "Planning and development of recreational activities to energize student life."
       },
-      "LOCATION": "Sarriguren, NA",
-      "RANGE": "July - December 2017",
-      "TITLE": "FullStack Developer"
+      "LOCATION": "Pamplona, NA",
+      "RANGE": "Aug 2021 - Nov 2023",
+      "TITLE": "Front Desk Agent"
     },
-    "TITLE": "Where I’ve Worked",
+    "TITLE": "Where I've Worked?",
     "TRACASA": {
       "COMPANY": "Tracasa Instrumental",
       "DUTIES": {
-        "D1": "Contributed to something in the development of amazing products",
-        "D2": "Contributed to something in the development of amazing products",
-        "D3": "Contributed to something in the development of amazing products",
-        "D4": "Contributed to something in the development of amazing products",
-        "D5": "Contributed to something in the development of amazing products"
+        "D1": "Development of multi-platform GIS (Geographic Information System) applications, with experience in the entire software lifecycle. This includes creating intuitive and responsive interfaces, implementing business logic, and efficiently managing databases.",
+        "D2": "[ FRONT-END ]",
+        "D3": "Design, development, and maintenance of responsive user interfaces for all types of devices.",
+        "D4": "React.js, MaterialUI, OpenLayers, HTML5, CSS3, Styled-Components.",
+        "D5": "[ BACK-END ]",
+        "D6": "Development and maintenance of APIs and services for client-server communication.",
+        "D7": "Optimization of business logic.",
+        "D8": "ASP.NET Core, Entity Framework.",
+        "D9": "[ DATABASES ]",
+        "D10": "Management of relational databases.",
+        "D11": "Creation of automations for data management and ensuring data integrity.",
+        "D12": "PostgreSQL with PostGIS extension.",
+        "D13": "[ GIS ]",
+        "D14": "Management of spatial data with GeoServer.",
+        "D15": "Development of QGIS plugins in Python.",
+        "D16": "[ OTHERS ]",
+        "D17": "Version control with Git, GitLab, and AzureDevOps.",
+        "D18": "Implementation of Agile Methodologies (Scrum and Kanban)."
       },
       "LOCATION": "Sarriguren, NA",
-      "RANGE": "July - December 2017",
+      "RANGE": "Jan 2024 - Present",
       "TITLE": "FullStack Developer"
     }
   },
@@ -69,14 +103,14 @@
     "SELECT_ONE_LANG": "Select language"
   },
   "MODERN_DEVICE_WARNING": {
-    "S1": "¡Bienvenid@ a los años 80!",
-    "S2": "Estás a punto de viajar en el tiempo a una época donde los peinados eran más altos, los coches \"fantásticos\", y...",
-    "S3": "¡los smartphones aún eran ciencia ficción!",
-    "S4": "Si pretendes emprender este viaje desde tu dispositivo futurista",
-    "S5": "¡toma nota!",
-    "S6": "esta web tiene más detalles que la chaqueta de Michael Jackson, pero estos no entran en una pantalla tan pequeña...",
-    "S7": "Para una experiencia más inmersiva, te sugerimos desempolvar tu viejo Commodore 64, o usar una pantalla más grande...",
-    "S8": "¡Disfruta el viaje y que la nostalgia te acompañe!"
+    "S1": "Welcome to the '80s!",
+    "S2": "You're about to travel back in time to an era where hairstyles were taller, cars were 'fantastic', and...",
+    "S3": "smartphones were still science fiction!",
+    "S4": "If you intend to embark on this journey from your futuristic device",
+    "S5": "take note!",
+    "S6": "this website has more details than Michael Jackson's jacket, but they don't fit on such a small screen...",
+    "S7": "For a more immersive experience, we suggest dusting off your old Commodore 64, or using a larger screen...",
+    "S8": "Enjoy the journey and let longing be with you!"
   },
   "NAV": {
     "ABOUT": "About",
@@ -90,14 +124,14 @@
   },
   "PROJECTS": {
     "RETRO_WEBSITE": {
-      "DESCRIPT": "Esto es mi portfolio y todo lo demás que tengo que contar aquí a modo de introducción jalsdkfj asdlfkjsd flñaskdjf ñlasdkfj añsldkfj sdfl fasdf asdf asd",
+      "DESCRIPT": "A homage born out of longing. This open-source single page application combines retro design with modern technologies, creating an experience where past and future merge to transport the user back to the arcade era.",
       "TITLE": "Retro Website"
     },
     "TITLE": "Some Things I’ve Built"
   },
   "RETRO_SCREEN": {
     "FSDEV": "Full Stack Developer",
-    "GIS_SPEC": "Specialization in GIS",
+    "GIS_SPEC": "GIS Specialist",
     "GREETING": "Hi there, ",
     "I_AM": "I'm "
   }
