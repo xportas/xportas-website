@@ -168,7 +168,7 @@ export default function Jobs({ screenWidth }) {
                       const showBullet = t(`${dutie}`).startsWith("[");
                       return (
                         <>
-                          {showBullet && <li><br /></li>}
+                          {showBullet && <li key={`br-${dutie}-${i}`} ><br /></li>}
                           <li
                             key={`duty-${i}`}
                             className={`relative pl-7 mb-3 text-xs min-[480px]:text-sm min-[1375px]:text-base animate-wipeInRight 
