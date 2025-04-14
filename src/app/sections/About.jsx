@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from "react-i18next";
 import Skill from '../components/Skill';
 import { links, skills } from "../utils/config";
@@ -7,35 +7,32 @@ export default function About() {
 
   const { t } = useTranslation(['strings']);
   const aboutRef = useRef(null);
-  const [rendered, setRendered] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
+  const handleIntersection = useCallback((entries, observer) => {
+    const [entry] = entries;
+    if (entry.isIntersecting) {
+      setIsVisible(true);
+      observer.disconnect();
+    }
+  }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !rendered) {
-          setRendered(true);
-          observer.disconnect(); // Disconnects the observer after the first intersection
-        }
-      },
-      { threshold: 0.07 }
-    );
+    if (!aboutRef.current || isVisible) return;
 
-    if (aboutRef.current) {
-      observer.observe(aboutRef.current);
-    }
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.05,
+    });
 
-    return () => {
-      if (aboutRef.current) {
-        observer.disconnect();
-      }
-    };
-  }, [rendered]);
+    observer.observe(aboutRef.current);
+
+    return () => observer.disconnect();
+  }, [isVisible]);
 
   return (
     <section
       ref={aboutRef}
-      className={`max-w-5xl mx-auto max-[450px]:py-14 max-[768px]:py-20 md:py-24 transition-all duration-300 ease-in ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}
+      className={`max-w-5xl mx-auto max-[450px]:py-14 max-[768px]:py-20 md:py-24 transition-all duration-300 ease-in ${isVisible ? 'opacity-100 blur-0' : 'opacity-0 blur-md'}
                   px-7 sm:px-6 md:px-8`}
       id="about"
     >

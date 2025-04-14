@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from "react-i18next";
 import Plumber from '../components/Plumber';
 import { projects } from '../utils/config';
@@ -8,37 +8,34 @@ export default function Projects({ screenWidth }) {
 
   const { t } = useTranslation(['strings']);
   const projectsRef = useRef(null);
-  const [rendered, setRendered] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
+  const handleIntersection = useCallback((entries, observer) => {
+    const [entry] = entries;
+    if (entry.isIntersecting) {
+      setIsVisible(true);
+      observer.disconnect();
+    }
+  }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !rendered) {
-          setRendered(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
+    if (!projectsRef.current || isVisible) return;
 
-    if (projectsRef.current) {
-      observer.observe(projectsRef.current);
-    }
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.05,
+    });
 
-    return () => {
-      if (projectsRef.current) {
-        observer.disconnect();
-      }
-    };
-  }, [rendered]);
+    observer.observe(projectsRef.current);
+
+    return () => observer.disconnect();
+  }, [isVisible]);
 
 
   return (
     <section
       ref={projectsRef}
       className={`max-[450px]:py-14 max-[768px]:py-20 md:py-24 mx-auto transition-all duration-500 ease-in max-w-[1200px]
-                  ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'} md:p-8`}
+                  ${isVisible ? 'opacity-100 blur-0' : 'opacity-0 blur-md'} md:p-8`}
       id='work'
     >
       <h3 className={`flex items-center justify-center mb-14 mx-3 font-header text-responsive-section-heading ${screenWidth > 768 && 'dashed-line'}`}

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from "react-i18next";
 import RetroBtn from '../components/RetroBtn';
 import { personalData } from '../utils/config';
@@ -7,36 +7,33 @@ export default function Contact() {
 
   const { t } = useTranslation(['strings']);
   const contactRef = useRef(null);
-  const [rendered, setRendered] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
+  const handleIntersection = useCallback((entries, observer) => {
+    const [entry] = entries;
+    if (entry.isIntersecting) {
+      setIsVisible(true);
+      observer.disconnect();
+    }
+  }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !rendered) {
-          setRendered(true);
-          observer.disconnect(); // Disconnects the observer after the first intersection
-        }
-      },
-      { threshold: 0.05 }
-    );
+    if (!contactRef.current || isVisible) return;
 
-    if (contactRef.current) {
-      observer.observe(contactRef.current);
-    }
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.05,
+    });
 
-    return () => {
-      if (contactRef.current) {
-        observer.disconnect();
-      }
-    };
-  }, [rendered]);
+    observer.observe(contactRef.current);
+
+    return () => observer.disconnect();
+  }, [isVisible]);
 
   return (
     <section
       ref={contactRef}
       className={`block text-center max-w-[600px] mx-auto max-[450px]:py-14 max-[768px]:py-20 md:py-24 transition-all duration-500 ease-in 
-                  ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'} px-7 sm:px-6 md:px-8`}
+                  ${isVisible ? 'opacity-100 blur-0' : 'opacity-0 blur-md'} px-7 sm:px-6 md:px-8`}
       id='contact'
     >
       <h3 className='text-lg'>

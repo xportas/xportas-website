@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from "react-i18next";
 import RetroBtn from '../components/RetroBtn';
 import { links } from '../utils/config';
@@ -7,37 +7,34 @@ export default function Hero() {
 
   const { t } = useTranslation(['strings']);
   const heroRef = useRef(null);
-  const [rendered, setRendered] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
+  const handleIntersection = useCallback((entries, observer) => {
+    const [entry] = entries;
+    if (entry.isIntersecting) {
+      setIsVisible(true);
+      observer.disconnect();
+    }
+  }, []);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !rendered) {
-          setRendered(true);
-          observer.disconnect(); // Disconnects the observer after the first intersection
-        }
-      },
-      { threshold: 0.25 }
-    );
+    if (!heroRef.current || isVisible) return;
 
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
-    }
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.05,
+    });
 
-    return () => {
-      if (heroRef.current) {
-        observer.disconnect();
-      }
-    };
-  }, [rendered]);
+    observer.observe(heroRef.current);
+
+    return () => observer.disconnect();
+  }, [isVisible]);
 
   return (
     <div className='flex items-center justify-center' id='hero'>
       <article
         ref={heroRef}
         className={`flex flex-col items-start justify-center min-h-screen h-auto mx-auto transition-all duration-500 ease-in 
-                  ${rendered ? 'opacity-100 blur-0' : 'opacity-0 blur-md'} max-[768px]:py-auto max-[768px]:mx-7 max-[768px]:mb-32
+                  ${isVisible ? 'opacity-100 blur-0' : 'opacity-0 blur-md'} max-[768px]:py-auto max-[768px]:mx-7 max-[768px]:mb-32
                   min-[768px]:mx-32 min-[1080px]:max-w-[980px]`}
       >
         <h3 className="text-[clamp(14px,4vw,16px)] text-secondary-orange">{t('HERO.GREETING')}</h3>
