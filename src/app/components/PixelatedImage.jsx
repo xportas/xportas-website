@@ -1,26 +1,33 @@
-import { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef } from 'react';
+
+
 
 export const PixelatedImage = forwardRef(
   (
     {
       id,
-      className,
+      className = '',
       src,
       blockSize = 20,
       width = 600,
       height = 600,
       level = '',
-      style,
+      style = {},
       onClick,
       ...rest
     },
-    ref,
+    ref
   ) => {
     const canvasRef = useRef(null);
-    useImperativeHandle(
-      ref,
-      () => canvasRef.current || document.createElement('canvas'),
-    );
+
+    useImperativeHandle(ref, () => canvasRef.current);
+
+    const img = useMemo(() => {
+      const image = new Image();
+      image.crossOrigin = 'anonymous';
+      image.src = src;
+      return image;
+    }, [src]);
 
     useEffect(() => {
       const canvas = canvasRef.current;
@@ -31,48 +38,57 @@ export const PixelatedImage = forwardRef(
 
       ctx.imageSmoothingEnabled = false;
 
-      const img = new Image();
-      img.crossOrigin = 'Anonymous';
-      img.src = src;
-
       img.onload = () => {
-        const tempCanvas = document.createElement('canvas');
-        const tempCtx = tempCanvas.getContext('2d');
+        requestAnimationFrame(() => {
+          const tempCanvas = document.createElement('canvas');
+          const tempCtx = tempCanvas.getContext('2d');
 
-        tempCanvas.width = canvas.width * blockSize * 0.01;
-        tempCanvas.height = canvas.height * blockSize * 0.01;
+          const scaledWidth = canvas.width * blockSize * 0.01;
+          const scaledHeight = canvas.height * blockSize * 0.01;
 
-        tempCtx.imageSmoothingEnabled = false;
-        tempCtx.drawImage(img, 0, 0, tempCanvas.width, tempCanvas.height);
+          tempCanvas.width = scaledWidth;
+          tempCanvas.height = scaledHeight;
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(tempCanvas, 0, 0, tempCanvas.width, tempCanvas.height, 0, 0, canvas.width, canvas.height);
+          if (tempCtx) {
+            tempCtx.imageSmoothingEnabled = false;
+            tempCtx.drawImage(img, 0, 0, scaledWidth, scaledHeight);
+          }
 
-        if (level && level !== '') {
-          ctx.shadowColor = "black";
-          ctx.shadowOffsetX = 15;
-          ctx.shadowOffsetY = 15;
-          ctx.font = `200px chill`;
-          ctx.textBaseline = 'middle';
-          ctx.fillStyle = '#FFAD36';
-          ctx.fillText(level, canvas.width / 3.8, canvas.height / 2);
-        }
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(tempCanvas, 0, 0, scaledWidth, scaledHeight, 0, 0, canvas.width, canvas.height);
+
+          if (level) {
+            ctx.save();
+            ctx.shadowColor = 'black';
+            ctx.shadowOffsetX = 15;
+            ctx.shadowOffsetY = 15;
+            ctx.font = '200px chill';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = '#FFAD36';
+            ctx.fillText(level, canvas.width / 3.8, canvas.height / 2);
+            ctx.restore();
+          }
+        });
       };
-    }, [src, blockSize]);
+    }, [img, blockSize, level]);
 
     return (
       <canvas
         ref={canvasRef}
         id={id}
-        className={`${level ? 'border-2 border-solid border-[#FFAD36]' : ''} ${className || ''}`}
         width={width}
         height={height}
-        style={{ style, imageRendering: 'pixelated', pointerEvents: 'auto' }}
+        className={`${level ? 'border-2 border-solid border-[#FFAD36]' : ''} ${className}`}
+        style={{
+          ...style,
+          imageRendering: 'pixelated',
+          pointerEvents: 'auto',
+        }}
         onClick={onClick}
         {...rest}
       />
     );
-  },
+  }
 );
 
 PixelatedImage.displayName = 'PixelatedImage';
