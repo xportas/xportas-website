@@ -1,66 +1,73 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
 
 export default function PacManGhosts() {
   const [weakGhosts, setWeakGhosts] = useState(false);
+  const weakGhostRef = useRef(weakGhosts);
+  const ghostsRef = useRef([]);
+  const pacmanCursorRef = useRef(null);
+  const animationFrameId = useRef(null);
 
   useEffect(() => {
+    pacmanCursorRef.current = document.getElementById('pacman-cursor');
+    ghostsRef.current = Array.from(document.querySelectorAll('.ghost'));
+
+    const safetyMargin = 15;
+
     const handleMouseMove = (e) => {
-      const ghosts = document.querySelectorAll('.ghost');
-      const pacmanCursor = document.getElementById('pacman-cursor');
-      const safetyMargin = 15;
+      if (animationFrameId.current) return;
 
-      // Pac-Man movement
-      if (pacmanCursor) {
-        pacmanCursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-        pacmanCursor.classList.remove('hidden');
-      }
+      animationFrameId.current = requestAnimationFrame(() => {
+        // Pac-Man movement
+        if (pacmanCursorRef.current) {
+          pacmanCursorRef.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+          pacmanCursorRef.current.classList.remove('hidden');
+        }
 
-      ghosts.forEach((g, index) => {
-        g.classList.remove('hidden');
-        setTimeout(() => {
-          let offsetX, offsetY;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
 
-          if (weakGhosts) {
-            // Ghosts escape, go in the opposite direction of the cursor.
-            const windowWidth = window.innerWidth;
-            const windowHeight = window.innerHeight;
+        ghostsRef.current.forEach((ghost, index) => {
+          ghost.classList.remove('hidden');
 
-            const ghostRect = g.getBoundingClientRect();
-            const ghostCenterX = ghostRect.left + ghostRect.width / 2;
-            const ghostCenterY = ghostRect.top + ghostRect.height / 2;
+          setTimeout(() => {
+            let offsetX, offsetY;
+            const ghostRect = ghost.getBoundingClientRect();
 
-            const directionX = ghostCenterX - e.clientX;
-            const directionY = ghostCenterY - e.clientY;
-
-            // Calculates the new position by escaping from the cursor
-            offsetX = ghostCenterX + directionX;
-            offsetY = ghostCenterY + directionY;
-
-            // Limiting to avoid edges and corners
-            offsetX = Math.max(safetyMargin, Math.min(windowWidth - ghostRect.width - safetyMargin, offsetX));
-            offsetY = Math.max(safetyMargin, Math.min(windowHeight - ghostRect.height - safetyMargin, offsetY));
-
-          } else {
-            // Ghosts chase the cursor
-            offsetX = e.clientX;
-            offsetY = e.clientY;
+            if (weakGhostRef.current) {
+              const ghostCenterX = ghostRect.left + ghostRect.width / 2;
+              const ghostCenterY = ghostRect.top + ghostRect.height / 2;
+              const directionX = ghostCenterX - e.clientX;
+              const directionY = ghostCenterY - e.clientY;
+              offsetX = ghostCenterX + directionX;
+              offsetY = ghostCenterY + directionY;
+            } else {
+              // Ghosts chase the cursor
+              offsetX = e.clientX;
+              offsetY = e.clientY;
+            }
 
             // Limit to prevent them from moving completely to the edges.
-            const windowWidth = window.innerWidth;
-            const windowHeight = window.innerHeight;
-            const ghostRect = g.getBoundingClientRect();
             offsetX = Math.max(safetyMargin, Math.min(windowWidth - ghostRect.width - safetyMargin, offsetX));
             offsetY = Math.max(safetyMargin, Math.min(windowHeight - ghostRect.height - safetyMargin, offsetY));
-          }
 
-          g.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-          g.style.transition = 'transform 0.7s linear';
-        }, index * 200); // Delay to create the dragging effect
+            ghost.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+            ghost.style.transition = 'transform 0.7s linear';
+          }, index * 200); // Delay to create the dragging effect
+        });
+
+        animationFrameId.current = null;
       });
     };
 
-    const weakenTheGhosts = () => setWeakGhosts(!weakGhosts);
+    const weakenTheGhosts = () => {
+      setWeakGhosts((prev) => {
+        const newVal = !prev;
+        weakGhostRef.current = newVal;
+        return newVal;
+      });
+    };
 
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('click', weakenTheGhosts);
@@ -68,8 +75,9 @@ export default function PacManGhosts() {
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('click', weakenTheGhosts);
+      if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
     };
-  }, [weakGhosts]);
+  }, []);
 
   return (
     <>
