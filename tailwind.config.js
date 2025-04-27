@@ -12,7 +12,7 @@ module.exports = {
         crtScreen: 'moveBand 3s linear infinite',
         fadeIn: 'fadeIn var(--dynamic-duration) ease-out',
         fadeOut: 'fadeOut var(--dynamic-duration) ease-out forwards',
-        rotation: 'rotation 10s infinite linear',
+        rotation: 'rotation 15s infinite linear',
         rotationLoader: 'rotationLoader 4s linear infinite reverse',
         shuttingOffAnimation: 'shrinkToLine 0.84s forwards, shrinkToDot 0.35s 0.84s forwards',
         turnOnAnimation: 'growFromDot 0.17s 0.84s forwards, growFromLine 0.44s forwards',
